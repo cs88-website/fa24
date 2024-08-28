@@ -38,3 +38,11 @@
 .fc-ltr .fc-time-grid .fc-event-container {
   margin: 0;
 }
+
+#calendar tr a:not(.label-outline) {
+  color: #023389;
+  text-decoration: underline;
+  text-decoration-color: #9dcbef;
+  font-weight: 500;
+  font-size: 15px;
+}

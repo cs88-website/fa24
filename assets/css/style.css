@@ -53,6 +53,14 @@ section, footer {
   margin: 2em 0;
 }
 
+a {
+  text-decoration: underline;
+}
+
+.sidebar a, a.label-outline, .navbar a {
+  text-decoration: none;
+}
+
 @media (min-width: 1200px) {
   .container {
     width: auto;
@@ -83,13 +91,23 @@ a, button, .btn {
   outline: 0;
 }
 
+blockquote a {
+  color: #1c70ba;
+  text-decoration-color: #9dcbef;
+}
+
+.announcement a {
+  text-decoration: underline;
+  text-decoration-color: #9dcbef;
+}
+
 a:hover {
-  text-decoration: none;
+  color: #204f78;
 }
 
 blockquote {
-  background-color: #e6f3ff;
-  border-left: solid #0072c1;
+  background-color: #ebf5ff;
+  border-left: solid #ebf5ff;
   font-size: inherit;
 }
 
@@ -515,8 +533,9 @@ a.label-outline:hover, a.label-outline:focus {
 }
 
 a.label-outline {
-  color: #0072c1;
+  color: #024092;
   border: 1px solid #0072c1;
+  font-weight: 500;
 }
 
 /* Staff page */
@@ -576,7 +595,7 @@ table#calendar td {
 }
 
 table#calendar tr:not(:first-child) {
-  background-color: #c1d6e3;
+  background-color: #dae5ec;
 }
 
 table#calendar td.weeknum {
@@ -590,11 +609,15 @@ table#calendar td.reading ul {
 }
 
 table#calendar td.even {
-  background-color: #B0C4DE;
+  background-color: #c4d5dd;
 }
 
 table#calendar tr:hover td:not(.weeknum) {
-  background-color: #B0C4DE;
+  background-color: #b8d1dc;
+}
+
+table#calendar a {
+  color: #0065bd;
 }
 
 .calendar-date-anchor {
@@ -606,7 +629,7 @@ table#calendar tr:hover td:not(.weeknum) {
 
 /* Navbar colors */
 .navbar-default {
-  background-color: #0072c1;
+  background-color: #026ebb;
   border: none;
   top: 0;
   position: fixed;
