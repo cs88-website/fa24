@@ -9,13 +9,9 @@ test = {
           >>> def welcome():
           ...     print('Go')
           ...     return 'hello'
-          b38c6faf326a882a1f2f2b72898dbfee
-          # locked
           >>> def cal():
           ...     print('Bears')
           ...     return 'world'
-          b38c6faf326a882a1f2f2b72898dbfee
-          # locked
           >>> welcome()
           a344033e5d41145ddc2ecba020ecca21
           687c415dafe5ef56622994c5d47f0c53
