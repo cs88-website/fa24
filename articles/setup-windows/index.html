@@ -5,6 +5,7 @@
     <meta name="description" content ="Data C88C: Computational Structures in Data Science" />
     <meta name="keywords" content ="Computer Science, Programming, Berkeley, EECS" />
     <meta name="author" content ="John DeNero, Jedi Tsang, Shm Almeda" />
+    <!-- CHANGED CAREFUL -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
 
@@ -75,9 +76,9 @@ Lab 0: Getting Started (Windows Setup) | Data C88C Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="https://go.cs61a.org/c88c-extensions">Request an Extension</a></li>
+                <li><a href="https://go.c88c.org/c88c-extensions">Request an Extension</a></li>
                 
-                <li><a href="https://go.cs61a.org/c88c-regrades">Request a Regrade</a></li>
+                <li><a href="https://go.c88c.org/c88c-regrades">Request a Regrade</a></li>
                 
                 <li><a href="https://oh.c88c.org/">Office Hours Queue</a></li>
                 
@@ -106,6 +107,20 @@ Lab 0: Getting Started (Windows Setup) | Data C88C Fall 2024
                 <li><a href="/fa24/articles/composition/">Composition Guide</a></li>
                 
                 <li><a href="/fa24/articles/campus-res/">Campus Resources</a></li>
+                
+              </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Staff
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                <li><a href="/fa24/instructor">Instructors</a></li>
+                
+                <li><a href="/fa24/staff">TAs & Tutors</a></li>
                 
               </ul>
             </li>
@@ -283,7 +298,7 @@ here's how my folder for this course looks in my GUI:</p>
 
 <p>In this section, you will learn how to manage files using terminal commands.</p>
 
-<blockquote><p>Make sure your prompt does not begin with <code>&gt;&gt;&gt;</code>. If it begins with <code>&gt;&gt;&gt;</code> 
+<blockquote><p>Make sure your prompt does not begin with <code>&gt;&gt;&gt;</code>. If it begins with <code>&gt;&gt;&gt;</code>
 you are still in a Python shell, and you need to exit. See above for how.</p></blockquote>
 
 
@@ -294,42 +309,49 @@ you are still in a Python shell, and you need to exit. See above for how.</p></b
 
 <pre><code>ls</code></pre>
 
-<p>The <code>ls</code> command <strong>l</strong>i<strong>s</strong>ts all the files and folders in the current
-directory. A <strong>directory</strong> is another name for a folder (such as the
-<code>Documents</code> folder).</p>
+<p>The <code>ls</code> command (which stands for <strong>l</strong>i<strong>s</strong>t) lists all the files and folders in the current directory.
+A <strong>directory</strong> is another name for a folder (such as the <code>Documents</code> folder).</p>
 
-<p>Since you're in the home directory right now, after you type <code>ls</code> you should
-see the contents of your home directory.</p>
+<p>Since you're in the home directory right now, after you type <code>ls</code> you should see the contents of your home directory.</p>
 
-<p><em></em> Changing Directories <em></em></p>
+<p><strong>Changing Directories</strong></p>
 
-<p>To move into another directory, use the <code>cd</code> command (<strong>c</strong>hange <strong>d</strong>irectory).</p>
+<p>To move into another directory, use the <code>cd</code> command (which stands for <strong>c</strong>hange <strong>d</strong>irectory).</p>
 
-<p>Let's try moving into your <code>Desktop</code> directory. First, make sure you're in your
-home directory (<code>cd ~</code>) and use <code>ls</code> to see if the <code>Desktop</code> directory is present.</p>
+<p>Let's try moving into your <code>Desktop</code> directory.
+First, make sure you're in your home directory by typing:</p>
 
-<p>Try typing the following command into your terminal, which should move you into
-that directory:</p>
+<pre><code>cd ~</code></pre>
+
+<p>Then, use the <code>ls</code> command to see if the <code>Desktop</code> directory is present.</p>
+
+<p>If you see the <code>Desktop</code> directory, you can move into it with the following command:</p>
 
 <pre><code>cd Desktop</code></pre>
 
-<p><em></em> Making New Directories <em></em></p>
+<p>However, if the <code>Desktop</code> directory is not listed, it might be located elsewhere on your system.
+This can happen due to system configurations or custom setups.
+In that case, you'll need to find the correct location of your <code>Desktop</code> folder.
+Most of the time, the <code>Desktop</code> folder will be located in the <code>OneDrive</code> directory.
+So, you can try the following command:</p>
 
-<p>The next command is called <code>mkdir</code>, which <strong>m</strong>a<strong>k</strong>es a new
-<strong>dir</strong>ectory. Let's make a directory called <code>cs61a</code> in your <code>Desktop</code> directory to
-store all of the assignments for this class:</p>
+<pre><code>cd OneDrive\Desktop</code></pre>
+
+<p><strong>Making New Directories</strong></p>
+
+<p>Once you're in the <code>Desktop</code> directory, the next command you'll use is <code>mkdir</code>, which stands for <strong>m</strong>a<strong>k</strong>e a new <strong>dir</strong>ectory.
+Let's make a directory called <code>cs61a</code> in your <code>Desktop</code> directory to store all of the assignments for this class:</p>
 
 <pre><code>mkdir cs61a</code></pre>
 
-<p>A folder named <code>cs61a</code> will appear on your Desktop. You can verify this by
-using the <code>ls</code> command again or by checking your Desktop using File Explorer.</p>
+<p>A folder named <code>cs61a</code> will appear on your Desktop.
+You can verify this by using the <code>ls</code> command again or by checking your Desktop using File Explorer.</p>
 
-<p>At this point, let's create some more directories. First, make sure you are in
-the <code>cs61a</code> directory, path should be <code>C:\Users\&lt;USER&gt;\Desktop\cs61a</code>, with the path before <code>\Desktop\cs61a</code> potentially being different. 
-Then, create two new folders, one called <code>projects</code> and the other called <code>lab</code>. Both
-should be inside of your <code>cs61a</code> folder:</p>
+<p>Now, let's create some more directories. First, make sure you are in the <code>cs61a</code> directory,
+which should be in a path like <code>C:\Users\&lt;USER&gt;\Desktop\cs61a</code> where <code>&lt;USER&gt;</code> is your actual username.
+Then, create two new folders, one called <code>projects</code> and the other called <code>lab</code>. Both should be inside your <code>cs61a</code> folder:</p>
 
-<pre><code>cd ~\Desktop\berk
+<pre><code>cd cs61a
 mkdir projects
 mkdir lab</code></pre>
 
