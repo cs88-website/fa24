@@ -189,9 +189,9 @@ def is_always_roll(strategy, goal=GOAL):
     # END PROBLEM 7
 
 
-def make_averaged(original_function, samples_count=1000):
+def make_averaged(original_function, times_called=1000):
     """Return a function that returns the average value of ORIGINAL_FUNCTION
-    called SAMPLES_COUNT times.
+    called TIMES_CALLED times.
 
     To implement this function, you will have to use *args syntax.
 
@@ -205,7 +205,7 @@ def make_averaged(original_function, samples_count=1000):
     # END PROBLEM 8
 
 
-def max_scoring_num_rolls(dice=six_sided, samples_count=1000):
+def max_scoring_num_rolls(dice=six_sided, times_called=1000):
     """Return the number of dice (1 to 10) that gives the maximum average score for a turn.
     Assume that the dice always return positive outcomes.
 

@@ -4,7 +4,7 @@
   <head>
     <meta name="description" content ="CS 61A: Structure and Interpretation of Computer Programs" />
     <meta name="keywords" content ="Computer Science, Programming, Berkeley, EECS" />
-    <meta name="author" content ="John DeNero, Jedi Tsang, Shm Almeda" />
+    <meta name="author" content ="John DeNero, Jedi Tsang (Guest Lecturer), Shm Almeda (GSI)" />
     <!-- CHANGED CAREFUL -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
@@ -174,8 +174,8 @@ rolls.  </cite></blockquote>
 <blockquote><p><strong>Important submission note:</strong> For full credit:</p>
 
 <ul>
-  <li>Submit with Phase 1 complete by <strong>Thursday, June 27</strong>, worth 1 pt.</li>
-  <li>Submit the complete project by <strong>Tuesday, July 2</strong>.</li>
+  <li>Submit with Phase 1 complete by <strong>Thursday, Sept 12</strong>, worth 1 pt.</li>
+  <li>Submit the complete project by <strong>Thursday, Sept 19</strong>.</li>
 </ul>
 
 <p>Try to attempt the problems in order, as some later problems will depend on
@@ -184,7 +184,7 @@ tests.</p>
 
 <p>You may complete the project with a partner.</p>
 
-<p>You can get 1 bonus point by submitting the entire project by <strong>Monday, July 1</strong>.
+<p>You can get 1 bonus point by submitting the entire project by <strong>Wednesday, Sept 18</strong>.
 You can receive extensions on the project deadline and checkpoint
 deadline, but not on the early deadline, unless you're a DSP student with an
 accommodation for assignment extensions.</p></blockquote>
@@ -350,7 +350,7 @@ For the project, you'll only be making changes to <code>hog.py</code>.</p>
 
 
 <p>The project is worth 25 points, of which 1 point is for submitting
-Phase 1 by the checkpoint date of Thursday, June 27.</p>
+Phase 1 by the checkpoint date of Thursday, Sept 12.</p>
 
 
 <p>You will turn in the following files:</p>
@@ -546,9 +546,9 @@ problems on this assignment.</p>
 <blockquote><p>To see these videos, you should be logged into your berkeley.edu email.</p></blockquote>
 
 
-            <iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZebgMROlbtGHlmAbOjDegj5"
+            <iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZfpHDDcEnevQqlX4wTxuMAD"
                 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "hog-getstarted"
-                allowfullscreen></iframe><p><a href='https://youtu.be/playlist?list=PLx38hZJ5RLZebgMROlbtGHlmAbOjDegj5'> YouTube link </a></p>
+                allowfullscreen></iframe><p><a href='https://youtu.be/playlist?list=PLx38hZJ5RLZfpHDDcEnevQqlX4wTxuMAD'> YouTube link </a></p>
 
 
 <h2 id="phase-1-rules-of-the-game">Phase 1: Rules of the Game</h2>
@@ -1171,20 +1171,20 @@ Implement make_averaged, which is a higher-order function that takes a function 
 
 The return value of make_averaged is a function that takes in the same number of arguments as original_function. When we call this returned function on the arguments, it will return the average value of repeatedly calling original_function on the arguments passed in.
 
-Specifically, this function should call original_function a total of samples_count times and return the average of the results of these calls. -->
+Specifically, this function should call original_function a total of times_called times and return the average of the results of these calls. -->
 
 <p>Implement <code>make_averaged</code>, which is a higher-order function that
 takes a function <code>original_function</code> as an argument.</p>
 
 <p>The return value of <code>make_averaged</code> is a function that takes in the same
 arguments as <code>original_function</code>. When called with specific arguments, this function should repeatedly
-call <code>original_function</code> on those same arguments, <code>samples_count</code> times, and return the average of the results.
+call <code>original_function</code> on those same arguments, <code>times_called</code> times, and return the average of the results.
 Take a look at the <code>make_averaged</code> doctest. Be sure to keep track of what values are being passed into the function!</p>
 
 <blockquote><p><strong>Doctest Walkthrough</strong>:
 Take a close look at the <code>make_averaged</code> doctest. Here, <code>original_function</code> is <code>roll_dice</code>.
 Notice the line <code>averaged_dice(1, dice)</code>. This implies that the arguments for <code>roll_dice</code> are <code>(1, dice)</code> (think about why!) Observe how <code>averaged_dice</code> accepts the same arguments as <code>roll_dice</code>. The arguments are not passed directly to <code>roll_dice</code> but rather to <code>averaged_dice</code>. (Think about how this can be achieved!) Keep in mind, <code>make_averaged</code> should work with any <code>original_function</code> that shares the same argument structure as the function returned by <code>make_averaged</code>.
-In this example, rolling a single die is considered a sample (<code>roll_dice(1, dice)</code>). Since <code>samples_count</code> is set to 40, this sampling is repeated 40 times. The <code>make_averaged</code> function then calculates the average result of these 40 calls to <code>roll_dice</code>.</p>
+In this example, rolling a single die is considered a sample (<code>roll_dice(1, dice)</code>). Since <code>times_called</code> is set to 40, this sampling is repeated 40 times. The <code>make_averaged</code> function then calculates the average result of these 40 calls to <code>roll_dice</code>.</p>
 
 <p><strong>Important:</strong>
 To implement this function, you will need to use a new piece of Python syntax.
