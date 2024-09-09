@@ -262,117 +262,7 @@ from last semester and go to links.cs61a.org to make a new shortlink
         
 
 
-<h2 id="write-code">Write Code</h2>
-
-
-
-<h3 id="q2-falling-factorial">Q2: Falling Factorial</h3>
-
-
-<p>Let's write a function <code>falling</code>, which is a "falling" factorial
-that takes two arguments, <code>n</code> and <code>k</code>, and returns the product of <code>k</code>
-consecutive numbers, starting from <code>n</code> and working downwards.
-When <code>k</code> is 0, the function should return 1.</p>
-
-<solution>
-
-<pre><code>def falling(n, k):
-    &quot;&quot;&quot;Compute the falling factorial of n to depth k.
-
-    &gt;&gt;&gt; falling(6, 3)  # 6 * 5 * 4
-    120
-    &gt;&gt;&gt; falling(4, 3)  # 4 * 3 * 2
-    24
-    &gt;&gt;&gt; falling(4, 1)  # 4
-    4
-    &gt;&gt;&gt; falling(4, 0)
-    1
-    &quot;&quot;&quot;
-    "*** YOUR CODE HERE ***"
-</code></pre>
-
-</solution>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q falling<button id="copy-code-python3ok-qfalling" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qfalling").onclick = () => copyCode('python3 ok -q falling', "copy-code-python3ok-qfalling");
-        </script>
-        <br/>
-
-
-<h3 id="q3-divisible-by-k">Q3: Divisible By k</h3>
-
-
-<p>Write a function <code>divisible_by_k</code> that takes positive integers <code>n</code> and <code>k</code>. It prints all positive integers less than or equal to <code>n</code> that are divisible by <code>k</code> from smallest to largest. Then, it returns how many numbers were printed.</p>
-
-<solution>
-
-<pre><code>def divisible_by_k(n, k):
-    &quot;&quot;&quot;
-    &gt;&gt;&gt; a = divisible_by_k(10, 2)  # 2, 4, 6, 8, and 10 are divisible by 2
-    2
-    4
-    6
-    8
-    10
-    &gt;&gt;&gt; a
-    5
-    &gt;&gt;&gt; b = divisible_by_k(3, 1)  # 1, 2, and 3 are divisible by 1
-    1
-    2
-    3
-    &gt;&gt;&gt; b
-    3
-    &gt;&gt;&gt; c = divisible_by_k(6, 7)  # There are no integers up to 6 divisible by 7
-    &gt;&gt;&gt; c
-    0
-    &quot;&quot;&quot;
-    "*** YOUR CODE HERE ***"
-</code></pre>
-
-</solution>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q divisible_by_k<button id="copy-code-python3ok-qdivisible_by_k" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qdivisible_by_k").onclick = () => copyCode('python3 ok -q divisible_by_k', "copy-code-python3ok-qdivisible_by_k");
-        </script>
-        <br/>
-
-
-<h3 id="q4-sum-digits">Q4: Sum Digits</h3>
-
-
-<p>Write a function that takes in a nonnegative integer and sums its digits. (Using
-floor division and modulo might be helpful here!)</p>
-
-<solution>
-
-<pre><code>def sum_digits(y):
-    &quot;&quot;&quot;Sum all the digits of y.
-
-    &gt;&gt;&gt; sum_digits(10) # 1 + 0 = 1
-    1
-    &gt;&gt;&gt; sum_digits(4224) # 4 + 2 + 2 + 4 = 12
-    12
-    &gt;&gt;&gt; sum_digits(1234567890)
-    45
-    &gt;&gt;&gt; a = sum_digits(123) # make sure that you are using return rather than print
-    &gt;&gt;&gt; a
-    6
-    &quot;&quot;&quot;
-    "*** YOUR CODE HERE ***"
-</code></pre>
-
-</solution>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q sum_digits<button id="copy-code-python3ok-qsum_digits" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qsum_digits").onclick = () => copyCode('python3 ok -q sum_digits', "copy-code-python3ok-qsum_digits");
-        </script>
-        <br/>
-
-
-<h3 id="q5-wwpd-what-if">Q5: WWPD: What If?</h3>
+<h3 id="q2-wwpd-what-if">Q2: WWPD: What If?</h3>
 
 
 <blockquote><p>Use Ok to test your knowledge with the following "What Would Python Display?" questions:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q if-statements -u<button id="copy-code-python3ok-qif-statements-u" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
@@ -434,6 +324,116 @@ floor division and modulo might be helpful here!)</p>
         Toggle Solution<noscript> (enable JavaScript)</noscript>
         </button>
         
+
+
+<h2 id="write-code">Write Code</h2>
+
+
+
+<h3 id="q3-falling-factorial">Q3: Falling Factorial</h3>
+
+
+<p>Let's write a function <code>falling</code>, which is a "falling" factorial
+that takes two arguments, <code>n</code> and <code>k</code>, and returns the product of <code>k</code>
+consecutive numbers, starting from <code>n</code> and working downwards.
+When <code>k</code> is 0, the function should return 1.</p>
+
+<solution>
+
+<pre><code>def falling(n, k):
+    &quot;&quot;&quot;Compute the falling factorial of n to depth k.
+
+    &gt;&gt;&gt; falling(6, 3)  # 6 * 5 * 4
+    120
+    &gt;&gt;&gt; falling(4, 3)  # 4 * 3 * 2
+    24
+    &gt;&gt;&gt; falling(4, 1)  # 4
+    4
+    &gt;&gt;&gt; falling(4, 0)
+    1
+    &quot;&quot;&quot;
+    "*** YOUR CODE HERE ***"
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q falling<button id="copy-code-python3ok-qfalling" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qfalling").onclick = () => copyCode('python3 ok -q falling', "copy-code-python3ok-qfalling");
+        </script>
+        <br/>
+
+
+<h3 id="q4-divisible-by-k">Q4: Divisible By k</h3>
+
+
+<p>Write a function <code>divisible_by_k</code> that takes positive integers <code>n</code> and <code>k</code>. It prints all positive integers less than or equal to <code>n</code> that are divisible by <code>k</code> from smallest to largest. Then, it returns how many numbers were printed.</p>
+
+<solution>
+
+<pre><code>def divisible_by_k(n, k):
+    &quot;&quot;&quot;
+    &gt;&gt;&gt; a = divisible_by_k(10, 2)  # 2, 4, 6, 8, and 10 are divisible by 2
+    2
+    4
+    6
+    8
+    10
+    &gt;&gt;&gt; a
+    5
+    &gt;&gt;&gt; b = divisible_by_k(3, 1)  # 1, 2, and 3 are divisible by 1
+    1
+    2
+    3
+    &gt;&gt;&gt; b
+    3
+    &gt;&gt;&gt; c = divisible_by_k(6, 7)  # There are no integers up to 6 divisible by 7
+    &gt;&gt;&gt; c
+    0
+    &quot;&quot;&quot;
+    "*** YOUR CODE HERE ***"
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q divisible_by_k<button id="copy-code-python3ok-qdivisible_by_k" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qdivisible_by_k").onclick = () => copyCode('python3 ok -q divisible_by_k', "copy-code-python3ok-qdivisible_by_k");
+        </script>
+        <br/>
+
+
+<h3 id="q5-sum-digits">Q5: Sum Digits</h3>
+
+
+<p>Write a function that takes in a nonnegative integer and sums its digits. (Using
+floor division and modulo might be helpful here!)</p>
+
+<solution>
+
+<pre><code>def sum_digits(y):
+    &quot;&quot;&quot;Sum all the digits of y.
+
+    &gt;&gt;&gt; sum_digits(10) # 1 + 0 = 1
+    1
+    &gt;&gt;&gt; sum_digits(4224) # 4 + 2 + 2 + 4 = 12
+    12
+    &gt;&gt;&gt; sum_digits(1234567890)
+    45
+    &gt;&gt;&gt; a = sum_digits(123) # make sure that you are using return rather than print
+    &gt;&gt;&gt; a
+    6
+    &quot;&quot;&quot;
+    "*** YOUR CODE HERE ***"
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q sum_digits<button id="copy-code-python3ok-qsum_digits" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qsum_digits").onclick = () => copyCode('python3 ok -q sum_digits', "copy-code-python3ok-qsum_digits");
+        </script>
+        <br/>
 
 
 <h3 id="q6-double-eights">Q6: Double Eights</h3>
@@ -498,13 +498,13 @@ adjacent 8s.</p>
     <li><a href="#what-would-python-display-wwpd">What Would Python Display? (WWPD)</a></li>
     <ul>
       <li><a href="#q1-wwpd-control">Q1: WWPD: Control</a></li>
+      <li><a href="#q2-wwpd-what-if">Q2: WWPD: What If?</a></li>
     </ul>
     <li><a href="#write-code">Write Code</a></li>
     <ul>
-      <li><a href="#q2-falling-factorial">Q2: Falling Factorial</a></li>
-      <li><a href="#q3-divisible-by-k">Q3: Divisible By k</a></li>
-      <li><a href="#q4-sum-digits">Q4: Sum Digits</a></li>
-      <li><a href="#q5-wwpd-what-if">Q5: WWPD: What If?</a></li>
+      <li><a href="#q3-falling-factorial">Q3: Falling Factorial</a></li>
+      <li><a href="#q4-divisible-by-k">Q4: Divisible By k</a></li>
+      <li><a href="#q5-sum-digits">Q5: Sum Digits</a></li>
       <li><a href="#q6-double-eights">Q6: Double Eights</a></li>
     </ul>
     <li><a href="#check-your-score-locally">Check Your Score Locally</a></li>
