@@ -13,7 +13,8 @@
         "if-statements",
         "falling",
         "divisible_by_k",
-        "sum_digits"
+        "sum_digits",
+        "double_eights"
     ],
     "protocols": [
         "restore",

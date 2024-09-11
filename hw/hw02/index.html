@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content ="CS 61A: Structure and Interpretation of Computer Programs" />
+    <meta name="description" content ="Data C88C: Computational Structures in Data Science" />
     <meta name="keywords" content ="Computer Science, Programming, Berkeley, EECS" />
-    <meta name="author" content ="John DeNero, Jedi Tsang (Guest Lecturer), Shm Almeda (GSI)" />
+    <meta name="author" content ="John DeNero, Jedi Tsang, Shm Almeda (GSI)" />
     <!-- CHANGED CAREFUL -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
@@ -12,8 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/assets/js/hl.js"></script>
-    <script src="/assets/js/toggledarkmode.js"></script>
+    <script src="/fa24/assets/js/hl.js"></script>
+    <script src="/fa24/assets/js/toggledarkmode.js"></script>
     <script>
         // we aren't registering builtins since
         //      (1) they don't render differently in the current CSS from other names
@@ -24,12 +24,12 @@
         });
         hljs.initHighlightingOnLoad();
     </script>
-    <script src="/assets/js/dark-mode.js"></script>
+    <script src="/fa24/assets/js/dark-mode.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/mono-blue.css">
-    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/fa24/assets/css/style.css">
+    <link rel="stylesheet" href="/fa24/assets/css/mono-blue.css">
+    <link rel="icon" href="/fa24/assets/images/favicon.ico">
 
     
 
@@ -37,7 +37,7 @@
 
 
     <title>
-Homework 2 | CS 61A Fall 2024
+Homework 2 | Data C88C Fall 2024
 </title>
   </head>
 
@@ -50,8 +50,8 @@ Homework 2 | CS 61A Fall 2024
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">
-            CS 61A
+          <a class="navbar-brand" href="/fa24/">
+            Data C88C
             <!-- <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png"/> -->
           </a>
         </div>
@@ -60,15 +60,15 @@ Homework 2 | CS 61A Fall 2024
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="/">Lectures</a></li>
+            <li><a href="/fa24/">Lectures</a></li>
             
-            <li><a href="/articles/about-61a/">Syllabus</a></li>
+            <li><a href="/fa24/articles/about-c88c/">Syllabus</a></li>
             
-            <li><a href="https://edstem.org/us/courses/63971/discussion/">Ed</a></li>
+            <li><a href="https://edstem.org/us/courses/63975/discussion/">Ed</a></li>
             
-            <li><a href="/office-hours/">Office Hours</a></li>
+            <li><a href="/fa24/office-hours/">Office Hours</a></li>
             
-            <li><a href="/articles/contact-61a/">Contact</a></li>
+            <li><a href="/fa24/articles/contact-c88c/">Contact</a></li>
             
 
             
@@ -79,19 +79,17 @@ Homework 2 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="https://go.cs61a.org/61a-extensions">Request an Extension</a></li>
+                <li><a href="https://go.c88c.org/c88c-extensions">Request an Extension</a></li>
                 
-                <li><a href="https://go.cs61a.org/61a-regrades">Request a Regrade</a></li>
+                <li><a href="https://go.c88c.org/c88c-regrades">Request a Regrade</a></li>
                 
-                <li><a href="https://oh.cs61a.org/">Office Hours Queue</a></li>
+                <li><a href="https://oh.c88c.org/">Office Hours Queue</a></li>
                 
-                <li><a href="https://www.gradescope.com/courses/843175">Gradescope</a></li>
+                <li><a href="https://www.gradescope.com/courses/843183">Gradescope</a></li>
                 
-                <li><a href="https://bcourses.berkeley.edu/courses/1538118/pages">Lecture Recordings</a></li>
+                <li><a href="https://bcourses.berkeley.edu/courses/1538122/pages">Lecture Recordings</a></li>
                 
                 <li><a href="https://pythontutor.com/cp/composingprograms.html">Python Tutor</a></li>
-                
-                <li><a href="https://code.cs61a.org/scheme/">Scheme Editor</a></li>
                 
               </ul>
             </li>
@@ -103,19 +101,15 @@ Homework 2 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/resources/">Past Exams & Websites</a></li>
-                
                 <li><a href="https://www.composingprograms.com">Textbook</a></li>
                 
                 <li><a href="https://drive.google.com/file/d/1O72u0ml65pibcjz-PXKpqeJDKaVqQ3D8/view">Debugging Guide</a></li>
                 
-                <li><a href="/articles/studying/">Studying Guide</a></li>
+                <li><a href="/fa24/articles/studying/">Studying Guide</a></li>
                 
-                <li><a href="/articles/composition/">Composition Guide</a></li>
+                <li><a href="/fa24/articles/composition/">Composition Guide</a></li>
                 
-                <li><a href="/articles/campus-res/">Campus Resources</a></li>
-                
-                <li><a href="/articles/advice/">Advice from Students</a></li>
+                <li><a href="/fa24/articles/campus-res/">Campus Resources</a></li>
                 
               </ul>
             </li>
@@ -127,9 +121,9 @@ Homework 2 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/instructor">Instructors</a></li>
+                <li><a href="/fa24/instructor">Instructors</a></li>
                 
-                <li><a href="/staff">TAs & Tutors</a></li>
+                <li><a href="/fa24/staff">TAs & Tutors</a></li>
                 
               </ul>
             </li>
@@ -147,7 +141,7 @@ Homework 2 | CS 61A Fall 2024
     <header>
       <h1>
         
-Homework 2: Higher-Order Functions
+Homework 2: Control
 
         
         
@@ -160,7 +154,7 @@ Homework 2: Higher-Order Functions
     </header>
     
 
-<p><em>Due by 11:59pm on Thursday, September 12</em></p>
+<p><em>Due by 11:59pm on Wednesday, September 18</em></p>
 
 
 
@@ -168,9 +162,7 @@ Homework 2: Higher-Order Functions
 
 <h2>Instructions</h2>
 
-<p>Download <a href="hw02.zip">hw02.zip</a>. Inside the archive, you will find
-a file called <a href="hw02.py">hw02.py</a>, along with a copy of the <code>ok</code>
-autograder.</p>
+<p>Download <a href="hw02.zip">hw02.zip</a>.</p>
 
 <p><strong>Submission:</strong> When you are done, submit the assignment by uploading all code files you've edited to Gradescope. You may submit more than once before the deadline; only the
 final submission will be scored. Check that you have successfully submitted
@@ -185,7 +177,7 @@ refer to <a href="../../articles/using-ok">this guide.</a>
   <p><strong>Readings:</strong> You might find the following references
   useful:</p>
   <ul>
-  <li><a href="https://www.composingprograms.com/pages/16-higher-order-functions.html">Section 1.6</a></li>
+  <li><a href="https://www.composingprograms.com/pages/15-control.html">Section 1.5</a></li>
 </ul>
   
 
@@ -197,215 +189,107 @@ correctness. Each incorrect problem will decrease the total score by one point.
 
 
     
+<br />
+
+
 <h1 id="required-questions">Required Questions</h1>
 
 
-<br>
 
-        <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Getting Started Videos<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-1">
-
-<h2 id="getting-started-videos" class="no-toc">Getting Started Videos</h2>
+<h3 id="q1-largest-factor">Q1: Largest Factor</h3>
 
 
-<p>These videos may provide some helpful direction for tackling the coding
-problems on this assignment.</p>
+<p>Write a function that takes an integer <code>n</code> that is <strong>greater than 1</strong> and
+returns the largest integer that is smaller than <code>n</code> and evenly divides <code>n</code>.</p>
 
-<blockquote><p>To see these videos, you should be logged into your berkeley.edu email.</p></blockquote>
+<pre><code>def largest_factor(n):
+    &quot;&quot;&quot;Return the largest factor of n that is smaller than n.
 
-
-            <iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZdZvspwV7EqoPNQBYjqJaX5"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "hw2-getstarted"
-                allowfullscreen></iframe><p><a href='https://youtu.be/playlist?list=PLx38hZJ5RLZdZvspwV7EqoPNQBYjqJaX5'> YouTube link </a></p>
-</div>
-
-<p>Several doctests refer to these functions:</p>
-
-<pre><code>from operator import add, mul
-
-square = lambda x: x * x
-
-identity = lambda x: x
-
-triple = lambda x: 3 * x
-
-increment = lambda x: x + 1</code></pre>
-
-<br>
-
-
-<h2 id="higher-order-functions">Higher-Order Functions</h2>
-
-
-
-<h3 id="q1-product">Q1: Product</h3>
-
-
-<p>Write a function called <code>product</code> that returns the product of the first <code>n</code> terms of a sequence.
-Specifically, <code>product</code> takes in an integer <code>n</code> and <code>term</code>, a single-argument function that determines a sequence. 
-(That is, <code>term(i)</code> gives the <code>i</code>th term of the sequence.)
-<code>product(n, term)</code> should return <code>term(1) * ... * term(n)</code>.</p>
-
-<pre><code>def product(n, term):
-    &quot;&quot;&quot;Return the product of the first n terms in a sequence.
-
-    n: a positive integer
-    term:  a function that takes one argument to produce the term
-
-    &gt;&gt;&gt; product(3, identity)  # 1 * 2 * 3
-    6
-    &gt;&gt;&gt; product(5, identity)  # 1 * 2 * 3 * 4 * 5
-    120
-    &gt;&gt;&gt; product(3, square)    # 1^2 * 2^2 * 3^2
-    36
-    &gt;&gt;&gt; product(5, square)    # 1^2 * 2^2 * 3^2 * 4^2 * 5^2
-    14400
-    &gt;&gt;&gt; product(3, increment) # (1+1) * (2+1) * (3+1)
-    24
-    &gt;&gt;&gt; product(3, triple)    # 1*3 * 2*3 * 3*3
-    162
+    &gt;&gt;&gt; largest_factor(15) # factors are 1, 3, 5
+    5
+    &gt;&gt;&gt; largest_factor(80) # factors are 1, 2, 4, 5, 8, 10, 16, 20, 40
+    40
+    &gt;&gt;&gt; largest_factor(13) # factor is 1 since 13 is prime
+    1
     &quot;&quot;&quot;
     "*** YOUR CODE HERE ***"
 </code></pre>
 
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q product<button id="copy-code-python3ok-qproduct" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+<blockquote><p><strong>Hint:</strong> To check if <code>b</code> evenly divides <code>a</code>,
+use the expression <code>a % b == 0</code>, which can be read as,
+"the remainder when dividing <code>a</code> by <code>b</code> is 0."</p></blockquote>
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q largest_factor<button id="copy-code-python3ok-qlargest_factor" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
-        document.getElementById("copy-code-python3ok-qproduct").onclick = () => copyCode('python3 ok -q product', "copy-code-python3ok-qproduct");
+        document.getElementById("copy-code-python3ok-qlargest_factor").onclick = () => copyCode('python3 ok -q largest_factor', "copy-code-python3ok-qlargest_factor");
         </script>
         <br/>
 
 
 
 
-<h3 id="q2-accumulate">Q2: Accumulate</h3>
+<h3 id="q2-hailstone">Q2: Hailstone</h3>
 
 
-<p>Let's take a look at how <code>product</code> is an instance of a more
-general function called <code>accumulate</code>, which we would like to implement:</p>
+<p>Douglas Hofstadter's Pulitzer-prize-winning book, <em>Gödel, Escher, Bach</em>, poses
+the following mathematical puzzle.</p>
 
-<pre><code>def accumulate(fuse, start, n, term):
-    &quot;&quot;&quot;Return the result of fusing together the first n terms in a sequence 
-    and start.  The terms to be fused are term(1), term(2), ..., term(n). 
-    The function fuse is a two&#x2d;argument commutative &amp; associative function.
+<ol>
+  <li>Pick a positive integer <code>n</code> as the start.</li>
+  <li>If <code>n</code> is even, divide it by 2.</li>
+  <li>If <code>n</code> is odd, multiply it by 3 and add 1.</li>
+  <li>Continue this process until <code>n</code> is 1.</li>
+</ol>
 
-    &gt;&gt;&gt; accumulate(add, 0, 5, identity)  # 0 + 1 + 2 + 3 + 4 + 5
-    15
-    &gt;&gt;&gt; accumulate(add, 11, 5, identity) # 11 + 1 + 2 + 3 + 4 + 5
-    26
-    &gt;&gt;&gt; accumulate(add, 11, 0, identity) # 11 (fuse is never used)
-    11
-    &gt;&gt;&gt; accumulate(add, 11, 3, square)   # 11 + 1^2 + 2^2 + 3^2
-    25
-    &gt;&gt;&gt; accumulate(mul, 2, 3, square)    # 2 * 1^2 * 2^2 * 3^2
-    72
-    &gt;&gt;&gt; # 2 + (1^2 + 1) + (2^2 + 1) + (3^2 + 1)
-    &gt;&gt;&gt; accumulate(lambda x, y: x + y + 1, 2, 3, square)
-    19
+<p>The number <code>n</code> will travel up and down but eventually end at 1 (at least for
+all numbers that have ever been tried -- nobody has ever proved that the
+sequence will terminate). Analogously, a hailstone travels up and down in the
+atmosphere before eventually landing on earth.</p>
+
+<p>This sequence of values of <code>n</code> is often called a Hailstone sequence. Write a
+function that takes a single argument with formal parameter name <code>n</code>, prints
+out the hailstone sequence starting at <code>n</code>, and returns the number of steps in
+the sequence:</p>
+
+<pre><code>def hailstone(n):
+    &quot;&quot;&quot;Print the hailstone sequence starting at n and return its
+    length.
+
+    &gt;&gt;&gt; a = hailstone(10)
+    10
+    5
+    16
+    8
+    4
+    2
+    1
+    &gt;&gt;&gt; a
+    7
+    &gt;&gt;&gt; b = hailstone(1)
+    1
+    &gt;&gt;&gt; b
+    1
     &quot;&quot;&quot;
     "*** YOUR CODE HERE ***"
 </code></pre>
 
-<p><code>accumulate</code> has the following parameters:</p>
+<p>Hailstone sequences can get quite long! Try 27. What's the longest you can
+find?</p>
+
+<blockquote><p>Note that if <code>n == 1</code> initially, then the sequence is one step long. <br>
+<strong>Hint:</strong> If you see 4.0 but want just 4, try using floor division <code>//</code> instead of regular division <code>/</code>.</p></blockquote>
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q hailstone<button id="copy-code-python3ok-qhailstone" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qhailstone").onclick = () => copyCode('python3 ok -q hailstone', "copy-code-python3ok-qhailstone");
+        </script>
+        <br/>
+
+<p><strong>Curious about hailstone sequences? Take a look at this article:</strong></p>
 
 <ul>
-  <li><code>fuse</code>: a two-argument function that specifies how the current term
-  is fused with the previously accumulated terms</li>
-  <li><code>start</code>: value at which to start the accumulation</li>
-  <li><code>n</code>: a non-negative integer indicating the number of terms to fuse</li>
-  <li><code>term</code>: a single-argument function; <code>term(i)</code> is the <code>i</code>th term of the sequence</li>
+  <li>In 2019, there was a major <a href="https://www.quantamagazine.org/mathematician-terence-tao-and-the-collatz-conjecture-20191211/">development</a> in understanding how the hailstone conjecture works for most numbers!</li>
 </ul>
-
-<p>Implement <code>accumulate</code>, which fuses the first <code>n</code> terms of the sequence defined
-by <code>term</code> with the <code>start</code> value using the <code>fuse</code> function.</p>
-
-<p>For example, the result of <code>accumulate(add, 11, 3, square)</code> is</p>
-
-<pre><code>add(11,  add(square(1), add(square(2),  square(3)))) =
-    11 +     square(1) +    square(2) + square(3)    =
-    11 +     1         +    4         + 9            = 25</code></pre>
-
-<blockquote><p>Assume that <code>fuse</code> is commutative, <code>fuse(a, b) == fuse(b, a)</code>, and
-associative, <code>fuse(fuse(a, b), c) == fuse(a, fuse(b, c))</code>.</p></blockquote>
-
-<p>Then, implement <code>summation</code> (from lecture) and <code>product</code> as one-line calls to
-<code>accumulate</code>.</p>
-
-<blockquote><p><strong>Important:</strong> Both <code>summation_using_accumulate</code> and <code>product_using_accumulate</code>
-should be implemented with a single line of code starting with <code>return</code>.</p></blockquote>
-
-<pre><code>def summation_using_accumulate(n, term):
-    &quot;&quot;&quot;Returns the sum: term(1) + ... + term(n), using accumulate.
-
-    &gt;&gt;&gt; summation_using_accumulate(5, square) # square(0) + square(1) + ... + square(4) + square(5)
-    55
-    &gt;&gt;&gt; summation_using_accumulate(5, triple) # triple(0) + triple(1) + ... + triple(4) + triple(5)
-    45
-    &gt;&gt;&gt; # This test checks that the body of the function is just a return statement.
-    &gt;&gt;&gt; import inspect, ast
-    &gt;&gt;&gt; [type(x).__name__ for x in ast.parse(inspect.getsource(summation_using_accumulate)).body[0].body]
-    [&#x27;Expr&#x27;, &#x27;Return&#x27;]
-    &quot;&quot;&quot;
-    return ____
-
-def product_using_accumulate(n, term):
-    &quot;&quot;&quot;Returns the product: term(1) * ... * term(n), using accumulate.
-
-    &gt;&gt;&gt; product_using_accumulate(4, square) # square(1) * square(2) * square(3) * square()
-    576
-    &gt;&gt;&gt; product_using_accumulate(6, triple) # triple(1) * triple(2) * ... * triple(5) * triple(6)
-    524880
-    &gt;&gt;&gt; # This test checks that the body of the function is just a return statement.
-    &gt;&gt;&gt; import inspect, ast
-    &gt;&gt;&gt; [type(x).__name__ for x in ast.parse(inspect.getsource(product_using_accumulate)).body[0].body]
-    [&#x27;Expr&#x27;, &#x27;Return&#x27;]
-    &quot;&quot;&quot;
-    return ____
-</code></pre>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q accumulate
-python3 ok -q summation_using_accumulate
-python3 ok -q product_using_accumulate<button id="copy-code-python3ok-qaccumulatepython3ok-qsummation_using_accumulatepython3ok-qproduct_using_accumulate" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qaccumulatepython3ok-qsummation_using_accumulatepython3ok-qproduct_using_accumulate").onclick = () => copyCode('python3 ok -q accumulate\npython3 ok -q summation_using_accumulate\npython3 ok -q product_using_accumulate', "copy-code-python3ok-qaccumulatepython3ok-qsummation_using_accumulatepython3ok-qproduct_using_accumulate");
-        </script>
-        <br/>
-
-</li>
-</ul>
-
-
-<h3 id="q3-make-repeater">Q3: Make Repeater</h3>
-
-
-<p>Implement the function <code>make_repeater</code> which takes a one-argument function <code>f</code>
-and a positive integer <code>n</code>. It returns a one-argument function, where
-<code>make_repeater(f, n)(x)</code> returns the value of <code>f(f(...f(x)...))</code> in which <code>f</code> is
-applied <code>n</code> times to <code>x</code>. For example, <code>make_repeater(square, 3)(5)</code> squares 5
-three times and returns 390625, just like <code>square(square(square(5)))</code>.</p>
-
-<pre><code>def make_repeater(f, n):
-    &quot;&quot;&quot;Returns the function that computes the nth application of f.
-
-    &gt;&gt;&gt; add_three = make_repeater(increment, 3)
-    &gt;&gt;&gt; add_three(5)
-    8
-    &gt;&gt;&gt; make_repeater(triple, 5)(1) # 3 * (3 * (3 * (3 * (3 * 1))))
-    243
-    &gt;&gt;&gt; make_repeater(square, 2)(5) # square(square(5))
-    625
-    &gt;&gt;&gt; make_repeater(square, 3)(5) # square(square(square(5)))
-    390625
-    &quot;&quot;&quot;
-    "*** YOUR CODE HERE ***"
-</code></pre>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q make_repeater<button id="copy-code-python3ok-qmake_repeater" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qmake_repeater").onclick = () => copyCode('python3 ok -q make_repeater', "copy-code-python3ok-qmake_repeater");
-        </script>
-        <br/>
 
 
 
@@ -424,18 +308,6 @@ three times and returns 390625, just like <code>square(square(square(5)))</code>
 
 <p>Submit this assignment by uploading any files you've edited <strong>to the appropriate Gradescope assignment.</strong> <a href="../../lab/lab00/#submit-with-gradescope">Lab 00</a> has detailed instructions.</p>
 
-
-<h2 id="optional-exam-practice">[Optional] Exam Practice</h2>
-
-
-<p>Here are some related questions from past exams for you to try. These are optional.
-There is no way to submit them.</p>
-
-<ol>
-  <li>Fall 2019 MT1 Q3: <a href="https://cs61a.org/exam/fa19/mt1/61a-fa19-mt1.pdf#page=4">You Again</a> [Higher-Order Functions]</li>
-  <li>Fall 2021 MT1 Q1b: <a href="https://cs61a.org/exam/fa21/mt1/61a-fa21-mt1.pdf#page=4">tik</a> [Functions and Expressions]</li>
-</ol>
-
 <script>
     $('.alwaystoggle').css('display', 'inline-block');
     $('.alwaystoggle').click(function() {
@@ -452,18 +324,13 @@ There is no way to submit them.</p>
       <ul>
   <li><a href="#required-questions">Required Questions</a></li>
   <ul>
-    <li><a href="#higher-order-functions">Higher-Order Functions</a></li>
-    <ul>
-      <li><a href="#q1-product">Q1: Product</a></li>
-      <li><a href="#q2-accumulate">Q2: Accumulate</a></li>
-      <li><a href="#q3-make-repeater">Q3: Make Repeater</a></li>
-    </ul>
+    <li><a href="#q1-largest-factor">Q1: Largest Factor</a></li>
+    <li><a href="#q2-hailstone">Q2: Hailstone</a></li>
+  </ul>
+  <ul>
     <li><a href="#check-your-score-locally">Check Your Score Locally</a></li>
   </ul>
   <li><a href="#submit-assignment">Submit Assignment</a></li>
-  <ul>
-    <li><a href="#optional-exam-practice">[Optional] Exam Practice</a></li>
-  </ul>
 </ul>
     </nav>
   </div>
@@ -516,12 +383,12 @@ There is no way to submit them.</p>
   };
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
-    <script src="/assets/js/network_storage.js"></script>
-    <script src="/assets/js/code_tabindex.js"></script>
-    <script src="/assets/js/storable.js"></script>
-    <script src="/assets/js/editor.js"></script>
-    <script src="/assets/js/copy-button.js"></script>
-    <script src="/assets/js/env-diagram.js"></script>
+    <script src="/fa24/assets/js/network_storage.js"></script>
+    <script src="/fa24/assets/js/code_tabindex.js"></script>
+    <script src="/fa24/assets/js/storable.js"></script>
+    <script src="/fa24/assets/js/editor.js"></script>
+    <script src="/fa24/assets/js/copy-button.js"></script>
+    <script src="/fa24/assets/js/env-diagram.js"></script>
     
 <!-- <script src="/assets/js/sketchy.js"></script> -->
 <script>
