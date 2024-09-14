@@ -620,6 +620,10 @@ table#calendar a {
   color: #0065bd;
 }
 
+table#calendar a.label-outline:hover {
+  color: #ffffff;
+}
+
 .calendar-date-anchor {
   display: block;
   position: absolute;

@@ -1,103 +1,144 @@
-def falling(n, k):
-    """Compute the falling factorial of n to depth k.
 
-    >>> falling(6, 3)  # 6 * 5 * 4
-    120
-    >>> falling(4, 3)  # 4 * 3 * 2
-    24
-    >>> falling(4, 1)  # 4
-    4
-    >>> falling(4, 0)
-    1
+def composite_identity(f, g):
     """
-    total, stop = 1, n-k
-    while n > stop:
-        total, n = total*n, n-1
-    return total
+    Return a function with one parameter x that returns True if f(g(x)) is
+    equal to g(f(x)). You can assume the result of g(x) is a valid input for f
+    and vice versa.
 
+    >>> add_one = lambda x: x + 1        # adds one to x
+    >>> square = lambda x: x**2          # squares x [returns x^2]
+    >>> b1 = composite_identity(square, add_one)
+    >>> b1(0)                            # (0 + 1) ** 2 == 0 ** 2 + 1
+    True
+    >>> b1(4)                            # (4 + 1) ** 2 != 4 ** 2 + 1
+    False
+    """
+    return lambda x: f(g(x)) == g(f(x))
 
-def divisible_by_k(n, k):
-    """
-    >>> a = divisible_by_k(10, 2)  # 2, 4, 6, 8, and 10 are divisible by 2
-    2
-    4
-    6
-    8
-    10
-    >>> a
-    5
-    >>> b = divisible_by_k(3, 1)  # 1, 2, and 3 are divisible by 1
-    1
-    2
-    3
-    >>> b
-    3
-    >>> c = divisible_by_k(6, 7)  # There are no integers up to 6 divisible by 7
-    >>> c
-    0
-    """
-    count = 0
-    i = 1
-    while i <= n:
-        if i % k == 0:
-            print(i)
-            count += 1
-        i += 1
-    return count
+    # Alternate solution:
+    def h(x):
+        return f(g(x)) == g(f(x))
+    return h
 
 
 def sum_digits(y):
-    """Sum all the digits of y.
-
-    >>> sum_digits(10) # 1 + 0 = 1
-    1
-    >>> sum_digits(4224) # 4 + 2 + 2 + 4 = 12
-    12
-    >>> sum_digits(1234567890)
-    45
-    >>> a = sum_digits(123) # make sure that you are using return rather than print
-    >>> a
-    6
-    """
+    """Return the sum of the digits of non-negative integer y."""
     total = 0
     while y > 0:
         total, y = total + y % 10, y // 10
     return total
 
+def is_prime(n):
+    """Return whether positive integer n is prime."""
+    if n == 1:
+        return False
+    k = 2
+    while k < n:
+        if n % k == 0:
+            return False
+        k += 1
+    return True
 
-def double_eights(n):
-    """Return true if n has two eights in a row.
-    >>> double_eights(8)
-    False
-    >>> double_eights(88)
-    True
-    >>> double_eights(2882)
-    True
-    >>> double_eights(880088)
-    True
-    >>> double_eights(12345)
-    False
-    >>> double_eights(80808080)
-    False
+def count_cond(condition):
+    """Returns a function with one parameter N that counts all the numbers from
+    1 to N that satisfy the two-argument predicate function Condition, where
+    the first argument for Condition is N and the second argument is the
+    number from 1 to N.
+
+    >>> count_fives = count_cond(lambda n, i: sum_digits(n * i) == 5)
+    >>> count_fives(10)   # 50 (10 * 5)
+    1
+    >>> count_fives(50)   # 50 (50 * 1), 500 (50 * 10), 1400 (50 * 28), 2300 (50 * 46)
+    4
+
+    >>> is_i_prime = lambda n, i: is_prime(i) # need to pass 2-argument function into count_cond
+    >>> count_primes = count_cond(is_i_prime)
+    >>> count_primes(2)    # 2
+    1
+    >>> count_primes(3)    # 2, 3
+    2
+    >>> count_primes(4)    # 2, 3
+    2
+    >>> count_primes(5)    # 2, 3, 5
+    3
+    >>> count_primes(20)   # 2, 3, 5, 7, 11, 13, 17, 19
+    8
     """
-    prev_eight = False
-    while n > 0:
-        last_digit = n % 10
-        if last_digit == 8 and prev_eight:
-            return True
-        elif last_digit == 8:
-            prev_eight = True
-        else:
-            prev_eight = False
-        n = n // 10
-    return False
+    def counter(n):
+        i = 1
+        count = 0
+        while i <= n:
+            if condition(n, i):
+                count += 1
+            i += 1
+        return count
+    return counter
 
 
-# Alternate solution
-def double_eights_alt(n):
-    while n:
-        if n % 10 == 8 and n // 10 % 10 == 8:
-            return True
-        n //= 10
-    return False
+def multiple(a, b):
+    """Return the smallest number n that is a multiple of both a and b.
+
+    >>> multiple(3, 4)
+    12
+    >>> multiple(14, 21)
+    42
+    """
+    n = 1
+    while True:
+        if n % a == 0 and n % b == 0:
+            return n
+        n += 1
+
+
+
+def cycle(f1, f2, f3):
+    """Returns a function that is itself a higher-order function.
+
+    >>> def add1(x):
+    ...     return x + 1
+    >>> def times2(x):
+    ...     return x * 2
+    >>> def add3(x):
+    ...     return x + 3
+    >>> my_cycle = cycle(add1, times2, add3)
+    >>> identity = my_cycle(0)
+    >>> identity(5)
+    5
+    >>> add_one_then_double = my_cycle(2)
+    >>> add_one_then_double(1)
+    4
+    >>> do_all_functions = my_cycle(3)
+    >>> do_all_functions(2)
+    9
+    >>> do_more_than_a_cycle = my_cycle(4)
+    >>> do_more_than_a_cycle(2)
+    10
+    >>> do_two_cycles = my_cycle(6)
+    >>> do_two_cycles(1)
+    19
+    """
+    def g(n):
+        def h(x):
+            i = 0
+            while i < n:
+                if i % 3 == 0:
+                    x = f1(x)
+                elif i % 3 == 1:
+                    x = f2(x)
+                else:
+                    x = f3(x)
+                i += 1
+            return x
+        return h
+    return g
+
+    # Alternative recursive solution
+    def g(n):
+        def h(x):
+            if n == 0:
+                return x
+            return cycle(f2, f3, f1)(n - 1)(f1(x))
+        return h
+    return g
+
 
