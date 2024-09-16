@@ -1,18 +1,18 @@
 {
-    "name": "Lab 3",
-    "endpoint": "cal/c88c/fa24/lab03",
+    "name": "Lab 1",
+    "endpoint": "cal/c88c/fa24/lab01",
     "src": [
-        "lab03.py"
+        "lab01.py"
     ],
     "tests": {
         "lab*.py": "doctest",
         "tests/*.py": "ok_test"
     },
     "default_tests": [
-        "lambda",
-        "hof-wwpd",
-        "count_cond",
-        "composite_identity"
+        "return-and-print",
+        "debugging-quiz",
+        "digit",
+        "middle"
     ],
     "protocols": [
         "restore",

@@ -1,125 +1,74 @@
-LAB_SOURCE_FILE=__file__
 
-
-def print_if(s, f):
-    """Print each element of s for which f returns a true value.
-
-    >>> print_if([3, 4, 5, 6], lambda x: x > 4)
-    5
-    6
-    >>> result = print_if([3, 4, 5, 6], lambda x: x % 2 == 0)
-    4
-    6
-    >>> print(result)  # print_if should return None
-    None
+def composite_identity(f, g):
     """
-    for x in s:
-        "*** YOUR CODE HERE ***"
+    Return a function with one parameter x that returns True if f(g(x)) is
+    equal to g(f(x)). You can assume the result of g(x) is a valid input for f
+    and vice versa.
 
-
-def close(s, k):
-    """Return how many elements of s that are within k of their index.
-
-    >>> t = [6, 2, 4, 3, 5]
-    >>> close(t, 0)  # Only 3 is equal to its index
-    1
-    >>> close(t, 1)  # 2, 3, and 5 are within 1 of their index
-    3
-    >>> close(t, 2)  # 2, 3, 4, and 5 are all within 2 of their index
-    4
-    >>> close(list(range(10)), 0)
-    10
-    """
-    count = 0
-    for i in range(len(s)):  # Use a range to loop over indices
-        "*** YOUR CODE HERE ***"
-    return count
-
-
-def close_list(s, k):
-    """Return a list of the elements of s that are within k of their index.
-
-    >>> t = [6, 2, 4, 3, 5]
-    >>> close_list(t, 0)  # Only 3 is equal to its index
-    [3]
-    >>> close_list(t, 1)  # 2, 3, and 5 are within 1 of their index
-    [2, 3, 5]
-    >>> close_list(t, 2)  # 2, 3, 4, and 5 are all within 2 of their index
-    [2, 4, 3, 5]
-    """
-    return [___ for i in range(len(s)) if ___]
-
-
-from math import sqrt
-
-def squares(s):
-    """Returns a new list containing square roots of the elements of the
-    original list that are perfect squares.
-
-    >>> seq = [8, 49, 8, 9, 2, 1, 100, 102]
-    >>> squares(seq)
-    [7, 3, 1, 10]
-    >>> seq = [500, 30]
-    >>> squares(seq)
-    []
-    """
-    return [___ for n in s if ___]
-
-
-def double_eights(n):
-    """ Returns whether or not n has two digits in row that
-    are the number 8. Assume n has at least two digits in it.
-
-    >>> double_eights(1288)
+    >>> add_one = lambda x: x + 1        # adds one to x
+    >>> square = lambda x: x**2          # squares x [returns x^2]
+    >>> b1 = composite_identity(square, add_one)
+    >>> b1(0)                            # (0 + 1) ** 2 == 0 ** 2 + 1
     True
-    >>> double_eights(880)
-    True
-    >>> double_eights(538835)
-    True
-    >>> double_eights(284682)
+    >>> b1(4)                            # (4 + 1) ** 2 != 4 ** 2 + 1
     False
-    >>> double_eights(588138)
-    True
-    >>> double_eights(78)
-    False
-    >>> from construct_check import check
-    >>> # ban iteration
-    >>> check(LAB_SOURCE_FILE, 'double_eights', ['While', 'For'])
-    True
     """
     "*** YOUR CODE HERE ***"
 
 
-def make_onion(f, g):
-    """Return a function can_reach(x, y, limit) that returns
-    whether some call expression containing only f, g, and x with
-    up to limit calls will give the result y.
+def sum_digits(y):
+    """Return the sum of the digits of non-negative integer y."""
+    total = 0
+    while y > 0:
+        total, y = total + y % 10, y // 10
+    return total
 
-    >>> up = lambda x: x + 1
-    >>> double = lambda y: y * 2
-    >>> can_reach = make_onion(up, double)
-    >>> can_reach(5, 25, 4)      # 25 = up(double(double(up(5))))
-    True
-    >>> can_reach(5, 25, 3)      # Not possible
-    False
-    >>> can_reach(1, 1, 0)      # 1 = 1
-    True
-    >>> add_ing = lambda x: x + "ing"
-    >>> add_end = lambda y: y + "end"
-    >>> can_reach_string = make_onion(add_ing, add_end)
-    >>> can_reach_string("cry", "crying", 1)      # "crying" = add_ing("cry")
-    True
-    >>> can_reach_string("un", "unending", 3)     # "unending" = add_ing(add_end("un"))
-    True
-    >>> can_reach_string("peach", "folding", 4)   # Not possible
-    False
+def is_prime(n):
+    """Return whether positive integer n is prime."""
+    if n == 1:
+        return False
+    k = 2
+    while k < n:
+        if n % k == 0:
+            return False
+        k += 1
+    return True
+
+def count_cond(condition):
+    """Returns a function with one parameter N that counts all the numbers from
+    1 to N that satisfy the two-argument predicate function Condition, where
+    the first argument for Condition is N and the second argument is the
+    number from 1 to N.
+
+    >>> count_fives = count_cond(lambda n, i: sum_digits(n * i) == 5)
+    >>> count_fives(10)   # 50 (10 * 5)
+    1
+    >>> count_fives(50)   # 50 (50 * 1), 500 (50 * 10), 1400 (50 * 28), 2300 (50 * 46)
+    4
+
+    >>> is_i_prime = lambda n, i: is_prime(i) # need to pass 2-argument function into count_cond
+    >>> count_primes = count_cond(is_i_prime)
+    >>> count_primes(2)    # 2
+    1
+    >>> count_primes(3)    # 2, 3
+    2
+    >>> count_primes(4)    # 2, 3
+    2
+    >>> count_primes(5)    # 2, 3, 5
+    3
+    >>> count_primes(20)   # 2, 3, 5, 7, 11, 13, 17, 19
+    8
     """
-    def can_reach(x, y, limit):
-        if limit < 0:
-            return ____
-        elif x == y:
-            return ____
-        else:
-            return can_reach(____, ____, limit - 1) or can_reach(____, ____, limit - 1)
-    return can_reach
+    "*** YOUR CODE HERE ***"
+
+
+def multiple(a, b):
+    """Return the smallest number n that is a multiple of both a and b.
+
+    >>> multiple(3, 4)
+    12
+    >>> multiple(14, 21)
+    42
+    """
+    "*** YOUR CODE HERE ***"
 

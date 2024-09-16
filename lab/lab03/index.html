@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content ="CS 61A: Structure and Interpretation of Computer Programs" />
+    <meta name="description" content ="Data C88C: Computational Structures in Data Science" />
     <meta name="keywords" content ="Computer Science, Programming, Berkeley, EECS" />
-    <meta name="author" content ="John DeNero, Jedi Tsang (Guest Lecturer), Shm Almeda (GSI)" />
+    <meta name="author" content ="John DeNero, Jedi Tsang, Shm Almeda (GSI)" />
     <!-- CHANGED CAREFUL -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
@@ -12,8 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/assets/js/hl.js"></script>
-    <script src="/assets/js/toggledarkmode.js"></script>
+    <script src="/fa24/assets/js/hl.js"></script>
+    <script src="/fa24/assets/js/toggledarkmode.js"></script>
     <script>
         // we aren't registering builtins since
         //      (1) they don't render differently in the current CSS from other names
@@ -24,20 +24,20 @@
         });
         hljs.initHighlightingOnLoad();
     </script>
-    <script src="/assets/js/dark-mode.js"></script>
+    <script src="/fa24/assets/js/dark-mode.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/mono-blue.css">
-    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/fa24/assets/css/style.css">
+    <link rel="stylesheet" href="/fa24/assets/css/mono-blue.css">
+    <link rel="icon" href="/fa24/assets/images/favicon.ico">
 
     
     
-    <link rel="stylesheet" href="/assets/css/lab.css">
+    <link rel="stylesheet" href="/fa24/assets/css/lab.css">
 
 
     <title>
-Lab 3: Recursion, Python Lists | CS 61A Fall 2024
+Lab 3: Higher-Order Functions | Data C88C Fall 2024
 </title>
   </head>
 
@@ -50,8 +50,8 @@ Lab 3: Recursion, Python Lists | CS 61A Fall 2024
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">
-            CS 61A
+          <a class="navbar-brand" href="/fa24/">
+            Data C88C
             <!-- <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png"/> -->
           </a>
         </div>
@@ -60,15 +60,15 @@ Lab 3: Recursion, Python Lists | CS 61A Fall 2024
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="/">Lectures</a></li>
+            <li><a href="/fa24/">Lectures</a></li>
             
-            <li><a href="/articles/about-61a/">Syllabus</a></li>
+            <li><a href="/fa24/articles/about-c88c/">Syllabus</a></li>
             
-            <li><a href="https://edstem.org/us/courses/63971/discussion/">Ed</a></li>
+            <li><a href="https://edstem.org/us/courses/63975/discussion/">Ed</a></li>
             
-            <li><a href="/office-hours/">Office Hours</a></li>
+            <li><a href="/fa24/office-hours/">Office Hours</a></li>
             
-            <li><a href="/articles/contact-61a/">Contact</a></li>
+            <li><a href="/fa24/articles/contact-c88c/">Contact</a></li>
             
 
             
@@ -79,19 +79,17 @@ Lab 3: Recursion, Python Lists | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="https://go.cs61a.org/61a-extensions">Request an Extension</a></li>
+                <li><a href="https://go.c88c.org/c88c-extensions">Request an Extension</a></li>
                 
-                <li><a href="https://go.cs61a.org/61a-regrades">Request a Regrade</a></li>
+                <li><a href="https://go.c88c.org/c88c-regrades">Request a Regrade</a></li>
                 
-                <li><a href="https://oh.cs61a.org/">Office Hours Queue</a></li>
+                <li><a href="https://oh.c88c.org/">Office Hours Queue</a></li>
                 
-                <li><a href="https://www.gradescope.com/courses/843175">Gradescope</a></li>
+                <li><a href="https://www.gradescope.com/courses/843183">Gradescope</a></li>
                 
-                <li><a href="https://bcourses.berkeley.edu/courses/1538118/pages">Lecture Recordings</a></li>
+                <li><a href="https://bcourses.berkeley.edu/courses/1538122/pages">Lecture Recordings</a></li>
                 
                 <li><a href="https://pythontutor.com/cp/composingprograms.html">Python Tutor</a></li>
-                
-                <li><a href="https://code.cs61a.org/scheme/">Scheme Editor</a></li>
                 
               </ul>
             </li>
@@ -103,19 +101,15 @@ Lab 3: Recursion, Python Lists | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/resources/">Past Exams & Websites</a></li>
-                
                 <li><a href="https://www.composingprograms.com">Textbook</a></li>
                 
                 <li><a href="https://drive.google.com/file/d/1O72u0ml65pibcjz-PXKpqeJDKaVqQ3D8/view">Debugging Guide</a></li>
                 
-                <li><a href="/articles/studying/">Studying Guide</a></li>
+                <li><a href="/fa24/articles/studying/">Studying Guide</a></li>
                 
-                <li><a href="/articles/composition/">Composition Guide</a></li>
+                <li><a href="/fa24/articles/composition/">Composition Guide</a></li>
                 
-                <li><a href="/articles/campus-res/">Campus Resources</a></li>
-                
-                <li><a href="/articles/advice/">Advice from Students</a></li>
+                <li><a href="/fa24/articles/campus-res/">Campus Resources</a></li>
                 
               </ul>
             </li>
@@ -127,11 +121,9 @@ Lab 3: Recursion, Python Lists | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/instructor">Instructors</a></li>
+                <li><a href="/fa24/instructor">Instructors</a></li>
                 
-                <li><a href="/staff">TAs & Tutors</a></li>
-                
-                <li><a href="/academic-interns">Academic Interns</a></li>
+                <li><a href="/fa24/staff">TAs & Tutors</a></li>
                 
               </ul>
             </li>
@@ -149,7 +141,7 @@ Lab 3: Recursion, Python Lists | CS 61A Fall 2024
     <header>
       <h1>
         
-Lab 3: Recursion, Python Lists
+Lab 3: Higher-Order Functions
 
         
         
@@ -162,7 +154,7 @@ Lab 3: Recursion, Python Lists
     </header>
     
 
-<p><i>Due by 11:59pm on Wednesday, September 25.</i></p>
+<p><i>Due by 11:59pm on Friday, September 20.</i></p>
 
 
 
@@ -181,7 +173,7 @@ Lab 3: Recursion, Python Lists
 
 
     
-<h2 id="topics">Topics</h2>
+<h1 id="topics">Topics</h1>
 
 
 <p>Consult this section if you need a refresher on the material for this lab. It's
@@ -190,489 +182,602 @@ here should you get stuck.</p>
 
 
         <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Lists<noscript> (enable JavaScript)</noscript>
+        Short Circuiting<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-1">
 
 
-<h2 id="lists" class="no-toc">Lists</h2>
+<h2 id="short-circuiting" class="no-toc">Short Circuiting</h2>
 
 
-<p>A list is a data structure that can hold an ordered collection of items.
-These items, known as elements, can be of any data type, including numbers, strings, or even other lists.
-A comma-separated list of expressions in square brackets creates a list:</p>
+<p>What do you think will happen if we type the following into Python?</p>
 
-<pre><code>&gt;&gt;&gt; list_of_values = [2, 1, 3, True, 3]
-&gt;&gt;&gt; nested_list = [2, [1, 3], [True, [3]]]</code></pre>
+<pre><code>1 / 0</code></pre>
 
-<p>Each position in a list has an index, with the left-most element indexed <code>0</code>.</p>
+<p>Try it out in Python! You should see a <code>ZeroDivisionError</code>. But what about this expression?</p>
 
-<pre><code>&gt;&gt;&gt; list_of_values[0]
-2
-&gt;&gt;&gt; nested_list[1]
-[1, 3]</code></pre>
+<pre><code>True or 1 / 0</code></pre>
 
-<p>A negative index counts from the end, with the right-most element indexed <code>&#x2d;1</code>.</p>
+<p>It evaluates to <code>True</code> because Python's <code>and</code> and <code>or</code> operators <em>short-circuit</em>. That is, they don't necessarily evaluate every operand.</p>
 
-<pre><code>&gt;&gt;&gt; nested_list[&#x2d;1]
-[True, [3]]</code></pre>
+<div class = "table-responsive">
+  <table class='table table-bordered'>
+    <tr>
+      <th>Operator</th>
+      <th>Checks if:</th>
+      <th>Evaluates from left to right up to:</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>AND</td>
+      <td>All values are true</td>
+      <td>The first false value</td>
+      <td><code>False and 1 / 0</code> evaluates to <code>False</code></td>
+    </tr>
+    <tr>
+      <td>OR</td>
+      <td>At least one value is true</td>
+      <td>The first true value</td>
+      <td><code>True or 1 / 0</code> evaluates to <code>True</code></td>
+    </tr>
+  </table>
+</div>
 
-<p>Adding lists creates a longer list containing the elements of the added lists.</p>
+<p>Short-circuiting happens when the operator reaches an operand that allows them to make a conclusion about the expression. For example, <code>and</code> will short-circuit as soon as it reaches the first false value because it then knows that not all the values are true.</p>
 
-<pre><code>&gt;&gt;&gt; [1, 2] + [3] + [4, 5]
-[1, 2, 3, 4, 5]</code></pre>
+<p>If <code>and</code> and <code>or</code> do not <em>short-circuit</em>, they just return the last
+value; another way to remember this is that <code>and</code> and <code>or</code> always return the last
+thing they evaluate, whether they short circuit or not. Keep in mind that <code>and</code> and <code>or</code>
+don't always return booleans when using values other than <code>True</code> and <code>False</code>.</p>
 
 </div>
 
 
         <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        List Comprehensions<noscript> (enable JavaScript)</noscript>
+        Higher-Order Functions<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-2">
 
 
-<h2 id="list-comprehensions" class="no-toc">List Comprehensions</h2>
+<h2 id="higher-order-functions" class="no-toc">Higher-Order Functions</h2>
 
 
-<p>A list comprehension describes the elements in a list and evaluates to a new list
-containing those elements.</p>
+<p>Variables are names bound to values, which can be primitives like <code>3</code> or
+<code>&#x27;Hello World&#x27;</code>, but they can also be functions. And since functions can take
+arguments of any value, other functions can be passed in as arguments. This is
+the basis for higher-order functions.</p>
 
-<p>There are two forms:</p>
+<p>A higher order function is a function that manipulates other functions by
+taking in functions as arguments, returning a function, or both. We will
+introduce the basics of higher order functions in this lab and will be
+exploring many applications of higher order functions in our next lab.</p>
 
-<pre><code>[&lt;expression&gt; for &lt;element&gt; in &lt;sequence&gt;]
-[&lt;expression&gt; for &lt;element&gt; in &lt;sequence&gt; if &lt;conditional&gt;]</code></pre>
 
-<p>Here's an example that starts with <code>[1, 2, 3, 4]</code>, picks out the even elements
-<code>2</code> and <code>4</code> using <code>if i % 2 == 0</code>, then squares each of these using <code>i*i</code>. The
-purpose of <code>for i</code> is to give a name to each element in <code>[1, 2, 3, 4]</code>.</p>
+<h3 id="functions-as-arguments" class="no-toc">Functions as arguments</h3>
 
-<pre><code>&gt;&gt;&gt; [i*i for i in [1, 2, 3, 4] if i % 2 == 0]
-[4, 16]</code></pre>
 
-<p>This list comprehension evaluates to a list of:</p>
+<p>In Python, function objects are values that can be passed around. We know that one
+way to create functions is by using a <code>def</code> statement:</p>
 
-<ul>
-  <li>The value of <code>i*i</code></li>
-  <li>For each element <code>i</code> in the sequence <code>[1, 2, 3, 4]</code></li>
-  <li>For which <code>i % 2 == 0</code></li>
-</ul>
+<pre><code>def square(x):
+    return x * x</code></pre>
 
-<p>In other words, this list comprehension will create a new list that contains
-the square of every even element of the original list <code>[1, 2, 3, 4]</code>.</p>
+<p>The above statement created a function object with the intrinsic name <code>square</code> as
+well as binded it to the name <code>square</code> in the current environment. Now let's try
+passing it as an argument.</p>
 
-<p>We can also rewrite a list comprehension as an equivalent <code>for</code> statement,
-such as for the example above:</p>
+<p>First, let's write a function that takes in another function as an argument:</p>
 
-<pre><code>&gt;&gt;&gt; result = []
-&gt;&gt;&gt; for i in [1, 2, 3, 4]:
-...     if i % 2 == 0:
-...         result = result + [i*i]
-&gt;&gt;&gt; result
-[4, 16]</code></pre>
+<pre><code>def scale(f, x, k):
+    &quot;&quot;&quot; Returns the result of f(x) scaled by k. &quot;&quot;&quot;
+    return k * f(x)</code></pre>
+
+<p>We can now call <code>scale</code> on <code>square</code> and some other arguments:</p>
+
+<pre><code>&gt;&gt;&gt; scale(square, 3, 2) # Double square(3)
+18
+&gt;&gt;&gt; scale(square, 2, 5) # 5 times 2 squared
+20</code></pre>
+
+<p>Note that in the body of the call to <code>scale</code>, the function object with the intrinsic
+name <code>square</code> is bound to the parameter <code>f</code>. Then, we call <code>square</code> in the body of
+<code>scale</code> by calling <code>f(x)</code>.</p>
+
+<p>As we saw in the above section on <code>lambda</code> expressions, we can also pass
+<code>lambda</code> expressions into call expressions!</p>
+
+<pre><code>&gt;&gt;&gt; scale(lambda x: x + 10, 5, 2)
+30</code></pre>
+
+<p>In the frame for this call expression, the name <code>f</code> is bound to the function
+created by the <code>lambda</code> expression <code>lambda x: x + 10</code>.</p>
+
+
+<h3 id="functions-that-return-functions" class="no-toc">Functions that return functions</h3>
+
+
+<p>Because functions are values, they are valid as return values! Here's an example:</p>
+
+<pre><code>def multiply_by(m):
+    def multiply(n):
+        return n * m
+    return multiply</code></pre>
+
+<p>In this particular case, we defined the function <code>multiply</code> within the body of <code>multiply_by</code>
+and then returned it. Let's see it in action:</p>
+
+<pre><code>&gt;&gt;&gt; multiply_by(3)
+&lt;function multiply_by.&lt;locals&gt;.multiply at ...&gt;
+&gt;&gt;&gt; multiply(4)
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name &#x27;multiply&#x27; is not defined</code></pre>
+
+<p>A call to <code>multiply_by</code> returns a function, as expected. However, calling
+<code>multiply</code> errors, even though that's the name we gave the inner function. This
+is because the name <code>multiply</code> only exists within the frame where we evaluate
+the body of <code>multiply_by</code>.</p>
+
+<p>So how do we actually use the inner function? Here are two ways:</p>
+
+<pre><code>&gt;&gt;&gt; times_three = multiply_by(3) # Assign the result of the call expression to a name
+&gt;&gt;&gt; times_three(5) # Call the inner function with its new name
+15
+&gt;&gt;&gt; multiply_by(3)(10) # Chain together two call expressions
+30</code></pre>
+
+<p>The point is, because <code>multiply_by</code> returns a function, you can use its return
+value just like you would use any other function.</p>
+
+<!--
+Here's what <code>multiply_by</code> would look like if we wrote it with a lambda expression:
+
+<pre><code>def multiply_by(m):
+    return lambda n: n * m</code></pre>
+
+As you can see, lambda expressions make writing higher order functions much cleaner.
+-->
 
 </div>
+<br>
 
 
         <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        For Loops<noscript> (enable JavaScript)</noscript>
+        Lambda Expressions<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-3">
 
 
-<h2 id="for-statements" class="no-toc">For Statements</h2>
+<h2 id="lambda-expressions" class="no-toc">Lambda Expressions</h2>
 
 
-<p>A <code>for</code> statement executes code for each element of a sequence, such as a list or range.  Each time the code is executed, the name right after <code>for</code> is bound to a different element of the sequence.</p>
+<p>Lambda expressions are expressions that evaluate to functions by specifying two
+things: the parameters and a return expression.</p>
 
-<pre><code>for &lt;name&gt; in &lt;expression&gt;:
-    &lt;suite&gt;</code></pre>
+<pre><code>lambda &lt;parameters&gt;: &lt;return expression&gt;</code></pre>
 
-<p>First, <code>&lt;expression&gt;</code> is evaluated. It must evaluate to a sequence. Then, for each element in the sequence in order,</p>
+<p>While both <code>lambda</code> expressions and <code>def</code> statements create function objects,
+there are some notable differences. <code>lambda</code> expressions work like other
+expressions; much like a mathematical expression just evaluates to a number and
+does not alter the current environment, a <code>lambda</code> expression
+evaluates to a function without changing the current environment. Let's take a
+closer look.</p>
 
-<ol>
-  <li><code>&lt;name&gt;</code> is bound to the element.</li>
-  <li><code>&lt;suite&gt;</code> is executed.</li>
-</ol>
+<div class="table-responsive">
+  <table class="table table-bordered">
+      <tr>
+          <th></th>
+          <th>lambda</th>
+          <th>def</th>
+      </tr>
+      <tr>
+          <td>Type</td>
+          <td><i>Expression</i> that evaluates to a value</td>
+          <td><i>Statement</i> that alters the environment</td>
+      </tr>
+      <tr>
+          <td>Result of execution</td>
+          <td>Creates an anonymous lambda function with no intrinsic name.</td>
+          <td>Creates a function with an intrinsic name and binds it to that
+          name in the current environment.</td>
+      </tr>
+      <tr>
+          <td>Effect on the environment</td>
+          <td>Evaluating a <code>lambda</code> expression does <i>not</i> create or
+          modify any variables.</td>
+          <td>Executing a <code>def</code> statement both creates a new function
+          object <i>and</i> binds it to a name in the current environment.</td>
+      </tr>
+      <tr>
+          <td>Usage</td>
+          <td>A <code>lambda</code> expression can be used anywhere that
+          expects an expression, such as in an assignment statement or as the
+          operator or operand to a call expression.</td>
+          <td>After executing a <code>def</code> statement, the created
+          function is bound to a name. You should use this name to refer to the
+          function anywhere that expects an expression.</td>
+      </tr>
+      <tr>
+          <td>Example</td>
+          <td>
+<pre><code># A lambda expression by itself does not alter
+# the environment
+lambda x: x * x
 
-<p>Here is an example:</p>
+# We can assign lambda functions to a name
+# with an assignment statement
+square = lambda x: x * x
+square(3)
 
-<pre><code>for x in [&#x2d;1, 4, 2, 0, 5]:
-    print(&quot;Current elem:&quot;, x)</code></pre>
+# Lambda expressions can be used as an operator
+# or operand
+negate = lambda f, x: -f(x)
+negate(lambda x: x * x, 3)</code></pre></td>
+          <td><pre><code>def square(x):
+    return x * x
 
-<p>This would display the following:</p>
+# A function created by a def statement
+# can be referred to by its intrinsic name
+square(3)</code></pre></td>
+      </tr>
+  </table>
+</div>
 
-<pre><code>Current elem: &#x2d;1
-Current elem: 4
-Current elem: 2
-Current elem: 0
-Current elem: 5</code></pre>
+
+            <iframe width="560" height="315" src="https://youtube.com/embed/vCeNq_P3akI?list=PLx38hZJ5RLZcUPWZ1-3HYsRPgZ8OCrvqz"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "denero-lambda"
+                allowfullscreen></iframe><p><a href='https://youtu.be/vCeNq_P3akI?list=PLx38hZJ5RLZcUPWZ1-3HYsRPgZ8OCrvqz'> YouTube link </a></p>
 
 </div>
 
 
         <button id='toggle-4' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Ranges<noscript> (enable JavaScript)</noscript>
+        Environment Diagrams<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-4">
 
 
-<h2 id="ranges" class="no-toc">Ranges</h2>
+<h2 id="environment-diagrams" class="no-toc">Environment Diagrams</h2>
 
 
-<p>A range is a data structure that holds integer sequences. A range can be created by:</p>
+<p>Environment diagrams are one of the best learning tools for understanding
+<code>lambda</code> expressions and higher order functions because you're able to keep
+track of all the different names, function objects, and arguments to functions.
+We highly recommend drawing environment diagrams or using <a href="https://tutor.cs61a.org">Python
+tutor</a> if you get stuck doing the WWPD problems below.
+For examples of what environment diagrams should look like, try running some
+code in Python tutor. Here are the rules:</p>
 
-<ul>
-  <li><code>range(stop)</code> contains 0, 1, ..., <code>stop</code> - 1</li>
-  <li><code>range(start, stop)</code> contains <code>start</code>, <code>start</code> + 1, ..., <code>stop</code> - 1</li>
-</ul>
 
-<p>Notice how the range function doesn't include the <code>stop</code> value; it generates numbers up to, but not including, the <code>stop</code> value.</p>
+<h3 id="assignment-statements" class="no-toc">Assignment Statements</h3>
 
-<p>For example:</p>
 
-<pre><code>&gt;&gt;&gt; for i in range(3):
-...     print(i)
-...
-0
-1
-2</code></pre>
+<ol>
+  <li>Evaluate the expression on the right hand side of the <code>=</code> sign.</li>
+  <li>If the name found on the left hand side of the <code>=</code> doesn't already exist in
+  the current frame, write it in. If it does, erase the current binding. Bind the
+  <em>value</em> obtained in step 1 to this name.</li>
+</ol>
 
-<p>While ranges and lists are both <a href="https://en.wikibooks.org/wiki/Python_Programming/Sequences">sequences</a>, a range object is different from a list. A range can be converted to a list by calling <code>list()</code>:</p>
+<p>If there is more than one name/expression in the statement, evaluate all the
+expressions first from left to right before making any bindings.</p>
 
-<pre><code>&gt;&gt;&gt; range(3, 6)
-range(3, 6)  # this is a range object
-&gt;&gt;&gt; list(range(3, 6))
-[3, 4, 5]  # list() converts the range object to a list
-&gt;&gt;&gt; list(range(5))
-[0, 1, 2, 3, 4]
-&gt;&gt;&gt; list(range(1, 6))
-[1, 2, 3, 4, 5]</code></pre>
+<iframe width="800" height="270" frameborder="0"
+src="https://pythontutor.com/iframe-embed.html#code=x%20%3D%2010%0Ay%20%3D%20x%0Ax%20%3D%2020%0Ax,%20y%20%3D%20y%20%2B%201,%20x%20-%201&codeDivHeight=400&codeDivWidth=350&cumulative=true&curInstr=0&origin=composingprograms.js&py=3&rawInputLstJSON=%5B%5D">
+</iframe>
+
+
+<h3 id="def-statements" class="no-toc">def Statements</h3>
+
+
+<ol>
+  <li>Draw the function object with its intrinsic name, formal parameters, and
+  parent frame. A function's parent frame is the frame in which the function was
+  defined.</li>
+  <li>If the intrinsic name of the function doesn't already exist in the current
+  frame, write it in. If it does, erase the current binding. Bind the newly
+  created function object to this name.</li>
+</ol>
+
+<iframe width="800" height="360" frameborder="0"
+src="https://pythontutor.com/iframe-embed.html#code=def%20f%28x%29%3A%0A%20%20%20%20return%20x%20%2B%201%0A%0Adef%20g%28y%29%3A%0A%20%20%20%20return%20y%20-%201%0A%0Adef%20f%28z%29%3A%0A%20%20%20%20return%20x%20*%202&codeDivHeight=400&codeDivWidth=350&cumulative=true&curInstr=0&origin=composingprograms.js&py=3&rawInputLstJSON=%5B%5D">
+</iframe>
+
+
+<h3 id="call-expressions" class="no-toc">Call expressions</h3>
+
+
+<blockquote><p>Note: you do not have to go through this process for a built-in Python function like <code>max</code> or <code>print</code>.</p></blockquote>
+
+<ol>
+  <li>Evaluate the operator, whose value should be a function.</li>
+  <li>Evaluate the operands left to right.</li>
+  <li>Open a new frame. Label it with the sequential frame number, the intrinsic
+  name of the function, and its parent.</li>
+  <li>Bind the formal parameters of the function to the arguments whose values you
+  found in step 2.</li>
+  <li>Execute the body of the function in the new environment.</li>
+</ol>
+
+<iframe width="800" height="330" frameborder="0"
+src="https://pythontutor.com/iframe-embed.html#code=def%20f%28a,%20b,%20c%29%3A%0A%20%20%20%20return%20a%20*%20%28b%20%2B%20c%29%0A%0Adef%20g%28x%29%3A%0A%20%20%20%20return%203%20*%20x%0A%0Af%281%20%2B%202,%20g%282%29,%206%29&codeDivHeight=400&codeDivWidth=350&cumulative=true&curInstr=0&origin=composingprograms.js&py=3&rawInputLstJSON=%5B%5D">
+</iframe>
+
+
+<h3 id="lambdas" class="no-toc">Lambdas</h3>
+
+
+<blockquote><p><em>Note:</em> As we saw in the <code>lambda</code> expression section above, <code>lambda</code>
+functions have no intrinsic name. When drawing <code>lambda</code> functions in
+environment diagrams, they are labeled with the name <code>lambda</code> or with the
+lowercase Greek letter &lambda;.  This can get confusing when there are
+multiple lambda functions in an environment diagram, so you can distinguish
+them by numbering them or by writing the line number on which they were defined.</p></blockquote>
+
+<ol>
+  <li>Draw the lambda function object and label it with &lambda;, its formal
+  parameters, and its parent frame. A function's parent frame is the frame in
+  which the function was defined.</li>
+</ol>
+
+<p>This is the only step. We are including this section to emphasize the fact that
+the difference between <code>lambda</code> expressions and <code>def</code> statements is that
+<code>lambda</code> expressions <em>do not</em> create any new bindings in the environment.</p>
+
+<iframe width="800" height="330" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=lambda%20x%3A%20x%20*%20x%20%23no%20binding%20created%0Asquare%20%3D%20lambda%20x%3A%20x%20*%20x%0Asquare%284%29%20%23calling%20a%20lambda%20function%0A&codeDivHeight=400&codeDivWidth=350&cumulative=true&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+
+            <iframe width="560" height="315" src="https://youtube.com/embed/IPec2A7j2bY?list=PLx38hZJ5RLZcUPWZ1-3HYsRPgZ8OCrvqz"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "denero-env-diag"
+                allowfullscreen></iframe><p><a href='https://youtu.be/IPec2A7j2bY?list=PLx38hZJ5RLZcUPWZ1-3HYsRPgZ8OCrvqz'> YouTube link </a></p>
 
 </div>
-
-<br>
 
 
 <h1 id="required-questions">Required Questions</h1>
 
 
 <br>
-<alwaystoggle prompt="Getting Started Videos">
+
+        <button id='toggle-5' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        Getting Started Videos<noscript> (enable JavaScript)</noscript>
+        </button>
+        <div class="solution toggle-5">
 
 
-<h2 id="lists">Lists</h2>
+<h2 id="getting-started-videos" class="no-toc">Getting Started Videos</h2>
 
 
+<p>These videos may provide some helpful direction for tackling the coding
+problems on this assignment.</p>
 
-<h3 id="q1-wwpd-lists-amp-ranges">Q1: WWPD: Lists &amp; Ranges</h3>
+<blockquote><p>To see these videos, you should be logged into your berkeley.edu email.</p></blockquote>
 
 
-<blockquote><p>Use Ok to test your knowledge with the following "What Would Python Display?" questions:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q lists-wwpd -u<button id="copy-code-python3ok-qlists-wwpd-u" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+            <iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZe3y57961XyBIvQoyT0IaqF"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "lab2-getstarted"
+                allowfullscreen></iframe><p><a href='https://youtu.be/playlist?list=PLx38hZJ5RLZe3y57961XyBIvQoyT0IaqF'> YouTube link </a></p>
+</div>
+
+
+<h2 id="what-would-python-display">What Would Python Display?</h2>
+
+
+<blockquote><p><strong>Important:</strong>
+For all WWPD questions, type <code>Function</code> if you believe the answer is
+<code>&lt;function...&gt;</code>, <code>Error</code> if it errors, and <code>Nothing</code> if nothing is displayed.</p></blockquote>
+
+
+<h3 id="q1-wwpd-higher-order-functions">Q1: WWPD: Higher-Order Functions</h3>
+
+
+<blockquote><p>Use Ok to test your knowledge with the following "What Would Python Display?" questions:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q hof-wwpd -u<button id="copy-code-python3ok-qhof-wwpd-u" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
-        document.getElementById("copy-code-python3ok-qlists-wwpd-u").onclick = () => copyCode('python3 ok -q lists-wwpd -u', "copy-code-python3ok-qlists-wwpd-u");
+        document.getElementById("copy-code-python3ok-qhof-wwpd-u").onclick = () => copyCode('python3 ok -q hof-wwpd -u', "copy-code-python3ok-qhof-wwpd-u");
         </script>
-        <br/></blockquote>
-
-<p>Predict what Python will display when you type the following into the
-interactive interpreter. Then try it to check your answers.</p>
-
-<pre><code>&gt;&gt;&gt; s = [7//3, 5, [4, 0, 1], 2]
-&gt;&gt;&gt; s[0]
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x32;</div>
-&gt;&gt;&gt; s[2]
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x5b;&#x34;&#x2c;&#x20;&#x30;&#x2c;&#x20;&#x31;&#x5d;</div>
-&gt;&gt;&gt; s[&#x2d;1]
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x32;</div>
-&gt;&gt;&gt; len(s)
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x34;</div>
-&gt;&gt;&gt; 4 in s
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x46;&#x61;&#x6c;&#x73;&#x65;</div>
-&gt;&gt;&gt; 4 in s[2]
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x54;&#x72;&#x75;&#x65;</div>
-&gt;&gt;&gt; s[2] + [3 + 2]
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x5b;&#x34;&#x2c;&#x20;&#x30;&#x2c;&#x20;&#x31;&#x2c;&#x20;&#x35;&#x5d;</div>
-&gt;&gt;&gt; 5 in s[2]
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x46;&#x61;&#x6c;&#x73;&#x65;</div>
-&gt;&gt;&gt; s[2] * 2
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x5b;&#x34;&#x2c;&#x20;&#x30;&#x2c;&#x20;&#x31;&#x2c;&#x20;&#x34;&#x2c;&#x20;&#x30;&#x2c;&#x20;&#x31;&#x5d;</div>
-&gt;&gt;&gt; list(range(3, 6))
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x5b;&#x33;&#x2c;&#x20;&#x34;&#x2c;&#x20;&#x35;&#x5d;</div>
-&gt;&gt;&gt; range(3, 6)
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x72;&#x61;&#x6e;&#x67;&#x65;&#x28;&#x33;&#x2c;&#x20;&#x36;&#x29;</div>
-&gt;&gt;&gt; r = range(3, 6)
-&gt;&gt;&gt; [r[0], r[2]]
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x5b;&#x33;&#x2c;&#x20;&#x35;&#x5d;</div>
-&gt;&gt;&gt; range(4)[&#x2d;1]
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x33;</div></code></pre>
+        <br/>
+<!--
+<pre><code>&gt;&gt;&gt; def even(f):
+...     def odd(x):
+...         if x &lt; 0:
+...             return f(&#x2d;x)
+...         return f(x)
+...     return odd
+&gt;&gt;&gt; steven = lambda x: x
+&gt;&gt;&gt; stewart = even(steven)
+&gt;&gt;&gt; stewart
+<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x3c;&#x66;&#x75;&#x6e;&#x63;&#x74;&#x69;&#x6f;&#x6e;&#x20;&#x2e;&#x2e;&#x2e;&#x3e;</div>
+&gt;&gt;&gt; stewart(61)
+<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x36;&#x31;</div>
+&gt;&gt;&gt; stewart(&#x2d;4)
+<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x34;</div></code></pre>
         <button id='prompt-1' class='btn btn-outline btn-lg solutiontoggle prompt'>
         Toggle Solution<noscript> (enable JavaScript)</noscript>
         </button>
         
+--></blockquote>
 
-
-<h3 id="q2-print-if">Q2: Print If</h3>
-
-
-<p>Implement <code>print_if</code>, which takes a list <code>s</code> and a one-argument function <code>f</code>. It prints each element <code>x</code> of <code>s</code> for which <code>f(x)</code> returns a true value.</p>
-
-<solution>
-
-<pre><code>def print_if(s, f):
-    &quot;&quot;&quot;Print each element of s for which f returns a true value.
-
-    &gt;&gt;&gt; print_if([3, 4, 5, 6], lambda x: x &gt; 4)
-    5
-    6
-    &gt;&gt;&gt; result = print_if([3, 4, 5, 6], lambda x: x % 2 == 0)
-    4
-    6
-    &gt;&gt;&gt; print(result)  # print_if should return None
-    None
-    &quot;&quot;&quot;
-    for x in s:
-        "*** YOUR CODE HERE ***"
-</code></pre>
-
-</solution>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q print_if<button id="copy-code-python3ok-qprint_if" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qprint_if").onclick = () => copyCode('python3 ok -q print_if', "copy-code-python3ok-qprint_if");
-        </script>
-        <br/>
-
-
-<h3 id="q3-close">Q3: Close</h3>
-
-
-<p>Implement <code>close</code>, which takes a list of numbers <code>s</code> and a non-negative integer <code>k</code>. It returns how many of the elements of <code>s</code> are within <code>k</code> of their index. That is, the absolute value of the difference between the element and its index is less than or equal to <code>k</code>.</p>
-
-<blockquote><p>Remember that list is "zero-indexed"; the index of the first element is <code>0</code>.</p></blockquote>
-
-<solution>
-
-<pre><code>def close(s, k):
-    &quot;&quot;&quot;Return how many elements of s that are within k of their index.
-
-    &gt;&gt;&gt; t = [6, 2, 4, 3, 5]
-    &gt;&gt;&gt; close(t, 0)  # Only 3 is equal to its index
-    1
-    &gt;&gt;&gt; close(t, 1)  # 2, 3, and 5 are within 1 of their index
-    3
-    &gt;&gt;&gt; close(t, 2)  # 2, 3, 4, and 5 are all within 2 of their index
-    4
-    &gt;&gt;&gt; close(list(range(10)), 0)
-    10
-    &quot;&quot;&quot;
-    count = 0
-    for i in range(len(s)):  # Use a range to loop over indices
-        "*** YOUR CODE HERE ***"
-    return count</code></pre>
-
-</solution>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q close<button id="copy-code-python3ok-qclose" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qclose").onclick = () => copyCode('python3 ok -q close', "copy-code-python3ok-qclose");
-        </script>
-        <br/>
-
-
-<h2 id="list-comprehensions">List Comprehensions</h2>
-
-
-
-<h3 id="q4-wwpd-list-comprehensions">Q4: WWPD: List Comprehensions</h3>
-
-
-<blockquote><p>Use Ok to test your knowledge with the following "What Would Python Display?" questions:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q list-comprehensions-wwpd -u<button id="copy-code-python3ok-qlist-comprehensions-wwpd-u" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qlist-comprehensions-wwpd-u").onclick = () => copyCode('python3 ok -q list-comprehensions-wwpd -u', "copy-code-python3ok-qlist-comprehensions-wwpd-u");
-        </script>
-        <br/></blockquote>
-
-<p>Predict what Python will display when you type the following into the
-interactive interpreter. Then try it to check your answers.</p>
-
-<pre><code>&gt;&gt;&gt; [2 * x for x in range(4)]
-<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x5b;&#x30;&#x2c;&#x20;&#x32;&#x2c;&#x20;&#x34;&#x2c;&#x20;&#x36;&#x5d;</div>
-&gt;&gt;&gt; [y for y in [6, 1, 6, 1] if y &gt; 2]
-<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x5b;&#x36;&#x2c;&#x20;&#x36;&#x5d;</div>
-&gt;&gt;&gt; [[1] + s for s in [[4], [5, 6]]]
-<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x5b;&#x5b;&#x31;&#x2c;&#x20;&#x34;&#x5d;&#x2c;&#x20;&#x5b;&#x31;&#x2c;&#x20;&#x35;&#x2c;&#x20;&#x36;&#x5d;&#x5d;</div>
-&gt;&gt;&gt; [z + 1 for z in range(10) if z % 3 == 0]
-<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x5b;&#x31;&#x2c;&#x20;&#x34;&#x2c;&#x20;&#x37;&#x2c;&#x20;&#x31;&#x30;&#x5d;</div></code></pre>
+<pre><code>&gt;&gt;&gt; def cake():
+...    print(&#x27;beets&#x27;)
+...    def pie():
+...        print(&#x27;sweets&#x27;)
+...        return &#x27;cake&#x27;
+...    return pie
+&gt;&gt;&gt; chocolate = cake()
+<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x62;&#x65;&#x65;&#x74;&#x73;</div>
+&gt;&gt;&gt; chocolate
+<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x46;&#x75;&#x6e;&#x63;&#x74;&#x69;&#x6f;&#x6e;</div>
+&gt;&gt;&gt; chocolate()
+<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x73;&#x77;&#x65;&#x65;&#x74;&#x73;&#xa;&#x27;&#x63;&#x61;&#x6b;&#x65;&#x27;</div>
+&gt;&gt;&gt; more_chocolate, more_cake = chocolate(), cake
+<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x73;&#x77;&#x65;&#x65;&#x74;&#x73;</div>
+&gt;&gt;&gt; more_chocolate
+<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x27;&#x63;&#x61;&#x6b;&#x65;&#x27;</div>
+&gt;&gt;&gt; def snake(x, y):
+...    if cake == more_cake:
+...        return chocolate
+...    else:
+...        return x + y
+&gt;&gt;&gt; snake(10, 20)
+<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x46;&#x75;&#x6e;&#x63;&#x74;&#x69;&#x6f;&#x6e;</div>
+&gt;&gt;&gt; snake(10, 20)()
+<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x33;&#x30;</div>
+&gt;&gt;&gt; cake = &#x27;cake&#x27;
+&gt;&gt;&gt; snake(10, 20)
+<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x33;&#x30;</div></code></pre>
         <button id='prompt-2' class='btn btn-outline btn-lg solutiontoggle prompt'>
         Toggle Solution<noscript> (enable JavaScript)</noscript>
         </button>
         
 
 
-<h3 id="q5-close-list">Q5: Close List</h3>
+<h2 id="coding-practice">Coding Practice</h2>
 
 
-<p>Implement <code>close_list</code>, which takes a list of numbers <code>s</code> and a non-negative integer <code>k</code>. It returns a list of the elements of <code>s</code> that are within <code>k</code> of their index. That is, the absolute value of the difference between the element and its index is less than or equal to <code>k</code>.</p>
+
+<h3 id="q2-composite-identity-function">Q2: Composite Identity Function</h3>
+
+
+<p>Write a function that takes in two single-argument functions, <code>f</code> and <code>g</code>, and
+returns another <strong>function</strong> that has a single parameter <code>x</code>. The returned
+function should return <code>True</code> if <code>f(g(x))</code> is equal to <code>g(f(x))</code> and <code>False</code>
+otherwise. You can assume the output of <code>g(x)</code> is a valid input for <code>f</code> and vice
+versa.</p>
 
 <solution>
 
-<pre><code>def close_list(s, k):
-    &quot;&quot;&quot;Return a list of the elements of s that are within k of their index.
-
-    &gt;&gt;&gt; t = [6, 2, 4, 3, 5]
-    &gt;&gt;&gt; close_list(t, 0)  # Only 3 is equal to its index
-    [3]
-    &gt;&gt;&gt; close_list(t, 1)  # 2, 3, and 5 are within 1 of their index
-    [2, 3, 5]
-    &gt;&gt;&gt; close_list(t, 2)  # 2, 3, 4, and 5 are all within 2 of their index
-    [2, 4, 3, 5]
+<pre><code>def composite_identity(f, g):
     &quot;&quot;&quot;
-    return [___ for i in range(len(s)) if ___]
-</code></pre>
+    Return a function with one parameter x that returns True if f(g(x)) is
+    equal to g(f(x)). You can assume the result of g(x) is a valid input for f
+    and vice versa.
 
-</solution>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q close_list<button id="copy-code-python3ok-qclose_list" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qclose_list").onclick = () => copyCode('python3 ok -q close_list', "copy-code-python3ok-qclose_list");
-        </script>
-        <br/>
-
-
-<h3 id="q6-squares-only">Q6: Squares Only</h3>
-
-
-<p>Implement the function <code>squares</code>, which takes in a list of positive integers.
-It returns a list that contains the square roots of the elements of the original
-list that are perfect squares. Use a list comprehension.</p>
-
-<blockquote><p>To find if <code>x</code> is a perfect square, you can check if <code>sqrt(x)</code> equals <code>round(sqrt(x))</code>.</p></blockquote>
-
-<solution>
-
-<pre><code>from math import sqrt
-
-def squares(s):
-    &quot;&quot;&quot;Returns a new list containing square roots of the elements of the
-    original list that are perfect squares.
-
-    &gt;&gt;&gt; seq = [8, 49, 8, 9, 2, 1, 100, 102]
-    &gt;&gt;&gt; squares(seq)
-    [7, 3, 1, 10]
-    &gt;&gt;&gt; seq = [500, 30]
-    &gt;&gt;&gt; squares(seq)
-    []
-    &quot;&quot;&quot;
-    return [___ for n in s if ___]
-</code></pre>
-
-
-</solution>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q squares<button id="copy-code-python3ok-qsquares" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qsquares").onclick = () => copyCode('python3 ok -q squares', "copy-code-python3ok-qsquares");
-        </script>
-        <br/>
-
-
-<h2 id="recursion">Recursion</h2>
-
-
-
-<h3 id="q7-double-eights">Q7: Double Eights</h3>
-
-
-<p>Write a <strong>recursive</strong> function that takes in a positive integer <code>n</code> and determines if its
-digits contain two adjacent <code>8</code>s (that is, two <code>8</code>s right next to each other). Do not use <code>for</code> or <code>while</code>.</p>
-
-<blockquote><p><strong>Hint:</strong> Start by coming up with a recursive plan: the digits of a number have double eights if either <strong></strong> (think of something that is straightforward to check) or double eights appear in the rest of the digits.</p></blockquote>
-
-<solution>
-
-<pre><code>def double_eights(n):
-    &quot;&quot;&quot; Returns whether or not n has two digits in row that
-    are the number 8. Assume n has at least two digits in it.
-
-    &gt;&gt;&gt; double_eights(1288)
+    &gt;&gt;&gt; add_one = lambda x: x + 1        # adds one to x
+    &gt;&gt;&gt; square = lambda x: x**2          # squares x [returns x^2]
+    &gt;&gt;&gt; b1 = composite_identity(square, add_one)
+    &gt;&gt;&gt; b1(0)                            # (0 + 1) ** 2 == 0 ** 2 + 1
     True
-    &gt;&gt;&gt; double_eights(880)
-    True
-    &gt;&gt;&gt; double_eights(538835)
-    True
-    &gt;&gt;&gt; double_eights(284682)
+    &gt;&gt;&gt; b1(4)                            # (4 + 1) ** 2 != 4 ** 2 + 1
     False
-    &gt;&gt;&gt; double_eights(588138)
-    True
-    &gt;&gt;&gt; double_eights(78)
-    False
-    &gt;&gt;&gt; from construct_check import check
-    &gt;&gt;&gt; # ban iteration
-    &gt;&gt;&gt; check(LAB_SOURCE_FILE, &#x27;double_eights&#x27;, [&#x27;While&#x27;, &#x27;For&#x27;])
-    True
     &quot;&quot;&quot;
     "*** YOUR CODE HERE ***"
 </code></pre>
 
 </solution>
 
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q double_eights<button id="copy-code-python3ok-qdouble_eights" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q composite_identity<button id="copy-code-python3ok-qcomposite_identity" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
-        document.getElementById("copy-code-python3ok-qdouble_eights").onclick = () => copyCode('python3 ok -q double_eights', "copy-code-python3ok-qdouble_eights");
+        document.getElementById("copy-code-python3ok-qcomposite_identity").onclick = () => copyCode('python3 ok -q composite_identity', "copy-code-python3ok-qcomposite_identity");
         </script>
         <br/>
 
 
-<h3 id="q8-making-onions">Q8: Making Onions</h3>
+<h3 id="q3-count-cond">Q3: Count Cond</h3>
 
 
-<p>Write a function <code>make_onion</code> that takes in two one-argument functions, <code>f</code> and
-<code>g</code>. It returns a function that takes in three arguments: <code>x</code>, <code>y</code>, and
-<code>limit</code>. The returned function returns <code>True</code> if it is possible to reach <code>y</code>
-from <code>x</code> using up to <code>limit</code> calls to <code>f</code> and <code>g</code>, and <code>False</code> otherwise.</p>
+<p>Consider the following implementations of <code>count_fives</code> and <code>count_primes</code> which
+use the <code>sum_digits</code> and <code>is_prime</code> functions from earlier assignments:</p>
 
-<p>For example, if <code>f</code> adds 1 and <code>g</code> doubles, then it is possible to reach 25 from
-5 in four calls: <code>f(g(g(f(5))))</code>.</p>
+<pre><code>def count_fives(n):
+    &quot;&quot;&quot;Return the number of values i from 1 to n (including n)
+    where sum_digits(n * i) is 5.
+    &gt;&gt;&gt; count_fives(10)  # Among 10, 20, 30, ..., 100, only 50 (10 * 5) has digit sum 5
+    1
+    &gt;&gt;&gt; count_fives(50)  # 50 (50 * 1), 500 (50 * 10), 1400 (50 * 28), 2300 (50 * 46)
+    4
+    &quot;&quot;&quot;
+    i = 1
+    count = 0
+    while i &lt;= n:
+        if sum_digits(n * i) == 5:
+            count += 1
+        i += 1
+    return count
+
+def count_primes(n):
+    &quot;&quot;&quot;Return the number of prime numbers up to and including n.
+    &gt;&gt;&gt; count_primes(6)   # 2, 3, 5
+    3
+    &gt;&gt;&gt; count_primes(13)  # 2, 3, 5, 7, 11, 13
+    6
+    &quot;&quot;&quot;
+    i = 1
+    count = 0
+    while i &lt;= n:
+        if is_prime(i):
+            count += 1
+        i += 1
+    return count</code></pre>
+
+
+
+<p>The implementations look quite similar! Generalize this logic by writing a
+function <code>count_cond</code>, which takes in a two-argument predicate function
+<code>condition(n, i)</code>. <code>count_cond</code> returns a one-argument function that takes
+in <code>n</code>, which counts all the numbers from 1 to <code>n</code> that satisfy <code>condition</code>
+when called.</p>
+
+<blockquote><p><strong>Note:</strong>
+When we say <code>condition</code> is a predicate function, we mean that it is
+a function that will return <code>True</code> or <code>False</code>.</p></blockquote>
 
 <solution>
 
-<pre><code>def make_onion(f, g):
-    &quot;&quot;&quot;Return a function can_reach(x, y, limit) that returns
-    whether some call expression containing only f, g, and x with
-    up to limit calls will give the result y.
+<pre><code>def sum_digits(y):
+    &quot;&quot;&quot;Return the sum of the digits of non&#x2d;negative integer y.&quot;&quot;&quot;
+    total = 0
+    while y &gt; 0:
+        total, y = total + y % 10, y // 10
+    return total
 
-    &gt;&gt;&gt; up = lambda x: x + 1
-    &gt;&gt;&gt; double = lambda y: y * 2
-    &gt;&gt;&gt; can_reach = make_onion(up, double)
-    &gt;&gt;&gt; can_reach(5, 25, 4)      # 25 = up(double(double(up(5))))
-    True
-    &gt;&gt;&gt; can_reach(5, 25, 3)      # Not possible
-    False
-    &gt;&gt;&gt; can_reach(1, 1, 0)      # 1 = 1
-    True
-    &gt;&gt;&gt; add_ing = lambda x: x + &quot;ing&quot;
-    &gt;&gt;&gt; add_end = lambda y: y + &quot;end&quot;
-    &gt;&gt;&gt; can_reach_string = make_onion(add_ing, add_end)
-    &gt;&gt;&gt; can_reach_string(&quot;cry&quot;, &quot;crying&quot;, 1)      # &quot;crying&quot; = add_ing(&quot;cry&quot;)
-    True
-    &gt;&gt;&gt; can_reach_string(&quot;un&quot;, &quot;unending&quot;, 3)     # &quot;unending&quot; = add_ing(add_end(&quot;un&quot;))
-    True
-    &gt;&gt;&gt; can_reach_string(&quot;peach&quot;, &quot;folding&quot;, 4)   # Not possible
-    False
+def is_prime(n):
+    &quot;&quot;&quot;Return whether positive integer n is prime.&quot;&quot;&quot;
+    if n == 1:
+        return False
+    k = 2
+    while k &lt; n:
+        if n % k == 0:
+            return False
+        k += 1
+    return True
+
+def count_cond(condition):
+    &quot;&quot;&quot;Returns a function with one parameter N that counts all the numbers from
+    1 to N that satisfy the two&#x2d;argument predicate function Condition, where
+    the first argument for Condition is N and the second argument is the
+    number from 1 to N.
+
+    &gt;&gt;&gt; count_fives = count_cond(lambda n, i: sum_digits(n * i) == 5)
+    &gt;&gt;&gt; count_fives(10)   # 50 (10 * 5)
+    1
+    &gt;&gt;&gt; count_fives(50)   # 50 (50 * 1), 500 (50 * 10), 1400 (50 * 28), 2300 (50 * 46)
+    4
+
+    &gt;&gt;&gt; is_i_prime = lambda n, i: is_prime(i) # need to pass 2&#x2d;argument function into count_cond
+    &gt;&gt;&gt; count_primes = count_cond(is_i_prime)
+    &gt;&gt;&gt; count_primes(2)    # 2
+    1
+    &gt;&gt;&gt; count_primes(3)    # 2, 3
+    2
+    &gt;&gt;&gt; count_primes(4)    # 2, 3
+    2
+    &gt;&gt;&gt; count_primes(5)    # 2, 3, 5
+    3
+    &gt;&gt;&gt; count_primes(20)   # 2, 3, 5, 7, 11, 13, 17, 19
+    8
     &quot;&quot;&quot;
-    def can_reach(x, y, limit):
-        if limit &lt; 0:
-            return ____
-        elif x == y:
-            return ____
-        else:
-            return can_reach(____, ____, limit &#x2d; 1) or can_reach(____, ____, limit &#x2d; 1)
-    return can_reach</code></pre>
+    "*** YOUR CODE HERE ***"
+</code></pre>
 
 </solution>
 
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q make_onion<button id="copy-code-python3ok-qmake_onion" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q count_cond<button id="copy-code-python3ok-qcount_cond" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
-        document.getElementById("copy-code-python3ok-qmake_onion").onclick = () => copyCode('python3 ok -q make_onion', "copy-code-python3ok-qmake_onion");
+        document.getElementById("copy-code-python3ok-qcount_cond").onclick = () => copyCode('python3 ok -q count_cond', "copy-code-python3ok-qcount_cond");
         </script>
         <br/>
 
@@ -692,6 +797,50 @@ from <code>x</code> using up to <code>limit</code> calls to <code>f</code> and <
 <p>If you are in a regular section of CS 61A, fill out this <a href="https://forms.gle/dHxj8gttNWRY6Ptm9">lab attendance and feedback form</a>. (If you are in the mega section, you don't need to fill out the form.)</p>
 
 <p>Then, submit this assignment by uploading any files you've edited <strong>to the appropriate Gradescope assignment.</strong> <a href="../lab00/#submit-with-gradescope">Lab 00</a> has detailed instructions.</p>
+
+
+<h1 id="environment-diagram-practice">Environment Diagram Practice</h1>
+
+
+<p><strong>There is no Gradescope submission for this component.</strong></p>
+
+<p>However, we still encourage you to do this problem on paper to develop
+familiarity with Environment Diagrams, which might appear in an alternate
+form on the exam. To check your work, you can try putting the code into PythonTutor.</p>
+
+
+<h1 id="optional-questions">Optional Questions</h1>
+
+
+<blockquote><p>These questions are optional. If you don't complete them, you will
+still receive credit for lab. They are great practice, so do them
+anyway!</p></blockquote>
+
+
+<h3 id="q4-multiple">Q4: Multiple</h3>
+
+<p>Write a function that takes in two numbers and returns the smallest number that
+is a multiple of both.
+<solution></p>
+
+<pre><code>def multiple(a, b):
+    &quot;&quot;&quot;Return the smallest number n that is a multiple of both a and b.
+
+    &gt;&gt;&gt; multiple(3, 4)
+    12
+    &gt;&gt;&gt; multiple(14, 21)
+    42
+    &quot;&quot;&quot;
+    "*** YOUR CODE HERE ***"
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q multiple<button id="copy-code-python3ok-qmultiple" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qmultiple").onclick = () => copyCode('python3 ok -q multiple', "copy-code-python3ok-qmultiple");
+        </script>
+        <br/>
 <script>
     $('.alwaystoggle').css('display', 'inline-block');
     $('.alwaystoggle').click(function() {
@@ -708,26 +857,23 @@ from <code>x</code> using up to <code>limit</code> calls to <code>f</code> and <
   <li><a href="#topics">Topics</a></li>
   <li><a href="#required-questions">Required Questions</a></li>
   <ul>
-    <li><a href="#lists">Lists</a></li>
+    <li><a href="#what-would-python-display">What Would Python Display?</a></li>
     <ul>
-      <li><a href="#q1-wwpd-lists-amp-ranges">Q1: WWPD: Lists &amp; Ranges</a></li>
-      <li><a href="#q2-print-if">Q2: Print If</a></li>
-      <li><a href="#q3-close">Q3: Close</a></li>
+      <li><a href="#q1-wwpd-higher-order-functions">Q1: WWPD: Higher-Order Functions</a></li>
     </ul>
-    <li><a href="#list-comprehensions">List Comprehensions</a></li>
+    <li><a href="#coding-practice">Coding Practice</a></li>
     <ul>
-      <li><a href="#q4-wwpd-list-comprehensions">Q4: WWPD: List Comprehensions</a></li>
-      <li><a href="#q5-close-list">Q5: Close List</a></li>
-      <li><a href="#q6-squares-only">Q6: Squares Only</a></li>
-    </ul>
-    <li><a href="#recursion">Recursion</a></li>
-    <ul>
-      <li><a href="#q7-double-eights">Q7: Double Eights</a></li>
-      <li><a href="#q8-making-onions">Q8: Making Onions</a></li>
+      <li><a href="#q2-composite-identity-function">Q2: Composite Identity Function</a></li>
+      <li><a href="#q3-count-cond">Q3: Count Cond</a></li>
     </ul>
     <li><a href="#check-your-score-locally">Check Your Score Locally</a></li>
   </ul>
   <li><a href="#submit-assignment">Submit Assignment</a></li>
+  <li><a href="#environment-diagram-practice">Environment Diagram Practice</a></li>
+  <li><a href="#optional-questions">Optional Questions</a></li>
+  <ul>
+    <li><a href="#q4-multiple">Q4: Multiple</a></li>
+  </ul>
 </ul>
     </nav>
   </div>
@@ -780,12 +926,12 @@ from <code>x</code> using up to <code>limit</code> calls to <code>f</code> and <
   };
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
-    <script src="/assets/js/network_storage.js"></script>
-    <script src="/assets/js/code_tabindex.js"></script>
-    <script src="/assets/js/storable.js"></script>
-    <script src="/assets/js/editor.js"></script>
-    <script src="/assets/js/copy-button.js"></script>
-    <script src="/assets/js/env-diagram.js"></script>
+    <script src="/fa24/assets/js/network_storage.js"></script>
+    <script src="/fa24/assets/js/code_tabindex.js"></script>
+    <script src="/fa24/assets/js/storable.js"></script>
+    <script src="/fa24/assets/js/editor.js"></script>
+    <script src="/fa24/assets/js/copy-button.js"></script>
+    <script src="/fa24/assets/js/env-diagram.js"></script>
     
 <!-- <script src="/assets/js/sketchy.js"></script> -->
 <script>
