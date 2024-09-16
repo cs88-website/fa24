@@ -1,8 +1,3 @@
-# Print and None (Fall 2022 Midterm 1)
-
-s = "Knock"
-print(print(print(s, s) or print("Who's There?")), "Who?")
-
 # Functional arguments
 
 def twice(f, x):
@@ -34,17 +29,6 @@ def make_adder(n):
         return k + n
     return adder
 
-# Lexical scope and returning functions
-
-def f(x, y):
-    return g(x)
-
-def g(a):
-    return a + y
-
-# This expression causes an error because y is not bound in g.
-# f(1, 2)
-
 # Lambda (Fall 2022 Midterm 1)
 
 twice(lambda y: y+y, 3)
@@ -53,6 +37,30 @@ bear = -1
 oski = lambda print: print(bear)
 bear = -2
 oski(abs)
+
+# Curry
+
+"""
+>>> curry = lambda f: lambda x: lambda y: f(x, y)
+>>> reverse = lambda g: lambda x, y: g(y, x)
+>>> square = curry(reverse(pow))(2)
+"""
+
+def curry(f):
+    def g(x):
+        def h(y):
+            return f(x, y)
+        return h
+    return g
+
+def reverse(g):
+    def h(x, y):
+        return g(y, x)
+    return h
+
+square = curry(reverse(pow))(2)
+
+# Env Diagram
 
 def f(x):
     """f(x)(t) returns max(x*x, 3*x) 
