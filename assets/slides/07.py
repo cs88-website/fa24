@@ -83,69 +83,24 @@ def nearest_prime(n):
         else:
             k = -k + 1
 
-# Currying
+# Curry
 
-from operator import add, mul
+"""
+>>> curry = lambda f: lambda x: lambda y: f(x, y)
+>>> reverse = lambda g: lambda x, y: g(y, x)
+>>> square = curry(reverse(pow))(2)
+"""
 
-def curry2(f):
-    """Curry a two-argument function.
-
-    >>> m = curry2(add)
-    >>> add_three = m(3)
-    >>> add_three(4)
-    7
-    >>> m(2)(1)
-    3
-    """
+def curry(f):
     def g(x):
         def h(y):
             return f(x, y)
         return h
     return g
 
+def reverse(g):
+    def h(x, y):
+        return g(y, x)
+    return h
 
-# Newton
-
-def find_zero(f, x=1):
-    """Return a zero of the function f."""
-    update = newton_update(f)
-    while not close(f(x), 0):
-        x = update(x)
-    return x
-
-def close(x, y, tolerance=1e-15):
-    return abs(x - y) < tolerance
-
-def slope(f, x, a=1e-10):
-    """Return the approximate slope of f at x.
-
-    >>> f = lambda x: x * x - 16
-    >>> slope_at_two = 4
-    >>> abs(slope(f, 2) - slope_at_two) < 1e-3
-    True
-    """
-    return (f(x+a) - f(x)) / a
-
-def newton_update(f):
-    """Return the Newton update for f.""" 
-    return lambda x: x - f(x) / slope(f, x)
-
-def sqrt(a):
-    """Return the square root of a.
-
-    >>> sqrt(9)
-    3.0
-    """
-    def f(x):
-        return x*x - a
-    return find_zero(f)
-
-def inverse(f):
-    """Return the inverse function of f.
-
-    >>> sqrt = inverse(lambda x: x * x)
-    >>> sqrt(16)
-    4.0
-    """
-    return lambda y: find_zero(lambda x: f(x)-y)
-
+square = curry(reverse(pow))(2)
