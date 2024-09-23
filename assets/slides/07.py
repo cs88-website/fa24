@@ -1,106 +1,157 @@
-# Twenty-one
+# Self-Reference
 
-def play(strategy0, strategy1, goal=21):
-    """Play twenty-one and return the index of the winner.
+def print_all(k):
+    print(k)
+    return print_all
+    
+print_all(1)(3)(5)
 
-    >>> play(two_strat, two_strat)
+def print_sums(n):
+    print(n)
+    def next_sum(k):
+        return print_sums(n+k)
+    return next_sum
+
+print_sums(1)(3)(5)
+
+# Functions that call functions that reference each other
+
+def add_next(n):
+    print(n)
+    return lambda f: subtract_next(n + f)
+
+def subtract_next(n):
+    print(n)
+    return lambda f: add_next(n - f)
+
+add_next(2500)(500)(1000)(24)
+
+# Recursion
+
+from ucb import trace
+
+def fact(n):
+    """Compute n factorial.
+
+    >>> fact(5)
+    120
+    >>> fact(0)
     1
     """
-    n = 0
-    who = 0  # Player 0 goes first
-    while n < goal:
-        if who == 0:
-            n = n + strategy0(n)
-            who = 1
-        elif who == 1:
-            n = n + strategy1(n)
-            who = 0
-    return who  # The player who didn't just add to n
+    result = 1
+    while n > 0:
+        result = result * n
+        n -= 1
+    return result
 
-def two_strat(n):
-    return 2
+fact(5)
 
-def best_strat(n):
-    return min(4 - n % 4, 3)
+def fact(n):
+    """Compute n factorial.
 
-def interactive_strat(n):
-    choice = 0
-    while choice < 1 or choice > 3:
-        print('How much will you add to', n, '(1-3)?', end=' ')
-        choice = int(input())
-    return choice
-
-def noisy(who, s):
-    """A strategy that prints its choices.
-
-    >>> play(noisy(0, two_strat), noisy(1, two_strat))
-    Player 0 added 2 to 0 to reach 2
-    Player 1 added 2 to 2 to reach 4
-    Player 0 added 2 to 4 to reach 6
-    Player 1 added 2 to 6 to reach 8
-    Player 0 added 2 to 8 to reach 10
-    Player 1 added 2 to 10 to reach 12
-    Player 0 added 2 to 12 to reach 14
-    Player 1 added 2 to 14 to reach 16
-    Player 0 added 2 to 16 to reach 18
-    Player 1 added 2 to 18 to reach 20
-    Player 0 added 2 to 20 to reach 22
+    >>> fact(5)
+    120
+    >>> fact(0)
     1
     """
-    def strat(n):
-        choice = s(n)
-        print('Player', who, 'added', choice, 'to', n, 'to reach', choice + n)
-        return choice
-    return strat
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return fact(n-1) * n
 
+fact(5)
 
-# Nearest Prime
+# Boxes and Pyramids
+# https://pythontutor.com/cp/composingprograms.html#code=def%20boxes_r%28k%29%3A%0A%20%20%20%20%22%22%22%20prints%20k%20boxes%20in%20a%20line.%0A%20%20%20%3E%3E%3E%20boxes%284%29%20%20%0A%20%20%20%5B%5D%5B%5D%5B%5D%5B%5D%0A%20%20%20%20%22%22%22%0A%20%20%20%20if%20k%20%3D%3D%200%3A%20%0A%20%20%20%20%20%20%20return%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28%22%5B%5D%22,%20end%3D%22%22%29%0A%20%20%20%20%20%20%20%20boxes_r%28k-1%29%0A%20%20%20%20return%20%0A%0Adef%20pyramid_r%28k%29%3A%0A%20%20%20%20%22%22%22%20recursively%20prints%20out%20a%20pyramid%20of%20k%20height.%0A%20%20%20%3E%3E%3E%20pyramid%284%29%20%0A%20%20%20%20%5B%5D%0A%20%20%20%20%5B%5D%5B%5D%0A%20%20%20%20%5B%5D%5B%5D%5B%5D%0A%20%20%20%20%5B%5D%5B%5D%5B%5D%5B%5D%0A%20%20%20%20%22%22%22%0A%20%20%20%20if%20k%3D%3D0%3A%0A%20%20%20%20%20%20%20%20return%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20pyramid_r%28k-1%29%0A%20%20%20%20%20%20%20%20print%28%22%22%29%0A%20%20%20%20%20%20%20%20boxes_r%28k%29%0A%20%20%20%20return%0A%0Apyramid_r%284%29&cumulative=true&curInstr=0&mode=display&origin=composingprograms.js&py=3&rawInputLstJSON=%5B%5D
 
-def is_prime(n):
-    k = 2
-    while k < n:
-        if n % k == 0:
-            return False
-        k = k + 1
-    return True
-
-def nearest_prime(n):
-    """Return the nearest prime number to n. In a tie, return the larger one.
-
-    >>> nearest_prime(8)   
-    7
-    >>> nearest_prime(11)   
-    11
-    >>> nearest_prime(21)   
-    23
+def boxes_iter(k):
+    """ iteratively prints out k boxes.
+   >>> boxes_iter(4)
+    [][][][]
     """
-    k = 0
-    while True:
-        if is_prime(n + k):
-            return n + k
-        if k > 0:
-            k = -k 
-        else:
-            k = -k + 1
+    while k > 0:
+        print("[]", end="")
+        k -= 1 
+    return
 
-# Curry
+def boxes_r(k):
+    """ recursively prints out k boxes.
+   >>> boxes_r(4)  
+   [][][][]
+    """
+    if k == 0: 
+       return
+    else:
+        print("[]", end="")
+        boxes_r(k-1)
+    return 
 
-"""
->>> curry = lambda f: lambda x: lambda y: f(x, y)
->>> reverse = lambda g: lambda x, y: g(y, x)
->>> square = curry(reverse(pow))(2)
-"""
+def pyramid_iter(k):
+    """ iteratively prints out a pyramid of k height.
+    >>> pyramid(4) 
+    []
+    [][]
+    [][][]
+    [][][][]
+    """
+    i = 1;          # start with 1 box
+    while k > i:    # until we get to k boxes
+        print(" ") 
+        boxes_r(i)  
+        i += 1      # increment i 
+    return
 
-def curry(f):
-    def g(x):
-        def h(y):
-            return f(x, y)
-        return h
-    return g
+def pyramid_r(k):
+    """ recursively prints a pyramid of k height.
+    >>> pyramid(4) 
+    []
+    [][]
+    [][][]
+    [][][][]
+    """
+    if k == 0: 
+       return
+    else:
+       pyramid_r(k-1) # make a smaller pyramid
+       print("")
+       boxes_r(k)   # then print out k boxes
+    return 
 
-def reverse(g):
-    def h(x, y):
-        return g(y, x)
-    return h
+pyramid_r(4)
+print("")
 
-square = curry(reverse(pow))(2)
+# Upside Down Pyramids
+# https://pythontutor.com/cp/composingprograms.html#code=def%20boxes_r%28k%29%3A%0A%20%20%20%20%22%22%22%20prints%20k%20boxes%20in%20a%20line.%0A%20%20%20%3E%3E%3E%20boxes%284%29%20%20%0A%20%20%20%5B%5D%5B%5D%5B%5D%5B%5D%0A%20%20%20%20%22%22%22%0A%20%20%20%20if%20k%20%3D%3D%200%3A%20%0A%20%20%20%20%20%20%20return%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28%22%5B%5D%22,%20end%3D%22%22%29%0A%20%20%20%20%20%20%20%20boxes_r%28k-1%29%0A%20%20%20%20return%20%0A%0Adef%20pyramid_r%28k%29%3A%0A%20%20%20%20%22%22%22%20prints%20out%20an%20upside%20down%20pyramid%20of%20k%20height.%0A%20%20%20%3E%3E%3E%20pyramid%284%29%20%0A%20%20%20%20%5B%5D%5B%5D%5B%5D%5B%5D%0A%20%20%20%20%5B%5D%5B%5D%5B%5D%0A%20%20%20%20%5B%5D%5B%5D%0A%20%20%20%20%5B%5D%0A%20%20%20%20%22%22%22%0A%20%20%20%20if%20k%3D%3D0%3A%0A%20%20%20%20%20%20%20%20return%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20boxes_r%28k%29%0A%20%20%20%20%20%20%20%20print%28%22%20%22%29%20%23%20new%20line%0A%20%20%20%20%20%20%20%20pyramid_r%28k-1%29%0A%20%20%20%20return%0Apyramid_r%284%29&cumulative=true&curInstr=0&mode=display&origin=composingprograms.js&py=3&rawInputLstJSON=%5B%5D
+
+def pyramid_iter(k):
+    """ iteratively prints out an upside down pyramid of k height.
+    >>> pyramid(4) 
+    [][][][]
+    [][][]
+    [][]
+    []
+    """
+    while k < 0:    # start with k boxes
+        print(" ")  
+        boxes_r(k)
+        k -= 1      #decrement k
+    return
+
+def pyramid_r(k):
+    """ recursively prints an upside down pyramid of k height.
+   >>> pyramid(4) 
+    [][][][]
+    [][][]
+    [][]
+    []
+    """
+    if k == 0: 
+       return
+    else:
+        boxes_r(k)      # print out k boxes
+        print(" ")
+        pyramid_r(k-1)    # print out a smaller pyramid
+    return 
+pyramid_r(5)
+
+

@@ -59,9 +59,9 @@ def accumulate(fuse, start, n, term):
 def summation_using_accumulate(n, term):
     """Returns the sum: term(1) + ... + term(n), using accumulate.
 
-    >>> summation_using_accumulate(5, square) # square(0) + square(1) + ... + square(4) + square(5)
+    >>> summation_using_accumulate(5, square) # square(1) + square(2) + ... + square(4) + square(5)
     55
-    >>> summation_using_accumulate(5, triple) # triple(0) + triple(1) + ... + triple(4) + triple(5)
+    >>> summation_using_accumulate(5, triple) # triple(1) + triple(2) + ... + triple(4) + triple(5)
     45
     >>> # This test checks that the body of the function is just a return statement.
     >>> import inspect, ast

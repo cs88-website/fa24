@@ -1,25 +1,22 @@
 {
-    "name": "Homework 4",
-    "endpoint": "cal/c88c/fa24/hw04",
+    "name": "Homework 2",
+    "endpoint": "cal/c88c/fa24/hw02",
     "src": [
-        "hw04.py"
+        "hw02.py"
     ],
     "tests": {
         "hw*.py": "doctest",
         "tests/*.py": "ok_test"
     },
     "default_tests": [
-        "num_eights",
-        "digit_distance",
-        "interleaved_sum"
+        "largest_factor",
+        "hailstone"
     ],
     "protocols": [
-        "restore",
         "file_contents",
+        "grading",
         "analytics",
         "help",
-        "unlock",
-        "grading",
         "backup"
     ]
 }

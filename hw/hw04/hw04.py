@@ -1,212 +1,128 @@
-def deep_map(f, s):
-    """Replace all non-list elements x with f(x) in the nested list s.
-
-    >>> six = [1, 2, [3, [4], 5], 6]
-    >>> deep_map(lambda x: x * x, six)
-    >>> six
-    [1, 4, [9, [16], 25], 36]
-    >>> # Check that you're not making new lists
-    >>> s = [3, [1, [4, [1]]]]
-    >>> s1 = s[1]
-    >>> s2 = s1[1]
-    >>> s3 = s2[1]
-    >>> deep_map(lambda x: x + 1, s)
-    >>> s
-    [4, [2, [5, [2]]]]
-    >>> s1 is s[1]
-    True
-    >>> s2 is s1[1]
-    True
-    >>> s3 is s2[1]
-    True
-    """
-    "*** YOUR CODE HERE ***"
+LAB_SOURCE_FILE=__file__
 
 
 HW_SOURCE_FILE=__file__
 
 
-def planet(mass):
-    """Construct a planet of some mass."""
-    assert mass > 0
-    "*** YOUR CODE HERE ***"
+def num_eights(n):
+    """Returns the number of times 8 appears as a digit of n.
 
-def mass(p):
-    """Select the mass of a planet."""
-    assert is_planet(p), 'must call mass on a planet'
-    "*** YOUR CODE HERE ***"
-
-def is_planet(p):
-    """Whether p is a planet."""
-    return type(p) == list and len(p) == 2 and p[0] == 'planet'
-
-def examples():
-    t = mobile(arm(1, planet(2)),
-               arm(2, planet(1)))
-    u = mobile(arm(5, planet(1)),
-               arm(1, mobile(arm(2, planet(3)),
-                             arm(3, planet(2)))))
-    v = mobile(arm(4, t), arm(2, u))
-    return t, u, v
-
-def total_mass(m):
-    """Return the total mass of m, a planet or mobile.
-
-    >>> t, u, v = examples()
-    >>> total_mass(t)
+    >>> num_eights(3)
+    0
+    >>> num_eights(8)
+    1
+    >>> num_eights(88888888)
+    8
+    >>> num_eights(2638)
+    1
+    >>> num_eights(86380)
+    2
+    >>> num_eights(12345)
+    0
+    >>> num_eights(8782089)
     3
-    >>> total_mass(u)
-    6
-    >>> total_mass(v)
-    9
-    """
-    if is_planet(m):
-        return mass(m)
-    else:
-        assert is_mobile(m), "must get total mass of a mobile or a planet"
-        return total_mass(end(left(m))) + total_mass(end(right(m)))
-
-def balanced(m):
-    """Return whether m is balanced.
-
-    >>> t, u, v = examples()
-    >>> balanced(t)
-    True
-    >>> balanced(v)
-    True
-    >>> p = mobile(arm(3, t), arm(2, u))
-    >>> balanced(p)
-    False
-    >>> balanced(mobile(arm(1, v), arm(1, p)))
-    False
-    >>> balanced(mobile(arm(1, p), arm(1, v)))
-    False
     >>> from construct_check import check
-    >>> # checking for abstraction barrier violations by banning indexing
-    >>> check(HW_SOURCE_FILE, 'balanced', ['Index'])
+    >>> # ban all assignment statements
+    >>> check(HW_SOURCE_FILE, 'num_eights',
+    ...       ['Assign', 'AnnAssign', 'AugAssign', 'NamedExpr', 'For', 'While'])
     True
     """
     "*** YOUR CODE HERE ***"
 
 
-HW_SOURCE_FILE=__file__
+def digit_distance(n):
+    """Determines the digit distance of n.
 
-
-def max_path_sum(t):
-    """Return the maximum root-to-leaf path sum of a tree.
-    >>> t = tree(1, [tree(5, [tree(1), tree(3)]), tree(10)])
-    >>> max_path_sum(t) # 1, 10
-    11
-    >>> t2 = tree(5, [tree(4, [tree(1), tree(3)]), tree(2, [tree(10), tree(3)])])
-    >>> max_path_sum(t2) # 5, 2, 10
-    17
+    >>> digit_distance(3)
+    0
+    >>> digit_distance(777)
+    0
+    >>> digit_distance(314)
+    5
+    >>> digit_distance(31415926535)
+    32
+    >>> digit_distance(3464660003)
+    16
+    >>> from construct_check import check
+    >>> # ban all loops
+    >>> check(HW_SOURCE_FILE, 'digit_distance',
+    ...       ['For', 'While'])
+    True
     """
     "*** YOUR CODE HERE ***"
 
 
-def mobile(left, right):
-    """Construct a mobile from a left arm and a right arm."""
-    assert is_arm(left), "left must be an arm"
-    assert is_arm(right), "right must be an arm"
-    return ['mobile', left, right]
+def interleaved_sum(n, odd_func, even_func):
+    """Compute the sum odd_func(1) + even_func(2) + odd_func(3) + ..., up
+    to n.
 
-def is_mobile(m):
-    """Return whether m is a mobile."""
-    return type(m) == list and len(m) == 3 and m[0] == 'mobile'
-
-def left(m):
-    """Select the left arm of a mobile."""
-    assert is_mobile(m), "must call left on a mobile"
-    return m[1]
-
-def right(m):
-    """Select the right arm of a mobile."""
-    assert is_mobile(m), "must call right on a mobile"
-    return m[2]
-
-def arm(length, mobile_or_planet):
-    """Construct an arm: a length of rod with a mobile or planet at the end."""
-    assert is_mobile(mobile_or_planet) or is_planet(mobile_or_planet)
-    return ['arm', length, mobile_or_planet]
-
-def is_arm(s):
-    """Return whether s is an arm."""
-    return type(s) == list and len(s) == 3 and s[0] == 'arm'
-
-def length(s):
-    """Select the length of an arm."""
-    assert is_arm(s), "must call length on an arm"
-    return s[1]
-
-def end(s):
-    """Select the mobile or planet hanging at the end of an arm."""
-    assert is_arm(s), "must call end on an arm"
-    return s[2]
-
-
-
-# Tree Data Abstraction
-
-def tree(label, branches=[]):
-    """Construct a tree with the given label value and a list of branches."""
-    for branch in branches:
-        assert is_tree(branch), 'branches must be trees'
-    return [label] + list(branches)
-
-def label(tree):
-    """Return the label value of a tree."""
-    return tree[0]
-
-def branches(tree):
-    """Return the list of branches of the given tree."""
-    return tree[1:]
-
-def is_tree(tree):
-    """Returns True if the given tree is a tree, and False otherwise."""
-    if type(tree) != list or len(tree) < 1:
-        return False
-    for branch in branches(tree):
-        if not is_tree(branch):
-            return False
-    return True
-
-def is_leaf(tree):
-    """Returns True if the given tree's list of branches is empty, and False
-    otherwise.
+    >>> identity = lambda x: x
+    >>> square = lambda x: x * x
+    >>> triple = lambda x: x * 3
+    >>> interleaved_sum(5, identity, square) # 1   + 2*2 + 3   + 4*4 + 5
+    29
+    >>> interleaved_sum(5, square, identity) # 1*1 + 2   + 3*3 + 4   + 5*5
+    41
+    >>> interleaved_sum(4, triple, square)   # 1*3 + 2*2 + 3*3 + 4*4
+    32
+    >>> interleaved_sum(4, square, triple)   # 1*1 + 2*3 + 3*3 + 4*3
+    28
+    >>> from construct_check import check
+    >>> check(HW_SOURCE_FILE, 'interleaved_sum', ['While', 'For', 'Mod']) # ban loops and %
+    True
+    >>> check(HW_SOURCE_FILE, 'interleaved_sum', ['BitAnd', 'BitOr', 'BitXor']) # ban bitwise operators, don't worry about these if you don't know what they are
+    True
     """
-    return not branches(tree)
+    "*** YOUR CODE HERE ***"
 
-def print_tree(t, indent=0):
-    """Print a representation of this tree in which each node is
-    indented by two spaces times its depth from the root.
 
-    >>> print_tree(tree(1))
-    1
-    >>> print_tree(tree(1, [tree(2)]))
-    1
-      2
-    >>> numbers = tree(1, [tree(2), tree(3, [tree(4), tree(5)]), tree(6, [tree(7)])])
-    >>> print_tree(numbers)
-    1
-      2
-      3
-        4
-        5
-      6
-        7
+def print_move(origin, destination):
+    """Print instructions to move a disk."""
+    print("Move the top disk from rod", origin, "to rod", destination)
+
+def move_stack(n, start, end):
+    """Print the moves required to move n disks on the start pole to the end
+    pole without violating the rules of Towers of Hanoi.
+
+    n -- number of disks
+    start -- a pole position, either 1, 2, or 3
+    end -- a pole position, either 1, 2, or 3
+
+    There are exactly three poles, and start and end must be different. Assume
+    that the start pole has at least n disks of increasing size, and the end
+    pole is either empty or has a top disk larger than the top n start disks.
+
+    >>> move_stack(1, 1, 3)
+    Move the top disk from rod 1 to rod 3
+    >>> move_stack(2, 1, 3)
+    Move the top disk from rod 1 to rod 2
+    Move the top disk from rod 1 to rod 3
+    Move the top disk from rod 2 to rod 3
+    >>> move_stack(3, 1, 3)
+    Move the top disk from rod 1 to rod 3
+    Move the top disk from rod 1 to rod 2
+    Move the top disk from rod 3 to rod 2
+    Move the top disk from rod 1 to rod 3
+    Move the top disk from rod 2 to rod 1
+    Move the top disk from rod 2 to rod 3
+    Move the top disk from rod 1 to rod 3
     """
-    print('  ' * indent + str(label(t)))
-    for b in branches(t):
-        print_tree(b, indent + 1)
+    assert 1 <= start <= 3 and 1 <= end <= 3 and start != end, "Bad start/end"
+    "*** YOUR CODE HERE ***"
 
-def copy_tree(t):
-    """Returns a copy of t. Only for testing purposes.
 
-    >>> t = tree(5)
-    >>> copy = copy_tree(t)
-    >>> t = tree(6)
-    >>> print_tree(copy)
-    5
+from operator import sub, mul
+
+def make_anonymous_factorial():
+    """Return the value of an expression that computes factorial.
+
+    >>> make_anonymous_factorial()(5)
+    120
+    >>> from construct_check import check
+    >>> # ban any assignments or recursion
+    >>> check(HW_SOURCE_FILE, 'make_anonymous_factorial',
+    ...     ['Assign', 'AnnAssign', 'AugAssign', 'NamedExpr', 'FunctionDef', 'Recursion'])
+    True
     """
-    return tree(label(t), [copy_tree(b) for b in branches(t)])
+    return 'YOUR_EXPRESSION_HERE'
 
