@@ -1,6 +1,3 @@
-LAB_SOURCE_FILE=__file__
-
-
 HW_SOURCE_FILE=__file__
 
 
@@ -35,13 +32,13 @@ def digit_distance(n):
 
     >>> digit_distance(3)
     0
-    >>> digit_distance(777)
+    >>> digit_distance(777) # 0 + 0
     0
-    >>> digit_distance(314)
+    >>> digit_distance(314) # 2 + 3
     5
-    >>> digit_distance(31415926535)
+    >>> digit_distance(31415926535) # 2 + 3 + 3 + 4 + ... + 2
     32
-    >>> digit_distance(3464660003)
+    >>> digit_distance(3464660003)  # 1 + 2 + 2 + 2 + ... + 3
     16
     >>> from construct_check import check
     >>> # ban all loops
