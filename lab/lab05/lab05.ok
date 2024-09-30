@@ -1,6 +1,6 @@
 {
     "name": "Lab 5",
-    "endpoint": "cal/cs61a/fa24/lab05",
+    "endpoint": "cal/c88c/fa24/lab05",
     "src": [
         "lab05.py"
     ],
@@ -9,19 +9,19 @@
         "tests/*.py": "ok_test"
     },
     "default_tests": [
-        "list-mutation",
-        "insert_items",
-        "group_by",
-        "iterators-wwpd",
-        "count_occurrences",
-        "repeated"
+        "lists-wwpd",
+        "print_if",
+        "close",
+        "list-comprehensions-wwpd",
+        "close_list",
+        "squares"
     ],
     "protocols": [
         "restore",
         "file_contents",
-        "analytics",
         "unlock",
         "grading",
+        "analytics",
         "backup"
     ]
 }
