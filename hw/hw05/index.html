@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content ="CS 61A: Structure and Interpretation of Computer Programs" />
+    <meta name="description" content ="Data C88C: Computational Structures in Data Science" />
     <meta name="keywords" content ="Computer Science, Programming, Berkeley, EECS" />
-    <meta name="author" content ="John DeNero, Jedi Tsang (Guest Lecturer), Shm Almeda (GSI)" />
+    <meta name="author" content ="John DeNero, Jedi Tsang, Shm Almeda (GSI)" />
     <!-- CHANGED CAREFUL -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
@@ -12,8 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/assets/js/hl.js"></script>
-    <script src="/assets/js/toggledarkmode.js"></script>
+    <script src="/fa24/assets/js/hl.js"></script>
+    <script src="/fa24/assets/js/toggledarkmode.js"></script>
     <script>
         // we aren't registering builtins since
         //      (1) they don't render differently in the current CSS from other names
@@ -24,12 +24,12 @@
         });
         hljs.initHighlightingOnLoad();
     </script>
-    <script src="/assets/js/dark-mode.js"></script>
+    <script src="/fa24/assets/js/dark-mode.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/mono-blue.css">
-    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/fa24/assets/css/style.css">
+    <link rel="stylesheet" href="/fa24/assets/css/mono-blue.css">
+    <link rel="icon" href="/fa24/assets/images/favicon.ico">
 
     
 
@@ -37,7 +37,7 @@
 
 
     <title>
-Homework 5 | CS 61A Fall 2024
+Homework 5 | Data C88C Fall 2024
 </title>
   </head>
 
@@ -50,8 +50,8 @@ Homework 5 | CS 61A Fall 2024
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">
-            CS 61A
+          <a class="navbar-brand" href="/fa24/">
+            Data C88C
             <!-- <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png"/> -->
           </a>
         </div>
@@ -60,15 +60,15 @@ Homework 5 | CS 61A Fall 2024
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="/">Lectures</a></li>
+            <li><a href="/fa24/">Lectures</a></li>
             
-            <li><a href="/articles/about-61a/">Syllabus</a></li>
+            <li><a href="/fa24/articles/about-c88c/">Syllabus</a></li>
             
-            <li><a href="https://edstem.org/us/courses/63971/discussion/">Ed</a></li>
+            <li><a href="https://edstem.org/us/courses/63975/discussion/">Ed</a></li>
             
-            <li><a href="/office-hours/">Office Hours</a></li>
+            <li><a href="/fa24/office-hours/">Office Hours</a></li>
             
-            <li><a href="/articles/contact-61a/">Contact</a></li>
+            <li><a href="/fa24/articles/contact-c88c/">Contact</a></li>
             
 
             
@@ -79,19 +79,17 @@ Homework 5 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="https://go.cs61a.org/61a-extensions">Request an Extension</a></li>
+                <li><a href="https://go.c88c.org/c88c-extensions">Request an Extension</a></li>
                 
-                <li><a href="https://go.cs61a.org/61a-regrades">Request a Regrade</a></li>
+                <li><a href="https://go.c88c.org/c88c-regrades">Request a Regrade</a></li>
                 
-                <li><a href="https://oh.cs61a.org/">Office Hours Queue</a></li>
+                <li><a href="https://oh.c88c.org/">Office Hours Queue</a></li>
                 
-                <li><a href="https://www.gradescope.com/courses/843175">Gradescope</a></li>
+                <li><a href="https://www.gradescope.com/courses/843183">Gradescope</a></li>
                 
-                <li><a href="https://bcourses.berkeley.edu/courses/1538118/pages">Lecture Recordings</a></li>
+                <li><a href="https://bcourses.berkeley.edu/courses/1538122/pages">Lecture Recordings</a></li>
                 
                 <li><a href="https://pythontutor.com/cp/composingprograms.html">Python Tutor</a></li>
-                
-                <li><a href="https://code.cs61a.org/scheme/">Scheme Editor</a></li>
                 
               </ul>
             </li>
@@ -103,19 +101,15 @@ Homework 5 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/resources/">Past Exams & Websites</a></li>
-                
                 <li><a href="https://www.composingprograms.com">Textbook</a></li>
                 
                 <li><a href="https://drive.google.com/file/d/1O72u0ml65pibcjz-PXKpqeJDKaVqQ3D8/view">Debugging Guide</a></li>
                 
-                <li><a href="/articles/studying/">Studying Guide</a></li>
+                <li><a href="/fa24/articles/studying/">Studying Guide</a></li>
                 
-                <li><a href="/articles/composition/">Composition Guide</a></li>
+                <li><a href="/fa24/articles/composition/">Composition Guide</a></li>
                 
-                <li><a href="/articles/campus-res/">Campus Resources</a></li>
-                
-                <li><a href="/articles/advice/">Advice from Students</a></li>
+                <li><a href="/fa24/articles/campus-res/">Campus Resources</a></li>
                 
               </ul>
             </li>
@@ -127,11 +121,9 @@ Homework 5 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/instructor">Instructors</a></li>
+                <li><a href="/fa24/instructor">Instructors</a></li>
                 
-                <li><a href="/staff">TAs & Tutors</a></li>
-                
-                <li><a href="/academic-interns">Academic Interns</a></li>
+                <li><a href="/fa24/staff">TAs & Tutors</a></li>
                 
               </ul>
             </li>
@@ -149,7 +141,7 @@ Homework 5 | CS 61A Fall 2024
     <header>
       <h1>
         
-Homework 5: Generators
+Homework 5: Tree Recursion
 
         
         
@@ -162,7 +154,7 @@ Homework 5: Generators
     </header>
     
 
-<p><em>Due by 11:59pm on Thursday, October 17</em></p>
+<p><em>Due by 11:59pm on Wednesday, October 9</em></p>
 
 
 
@@ -186,7 +178,7 @@ refer to <a href="../../articles/using-ok">this guide.</a>
   <p><strong>Readings:</strong> You might find the following references
   useful:</p>
   <ul>
-  <li><a href="https://www.composingprograms.com/pages/42-implicit-sequences.html">Section 4.2</a></li>
+  <li><a href="https://www.composingprograms.com/pages/17-recursive-functions.html">Section 1.7</a></li>
 </ul>
   
 
@@ -203,11 +195,11 @@ correctness. Each incorrect problem will decrease the total score by one point.
 
 <br>
 
-
         <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
         Getting Started Videos<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-1">
+
 
 <h2 id="getting-started-videos" class="no-toc">Getting Started Videos</h2>
 
@@ -217,169 +209,92 @@ problems on this assignment.</p>
 
 <blockquote><p>To see these videos, you should be logged into your berkeley.edu email.</p></blockquote>
 
+<p>Coming soon!
+<!-- 
+            <iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZfTmV97imfuOKeTdjhZRFYr"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "hw3-getstarted"
+                allowfullscreen></iframe><p><a href='https://youtu.be/playlist?list=PLx38hZJ5RLZfTmV97imfuOKeTdjhZRFYr'> YouTube link </a></p> --></p>
 
-            <iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZeljv8ylJ9bho83Lsmf6PV2"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "hw5-getstarted"
-                allowfullscreen></iframe><p><a href='https://youtu.be/playlist?list=PLx38hZJ5RLZeljv8ylJ9bho83Lsmf6PV2'> YouTube link </a></p>
 </div>
 
 
-<h3 id="q1-infinite-hailstone">Q1: Infinite Hailstone</h3>
+<h3 id="q1-count-dollars">Q1: Count Dollars</h3>
 
 
-<p>Write a generator function that yields the elements of the hailstone sequence starting at number <code>n</code>.
-After reaching the end of the hailstone sequence, the generator should yield the value 1 indefinitely.</p>
+<p>Given a positive integer <code>total</code>, a set of dollar bills makes change for <code>total</code> if
+the sum of the values of the dollar bills is <code>total</code>.
+Here we will use standard US dollar bill values: 1, 5, 10, 20, 50, and 100.
+For example, the following sets make change for <code>15</code>:</p>
 
-<p>Here's a quick reminder of how the hailstone sequence is defined:</p>
+<ul>
+  <li>15 1-dollar bills</li>
+  <li>10 1-dollar, 1 5-dollar bills</li>
+  <li>5 1-dollar, 2 5-dollar bills</li>
+  <li>5 1-dollar, 1 10-dollar bills</li>
+  <li>3 5-dollar bills</li>
+  <li>1 5-dollar, 1 10-dollar bills</li>
+</ul>
 
-<ol>
-  <li>Pick a positive integer <code>n</code> as the start.</li>
-  <li>If <code>n</code> is even, divide it by 2.</li>
-  <li>If <code>n</code> is odd, multiply it by 3 and add 1.</li>
-  <li>Continue this process until <code>n</code> is 1.</li>
-</ol>
+<p>Thus, there are 6 ways to make change for <code>15</code>.  Write a <strong>recursive</strong> function
+<code>count_dollars</code> that takes a positive integer <code>total</code> and returns the number of
+ways to make change for <code>total</code> using 1, 5, 10, 20, 50, and 100 dollar bills.</p>
 
-<p>Try to write this generator function recursively. If you're stuck, you can first try writing it iteratively
-and then seeing how you can turn that implementation into a recursive one.</p>
+<p>Use <code>next_smaller_dollar</code> in your solution:
+<code>next_smaller_dollar</code> will return the next smaller dollar bill value from the
+input (e.g. <code>next_smaller_dollar(5)</code> is <code>1</code>).
+<em>The function will return <code>None</code> if the next dollar bill value does not exist.</em></p>
 
-<blockquote><p><strong>Hint:</strong> Since <code>hailstone</code> returns a generator, you can <code>yield from</code> a call to <code>hailstone</code>!</p></blockquote>
+<blockquote><p><strong>Important:</strong> Use recursion; the tests will fail if you use loops.</p>
+
+<p><strong>Hint:</strong>
+Refer to the <a href="https://www.composingprograms.com/pages/17-recursive-functions.html#example-partitions">implementation</a> of <code>count_partitions</code> for an example
+of how to count the ways to sum up to a final value with smaller parts.
+If you need to keep track of more than one value across recursive calls,
+consider writing a helper function.</p></blockquote>
 
 <solution>
 
-<pre><code>def hailstone(n):
-    &quot;&quot;&quot;Q1: Yields the elements of the hailstone sequence starting at n.
-       At the end of the sequence, yield 1 infinitely.
+<pre><code>def next_smaller_dollar(bill):
+    &quot;&quot;&quot;Returns the next smaller bill in order.&quot;&quot;&quot;
+    if bill == 100:
+        return 50
+    if bill == 50:
+        return 20
+    if bill == 20:
+        return 10
+    elif bill == 10:
+        return 5
+    elif bill == 5:
+        return 1
 
-    &gt;&gt;&gt; hail_gen = hailstone(10)
-    &gt;&gt;&gt; [next(hail_gen) for _ in range(10)]
-    [10, 5, 16, 8, 4, 2, 1, 1, 1, 1]
-    &gt;&gt;&gt; next(hail_gen)
-    1
+def count_dollars(total):
+    &quot;&quot;&quot;Return the number of ways to make change.
+
+    &gt;&gt;&gt; count_dollars(15)  # 15 $1 bills, 10 $1 &amp; 1 $5 bills, ... 1 $5 &amp; 1 $10 bills
+    6
+    &gt;&gt;&gt; count_dollars(10)  # 10 $1 bills, 5 $1 &amp; 1 $5 bills, 2 $5 bills, 10 $1 bills
+    4
+    &gt;&gt;&gt; count_dollars(20)  # 20 $1 bills, 15 $1 &amp; $5 bills, ... 1 $20 bill
+    10
+    &gt;&gt;&gt; count_dollars(45)  # How many ways to make change for 45 dollars?
+    44
+    &gt;&gt;&gt; count_dollars(100) # How many ways to make change for 100 dollars?
+    344
+    &gt;&gt;&gt; count_dollars(200) # How many ways to make change for 200 dollars?
+    3274
+    &gt;&gt;&gt; from construct_check import check
+    &gt;&gt;&gt; # ban iteration
+    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#x27;count_dollars&#x27;, [&#x27;While&#x27;, &#x27;For&#x27;])
+    True
     &quot;&quot;&quot;
     "*** YOUR CODE HERE ***"
 </code></pre>
 
 </solution>
 
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q hailstone<button id="copy-code-python3ok-qhailstone" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q count_dollars<button id="copy-code-python3ok-qcount_dollars" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
-        document.getElementById("copy-code-python3ok-qhailstone").onclick = () => copyCode('python3 ok -q hailstone', "copy-code-python3ok-qhailstone");
-        </script>
-        <br/>
-
-
-<h3 id="q2-merge">Q2: Merge</h3>
-
-<p>Write a generator function <code>merge</code> that takes in two infinite generators <code>a</code> and <code>b</code> that are in increasing order without duplicates and returns a generator that has all the elements of both generators, in increasing order, without duplicates.</p>
-
-<solution>
-
-<pre><code>def merge(a, b):
-    &quot;&quot;&quot;Q2:
-    &gt;&gt;&gt; def sequence(start, step):
-    ...     while True:
-    ...         yield start
-    ...         start += step
-    &gt;&gt;&gt; a = sequence(2, 3) # 2, 5, 8, 11, 14, ...
-    &gt;&gt;&gt; b = sequence(3, 2) # 3, 5, 7, 9, 11, 13, 15, ...
-    &gt;&gt;&gt; result = merge(a, b) # 2, 3, 5, 7, 8, 9, 11, 13, 14, 15
-    &gt;&gt;&gt; [next(result) for _ in range(10)]
-    [2, 3, 5, 7, 8, 9, 11, 13, 14, 15]
-    &quot;&quot;&quot;
-    "*** YOUR CODE HERE ***"
-</code></pre>
-
-</solution>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q merge<button id="copy-code-python3ok-qmerge" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qmerge").onclick = () => copyCode('python3 ok -q merge', "copy-code-python3ok-qmerge");
-        </script>
-        <br/>
-
-
-<h3 id="q3-yield-paths">Q3: Yield Paths</h3>
-
-
-<p>Define a generator function <code>yield_paths</code> which takes in a tree <code>t</code>, a value
-<code>value</code>, and returns a generator object which yields each path from the root
-of <code>t</code> to a node that has label <code>value</code>.</p>
-
-<p>Each path should be represented as a list of the labels along that path in the
-tree. You may yield the paths in any order.</p>
-
-<pre><code>def yield_paths(t, value):
-    &quot;&quot;&quot;Q4: Yields all possible paths from the root of t to a node with the label
-    value as a list.
-
-    &gt;&gt;&gt; t1 = tree(1, [tree(2, [tree(3), tree(4, [tree(6)]), tree(5)]), tree(5)])
-    &gt;&gt;&gt; print_tree(t1)
-    1
-      2
-        3
-        4
-          6
-        5
-      5
-    &gt;&gt;&gt; next(yield_paths(t1, 6))
-    [1, 2, 4, 6]
-    &gt;&gt;&gt; path_to_5 = yield_paths(t1, 5)
-    &gt;&gt;&gt; sorted(list(path_to_5))
-    [[1, 2, 5], [1, 5]]
-
-    &gt;&gt;&gt; t2 = tree(0, [tree(2, [t1])])
-    &gt;&gt;&gt; print_tree(t2)
-    0
-      2
-        1
-          2
-            3
-            4
-              6
-            5
-          5
-    &gt;&gt;&gt; path_to_2 = yield_paths(t2, 2)
-    &gt;&gt;&gt; sorted(list(path_to_2))
-    [[0, 2], [0, 2, 1, 2]]
-    &quot;&quot;&quot;
-    if label(t) == value:
-        yield ____
-    for b in branches(t):
-        for ____ in ____:
-            yield ____
-</code></pre>
-
-<blockquote><p><em>Hint:</em> If you're having trouble getting started, think about how you'd approach this
-problem if it wasn't a generator function. What would your recursive calls be?
-With a generator function, what happens if you make a "recursive call" within its body?</p></blockquote>
-
-<!-- hack for blockquotes -->
-
-<blockquote><p><em>Hint:</em> Try coming up with a few simple cases of your own! How should this function work when <code>t</code> is a leaf node?</p></blockquote>
-
-<!-- hack for blockquotes -->
-
-<blockquote><p><em>Hint:</em> Remember, it's possible to loop over generator objects because generators are iterators!</p></blockquote>
-
-<!-- hack for blockquotes -->
-
-<blockquote><p>Note: Remember that this problem should <strong>yield paths</strong> -- do not return a list of paths!</p></blockquote>
-
-<!--
-<br />
-
-<p>Watch the hints video below for somewhere to start:
-
-            <iframe width="560" height="315" src="https://youtube.com/embed/43rVEl9ev7M"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "yield-paths-hint"
-                allowfullscreen></iframe><p><a href='https://youtu.be/43rVEl9ev7M'> YouTube link </a></p></p>
-
-<br />
--->
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q yield_paths<button id="copy-code-python3ok-qyield_paths" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qyield_paths").onclick = () => copyCode('python3 ok -q yield_paths', "copy-code-python3ok-qyield_paths");
+        document.getElementById("copy-code-python3ok-qcount_dollars").onclick = () => copyCode('python3 ok -q count_dollars', "copy-code-python3ok-qcount_dollars");
         </script>
         <br/>
 
@@ -401,19 +316,71 @@ With a generator function, what happens if you make a "recursive call" within it
 <p>Submit this assignment by uploading any files you've edited <strong>to the appropriate Gradescope assignment.</strong> <a href="../../lab/lab00/#submit-with-gradescope">Lab 00</a> has detailed instructions.</p>
 
 
-<h1 id="exam-practice">Exam Practice</h1>
+<h1 id="optional-questions">Optional Questions</h1>
 
 
-<p>Homework assignments will also contain prior exam questions for you to try.
-These questions have no submission component; feel free to attempt them if you'd like some practice!</p>
+<blockquote><p>These questions are optional. If you don't complete them, you will
+still receive credit for this assignment. They are great practice, so do them
+anyway!</p></blockquote>
 
-<ol>
-  <li>Summer 2018 Final Q7a,b: <a href="https://inst.eecs.berkeley.edu/~cs61a/su18/assets/pdfs/61a-su18-final.pdf#page=9">Streams and Jennyrators</a></li>
-  <li>Spring 2019 Final Q1: <a href="https://cs61a.org/exam/sp19/final/61a-sp19-final.pdf#page=2">Iterators are inevitable</a></li>
-  <li>Spring 2021 MT2 Q8: <a href="https://cs61a.org/exam/sp21/mt2/61a-sp21-mt2.pdf#page=18">The Tree of L-I-F-E</a></li>
-  <li>Summer 2016 Final Q8: <a href="https://inst.eecs.berkeley.edu//~cs61a/su16/assets/pdfs/61a-su16-final.pdf#page=13">Zhen-erators Produce Power</a></li>
-  <li>Spring 2018 Final Q4a: <a href="https://inst.eecs.berkeley.edu/~cs61a/sp18/assets/pdfs/61a-sp18-final.pdf#page=5">Apply Yourself</a></li>
-</ol>
+
+<h3 id="q2-count-dollars-upward">Q2: Count Dollars Upward</h3>
+
+
+<p>Write a <strong>recursive</strong> function <code>count_dollars_upward</code> that is just like <code>count_dollars</code>
+except it uses <code>next_larger_dollar</code>, which returns the next larger dollar bill value from the
+input (e.g. <code>next_larger_dollar(5)</code> is <code>10</code>).
+<em>The function will return <code>None</code> if the next dollar bill value does not exist.</em></p>
+
+<blockquote><p><strong>Important:</strong> Use recursion; the tests will fail if you use loops.</p></blockquote>
+
+<solution>
+
+<pre><code>def next_larger_dollar(bill):
+    &quot;&quot;&quot;Returns the next larger bill in order.&quot;&quot;&quot;
+    if bill == 1:
+        return 5
+    elif bill == 5:
+        return 10
+    elif bill == 10:
+        return 20
+    elif bill == 20:
+        return 50
+    elif bill == 50:
+        return 100
+
+def count_dollars_upward(total):
+    &quot;&quot;&quot;Return the number of ways to make change using bills.
+
+    &gt;&gt;&gt; count_dollars_upward(15)  # 15 $1 bills, 10 $1 &amp; 1 $5 bills, ... 1 $5 &amp; 1 $10 bills
+    6
+    &gt;&gt;&gt; count_dollars_upward(10)  # 10 $1 bills, 5 $1 &amp; 1 $5 bills, 2 $5 bills, 10 $1 bills
+    4
+    &gt;&gt;&gt; count_dollars_upward(20)  # 20 $1 bills, 15 $1 &amp; $5 bills, ... 1 $20 bill
+    10
+    &gt;&gt;&gt; count_dollars_upward(45)  # How many ways to make change for 45 dollars?
+    44
+    &gt;&gt;&gt; count_dollars_upward(100) # How many ways to make change for 100 dollars?
+    344
+    &gt;&gt;&gt; count_dollars_upward(200) # How many ways to make change for 200 dollars?
+    3274
+    &gt;&gt;&gt; from construct_check import check
+    &gt;&gt;&gt; # ban iteration
+    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#x27;count_dollars_upward&#x27;, [&#x27;While&#x27;, &#x27;For&#x27;])
+    True
+    &quot;&quot;&quot;
+    "*** YOUR CODE HERE ***"
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q count_dollars_upward<button id="copy-code-python3ok-qcount_dollars_upward" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qcount_dollars_upward").onclick = () => copyCode('python3 ok -q count_dollars_upward', "copy-code-python3ok-qcount_dollars_upward");
+        </script>
+        <br/>
+
+
 
 <script>
     $('.alwaystoggle').css('display', 'inline-block');
@@ -431,15 +398,16 @@ These questions have no submission component; feel free to attempt them if you'd
       <ul>
   <li><a href="#required-questions">Required Questions</a></li>
   <ul>
-    <li><a href="#q1-infinite-hailstone">Q1: Infinite Hailstone</a></li>
-    <li><a href="#q2-merge">Q2: Merge</a></li>
-    <li><a href="#q3-yield-paths">Q3: Yield Paths</a></li>
+    <li><a href="#q1-count-dollars">Q1: Count Dollars</a></li>
   </ul>
   <ul>
     <li><a href="#check-your-score-locally">Check Your Score Locally</a></li>
   </ul>
   <li><a href="#submit-assignment">Submit Assignment</a></li>
-  <li><a href="#exam-practice">Exam Practice</a></li>
+  <li><a href="#optional-questions">Optional Questions</a></li>
+  <ul>
+    <li><a href="#q2-count-dollars-upward">Q2: Count Dollars Upward</a></li>
+  </ul>
 </ul>
     </nav>
   </div>
@@ -492,12 +460,12 @@ These questions have no submission component; feel free to attempt them if you'd
   };
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
-    <script src="/assets/js/network_storage.js"></script>
-    <script src="/assets/js/code_tabindex.js"></script>
-    <script src="/assets/js/storable.js"></script>
-    <script src="/assets/js/editor.js"></script>
-    <script src="/assets/js/copy-button.js"></script>
-    <script src="/assets/js/env-diagram.js"></script>
+    <script src="/fa24/assets/js/network_storage.js"></script>
+    <script src="/fa24/assets/js/code_tabindex.js"></script>
+    <script src="/fa24/assets/js/storable.js"></script>
+    <script src="/fa24/assets/js/editor.js"></script>
+    <script src="/fa24/assets/js/copy-button.js"></script>
+    <script src="/fa24/assets/js/env-diagram.js"></script>
     
 <!-- <script src="/assets/js/sketchy.js"></script> -->
 <script>

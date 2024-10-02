@@ -1,6 +1,6 @@
 {
     "name": "Lab 4",
-    "endpoint": "cal/cs61a/fa24/lab04",
+    "endpoint": "cal/c88c/fa24/lab04",
     "src": [
         "lab04.py"
     ],
@@ -9,12 +9,9 @@
         "tests/*.py": "ok_test"
     },
     "default_tests": [
-        "pokemon",
-        "divide",
-        "buy",
-        "distance",
-        "closer_city",
-        "check_city_abstraction"
+        "double_eights",
+        "summation",
+        "ten_pairs"
     ],
     "protocols": [
         "restore",
