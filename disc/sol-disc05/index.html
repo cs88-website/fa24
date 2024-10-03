@@ -166,24 +166,19 @@ Discussion 5: Trees
 
 
     
-<p>Pick someone in your group to <a href="https://cs61a.org/articles/discord">join Discord</a>.
-It's fine if multiple people join, but one is enough.</p>
-
-<p>Now switch to Pensieve:</p>
+<p>Switch to Pensieve:</p>
 
 <ul>
-  <li><strong>Everyone</strong>: Go to <a href="http://discuss.pensieve.co">discuss.pensieve.co</a> and log in with your @berkeley.edu email, then enter your group number. (Your group number is the number of your Discord channel.)</li>
+  <li><strong>Everyone</strong>: Go to <a href="https://tutor.pensieve.co/schools/berkeley/all/cs61a/cs61a_fa24/65d4ec6600b2c0fafe1be10f/open">pensieve.co</a>, log in with your @berkeley.edu email, and <strong>enter your group number</strong> (which was in the email that assigned you to this lab).</li>
 </ul>
 
 <p>Once you're on Pensieve, you don't need to return to this page; Pensieve has all the same content (but more features). If for some reason Penseive doesn't work, return to this page and continue with the discussion.</p>
-
-<p>Post in the <code>#help</code> channel on <a href="https://cs61a.org/articles/discord/">Discord</a> if you have trouble.</p>
 
 
 <h1 id="getting-started">Getting Started</h1>
 
 
-<p>Everyone go around and say your name, just in case someone forgot.</p>
+<p>Everyone go around and say your name.</p>
 
 <p><strong>For fun:</strong> Think of a big word with at least three syllables, such as
 "solitary" or "conundrum" or "ominous". Try to use it as many times as you can
@@ -192,14 +187,9 @@ word. At the end, your group will try to guess each person's big word. Whoever
 uses their big word the most times (and at least twice) without their group
 guessing it wins.  (You win nothing; it's just a game.)</p>
 
-<p><strong>To get help from a TA</strong>, send a message to the <code>discuss&#x2d;queue</code> channel with
-the @discuss tag and your discussion group number.</p>
+<p><strong>To get help from a TA</strong>, If you do not have an in-person TA, you can reach your TA using this <a href="https://berkeley.zoom.us/j/91340395124?pwd=7Lqljf1tslL0QlufLz6HrBtSCB8Ojv.1">Zoom link</a>.</p>
 
-<p>If you have fewer than 4 people in your group, you can merge with another group in the room with you.</p>
-
-<p>The most common suggestion from last discussion was to add some hints, so we have.
-The second most common suggestion was to encourage more discussion and collaboration.
-Discuss and collaborate!</p>
+<p>If there are fewer than 3 people in your group, feel free to merge your group with another group in the room.</p>
 
 
 <h1 id="trees">Trees</h1>
@@ -366,7 +356,7 @@ might be path through a different branch.
             
             <b>Your Answer</b>
             
-            <div class="monaco-storable" id="has_path-input" style="height:450px;"></div>
+            <div class="monaco-storable" id="has_path-input" style="height:540px;"></div>
             <a href="javascript:void" id="modal-link-has_path-input">Run in 61A Code</a>
             <div class="modal fade" id="modal-has_path-input" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
@@ -410,6 +400,11 @@ might be path through a different branch.
         return False
     else:
         return any([has_path(b, p[1:]) for b in branches(t)])
+
+        for b in branches(t):
+            if has_path(b, p[1:]):
+                return True
+        return False
 </code></pre>
 
             </div>
@@ -455,14 +450,9 @@ return False</code></pre>
 
 </div>
 
-<p><strong>Discussion Time!</strong> Can the <code>else</code> case of <code>has_path</code> be written in just one
-line? Why or why not? You can ignore how fast the function will run.
-When your group has an answer, send a message to the discuss-queue channel with
-the @discuss tag, your discussion group number, and the message "Maybe?" and a
-member of the course staff will join your voice channel to hear your answer and
-give feedback.</p>
-
 <div class="page-break"></div>
+
+<p><strong>New Rule:</strong> Whoever in your group helped type the answer to the last question should not type the answer to the next one. Instead, just ask questions and give suggestions; give other members of your group a chance to type the answer.</p>
 
 
 <h3 id="q3-find-path">Q3: Find Path</h3>
@@ -589,9 +579,7 @@ list that starts with <code>v</code> and then has the elements of <code>path</co
 <p><strong>Description Time!</strong> When your group has completed this question, it's time to
 describe why this function does not have a base case that uses <code>is_leaf</code>. Come
 up with an explanation as a group, pick someone to present your answer, and then
-send a message to the discuss-queue channel with the @discuss tag, your
-discussion group number, and the message "Found it!" and a member of the course
-staff will join your voice channel to hear your description and give feedback.</p>
+tell your TA (on <a href="https://berkeley.zoom.us/j/91340395124?pwd=7Lqljf1tslL0QlufLz6HrBtSCB8Ojv.1">Zoom</a> if your TA is remote).</p>
 
 <div class="page-break"></div>
 
@@ -603,7 +591,7 @@ staff will join your voice channel to hear your description and give feedback.</
 (from the Getting Started section). The group only gets one guess. After they
 guess, reveal your <em>big word</em> and how many times you used it during discussion.</p>
 
-<p>Please all fill out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeqlK8l6WkScGr-RHR-kM4p5bnR9cllYrG95fDqPJspSlll7A/viewform">attendance form</a> (one submission per person per week).</p>
+<p>Please all fill out the <a href="https://forms.gle/UCYakosihNmKSuZE9">attendance form</a> (one submission per person per week).</p>
 <script>
     $('.alwaystoggle').css('display', 'inline-block');
     $('.alwaystoggle').click(function() {
