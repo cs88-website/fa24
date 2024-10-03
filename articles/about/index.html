@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content ="Data C88C: Computational Structures in Data Science" />
+    <meta name="description" content ="CS 61A: Structure and Interpretation of Computer Programs" />
     <meta name="keywords" content ="Computer Science, Programming, Berkeley, EECS" />
-    <meta name="author" content ="John DeNero, Jedi Tsang, Shm Almeda (GSI)" />
+    <meta name="author" content ="John DeNero, Jedi Tsang (Guest Lecturer), Shm Almeda (GSI)" />
     <!-- CHANGED CAREFUL -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
@@ -12,8 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/fa24/assets/js/hl.js"></script>
-    <script src="/fa24/assets/js/toggledarkmode.js"></script>
+    <script src="/assets/js/hl.js"></script>
+    <script src="/assets/js/toggledarkmode.js"></script>
     <script>
         // we aren't registering builtins since
         //      (1) they don't render differently in the current CSS from other names
@@ -24,17 +24,17 @@
         });
         hljs.initHighlightingOnLoad();
     </script>
-    <script src="/fa24/assets/js/dark-mode.js"></script>
+    <script src="/assets/js/dark-mode.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-    <link rel="stylesheet" href="/fa24/assets/css/style.css">
-    <link rel="stylesheet" href="/fa24/assets/css/mono-blue.css">
-    <link rel="icon" href="/fa24/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/mono-blue.css">
+    <link rel="icon" href="/assets/images/favicon.ico">
 
     
 
     <title>
-Syllabus & Course Policies | Data C88C Fall 2024
+Syllabus & Course Policies | CS 61A Fall 2024
 </title>
   </head>
 
@@ -47,8 +47,8 @@ Syllabus & Course Policies | Data C88C Fall 2024
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/fa24/">
-            Data C88C
+          <a class="navbar-brand" href="/">
+            CS 61A
             <!-- <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png"/> -->
           </a>
         </div>
@@ -57,15 +57,15 @@ Syllabus & Course Policies | Data C88C Fall 2024
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="/fa24/">Lectures</a></li>
+            <li><a href="/">Lectures</a></li>
             
-            <li><a href="/fa24/articles/about-c88c/">Syllabus</a></li>
+            <li><a href="/articles/about-61a/">Syllabus</a></li>
             
-            <li><a href="https://edstem.org/us/courses/63975/discussion/">Ed</a></li>
+            <li><a href="https://edstem.org/us/courses/63971/discussion/">Ed</a></li>
             
-            <li><a href="/fa24/office-hours/">Office Hours</a></li>
+            <li><a href="/office-hours/">Office Hours</a></li>
             
-            <li><a href="/fa24/articles/contact-c88c/">Contact</a></li>
+            <li><a href="/articles/contact-61a/">Contact</a></li>
             
 
             
@@ -76,17 +76,19 @@ Syllabus & Course Policies | Data C88C Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="https://go.c88c.org/c88c-extensions">Request an Extension</a></li>
+                <li><a href="https://go.cs61a.org/61a-extensions">Request an Extension</a></li>
                 
-                <li><a href="https://go.c88c.org/c88c-regrades">Request a Regrade</a></li>
+                <li><a href="https://go.cs61a.org/61a-regrades">Request a Regrade</a></li>
                 
-                <li><a href="https://oh.c88c.org/">Office Hours Queue</a></li>
+                <li><a href="https://oh.cs61a.org/">Office Hours Queue</a></li>
                 
-                <li><a href="https://www.gradescope.com/courses/843183">Gradescope</a></li>
+                <li><a href="https://www.gradescope.com/courses/843175">Gradescope</a></li>
                 
-                <li><a href="https://bcourses.berkeley.edu/courses/1538122/pages">Lecture Recordings</a></li>
+                <li><a href="https://bcourses.berkeley.edu/courses/1538118/pages">Lecture Recordings</a></li>
                 
                 <li><a href="https://pythontutor.com/cp/composingprograms.html">Python Tutor</a></li>
+                
+                <li><a href="https://code.cs61a.org/scheme/">Scheme Editor</a></li>
                 
               </ul>
             </li>
@@ -98,15 +100,19 @@ Syllabus & Course Policies | Data C88C Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
+                <li><a href="/resources/">Past Exams & Websites</a></li>
+                
                 <li><a href="https://www.composingprograms.com">Textbook</a></li>
                 
                 <li><a href="https://drive.google.com/file/d/1O72u0ml65pibcjz-PXKpqeJDKaVqQ3D8/view">Debugging Guide</a></li>
                 
-                <li><a href="/fa24/articles/studying/">Studying Guide</a></li>
+                <li><a href="/articles/studying/">Studying Guide</a></li>
                 
-                <li><a href="/fa24/articles/composition/">Composition Guide</a></li>
+                <li><a href="/articles/composition/">Composition Guide</a></li>
                 
-                <li><a href="/fa24/articles/campus-res/">Campus Resources</a></li>
+                <li><a href="/articles/campus-res/">Campus Resources</a></li>
+                
+                <li><a href="/articles/advice/">Advice from Students</a></li>
                 
               </ul>
             </li>
@@ -118,9 +124,11 @@ Syllabus & Course Policies | Data C88C Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/fa24/instructor">Instructors</a></li>
+                <li><a href="/instructor">Instructors</a></li>
                 
-                <li><a href="/fa24/staff">TAs & Tutors</a></li>
+                <li><a href="/staff">TAs & Tutors</a></li>
+                
+                <li><a href="/academic-interns">Academic Interns</a></li>
                 
               </ul>
             </li>
@@ -773,16 +781,16 @@ students. We want all of you to be successful here. Welcome to CS 61A!</p>
   };
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
-    <script src="/fa24/assets/js/network_storage.js"></script>
-    <script src="/fa24/assets/js/code_tabindex.js"></script>
-    <script src="/fa24/assets/js/storable.js"></script>
-    <script src="/fa24/assets/js/editor.js"></script>
-    <script src="/fa24/assets/js/copy-button.js"></script>
-    <script src="/fa24/assets/js/env-diagram.js"></script>
+    <script src="/assets/js/network_storage.js"></script>
+    <script src="/assets/js/code_tabindex.js"></script>
+    <script src="/assets/js/storable.js"></script>
+    <script src="/assets/js/editor.js"></script>
+    <script src="/assets/js/copy-button.js"></script>
+    <script src="/assets/js/env-diagram.js"></script>
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
-<script src="/fa24/assets/js/storable.js"></script>
-<script src="/fa24/assets/js/env-diagram.js"></script>
+<script src="/assets/js/storable.js"></script>
+<script src="/assets/js/env-diagram.js"></script>
 <script>
   $('.sidebar ul').addClass('nav nav-stacked noselect');
   $('body').scrollspy({

@@ -1,3 +1,6 @@
+HW_SOURCE_FILE=__file__
+
+
 def next_smaller_dollar(bill):
     """Returns the next smaller bill in order."""
     if bill == 100:
