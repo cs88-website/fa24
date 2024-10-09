@@ -33,11 +33,11 @@
 
     
 
-<link rel="stylesheet" type="text/css" href="/assets/css/disc.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/hw.css">
 
 
     <title>
-Discussion 6 | Data C88C Fall 2024
+Homework 6 | Data C88C Fall 2024
 </title>
   </head>
 
@@ -141,12 +141,12 @@ Discussion 6 | Data C88C Fall 2024
     <header>
       <h1>
         
-Discussion 6: Mutability
+Homework 6: Sequences, Data Abstraction, Trees
 
         
         
         <ul class="inline-block list-inline">
-          <li><a href="disc06.pdf" class="label label-outline">disc06.pdf</a></li>
+          <li><a href="hw06.zip" class="label label-outline">hw06.zip</a></li>
         </ul>
         
         
@@ -154,190 +154,175 @@ Discussion 6: Mutability
     </header>
     
 
-<!-- <div class="alert storable-login-status"></div> -->
+<p><em>Due by 11:59pm on Wednesday, October 16</em></p>
+
+
+
+
+
+<h2>Instructions</h2>
+
+<p>Download <a href="hw06.zip">hw06.zip</a>. Inside the archive, you will find a file called
+<a href="hw06.py">hw06.py</a>, along with a copy of the <code>ok</code> autograder.</p>
+
+<p><strong>Submission:</strong> When you are done, submit the assignment by uploading all code files you've edited to Gradescope. You may submit more than once before the deadline; only the
+final submission will be scored. Check that you have successfully submitted
+your code on Gradescope.  See <a
+  href="../../lab/lab00#task-c-submitting-the-assignment">Lab 0</a> for more instructions on
+submitting assignments.</p>
+
+<p><strong>Using Ok:</strong> If you have any questions about using Ok, please
+refer to <a href="../../articles/using-ok">this guide.</a>
+
+
+  <p><strong>Readings:</strong> You might find the following references
+  useful:</p>
+  <ul>
+  <li><a href="https://www.composingprograms.com/pages/24-mutable-data.html#sequence-objects">Section 2.4</a></li>
+</ul>
+  
+
+<p><strong>Grading:</strong> Homework is graded based on
+correctness. Each incorrect problem will decrease the total score by one point.
+<strong>This homework is out of 2 points.</strong>
+
+
 
 
     
-<p>If there are fewer than 3 people in your group, feel free to merge your group with another group in the room.</p>
-
-<p>Now switch to Pensieve:</p>
-
-<ul>
-  <li><strong>Everyone</strong>: Go to <a href="https://tutor.pensieve.co/schools/berkeley/all/cs88/cs88_fa24/0e448bf3-2585-443f-9161-ae20edf4bd8c/open">pensieve.co</a>, log in with your @berkeley.edu email, and <strong>enter your group number</strong> (which was in the email that assigned you to this lab).
-  Once you're on Pensieve, you don't need to return to this page; Pensieve has all the same content (but more features). If for some reason Penseive doesn't work, return to this page and continue with the discussion.</li>
-</ul>
+<h1 id="required-questions">Required Questions</h1>
 
 
-<h1 id="getting-started">Getting Started</h1>
-
-
-<p>Say your name and share a favorite place on the Berkeley campus or surrounding
-city that you've discovered. Try to pick a place that others might not have been
-yet. (But if the room you're in now is your favorite place on campus, that's ok
-too.)</p>
-
+<br>
 
         <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint<noscript> (enable JavaScript)</noscript>
+        Getting Started Videos<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-1">
-<a href="https://www.campus-maps.com/university-of-california-berkeley/mccone-hall/">McCone Hall</a> has a nice view from the 5th floor balcony.
-</div>
+
+<h2 id="getting-started-videos" class="no-toc">Getting Started Videos</h2>
 
 
-<h1 id="list-mutation">List Mutation</h1>
+<p>These videos may provide some helpful direction for tackling the coding
+problems on this assignment.</p>
+
+<blockquote><p>To see these videos, you should be logged into your berkeley.edu email.</p></blockquote>
+
+<p><strong>COMING SOON</strong>
+</div></p>
+
+<br>
 
 
-
-        <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Ways to Change a List<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-2">
-The two most common mutation operations for lists are item assignment and the
-<code>append</code> method.
-
-<pre><code>&gt;&gt;&gt; s = [1, 3, 4]
-&gt;&gt;&gt; t = s  # A second name for the same list
-&gt;&gt;&gt; t[0] = 2  # this changes the first element of the list to 2, affecting both s and t
-&gt;&gt;&gt; s
-[2, 3, 4]
-&gt;&gt;&gt; s.append(5)  # this adds 5 to the end of the list, affecting both s and t
-&gt;&gt;&gt; t
-[2, 3, 4, 5]</code></pre>
-
-<p>There are many other list mutation methods:</p>
-
-<ul>
-  <li><code>append(elem)</code>:
-  Add <code>elem</code> to the end of the list. Return <code>None</code>.</li>
-  <li><code>extend(s)</code>:
-  Add all elements of iterable <code>s</code> to the end of the list. Return <code>None</code>.</li>
-  <li><code>insert(i, elem)</code>:
-  Insert <code>elem</code> at index <code>i</code>. If <code>i</code> is greater than or equal to the length of
-  the list, then <code>elem</code> is inserted at the end. This does not replace any
-  existing elements, but only adds the new element <code>elem</code>. Return <code>None</code>.</li>
-  <li><code>remove(elem)</code>:
-  Remove the first occurrence of <code>elem</code> in list. Return <code>None</code>.
-  Errors if <code>elem</code> is not in the list.</li>
-  <li><code>pop(i)</code>:
-  Remove and return the element at index <code>i</code>.</li>
-  <li><code>pop()</code>:
-  Remove and return the last element.
-  </div></li>
-</ul>
+<h3 id="q1-shuffle">Q1: Shuffle</h3>
 
 
-<h3 id="q1-nested-lists">Q1: Nested Lists</h3>
+<p>Implement <code>shuffle</code>, which takes a sequence <code>s</code> (such as a list or range) with
+an even number of elements. It returns a new list that <em>interleaves</em> the
+elements of the first half of <code>s</code> with the elements of the second half. It does
+not modify <code>s</code>.</p>
+
+<p>To <em>interleave</em> two sequences <code>s0</code> and <code>s1</code> is to create a new list containing
+the first element of <code>s0</code>, the first element of <code>s1</code>, the second element of
+<code>s0</code>, the second element of <code>s1</code>, and so on. For example, if <code>s0 = [1, 2, 3]</code>
+and <code>s1 = [4, 5, 6]</code>, then interleaving <code>s0</code> and <code>s1</code> would result in
+<code>[1, 4, 2, 5, 3, 6]</code>.</p>
+
+<solution>
+
+<pre><code>def shuffle(s):
+    &quot;&quot;&quot;Return a shuffled list that interleaves the two halves of s.
+
+    &gt;&gt;&gt; shuffle(range(6))
+    [0, 3, 1, 4, 2, 5]
+    &gt;&gt;&gt; letters = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;, &#x27;f&#x27;, &#x27;g&#x27;, &#x27;h&#x27;]
+    &gt;&gt;&gt; shuffle(letters)
+    [&#x27;a&#x27;, &#x27;e&#x27;, &#x27;b&#x27;, &#x27;f&#x27;, &#x27;c&#x27;, &#x27;g&#x27;, &#x27;d&#x27;, &#x27;h&#x27;]
+    &gt;&gt;&gt; shuffle(shuffle(letters))
+    [&#x27;a&#x27;, &#x27;c&#x27;, &#x27;e&#x27;, &#x27;g&#x27;, &#x27;b&#x27;, &#x27;d&#x27;, &#x27;f&#x27;, &#x27;h&#x27;]
+    &gt;&gt;&gt; letters  # Original list should not be modified
+    [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;, &#x27;f&#x27;, &#x27;g&#x27;, &#x27;h&#x27;]
+    &quot;&quot;&quot;
+    assert len(s) % 2 == 0, &#x27;len(seq) must be even&#x27;
+    "*** YOUR CODE HERE ***"
+</code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q shuffle<button id="copy-code-python3ok-qshuffle" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qshuffle").onclick = () => copyCode('python3 ok -q shuffle', "copy-code-python3ok-qshuffle");
+        </script>
+        <br/>
 
 
-<p>The mathematical constant <em>e</em> is 2.718281828...</p>
-
-<p>Draw an environment diagram to determine what is printed by the following code.</p>
+<h3 id="q2-deep-map">Q2: Deep Map</h3>
 
 
-            <iframe
-                width="800"
-                height="460"
-                frameborder="0"
-                src="https://pythontutor.com/iframe-embed.html#code=s+%3D+%5B2%2C+7%2C+%5B1%5D%5D%0At+%3D+s%5B2%5D%0At.append%28%5B8%5D%29%0Ae+%3D+s+%2B+t%0At%5B1%5D.extend%28%5B2%2C+8%5D%29%0Aprint%28e%29&codeDivHeight=460&codeDivWidth=350&cumulative=true&curInstr=1&heapPrimitives=nevernest&origin=composingprograms.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">
-            </iframe>
-        
+<p><strong>Definition:</strong> A <em>nested list of numbers</em> is a list that contains numbers and
+lists. It may contain only numbers, only lists, or a mixture of both. The lists
+must also be <em>nested lists of numbers</em>. For example: <code>[1, [2, [3]], 4]</code>, <code>[1, 2,
+3]</code>, and <code>[[1, 2], [3, 4]]</code> are all <em>nested lists of numbers</em>.</p>
 
-<p>If you have questions, ask them instead of just looking up the answer! First ask
-your group, and then the course staff.</p>
+<p>Write a function <code>deep_map</code> that takes two arguments: a nested list of numbers
+<code>s</code> and a one-argument function <code>f</code>. It modifies <code>s</code> <strong>in place</strong> by applying
+<code>f</code> to each number within <code>s</code> and replacing the number with the result of
+calling <code>f</code> on that number.</p>
 
-<div class="page-break"></div>
+<p><code>deep_map</code> returns <code>None</code> and should not create any new lists.</p>
 
+<blockquote><p><strong>Hint:</strong> <code>type(a) == list</code> will evaluate to <code>True</code> if <code>a</code> is a list.</p></blockquote>
 
-<h3 id="q2-apply-in-place">Q2: Apply in Place</h3>
+<solution>
 
+<pre><code>def deep_map(f, s):
+    &quot;&quot;&quot;Replace all non&#x2d;list elements x with f(x) in the nested list s.
 
-<p>Implement <code>apply_in_place</code>, which takes a one-argument function <code>fn</code> and a list <code>s</code>. It modifies <code>s</code> so that each element is the result of applying <code>fn</code> to that element. It returns <code>None</code>.</p>
+    &gt;&gt;&gt; six = [1, 2, [3, [4], 5], 6]
+    &gt;&gt;&gt; deep_map(lambda x: x * x, six)
+    &gt;&gt;&gt; six
+    [1, 4, [9, [16], 25], 36]
+    &gt;&gt;&gt; # Check that you&#x27;re not making new lists
+    &gt;&gt;&gt; s = [3, [1, [4, [1]]]]
+    &gt;&gt;&gt; s1 = s[1]
+    &gt;&gt;&gt; s2 = s1[1]
+    &gt;&gt;&gt; s3 = s2[1]
+    &gt;&gt;&gt; deep_map(lambda x: x + 1, s)
+    &gt;&gt;&gt; s
+    [4, [2, [5, [2]]]]
+    &gt;&gt;&gt; s1 is s[1]
+    True
+    &gt;&gt;&gt; s2 is s1[1]
+    True
+    &gt;&gt;&gt; s3 is s2[1]
+    True
+    &quot;&quot;&quot;
+    "*** YOUR CODE HERE ***"
+</code></pre>
 
+</solution>
 
-            <div class="monaco-storable" id="apply_in_place-input" style="height:234px;"></div>
-            <a href="javascript:void" id="modal-link-apply_in_place-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-apply_in_place-input" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content" style="padding-bottom: -5px">
-                    <iframe
-                        id="code-iframe-apply_in_place-input"
-                        width="100%"
-                        height="700px"
-                        style="border: none; display:block;"
-                    ></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="storable-status"></div>
-            <script>
-                $(() => activateEditor('def apply_in_place(fn, s):\n    &quot;&quot;&quot;Replace each element x of s with fn(x).\n\n    &gt;&gt;&gt; original_list = [5, &#x2d;1, 2, 0]\n    &gt;&gt;&gt; apply_in_place(lambda x: x * x, original_list)\n    &gt;&gt;&gt; original_list\n    [25, 1, 4, 0]\n    &quot;&quot;&quot;\n    "*** YOUR CODE HERE ***"\n\n', "python", "apply_in_place-input"));
-            </script>
-        
-
-
-        <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-3">
-One approach is to use <code>for i in range(...)</code> to iterate over the indices (positions) of <code>s</code>.
-</div>
-
-<div class="page-break"></div>
-
-
-<h3 id="q3-word-rope">Q3: Word Rope</h3>
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q deep_map<button id="copy-code-python3ok-qdeep_map" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qdeep_map").onclick = () => copyCode('python3 ok -q deep_map', "copy-code-python3ok-qdeep_map");
+        </script>
+        <br/>
 
 
-<p><strong>Definition:</strong> A <em>rope</em> in Python is a list containing only one-letter strings
-except for the last element, which may either be a one-letter string or a rope.</p>
+<h2 id="check-your-score-locally">Check Your Score Locally</h2>
 
-<p>Implement <code>word_rope</code>, a Python function that takes a non-empty string <code>s</code>
-containing only letters and spaces that does not start or end with a space. It
-returns a <em>rope</em> containing the letters of <code>s</code> in which each word is in a
-separate list.</p>
+<p>You can locally check your score on each question of this assignment by running</p>
 
-<p><strong>Important:</strong> You may not use slicing or the <code>split</code>, <code>find</code>, or <code>index</code>
-methods of a string. Solve the problem using list operations.</p>
+<pre><code>python3 ok &#x2d;&#x2d;score</code></pre>
 
-<p><strong>Reminder:</strong> <code>s[&#x2d;1]</code> evaluates to the last element of a sequence <code>s</code>.</p>
+<p><strong>This does NOT submit the assignment!</strong> When you are satisfied with your score, submit the assignment to Gradescope to receive credit for it.</p>
 
 
-            <div class="monaco-storable" id="word_rope-input" style="height:360px;"></div>
-            <a href="javascript:void" id="modal-link-word_rope-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-word_rope-input" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content" style="padding-bottom: -5px">
-                    <iframe
-                        id="code-iframe-word_rope-input"
-                        width="100%"
-                        height="700px"
-                        style="border: none; display:block;"
-                    ></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="storable-status"></div>
-            <script>
-                $(() => activateEditor('def word_rope(s):\n    &quot;&quot;&quot;Return a rope of the words in string s.\n\n    &gt;&gt;&gt; word_rope(&#x27;the ref was wrong&#x27;)\n    [&#x27;t&#x27;, &#x27;h&#x27;, &#x27;e&#x27;, [&#x27;r&#x27;, &#x27;e&#x27;, &#x27;f&#x27;, [&#x27;w&#x27;, &#x27;a&#x27;, &#x27;s&#x27;, [&#x27;w&#x27;, &#x27;r&#x27;, &#x27;o&#x27;, &#x27;n&#x27;, &#x27;g&#x27;]]]]\n    &quot;&quot;&quot;\n    assert s and s[0] != &#x27; &#x27; and s[&#x2d;1] != [ ]\n    result = []\n    word = _____\n    for x in s:\n        if x == &#x27; &#x27;:\n            "*** YOUR CODE HERE ***"\n        else:\n            "*** YOUR CODE HERE ***"\n    return result\n', "python", "word_rope-input"));
-            </script>
-        
+<h1 id="submit-assignment">Submit Assignment</h1>
 
 
-        <button id='toggle-4' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-4">
-In this implementation, <code>result</code> is a rope and <code>word</code> is a list within that rope which is still being constructed. When <code>x</code> is a space, add an empty list to the end of <code>word</code> and assign <code>word</code> to this empty list. Otherwise, add <code>x</code> to the end of <code>word</code>.
-</div>
+<p>Submit this assignment by uploading any files you've edited <strong>to the appropriate Gradescope assignment.</strong> <a href="../../lab/lab00/#submit-with-gradescope">Lab 00</a> has detailed instructions.</p>
 
-<div class="page-break"></div>
-
-
-<h1 id="document-the-occasion">Document the Occasion</h1>
-
-
-<p>Please all fill out the <a href="https://forms.gle/FXxKTRphbCxZ2sy97">attendance form</a> (one submission per person per week).</p>
 <script>
     $('.alwaystoggle').css('display', 'inline-block');
     $('.alwaystoggle').click(function() {
@@ -346,19 +331,21 @@ In this implementation, <code>result</code> is a rope and <code>word</code> is a
     });
 </script>
 
+
   </div>
 
   <div class='col-md-3 sticky'>
     <nav class='hidden-print hidden-sm hidden-xs sidebar'>
       <ul>
-  <li><a href="#getting-started">Getting Started</a></li>
-  <li><a href="#list-mutation">List Mutation</a></li>
+  <li><a href="#required-questions">Required Questions</a></li>
   <ul>
-    <li><a href="#q1-nested-lists">Q1: Nested Lists</a></li>
-    <li><a href="#q2-apply-in-place">Q2: Apply in Place</a></li>
-    <li><a href="#q3-word-rope">Q3: Word Rope</a></li>
+    <li><a href="#q1-shuffle">Q1: Shuffle</a></li>
+    <li><a href="#q2-deep-map">Q2: Deep Map</a></li>
   </ul>
-  <li><a href="#document-the-occasion">Document the Occasion</a></li>
+  <ul>
+    <li><a href="#check-your-score-locally">Check Your Score Locally</a></li>
+  </ul>
+  <li><a href="#submit-assignment">Submit Assignment</a></li>
 </ul>
     </nav>
   </div>
