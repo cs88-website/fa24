@@ -37,7 +37,7 @@
 
 
     <title>
-Project 2: Computer Aided Typing Software | Data C88C Fall 2024
+Computer Aided Typing Software | Data C88C Fall 2024
 </title>
   </head>
 
@@ -141,7 +141,7 @@ Project 2: Computer Aided Typing Software | Data C88C Fall 2024
     <header>
       <h1>
         
-Project 2: Computer Aided Typing Software
+Computer Aided Typing Software
 
         
         
@@ -246,7 +246,7 @@ This project includes several files, <em>but your changes will be made only to</
 
 
 
-<p>The project is worth 19 points.
+<p>The project is worth 20 points.
 19 points are for correctness
 and 1 point is for submitting Phases 1 &amp; 2 by the checkpoint date.</p>
 
@@ -730,6 +730,26 @@ this test, consider adding a base case related to the <code>limit</code>.</p>
 
 <blockquote><p><strong>Hint</strong>: you will need more than one base case to solve this problem.</p></blockquote>
 
+
+        <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        String Slicing<noscript> (enable JavaScript)</noscript>
+        </button>
+        <div class="solution toggle-2">
+A string is a sequence of characters. (Letters, digits, and punctuation are all characters.) A slice of a string is another string that contains some of the characters of the original. Here are some examples:
+
+<pre><code>&gt;&gt;&gt; a = &#x27;strap&#x27;
+&gt;&gt;&gt; a[0]
+&#x27;s&#x27;
+&gt;&gt;&gt; a[1:]
+&#x27;trap&#x27;
+&gt;&gt;&gt; a[2:]
+&#x27;rap&#x27;
+&gt;&gt;&gt; a[1:][1:]
+&#x27;rap&#x27;</code></pre>
+
+
+</div>
+
 <p>Before writing any code, unlock the tests to verify your understanding of the question:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q 06 -u<button id="copy-code-python3ok-q06-u" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
         document.getElementById("copy-code-python3ok-q06-u").onclick = () => copyCode('python3 ok -q 06 -u', "copy-code-python3ok-q06-u");
@@ -1088,10 +1108,10 @@ In this problem, you will implement memoization decorators that will increase th
 <p>Make sure you're familiar with the decorators and memoization. If you would like a refresher, open the dropdown boxes below for more information.</p>
 
 
-        <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
         Decorators<noscript> (enable JavaScript)</noscript>
         </button>
-        <div class="solution toggle-2">
+        <div class="solution toggle-3">
 A Python decorator allows you to modify a pre-existing function without changing the function's structure.
 
 <p>Specifically, a decorator function is a higher-order function that...</p>
@@ -1140,10 +1160,10 @@ are being changed in our code.
 </div></p>
 
 
-        <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        <button id='toggle-4' class='btn btn-outline btn-lg alwaystoggle toggle'>
         Memoization<noscript> (enable JavaScript)</noscript>
         </button>
-        <div class="solution toggle-3">
+        <div class="solution toggle-4">
 Notice that the diff functions we wrote in the previous questions are very inefficient: you will likely find that the computer will make the same recursive call multiple times. For a function with multiple arguments and three recursive calls, this can be harder to see. It can be easier to first see this with a function like <code>fib</code> that is defined in lecture.
 
 <p><img class="img-responsive center-block" src="images/fib_tree.png" alt="Fib Tree" width="" height=""></p>
@@ -1173,10 +1193,10 @@ is fine, but using a list is not).
 If you're curious about why <code>memo_diff</code> is different than <code>memo</code> and is implemented in this way, reference the dropdown below:</p></blockquote>
 
 
-        <button id='toggle-4' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        <button id='toggle-5' class='btn btn-outline btn-lg alwaystoggle toggle'>
         More Information<noscript> (enable JavaScript)</noscript>
         </button>
-        <div class="solution toggle-4">
+        <div class="solution toggle-5">
 How do <code>memo</code> and <code>memo_diff</code> differ? Although <code>memo</code> stores only the result of a function call, <code>memo_diff</code> takes into account an additional constraint, <code>limit</code>, that affects whether the cached result can be used or not. When the <code>memo_diff</code> function is called with a (<code>typed</code>, <code>source</code>) pair, it doesn’t just check if the pair has been seen before; it also checks if the <code>limit</code> is less than or equal to the cached <code>limit</code>. This is an additional check that <code>memo</code> does not perform.
 
 <p>Why is <code>limit</code> handled this way? We already know that the <code>limit</code> represents the maximum
@@ -1218,10 +1238,10 @@ We are being strict about this here because having the tightest base cases is cr
 Try it yourself first! Only consult the following common mistakes section if you have been stuck on one test case for a while. Otherwise, you might not learn as much from the project.</p></blockquote>
 
 
-        <button id='toggle-5' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        <button id='toggle-6' class='btn btn-outline btn-lg alwaystoggle toggle'>
         Common Mistakes<noscript> (enable JavaScript)</noscript>
         </button>
-        <div class="solution toggle-5">
+        <div class="solution toggle-6">
 
 <ul>
   <li>Consider the case <code>minimum_mewtations(typed = &quot;maooo&quot;, source = &quot;mao&quot;, limit = 0)</code>: since no transformations are allowed and the two words are not the same, how quick can your function figure out that the result is impossible?</li>

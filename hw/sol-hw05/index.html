@@ -37,7 +37,7 @@
 
 
     <title>
-Homework 6 | Data C88C Fall 2024
+Homework 5 Solutions | Data C88C Fall 2024
 </title>
   </head>
 
@@ -141,53 +141,20 @@ Homework 6 | Data C88C Fall 2024
     <header>
       <h1>
         
-Homework 6: Mutability
+Homework 5 Solutions
 
         
         
         <ul class="inline-block list-inline">
-          <li><a href="hw06.zip" class="label label-outline">hw06.zip</a></li>
+          <li><a href="hw05.zip" class="label label-outline">hw05.zip</a></li>
         </ul>
         
         
       </h1>
     </header>
     
-
-<p><em>Due by 11:59pm on Wednesday, October 16</em></p>
-
-
-
-
-
-<h2>Instructions</h2>
-
-<p>Download <a href="hw06.zip">hw06.zip</a>. Inside the archive, you will find a file called
-<a href="hw06.py">hw06.py</a>, along with a copy of the <code>ok</code> autograder.</p>
-
-<p><strong>Submission:</strong> When you are done, submit the assignment by uploading all code files you've edited to Gradescope. You may submit more than once before the deadline; only the
-final submission will be scored. Check that you have successfully submitted
-your code on Gradescope.  See <a
-  href="../../lab/lab00#task-c-submitting-the-assignment">Lab 0</a> for more instructions on
-submitting assignments.</p>
-
-<p><strong>Using Ok:</strong> If you have any questions about using Ok, please
-refer to <a href="../../articles/using-ok">this guide.</a>
-
-
-  <p><strong>Readings:</strong> You might find the following references
-  useful:</p>
-  <ul>
-  <li><a href="https://www.composingprograms.com/pages/24-mutable-data.html#sequence-objects">Section 2.4</a></li>
-</ul>
-  
-
-<p><strong>Grading:</strong> Homework is graded based on
-correctness. Each incorrect problem will decrease the total score by one point.
-<strong>This homework is out of 2 points.</strong>
-
-
-
+<h2>Solution Files</h2>
+<p>You can find the solutions in <a href="hw05.py">hw05.py</a>.</p>
 
     
 <h1 id="required-questions">Required Questions</h1>
@@ -200,6 +167,7 @@ correctness. Each incorrect problem will decrease the total score by one point.
         </button>
         <div class="solution toggle-1">
 
+
 <h2 id="getting-started-videos" class="no-toc">Getting Started Videos</h2>
 
 
@@ -208,108 +176,117 @@ problems on this assignment.</p>
 
 <blockquote><p>To see these videos, you should be logged into your berkeley.edu email.</p></blockquote>
 
+<p>Coming soon!
+<!-- 
+            <iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZfTmV97imfuOKeTdjhZRFYr"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "hw3-getstarted"
+                allowfullscreen></iframe><p><a href='https://youtu.be/playlist?list=PLx38hZJ5RLZfTmV97imfuOKeTdjhZRFYr'> YouTube link </a></p> --></p>
 
-            <iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZeuSnAXIX-8pJXGB3Z4k3nW"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "c88c-hw6-getstarted"
-                allowfullscreen></iframe><p><a href='https://youtu.be/playlist?list=PLx38hZJ5RLZeuSnAXIX-8pJXGB3Z4k3nW'> YouTube link </a></p>
 </div>
 
-<br>
+
+<h3 id="q1-count-dollars">Q1: Count Dollars</h3>
 
 
-<h3 id="q1-shuffle">Q1: Shuffle</h3>
+<p>Given a positive integer <code>total</code>, a set of dollar bills makes change for <code>total</code> if
+the sum of the values of the dollar bills is <code>total</code>.
+Here we will use standard US dollar bill values: 1, 5, 10, 20, 50, and 100.
+For example, the following sets make change for <code>15</code>:</p>
 
+<ul>
+  <li>15 1-dollar bills</li>
+  <li>10 1-dollar, 1 5-dollar bills</li>
+  <li>5 1-dollar, 2 5-dollar bills</li>
+  <li>5 1-dollar, 1 10-dollar bills</li>
+  <li>3 5-dollar bills</li>
+  <li>1 5-dollar, 1 10-dollar bills</li>
+</ul>
 
-<p>Implement <code>shuffle</code>, which takes a sequence <code>s</code> (such as a list or range) with
-an even number of elements. It returns a new list that <em>interleaves</em> the
-elements of the first half of <code>s</code> with the elements of the second half. It does
-not modify <code>s</code>.</p>
+<p>Thus, there are 6 ways to make change for <code>15</code>.  Write a <strong>recursive</strong> function
+<code>count_dollars</code> that takes a positive integer <code>total</code> and returns the number of
+ways to make change for <code>total</code> using 1, 5, 10, 20, 50, and 100 dollar bills.</p>
 
-<p>To <em>interleave</em> two sequences <code>s0</code> and <code>s1</code> is to create a new list containing
-the first element of <code>s0</code>, the first element of <code>s1</code>, the second element of
-<code>s0</code>, the second element of <code>s1</code>, and so on. For example, if <code>s0 = [1, 2, 3]</code>
-and <code>s1 = [4, 5, 6]</code>, then interleaving <code>s0</code> and <code>s1</code> would result in
-<code>[1, 4, 2, 5, 3, 6]</code>.</p>
+<p>Use <code>next_smaller_dollar</code> in your solution:
+<code>next_smaller_dollar</code> will return the next smaller dollar bill value from the
+input (e.g. <code>next_smaller_dollar(5)</code> is <code>1</code>).
+<em>The function will return <code>None</code> if the next dollar bill value does not exist.</em></p>
 
-<solution>
+<blockquote><p><strong>Important:</strong> Use recursion; the tests will fail if you use loops.</p>
 
-<pre><code>def shuffle(s):
-    &quot;&quot;&quot;Return a shuffled list that interleaves the two halves of s.
-
-    &gt;&gt;&gt; shuffle(range(6))
-    [0, 3, 1, 4, 2, 5]
-    &gt;&gt;&gt; letters = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;, &#x27;f&#x27;, &#x27;g&#x27;, &#x27;h&#x27;]
-    &gt;&gt;&gt; shuffle(letters)
-    [&#x27;a&#x27;, &#x27;e&#x27;, &#x27;b&#x27;, &#x27;f&#x27;, &#x27;c&#x27;, &#x27;g&#x27;, &#x27;d&#x27;, &#x27;h&#x27;]
-    &gt;&gt;&gt; shuffle(shuffle(letters))
-    [&#x27;a&#x27;, &#x27;c&#x27;, &#x27;e&#x27;, &#x27;g&#x27;, &#x27;b&#x27;, &#x27;d&#x27;, &#x27;f&#x27;, &#x27;h&#x27;]
-    &gt;&gt;&gt; letters  # Original list should not be modified
-    [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;, &#x27;f&#x27;, &#x27;g&#x27;, &#x27;h&#x27;]
-    &quot;&quot;&quot;
-    assert len(s) % 2 == 0, &#x27;len(seq) must be even&#x27;
-    "*** YOUR CODE HERE ***"
-</code></pre>
-
-</solution>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q shuffle<button id="copy-code-python3ok-qshuffle" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qshuffle").onclick = () => copyCode('python3 ok -q shuffle', "copy-code-python3ok-qshuffle");
-        </script>
-        <br/>
-
-
-<h3 id="q2-deep-map">Q2: Deep Map</h3>
-
-
-<p><strong>Definition:</strong> A <em>nested list of numbers</em> is a list that contains numbers and
-lists. It may contain only numbers, only lists, or a mixture of both. The lists
-must also be <em>nested lists of numbers</em>. For example: <code>[1, [2, [3]], 4]</code>, <code>[1, 2,
-3]</code>, and <code>[[1, 2], [3, 4]]</code> are all <em>nested lists of numbers</em>.</p>
-
-<p>Write a function <code>deep_map</code> that takes two arguments: a nested list of numbers
-<code>s</code> and a one-argument function <code>f</code>. It modifies <code>s</code> <strong>in place</strong> by applying
-<code>f</code> to each number within <code>s</code> and replacing the number with the result of
-calling <code>f</code> on that number.</p>
-
-<p><code>deep_map</code> returns <code>None</code> and should not create any new lists.</p>
-
-<blockquote><p><strong>Hint:</strong> <code>type(a) == list</code> will evaluate to <code>True</code> if <code>a</code> is a list.</p></blockquote>
+<p><strong>Hint:</strong>
+Refer to the <a href="https://www.composingprograms.com/pages/17-recursive-functions.html#example-partitions">implementation</a> of <code>count_partitions</code> for an example
+of how to count the ways to sum up to a final value with smaller parts.
+If you need to keep track of more than one value across recursive calls,
+consider writing a helper function.</p></blockquote>
 
 <solution>
 
-<pre><code>def deep_map(f, s):
-    &quot;&quot;&quot;Replace all non&#x2d;list elements x with f(x) in the nested list s.
+<pre><code>def next_smaller_dollar(bill):
+    &quot;&quot;&quot;Returns the next smaller bill in order.&quot;&quot;&quot;
+    if bill == 100:
+        return 50
+    if bill == 50:
+        return 20
+    if bill == 20:
+        return 10
+    elif bill == 10:
+        return 5
+    elif bill == 5:
+        return 1
 
-    &gt;&gt;&gt; six = [1, 2, [3, [4], 5], 6]
-    &gt;&gt;&gt; deep_map(lambda x: x * x, six)
-    &gt;&gt;&gt; six
-    [1, 4, [9, [16], 25], 36]
-    &gt;&gt;&gt; # Check that you&#x27;re not making new lists
-    &gt;&gt;&gt; s = [3, [1, [4, [1]]]]
-    &gt;&gt;&gt; s1 = s[1]
-    &gt;&gt;&gt; s2 = s1[1]
-    &gt;&gt;&gt; s3 = s2[1]
-    &gt;&gt;&gt; deep_map(lambda x: x + 1, s)
-    &gt;&gt;&gt; s
-    [4, [2, [5, [2]]]]
-    &gt;&gt;&gt; s1 is s[1]
-    True
-    &gt;&gt;&gt; s2 is s1[1]
-    True
-    &gt;&gt;&gt; s3 is s2[1]
+def count_dollars(total):
+    &quot;&quot;&quot;Return the number of ways to make change.
+
+    &gt;&gt;&gt; count_dollars(15)  # 15 $1 bills, 10 $1 &amp; 1 $5 bills, ... 1 $5 &amp; 1 $10 bills
+    6
+    &gt;&gt;&gt; count_dollars(10)  # 10 $1 bills, 5 $1 &amp; 1 $5 bills, 2 $5 bills, 10 $1 bills
+    4
+    &gt;&gt;&gt; count_dollars(20)  # 20 $1 bills, 15 $1 &amp; $5 bills, ... 1 $20 bill
+    10
+    &gt;&gt;&gt; count_dollars(45)  # How many ways to make change for 45 dollars?
+    44
+    &gt;&gt;&gt; count_dollars(100) # How many ways to make change for 100 dollars?
+    344
+    &gt;&gt;&gt; count_dollars(200) # How many ways to make change for 200 dollars?
+    3274
+    &gt;&gt;&gt; from construct_check import check
+    &gt;&gt;&gt; # ban iteration
+    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#x27;count_dollars&#x27;, [&#x27;While&#x27;, &#x27;For&#x27;])
     True
     &quot;&quot;&quot;
-    "*** YOUR CODE HERE ***"
-</code></pre>
+<div class="sol-highlight">    def constrained_count(total, largest_bill):
+        if total == 0:
+            return 1
+        if total &lt; 0:
+            return 0
+        if largest_bill == None:
+            return 0
+        without_dollar_bill = constrained_count(total, next_smaller_dollar(largest_bill))
+        with_dollar_bill = constrained_count(total &#x2d; largest_bill, largest_bill)
+        return without_dollar_bill + with_dollar_bill
+    return constrained_count(total, 100)</div></code></pre>
 
 </solution>
 
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q deep_map<button id="copy-code-python3ok-qdeep_map" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q count_dollars<button id="copy-code-python3ok-qcount_dollars" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
-        document.getElementById("copy-code-python3ok-qdeep_map").onclick = () => copyCode('python3 ok -q deep_map', "copy-code-python3ok-qdeep_map");
+        document.getElementById("copy-code-python3ok-qcount_dollars").onclick = () => copyCode('python3 ok -q count_dollars', "copy-code-python3ok-qcount_dollars");
         </script>
         <br/>
+
+<div class="sol-highlight">
+
+<p>This is remarkably similar to the <code>count_partitions</code> problem, with a
+few minor differences:</p>
+
+<ul>
+  <li>A maximum partition size is not given, so we need to create a helper
+  function that takes in two arguments: current total and dollar bill value.</li>
+  <li>Partition size is not linear. To get the next partition you need to call
+  <code>next_smaller_dollar</code>.</li>
+</ul>
+
+</div>
 
 
 <h2 id="check-your-score-locally">Check Your Score Locally</h2>
@@ -326,14 +303,93 @@ calling <code>f</code> on that number.</p>
 
 <p>Submit this assignment by uploading any files you've edited <strong>to the appropriate Gradescope assignment.</strong> <a href="../../lab/lab00/#submit-with-gradescope">Lab 00</a> has detailed instructions.</p>
 
-<script>
-    $('.alwaystoggle').css('display', 'inline-block');
-    $('.alwaystoggle').click(function() {
-      var solution_id = $(this).attr('id');
-      $('div.' + solution_id).slideToggle(600);
-    });
-</script>
 
+<h1 id="optional-questions">Optional Questions</h1>
+
+
+<blockquote><p>These questions are optional. If you don't complete them, you will
+still receive credit for this assignment. They are great practice, so do them
+anyway!</p></blockquote>
+
+
+<h3 id="q2-count-dollars-upward">Q2: Count Dollars Upward</h3>
+
+
+<p>Write a <strong>recursive</strong> function <code>count_dollars_upward</code> that is just like <code>count_dollars</code>
+except it uses <code>next_larger_dollar</code>, which returns the next larger dollar bill value from the
+input (e.g. <code>next_larger_dollar(5)</code> is <code>10</code>).
+<em>The function will return <code>None</code> if the next dollar bill value does not exist.</em></p>
+
+<blockquote><p><strong>Important:</strong> Use recursion; the tests will fail if you use loops.</p></blockquote>
+
+<solution>
+
+<pre><code>def next_larger_dollar(bill):
+    &quot;&quot;&quot;Returns the next larger bill in order.&quot;&quot;&quot;
+    if bill == 1:
+        return 5
+    elif bill == 5:
+        return 10
+    elif bill == 10:
+        return 20
+    elif bill == 20:
+        return 50
+    elif bill == 50:
+        return 100
+
+def count_dollars_upward(total):
+    &quot;&quot;&quot;Return the number of ways to make change using bills.
+
+    &gt;&gt;&gt; count_dollars_upward(15)  # 15 $1 bills, 10 $1 &amp; 1 $5 bills, ... 1 $5 &amp; 1 $10 bills
+    6
+    &gt;&gt;&gt; count_dollars_upward(10)  # 10 $1 bills, 5 $1 &amp; 1 $5 bills, 2 $5 bills, 10 $1 bills
+    4
+    &gt;&gt;&gt; count_dollars_upward(20)  # 20 $1 bills, 15 $1 &amp; $5 bills, ... 1 $20 bill
+    10
+    &gt;&gt;&gt; count_dollars_upward(45)  # How many ways to make change for 45 dollars?
+    44
+    &gt;&gt;&gt; count_dollars_upward(100) # How many ways to make change for 100 dollars?
+    344
+    &gt;&gt;&gt; count_dollars_upward(200) # How many ways to make change for 200 dollars?
+    3274
+    &gt;&gt;&gt; from construct_check import check
+    &gt;&gt;&gt; # ban iteration
+    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#x27;count_dollars_upward&#x27;, [&#x27;While&#x27;, &#x27;For&#x27;])
+    True
+    &quot;&quot;&quot;
+<div class="sol-highlight">    def constrained_count(total, smallest_bill):
+        if total == 0:
+            return 1
+        if total &lt; 0:
+            return 0
+        if smallest_bill == None:
+            return 0
+        without_dollar_bill = constrained_count(total, next_larger_dollar(smallest_bill))
+        with_dollar_bill = constrained_count(total &#x2d; smallest_bill, smallest_bill)
+        return without_dollar_bill + with_dollar_bill
+    return constrained_count(total, 1)</div></code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q count_dollars_upward<button id="copy-code-python3ok-qcount_dollars_upward" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qcount_dollars_upward").onclick = () => copyCode('python3 ok -q count_dollars_upward', "copy-code-python3ok-qcount_dollars_upward");
+        </script>
+        <br/>
+
+<div class="sol-highlight">
+
+<p>This is remarkably similar to the <code>count_partitions</code> problem, with a
+few minor differences:</p>
+
+<ul>
+  <li>A maximum partition size is not given, so we need to create a helper
+  function that takes in two arguments: current total and dollar bill value.</li>
+  <li>Partition size is not linear. To get the next partition you need to call
+  <code>next_larger_dollar</code>.</li>
+</ul>
+
+</div>
 
   </div>
 
@@ -342,13 +398,16 @@ calling <code>f</code> on that number.</p>
       <ul>
   <li><a href="#required-questions">Required Questions</a></li>
   <ul>
-    <li><a href="#q1-shuffle">Q1: Shuffle</a></li>
-    <li><a href="#q2-deep-map">Q2: Deep Map</a></li>
+    <li><a href="#q1-count-dollars">Q1: Count Dollars</a></li>
   </ul>
   <ul>
     <li><a href="#check-your-score-locally">Check Your Score Locally</a></li>
   </ul>
   <li><a href="#submit-assignment">Submit Assignment</a></li>
+  <li><a href="#optional-questions">Optional Questions</a></li>
+  <ul>
+    <li><a href="#q2-count-dollars-upward">Q2: Count Dollars Upward</a></li>
+  </ul>
 </ul>
     </nav>
   </div>
