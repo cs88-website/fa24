@@ -163,12 +163,10 @@ Discussion 7: Object-Oriented Programming
 <p>Now switch to Pensieve:</p>
 
 <ul>
-  <li><strong>Everyone</strong>: Go to <a href=", log in with your @berkeley.edu email, and **enter your group number** (which was in the email that assigned you to this lab">pensieve.co</a>.</li>
+  <li><strong>Everyone</strong>: Go to <a href="https://tutor.pensieve.co/schools/berkeley/all/cs88/cs88_fa24/52eb5fe4-a9d1-47ee-a98e-e9a15f1b80b7/open">pensieve.co</a>, log in with your @berkeley.edu email, and <strong>enter your group number</strong> (which was in the email that assigned you to this lab).</li>
 </ul>
 
 <p>Once you're on Pensieve, you don't need to return to this page; Pensieve has all the same content (but more features). If for some reason Penseive doesn't work, return to this page and continue with the discussion.</p>
-
-<p>Post in the <code>#help</code> channel on <a href="https://cs61a.org/articles/discord/">Discord</a> if you have trouble.</p>
 
 
 <h1 id="getting-started">Getting Started</h1>
@@ -177,68 +175,6 @@ Discussion 7: Object-Oriented Programming
 <p>Say your name and something you've
 practiced for a while, such as playing an instrument, juggling, or martial arts.
 Did you discover any common interests among your group members?</p>
-
-
-<h3 id="q1-draw">Q1: Draw</h3>
-
-
-<p>The <code>draw</code> function takes a list <code>hand</code> and a list of unique non-negative
-integers <code>positions</code> that are all less than the length of <code>hand</code>.  It removes
-<code>hand[p]</code> for each <code>p</code> in <code>positions</code> and returns a list of those elements in
-the order they appeared in <code>hand</code> (not the order they appeared in <code>positions</code>).</p>
-
-<p>Fill in each blank with one of these names: <code>list</code>, <code>map</code>, <code>filter</code>, <code>reverse</code>,
-<code>reversed</code>, <code>sort</code>, <code>sorted</code>, <code>append</code>, <code>insert</code>, <code>index</code>, <code>remove</code>, <code>pop</code>,
-<code>zip</code>, or <code>sum</code>. See the <a href="https://docs.python.org/3/library/functions.html">built-in functions</a> and
-<a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a>
-documentation for descriptions of what these do.</p>
-
-<p><strong>Discussion Time:</strong> Before writing anything, talk as a group about what
-process you'll implement in order to make sure the right cards are removed and
-returned. Try not to guess-and-check! The purpose of discussion is for you to
-try to solve problems without the help of an interpreter checking your work.</p>
-
-
-            <div class="monaco-storable" id="draw-input" style="height:234px;"></div>
-            <a href="javascript:void" id="modal-link-draw-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-draw-input" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content" style="padding-bottom: -5px">
-                    <iframe
-                        id="code-iframe-draw-input"
-                        width="100%"
-                        height="700px"
-                        style="border: none; display:block;"
-                    ></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="storable-status"></div>
-            <script>
-                $(() => activateEditor('def draw(hand, positions):\n    &quot;&quot;&quot;Remove and return the items at positions from hand.\n\n    &gt;&gt;&gt; hand = [&#x27;A&#x27;, &#x27;K&#x27;, &#x27;Q&#x27;, &#x27;J&#x27;, 10, 9]\n    &gt;&gt;&gt; draw(hand, [2, 1, 4])\n    [&#x27;K&#x27;, &#x27;Q&#x27;, 10]\n    &gt;&gt;&gt; hand\n    [&#x27;A&#x27;, &#x27;J&#x27;, 9]\n    &quot;&quot;&quot;\n    return _____(_____( [hand._____(i) for i in _____(_____(positions))] ))\n\n', "python", "draw-input"));
-            </script>
-        
-
-
-        <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Ordering<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-1">
-For a list <code>s</code> and integer <code>i</code>, <code>s.pop(i)</code> returns and removes the <code>i</code>th
-element, which changes the position (index) of all the later elements but
-does not affect the position of prior elements.
-</div>
-
-
-        <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Reversed<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-2">
-Calling <code>reversed(s)</code> on a list <code>s</code> returns an iterator. Calling
-<code>list(reversed(s))</code> returns a list of the elements in <code>s</code> in reversed order.
-</div>
-
-<p><em>Aced</em> it? Give yourselves a <em>hand</em>!</p>
 
 
 <h1 id="object-oriented-programming">Object-Oriented Programming</h1>
@@ -250,7 +186,7 @@ have. First, describe the type of each attribute and how it will be used, then
 try to implement the class's methods in terms of those attributes.</p>
 
 
-<h3 id="q2-keyboard">Q2: Keyboard</h3>
+<h3 id="q1-keyboard">Q1: Keyboard</h3>
 
 
 <p><strong>Overview:</strong> A keyboard has a button for every letter of the alphabet. When a
@@ -317,11 +253,30 @@ can try writing the code together.</p>
         
 
 
-        <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
         Button Hint: Uppercasing<noscript> (enable JavaScript)</noscript>
         </button>
-        <div class="solution toggle-3">
+        <div class="solution toggle-1">
 Since <code>self.letter</code> is always lowercase, use <code>self.letter.upper()</code> to produce the uppercase version.
+</div>
+
+
+        <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        Button Hint: Caps Lock<noscript> (enable JavaScript)</noscript>
+        </button>
+        <div class="solution toggle-2">
+The number of times <code>caps_lock</code> has been pressed is either
+<code>self.caps_lock.pressed</code> or <code>Button.caps_lock.pressed</code>.
+</div>
+
+
+        <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        Button Hint: Output<noscript> (enable JavaScript)</noscript>
+        </button>
+        <div class="solution toggle-3">
+The <code>output</code> attribute is a function that can be called:
+<code>self.output(self.letter)</code> or <code>self.output(self.letter.upper())</code>. You do not
+need to return the result.
 </div>
 
 
@@ -347,38 +302,19 @@ Since <code>self.letter</code> is always lowercase, use <code>self.letter.upper(
 
 
         <button id='toggle-4' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Button Hint: Caps Lock<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-4">
-The number of times <code>caps_lock</code> has been pressed is either
-<code>self.caps_lock.pressed</code> or <code>Button.caps_lock.pressed</code>.
-</div>
-
-
-        <button id='toggle-5' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Button Hint: Output<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-5">
-The <code>output</code> attribute is a function that can be called:
-<code>self.output(self.letter)</code> or <code>self.output(self.letter.upper())</code>. You do not
-need to return the result.
-</div>
-
-
-        <button id='toggle-6' class='btn btn-outline btn-lg alwaystoggle toggle'>
         Keyboard Hint: Keys<noscript> (enable JavaScript)</noscript>
         </button>
-        <div class="solution toggle-6">
+        <div class="solution toggle-4">
 The keys can be created using a dictionary comprehension: <code>self.keys = {c: Button(c, ...) for c in LETTERS}</code>.
 The call to <code>Button</code> should take <code>c</code> and <strong>an output function that appends to <code>self.typed</code></strong>, so that every time
 one of these buttons is pressed, it appends a letter to <code>self.typed</code>.
 </div>
 
 
-        <button id='toggle-7' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        <button id='toggle-5' class='btn btn-outline btn-lg alwaystoggle toggle'>
         Keyboard Hint: Type<noscript> (enable JavaScript)</noscript>
         </button>
-        <div class="solution toggle-7">
+        <div class="solution toggle-5">
 Call the <code>press</code> method of <code>self.key[w]</code> for each <code>w</code> in <code>word</code>. It should be
 the case that when you call <code>press</code>, the <code>Button</code> is already set up (in the
 <code>Keyboard.__init__</code> method) to output to the <code>typed</code> list of this <code>Keyboard</code>.
@@ -408,12 +344,9 @@ One short sentence is enough to describe how new letters are added to <code>type
     <nav class='hidden-print hidden-sm hidden-xs sidebar'>
       <ul>
   <li><a href="#getting-started">Getting Started</a></li>
-  <ul>
-    <li><a href="#q1-draw">Q1: Draw</a></li>
-  </ul>
   <li><a href="#object-oriented-programming">Object-Oriented Programming</a></li>
   <ul>
-    <li><a href="#q2-keyboard">Q2: Keyboard</a></li>
+    <li><a href="#q1-keyboard">Q1: Keyboard</a></li>
   </ul>
   <li><a href="#document-the-occasion">Document the Occasion</a></li>
 </ul>
