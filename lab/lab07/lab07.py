@@ -102,7 +102,7 @@ class Mint:
     2024
     >>> nickel.worth()  # 5 cents + (80 - 50 years)
     35
-    >>> mint.update()   # The mint's year is updated to 2102
+    >>> mint.update()   # The mint's year is updated to 2104
     >>> Mint.present_year = 2179     # More time passes
     >>> mint.create(Dime).worth()    # 10 cents + (75 - 50 years)
     35
