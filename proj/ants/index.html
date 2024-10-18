@@ -101,6 +101,8 @@ Ants Vs. SomeBees | Data C88C Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
+                <li><a href="https://cs61a.org/resources/">Past Exams & Websites</a></li>
+                
                 <li><a href="https://www.composingprograms.com">Textbook</a></li>
                 
                 <li><a href="https://drive.google.com/file/d/1O72u0ml65pibcjz-PXKpqeJDKaVqQ3D8/view">Debugging Guide</a></li>
@@ -964,12 +966,12 @@ so pay careful attention to the order of your logic in <code>reduce_health</code
   </td>
 </table>
 
-<blockquote><p><em>Hint:</em> Damaging a bee may cause it to be removed from its place. If you
+<blockquote><p><strong>Important</strong>: Damaging a bee may cause it to be removed from its place; when an insect dies, it is removed from its current place. If you
 iterate over a list, but change the contents of that list at the same time,
 you <a href="https://docs.python.org/3/tutorial/controlflow.html#for-statements">may not visit all the elements</a>.
 This can be prevented by making a copy of the list.
 You can either use a list slice, or use the built-in <code>list</code> function to make sure
-we do not affect the original list.</p></blockquote>
+the original list is not affected.</p></blockquote>
 
 <pre><code>&gt;&gt;&gt; s = [1,2,3,4]
 &gt;&gt;&gt; s[:]

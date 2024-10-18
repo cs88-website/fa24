@@ -47,5 +47,39 @@ class VendingMachine:
     >>> w.vend()
     'Here is your soda.'
     """
-    "*** YOUR CODE HERE ***"
+    def __init__(self, product, price):
+        """Set the product and its price, as well as other instance attributes."""
+        "*** YOUR CODE HERE ***"
+
+    def restock(self, n):
+        """Add n to the stock and return a message about the updated stock level.
+
+        E.g., Current candy stock: 3
+        """
+        "*** YOUR CODE HERE ***"
+
+    def add_funds(self, n):
+        """If the machine is out of stock, return a message informing the user to restock
+        (and return their n dollars).
+
+        E.g., Nothing left to vend. Please restock. Here is your $4.
+
+        Otherwise, add n to the balance and return a message about the updated balance.
+
+        E.g., Current balance: $4
+        """
+        "*** YOUR CODE HERE ***"
+
+    def vend(self):
+        """Dispense the product if there is sufficient stock and funds and
+        return a message. Update the stock and balance accordingly.
+
+        E.g., Here is your candy and $2 change.
+
+        If not, return a message suggesting how to correct the problem.
+
+        E.g., Nothing left to vend. Please restock.
+              Please add $3 more funds.
+        """
+        "*** YOUR CODE HERE ***"
 
