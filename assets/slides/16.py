@@ -1,95 +1,44 @@
+t = [[1, 2], [3, 4]]
+t[0].append(t[1:2])
+
+def of(us):
+    def last(k):
+        "The last k items of us"
+        while k > 0:
+            result.append(us.pop())
+            k = k - 1
+        return result
+    return last
+
+def surround(n, f):
+    "n is the first and last item of f(2)"
+    result = [n]
+    result = f(2)
+    result[0] = [n]
+    return result.append(n)
+
+result = [1]
+surround(3, of([4, 5, 6]))
+
 from link import *
 
-
-def length(s):
-    """Return the number of elements in linked list s.
-
-    >>> length(Link(3, Link(4, Link(5))))
-    3
+def nested_link():
     """
-    if s is Link.empty:
-        return 0
-    else:
-        return 1 + length(s.rest)
-
-def length_iter(s):
-    """Return the number of elements in linked list s.
-
-    >>> length_iter(Link(3, Link(4, Link(5))))
-    3
-    """
-    k = 0
-    while s is not Link.empty:
-        s, k = s.rest, k + 1
-    return k
-
-def append(s, x):
-    """Append x to the end of non-empty s and return None.
-
-    >>> s = Link(3, Link(4, Link(5)))
-    >>> append(s, 6)
+    >>> s = Link(2, Link(3, Link(    4     , Link(5))))
+    >>> t = Link(2, Link(3, Link(  Link(4) , Link(5))))
     >>> print(s)
-    <3 4 5 6>
-    """
-    if s.rest: 
-        append(s.rest, x)
-    else:
-        s.rest = Link(x)
-
-def append_iter(s, x):
-    """Append x to the end of non-empty s and return None.
-
-    >>> s = Link(3, Link(4, Link(5)))
-    >>> append_iter(s, 6)
+    <2 3 4 5>
+    >>> print(t)
+    <2 3 <4> 5>
+    >>> s = Link(Link(8), Link(Link(4, Link(6, Link(Link(7)))), Link(5)))
     >>> print(s)
-    <3 4 5 6>
+    <<8> <4 6 <7>> 5>
+    >>> s.first.first
+    8
+    >>> s.rest.first.rest.rest.first
+    Link(7)
+    >>> s.rest.first.rest.rest.first.first
+    7
     """
-    while s.rest:
-        s = s.rest
-    s.rest = Link(x)
 
 
-def pop(s, i):
-    """Remove and return element i from linked list s for positive i.
-
-    >>> t = Link(3, Link(4, Link(5, Link(6))))
-    >>> pop(t, 2)
-    5
-    >>> pop(t, 2)
-    6
-    >>> pop(t, 1)
-    4
-    >>> t
-    Link(3)
-    """
-    assert i > 0 and i < length(s)
-    for x in range(i-1):
-        s = s.rest
-    result = s.rest.first
-    s.rest = s.rest.rest
-    return result
-
-
-def range_link(start, end):
-    """Return a Link containing consecutive integers from start to end.
-
-    >>> range_link(3, 6)
-    Link(3, Link(4, Link(5)))
-    """
-    if start >= end:
-        return Link.empty
-    else:
-        return Link(start, range_link(start + 1, end))
-
-def range_link_iter(start, end):
-    """Return a Link containing consecutive integers from start to end.
-
-    >>> range_link_iter(3, 6)
-    Link(3, Link(4, Link(5)))
-    """
-    s = Link.empty
-    k = end - 1
-    while k >= start:
-        s = Link(k, s)
-        k -= 1
-    return s
