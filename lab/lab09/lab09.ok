@@ -1,18 +1,18 @@
 {
     "name": "Lab 9",
-    "endpoint": "cal/cs61a/fa24/lab09",
+    "endpoint": "cal/c88c/fa24/lab09",
     "src": [
-        "lab09.scm"
+        "lab09.py"
     ],
     "tests": {
+        "lab*.py": "doctest",
         "tests/*.py": "ok_test"
     },
     "default_tests": [
-        "over_or_under",
-        "make_adder",
-        "composed",
-        "repeat",
-        "gcd"
+        "trees-wwpd",
+        "max_path_sum",
+        "find_path",
+        "prune_small"
     ],
     "protocols": [
         "restore",
