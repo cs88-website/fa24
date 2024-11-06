@@ -203,7 +203,8 @@ here should you get stuck.</p>
 <p>The <code>Tree</code> class (with its <code>__repr__</code> and <code>__str__</code> methods omitted) is defined as:</p>
 
 <pre><code>class Tree:
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;A tree has a label and a list of branches.
+
     &gt;&gt;&gt; t = Tree(3, [Tree(2, [Tree(5)]), Tree(4)])
     &gt;&gt;&gt; t.label
     3
@@ -213,9 +214,9 @@ here should you get stuck.</p>
     True
     &quot;&quot;&quot;
     def __init__(self, label, branches=[]):
-        for b in branches:
-            assert isinstance(b, Tree)
         self.label = label
+        for branch in branches:
+            assert isinstance(branch, Tree)
         self.branches = list(branches)
 
     def is_leaf(self):

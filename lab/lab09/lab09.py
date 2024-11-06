@@ -48,7 +48,8 @@ def prune_small(t, n):
 
 
 class Tree:
-    """
+    """A tree has a label and a list of branches.
+
     >>> t = Tree(3, [Tree(2, [Tree(5)]), Tree(4)])
     >>> t.label
     3
@@ -58,9 +59,9 @@ class Tree:
     True
     """
     def __init__(self, label, branches=[]):
-        for b in branches:
-            assert isinstance(b, Tree)
         self.label = label
+        for branch in branches:
+            assert isinstance(branch, Tree)
         self.branches = list(branches)
 
     def is_leaf(self):
@@ -71,13 +72,15 @@ class Tree:
             branch_str = ', ' + repr(self.branches)
         else:
             branch_str = ''
-        return 'Tree({0}{1})'.format(self.label, branch_str)
+        return 'Tree({0}{1})'.format(repr(self.label), branch_str)
 
     def __str__(self):
-        def print_tree(t, indent=0):
-            tree_str = '  ' * indent + str(t.label) + "\n"
-            for b in t.branches:
-                tree_str += print_tree(b, indent + 1)
-            return tree_str
-        return print_tree(self).rstrip()
+        return '\n'.join(self.indented())
+
+    def indented(self):
+        lines = []
+        for b in self.branches:
+            for line in b.indented():
+                lines.append('  ' + line)
+        return [str(self.label)] + lines
 
