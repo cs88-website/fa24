@@ -1,24 +1,25 @@
 {
-    "name": "Homework 8",
-    "endpoint": "cal/c88c/fa24/hw08",
+    "name": "Lab 9",
+    "endpoint": "cal/c88c/fa24/lab09",
     "src": [
-        "hw08.py"
+        "lab09.py"
     ],
     "tests": {
-        "hw*.py": "doctest",
+        "lab*.py": "doctest",
         "tests/*.py": "ok_test"
     },
     "default_tests": [
-        "store_digits",
-        "deep_map_mut"
+        "trees-wwpd",
+        "max_path_sum",
+        "find_path",
+        "prune_small"
     ],
     "protocols": [
         "restore",
         "file_contents",
-        "help",
+        "unlock",
         "grading",
         "analytics",
-        "unlock",
         "backup"
     ]
 }

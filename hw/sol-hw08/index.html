@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content ="CS 61A: Structure and Interpretation of Computer Programs" />
+    <meta name="description" content ="Data C88C: Computational Structures in Data Science" />
     <meta name="keywords" content ="Computer Science, Programming, Berkeley, EECS" />
-    <meta name="author" content ="John DeNero, Jedi Tsang (Guest Lecturer), Shm Almeda (GSI)" />
+    <meta name="author" content ="John DeNero, Jedi Tsang, Shm Almeda (GSI)" />
     <!-- CHANGED CAREFUL -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
@@ -12,8 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/assets/js/hl.js"></script>
-    <script src="/assets/js/toggledarkmode.js"></script>
+    <script src="/fa24/assets/js/hl.js"></script>
+    <script src="/fa24/assets/js/toggledarkmode.js"></script>
     <script>
         // we aren't registering builtins since
         //      (1) they don't render differently in the current CSS from other names
@@ -24,12 +24,12 @@
         });
         hljs.initHighlightingOnLoad();
     </script>
-    <script src="/assets/js/dark-mode.js"></script>
+    <script src="/fa24/assets/js/dark-mode.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/mono-blue.css">
-    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/fa24/assets/css/style.css">
+    <link rel="stylesheet" href="/fa24/assets/css/mono-blue.css">
+    <link rel="icon" href="/fa24/assets/images/favicon.ico">
 
     
 
@@ -37,7 +37,7 @@
 
 
     <title>
-Homework 8 Solutions | CS 61A Fall 2024
+Homework 8 Solutions | Data C88C Fall 2024
 </title>
   </head>
 
@@ -50,8 +50,8 @@ Homework 8 Solutions | CS 61A Fall 2024
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">
-            CS 61A
+          <a class="navbar-brand" href="/fa24/">
+            Data C88C
             <!-- <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png"/> -->
           </a>
         </div>
@@ -60,15 +60,15 @@ Homework 8 Solutions | CS 61A Fall 2024
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="/">Lectures</a></li>
+            <li><a href="/fa24/">Lectures</a></li>
             
-            <li><a href="/articles/about-61a/">Syllabus</a></li>
+            <li><a href="/fa24/articles/about-c88c/">Syllabus</a></li>
             
-            <li><a href="https://edstem.org/us/courses/63971/discussion/">Ed</a></li>
+            <li><a href="https://edstem.org/us/courses/63975/discussion/">Ed</a></li>
             
-            <li><a href="/office-hours/">Office Hours</a></li>
+            <li><a href="/fa24/office-hours/">Office Hours</a></li>
             
-            <li><a href="/articles/contact-61a/">Contact</a></li>
+            <li><a href="/fa24/articles/contact-c88c/">Contact</a></li>
             
 
             
@@ -79,19 +79,17 @@ Homework 8 Solutions | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="https://go.cs61a.org/61a-extensions">Request an Extension</a></li>
+                <li><a href="https://go.c88c.org/c88c-extensions">Request an Extension</a></li>
                 
-                <li><a href="https://go.cs61a.org/61a-regrades">Request a Regrade</a></li>
+                <li><a href="https://go.c88c.org/c88c-regrades">Request a Regrade</a></li>
                 
-                <li><a href="https://oh.cs61a.org/">Office Hours Queue</a></li>
+                <li><a href="https://oh.c88c.org/">Office Hours Queue</a></li>
                 
-                <li><a href="https://www.gradescope.com/courses/843175">Gradescope</a></li>
+                <li><a href="https://www.gradescope.com/courses/843183">Gradescope</a></li>
                 
-                <li><a href="https://bcourses.berkeley.edu/courses/1538118/pages">Lecture Recordings</a></li>
+                <li><a href="https://bcourses.berkeley.edu/courses/1538122/pages">Lecture Recordings</a></li>
                 
                 <li><a href="https://pythontutor.com/cp/composingprograms.html">Python Tutor</a></li>
-                
-                <li><a href="https://code.cs61a.org/scheme/">Scheme Editor</a></li>
                 
               </ul>
             </li>
@@ -103,19 +101,17 @@ Homework 8 Solutions | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/resources/">Past Exams & Websites</a></li>
+                <li><a href="https://cs61a.org/resources/">Past Exams & Websites</a></li>
                 
                 <li><a href="https://www.composingprograms.com">Textbook</a></li>
                 
                 <li><a href="https://drive.google.com/file/d/1O72u0ml65pibcjz-PXKpqeJDKaVqQ3D8/view">Debugging Guide</a></li>
                 
-                <li><a href="/articles/studying/">Studying Guide</a></li>
+                <li><a href="/fa24/articles/studying/">Studying Guide</a></li>
                 
-                <li><a href="/articles/composition/">Composition Guide</a></li>
+                <li><a href="/fa24/articles/composition/">Composition Guide</a></li>
                 
-                <li><a href="/articles/campus-res/">Campus Resources</a></li>
-                
-                <li><a href="/articles/advice/">Advice from Students</a></li>
+                <li><a href="/fa24/articles/campus-res/">Campus Resources</a></li>
                 
               </ul>
             </li>
@@ -127,11 +123,9 @@ Homework 8 Solutions | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/instructor">Instructors</a></li>
+                <li><a href="/fa24/instructor">Instructors</a></li>
                 
-                <li><a href="/staff">TAs & Tutors</a></li>
-                
-                <li><a href="/academic-interns">Academic Interns</a></li>
+                <li><a href="/fa24/staff">TAs & Tutors</a></li>
                 
               </ul>
             </li>
@@ -162,55 +156,13 @@ Homework 8 Solutions
     </header>
     
 <h2>Solution Files</h2>
-<p>You can find the solutions in <a href="hw08.scm">hw08.scm</a>.</p>
+<p>You can find the solutions in <a href="hw08.py">hw08.py</a>.</p>
 
     
-<p>The 61A Scheme interpreter is included in each Scheme assignment. To start it,
-type <code>python3 scheme</code> in a terminal. To load a Scheme file called <code>f.scm</code>, type <code>python3 scheme &#x2d;i f.scm</code>. To exit the Scheme interpreter, type
-<code>(exit)</code>.</p>
-
-<h3 id="scheme-editor">Scheme Editor</h3>
-
-
-<p>All Scheme assignments include a web-based editor that makes it easy to run ok
-tests and visualize environments. Type <code>python3 editor</code> in a terminal, and the
-editor will open in a browser window (at <code>http://127.0.0.1:31415/</code>). Whatever
-changes you make here will also save to the original file on your computer!
-To stop running the editor and return to the command line, type <code>Ctrl&#x2d;C</code> in the
-terminal where you started the editor.</p>
-
-<p>The <code>Run</code> button loads the current assignment's <code>.scm</code> file and opens a Scheme
-interpreter, allowing you to try evaluating different Scheme expressions.</p>
-
-<p>The <code>Test</code> button runs all ok tests for the assignment. Click <code>View Case</code> for a
-failed test, then click <code>Debug</code> to step through its evaluation.</p>
-
-<h3 id="recommended-vs-code-extensions">Recommended VS Code Extensions</h3>
-
-
-<p>If you choose to use VS Code as your text editor (instead of the web-based editor),
-install the <a href="https://marketplace.visualstudio.com/items?itemName=sjhuangx.vscode-scheme">vscode-scheme</a>
-extension so that parentheses are highlighted.</p>
-
-<p>Before:</p>
-
-<img class="img-responsive center-block" src="assets/before.png" width="600">
-
-<p>After:</p>
-
-<img class="img-responsive center-block" src="assets/after.png" width="600">
-
-<p>In addition, the 61a-bot (<a href="/articles/61a-bot">installation instructions</a>) VS Code extension is available for Scheme homeworks. The bot is also integrated into <code>ok</code>.</p>
-
-
 <h1 id="required-questions">Required Questions</h1>
 
 
-
-<h2 id="required-questions-2">Required Questions</h2>
-
-
-<br />
+<br>
 
         <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
         Getting Started Videos<noscript> (enable JavaScript)</noscript>
@@ -226,250 +178,153 @@ problems on this assignment.</p>
 <blockquote><p>To see these videos, you should be logged into your berkeley.edu email.</p></blockquote>
 
 
-            <iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZeOPmZFG6vuUl71MdfpmBLe"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "hw8-getstarted"
-                allowfullscreen></iframe><p><a href='https://youtu.be/playlist?list=PLx38hZJ5RLZeOPmZFG6vuUl71MdfpmBLe'> YouTube link </a></p>
+            <iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZfHlzLYIGkMtnR1ZcrWC1VW"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "c88c-hw8-getstarted"
+                allowfullscreen></iframe><p><a href='https://youtu.be/playlist?list=PLx38hZJ5RLZfHlzLYIGkMtnR1ZcrWC1VW'> YouTube link </a></p>
 </div>
 
 
-<h3 id="q1-ascending">Q1: Ascending</h3>
+<h2 id="linked-lists">Linked Lists</h2>
 
 
-<p>Implement a procedure called <code>ascending?</code>, which takes a list of numbers <code>s</code> and
-returns <code>True</code> if the numbers are in non-descending order, and <code>False</code>
-otherwise.</p>
-
-<p>A list of numbers is non-descending if each element after the first is
-greater than or equal to the previous element. For example...</p>
-
-<ul>
-  <li><code>(1 2 3 3 4)</code> is non-descending.</li>
-  <li><code>(1 2 3 3 2)</code> is not.</li>
-</ul>
-
-<blockquote><p><strong>Hint</strong>: The built-in <code>null?</code> procedure returns whether its argument is <code>nil</code>.</p></blockquote>
-
-<!-- breaking up the hints requires a comment -->
-
-<blockquote><p><strong>Note</strong>: The question mark in <code>ascending?</code> is just part of the procedure name and has no special meaning in terms of Scheme syntax. It is a common practice in Scheme to name procedures with a question mark at the end if it returns a boolean value.</p></blockquote>
-
-<pre><code class="scheme">(define (ascending? s)
-<div class="sol-highlight">  (if (or (null? s) (null? (cdr s)))
-      #t
-      (and (&lt;= (car s) (car (cdr s))) (ascending? (cdr s))))</div>)</code></pre>
+<h3 id="q1-store-digits">Q1: Store Digits</h3>
 
 
+<p>Write a function <code>store_digits</code> that takes in an integer <code>n</code> and returns
+a linked list containing the digits of <code>n</code> in the same order (from left to right).</p>
 
-<div class="sol-highlight">
-
-<p>We approach this much like a standard Python linked list problem.</p>
-
-<ul>
-  <li>Base case: when <code>s</code> has zero or one items, it is non-descending.</li>
-  <li>For the recursive case, we check that the second element is greater or equal
-  to the first and that the rest is non-descending.</li>
-</ul>
-
-</div>
-
-<p>Use Ok to unlock and test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q ascending -u
-python3 ok -q ascending<button id="copy-code-python3ok-qascending-upython3ok-qascending" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qascending-upython3ok-qascending").onclick = () => copyCode('python3 ok -q ascending -u\npython3 ok -q ascending', "copy-code-python3ok-qascending-upython3ok-qascending");
-        </script>
-        <br/>
-<!-- <p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q ascending<button id="copy-code-python3ok-qascending" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qascending").onclick = () => copyCode('python3 ok -q ascending', "copy-code-python3ok-qascending");
-        </script>
-        <br/> -->
-
-
-<h3 id="q2-my-filter">Q2: My Filter</h3>
-
-
-<p>Write a procedure <code>my&#x2d;filter</code>, which takes a predicate <code>pred</code> and a list <code>s</code>, and
-returns a new list containing only elements of the list that satisfy the
-predicate. The output should contain the elements in the same order that they
-appeared in the original list.</p>
-
-<p><strong>Note:</strong> Make sure that you are not just calling the built-in <code>filter</code> function in Scheme - we are asking you to re-implement this!</p>
+<blockquote><p><strong>Important</strong>: Do not use any string manipulation functions, such as <code>str</code> or <code>reversed</code>.</p></blockquote>
 
 <solution>
 
-<pre><code class="scheme">(define (my&#x2d;filter pred s)
-<div class="sol-highlight">  (cond ((null? s) &#x27;())
-        ((pred (car s)) (cons (car s) (my&#x2d;filter pred (cdr s))))
-        (else (my&#x2d;filter pred (cdr s))))
-</div>)</code></pre>
+<pre><code>def store_digits(n):
+    &quot;&quot;&quot;Stores the digits of a positive number n in a linked list.
 
-
-<div class="sol-highlight">
-
-<p>
-
-
-            <iframe width="560" height="315" src="https://youtube.com/embed/UJ37SCaM3cQ?t=39m39s"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "scheme-filter"
-                allowfullscreen></iframe><p><a href='https://youtu.be/UJ37SCaM3cQ?t=39m39s'> YouTube link </a></p>
-
-<p>The approach for this problem is to call <code>pred</code> on each element, which we can access with <code>car</code>.</p>
-
-<ul>
-  <li>If a given element satisfies <code>pred</code>, then it "passes" the filter and can be included in our new list.</li>
-  <li>If the element does not, then we simply return the recursive call because we should not include the element.
-  </div>
-  </solution></li>
-</ul>
-
-<p>Use Ok to unlock and test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q filter -u
-python3 ok -q filter<button id="copy-code-python3ok-qfilter-upython3ok-qfilter" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qfilter-upython3ok-qfilter").onclick = () => copyCode('python3 ok -q filter -u\npython3 ok -q filter', "copy-code-python3ok-qfilter-upython3ok-qfilter");
-        </script>
-        <br/>
-<!-- <p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q filter<button id="copy-code-python3ok-qfilter" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qfilter").onclick = () => copyCode('python3 ok -q filter', "copy-code-python3ok-qfilter");
-        </script>
-        <br/> -->
-
-
-<h3 id="q3-interleave">Q3: Interleave</h3>
-
-
-<p>Implement the function <code>interleave</code>, which takes two lists <code>lst1</code> and <code>lst2</code> as
-arguments. <code>interleave</code> should return a list that interleaves the elements
-of the two lists. (In other words, the resulting list should contain elements
-alternating between <code>lst1</code> and <code>lst2</code>, starting at <code>lst1</code>).</p>
-
-<p>If one of the input lists to <code>interleave</code> is shorter than the other, then
-<code>interleave</code> should alternate elements from both lists until one list has no
-more elements, and then the remaining elements from the longer list should be
-added to the end of the new list. If <code>lst1</code> is empty, you may simply return 
-<code>lst2</code> and vice versa.</p>
-
-<solution>
-
-<pre><code class="scheme">
-    (define (interleave lst1 lst2)
-<div class="sol-highlight">        (if (or (null? lst1) (null? lst2))
-            (append lst1 lst2)
-            (cons (car lst1)
-                    (cons (car lst2)
-                        (interleave (cdr lst1) (cdr lst2)))))
-
-    ; Alternate Solution 
-        (cond 
-            ((null? lst1) lst2)
-            ((null? lst2) lst1)
-            (else (cons (car lst1) (interleave lst2 (cdr lst1))))
-        )</div>    )</code></pre>
-
-
-<div class="sol-highlight">
-
-<p>The base cases for both solutions (which are equivalent), follow directly from the spec. That is, if we
-run out of elements in one list, then we should simply append the remaining elements from the longer list.</p>
-
-<p>The first solution constructs the interleaved list two elements at a time, by <code>cons</code>-ing together the first
-two elements of each list alongside the result of recursively calling <code>interleave</code> on the <code>cdr</code>'s of both lists.</p>
-
-<p>The second solution constructs the interleaved list one element at a time by swapping which list is passed in for <code>lst1</code>.
-Thus, we can then grab elements from only <code>lst1</code> to construct the list.</p>
-
-</div>
-</solution>
-
-<p>Use Ok to unlock and test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q interleave -u
-python3 ok -q interleave<button id="copy-code-python3ok-qinterleave-upython3ok-qinterleave" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qinterleave-upython3ok-qinterleave").onclick = () => copyCode('python3 ok -q interleave -u\npython3 ok -q interleave', "copy-code-python3ok-qinterleave-upython3ok-qinterleave");
-        </script>
-        <br/>
-
-
-<h3 id="q4-no-repeats">Q4: No Repeats</h3>
-
-
-<p>Implement <code>no&#x2d;repeats</code>, which takes a list of numbers <code>s</code>. It returns a list
-that has all of the unique elements of <code>s</code> in the order that they first appear,
-but no repeats.</p>
-
-<p>For example, <code>(no&#x2d;repeats (list 5 4 5 4 2 2))</code> evaluates to <code>(5 4 2)</code>.</p>
-
-<blockquote><p><strong>Hint:</strong> You may find it helpful to use <code>filter</code> with a <code>lambda</code> procedure to
-filter out repeats. To test if two numbers <code>a</code> and <code>b</code> are not equal, use
-<code>(not (= a b))</code>.</p></blockquote>
-
-<solution>
-
-<pre><code class="scheme">(define (no&#x2d;repeats s)
-<div class="sol-highlight">  (if (null? s) s
-    (cons (car s)
-      (no&#x2d;repeats (filter (lambda (x) (not (= (car s) x))) (cdr s)))))</div>)</code></pre>
-
-
-<div class="sol-highlight">
-
-<p>For the base case, if the input list is empty, then we do nothing and return the empty list.</p>
-
-<p>Otherwise, we may attempt to proceed with the intuition that removing repeats would require us to keep
-track of what elements we have already "seen". However, this would require a helper to keep track of
-seen elements. Furthermore, Scheme does not have a built-in containment predicate analog to Python's <code>in</code> keyword.</p>
-
-<p>Thus, we realize that we can instead remove all repeats of an element while iterating through our list. The idea is that as
-we iterate through an element of the list, we simultaneously remove all other instances of that element from the rest of the list. This ensures
-that there is only one instance of that element in the list. We achieve this by applying a filter onto the rest of the list.</p>
-
-</div>
+    &gt;&gt;&gt; s = store_digits(1)
+    &gt;&gt;&gt; s
+    Link(1)
+    &gt;&gt;&gt; store_digits(2345)
+    Link(2, Link(3, Link(4, Link(5))))
+    &gt;&gt;&gt; store_digits(876)
+    Link(8, Link(7, Link(6)))
+    &gt;&gt;&gt; store_digits(2450)
+    Link(2, Link(4, Link(5, Link(0))))
+    &gt;&gt;&gt; store_digits(20105)
+    Link(2, Link(0, Link(1, Link(0, Link(5)))))
+    &gt;&gt;&gt; # a check for restricted functions
+    &gt;&gt;&gt; import inspect, re
+    &gt;&gt;&gt; cleaned = re.sub(r&quot;#.*\\n&quot;, &#x27;&#x27;, re.sub(r&#x27;&quot;{3}[\s\S]*?&quot;{3}&#x27;, &#x27;&#x27;, inspect.getsource(store_digits)))
+    &gt;&gt;&gt; print(&quot;Do not use str or reversed!&quot;) if any([r in cleaned for r in [&quot;str&quot;, &quot;reversed&quot;]]) else None
+    &quot;&quot;&quot;
+<div class="sol-highlight">    result = Link.empty
+    while n &gt; 0:
+        result = Link(n % 10, result)
+        n //= 10
+    return result</div></code></pre>
 
 </solution>
 
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q no_repeats<button id="copy-code-python3ok-qno_repeats" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q store_digits<button id="copy-code-python3ok-qstore_digits" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
-        document.getElementById("copy-code-python3ok-qno_repeats").onclick = () => copyCode('python3 ok -q no_repeats', "copy-code-python3ok-qno_repeats");
+        document.getElementById("copy-code-python3ok-qstore_digits").onclick = () => copyCode('python3 ok -q store_digits', "copy-code-python3ok-qstore_digits");
         </script>
         <br/>
 
+
+<h3 id="q2-mutable-mapping">Q2: Mutable Mapping</h3>
+
+
+<p>Implement <code>deep_map_mut(func, s)</code>, which applies the function <code>func</code> to each
+element in the linked list <code>s</code>. If an element is itself a linked list,
+recursively apply <code>func</code> to its elements as well.</p>
+
+<p>Your implementation should <em>mutate</em> the original linked list. <strong>Do not
+create any new linked lists.</strong> The function returns <code>None</code>.</p>
+
+<blockquote><p><strong>Hint</strong>: You can use the built-in <code>isinstance</code> function to determine if an element is a linked list.</p>
+
+<pre><code>&gt;&gt;&gt; s = Link(1, Link(2, Link(3, Link(4))))
+&gt;&gt;&gt; isinstance(s, Link)
+True
+&gt;&gt;&gt; isinstance(s, int)
+False</code></pre></blockquote>
+
+<!-- separator for the indent blocks -->
+
+<blockquote><p><strong>Construct Check</strong>: The final test case for this problem checks
+that your function does not create any new linked lists.
+If you are failing this doctest, make sure that you are not
+creating link lists by calling the constructor, i.e.</p>
+
+<pre><code>s = Link(1)</code></pre></blockquote>
+
+<solution>
+
+<pre><code>def deep_map_mut(func, s):
+    &quot;&quot;&quot;Mutates a deep link s by replacing each item found with the
+    result of calling func on the item. Does NOT create new Links (so
+    no use of Link&#x27;s constructor).
+
+    Does not return the modified Link object.
+
+    &gt;&gt;&gt; link1 = Link(3, Link(Link(4), Link(5, Link(6))))
+    &gt;&gt;&gt; print(link1)
+    &lt;3 &lt;4&gt; 5 6&gt;
+    &gt;&gt;&gt; # Disallow the use of making new Links before calling deep_map_mut
+    &gt;&gt;&gt; Link.__init__, hold = lambda *args: print(&quot;Do not create any new Links.&quot;), Link.__init__
+    &gt;&gt;&gt; try:
+    ...     deep_map_mut(lambda x: x * x, link1)
+    ... finally:
+    ...     Link.__init__ = hold
+    &gt;&gt;&gt; print(link1)
+    &lt;9 &lt;16&gt; 25 36&gt;
+    &quot;&quot;&quot;
+<div class="sol-highlight">    if s is Link.empty:
+        return None
+    elif isinstance(s.first, Link):
+        deep_map_mut(func, s.first)
+    else:
+        s.first = func(s.first)
+    deep_map_mut(func, s.rest)</div></code></pre>
+
+</solution>
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q deep_map_mut<button id="copy-code-python3ok-qdeep_map_mut" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qdeep_map_mut").onclick = () => copyCode('python3 ok -q deep_map_mut', "copy-code-python3ok-qdeep_map_mut");
+        </script>
+        <br/>
+
+
+<h2 id="check-your-score-locally">Check Your Score Locally</h2>
+
+<p>You can locally check your score on each question of this assignment by running</p>
+
+<pre><code>python3 ok &#x2d;&#x2d;score</code></pre>
+
+<p><strong>This does NOT submit the assignment!</strong> When you are satisfied with your score, submit the assignment to Gradescope to receive credit for it.</p>
 
 <h1 id="submit-assignment">Submit Assignment</h1>
 
 
 <p>Submit this assignment by uploading any files you've edited <strong>to the appropriate Gradescope assignment.</strong> <a href="../../lab/lab00/#submit-with-gradescope">Lab 00</a> has detailed instructions.</p>
 
-
-<h2 id="exam-practice">Exam Practice</h2>
-
-<p>The following are some Scheme List exam problems from previous semesters that you may find useful as additional exam practice.</p>
-
-<ol>
-  <li><a href="https://cs61a.org/exam/fa22/final/61a-fa22-final.pdf#page=20">Fall 2022 Final, Question 8: A Parentheses Scheme</a></li>
-  <li><a href="https://cs61a.org/exam/sp22/final/61a-sp22-final.pdf#page=23">Spring 2022 Final, Question 11: Beadazzled, The Scheme-quel</a></li>
-  <li><a href="https://cs61a.org/exam/fa21/final/61a-fa21-final.pdf#page=18">Fall 2021 Final, Question 4: Spice</a></li>
-</ol>
-
   </div>
 
   <div class='col-md-3 sticky'>
     <nav class='hidden-print hidden-sm hidden-xs sidebar'>
       <ul>
-  <li><a href="#scheme-editor">Scheme Editor</a></li>
-  <li><a href="#recommended-vs-code-extensions">Recommended VS Code Extensions</a></li>
+  <li><a href="#instructions">Instructions</a></li>
   <li><a href="#required-questions">Required Questions</a></li>
   <ul>
-    <li><a href="#required-questions-2">Required Questions</a></li>
+    <li><a href="#linked-lists">Linked Lists</a></li>
     <ul>
-      <li><a href="#q1-ascending">Q1: Ascending</a></li>
-      <li><a href="#q2-my-filter">Q2: My Filter</a></li>
-      <li><a href="#q3-interleave">Q3: Interleave</a></li>
-      <li><a href="#q4-no-repeats">Q4: No Repeats</a></li>
+      <li><a href="#q1-store-digits">Q1: Store Digits</a></li>
+      <li><a href="#q2-mutable-mapping">Q2: Mutable Mapping</a></li>
     </ul>
+    <li><a href="#check-your-score-locally">Check Your Score Locally</a></li>
   </ul>
   <li><a href="#submit-assignment">Submit Assignment</a></li>
-  <ul>
-    <li><a href="#exam-practice">Exam Practice</a></li>
-  </ul>
 </ul>
     </nav>
   </div>
@@ -522,12 +377,12 @@ that there is only one instance of that element in the list. We achieve this by 
   };
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
-    <script src="/assets/js/network_storage.js"></script>
-    <script src="/assets/js/code_tabindex.js"></script>
-    <script src="/assets/js/storable.js"></script>
-    <script src="/assets/js/editor.js"></script>
-    <script src="/assets/js/copy-button.js"></script>
-    <script src="/assets/js/env-diagram.js"></script>
+    <script src="/fa24/assets/js/network_storage.js"></script>
+    <script src="/fa24/assets/js/code_tabindex.js"></script>
+    <script src="/fa24/assets/js/storable.js"></script>
+    <script src="/fa24/assets/js/editor.js"></script>
+    <script src="/fa24/assets/js/copy-button.js"></script>
+    <script src="/fa24/assets/js/env-diagram.js"></script>
     
 <!-- <script src="/assets/js/sketchy.js"></script> -->
 <script>
