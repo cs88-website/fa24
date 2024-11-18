@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content ="CS 61A: Structure and Interpretation of Computer Programs" />
+    <meta name="description" content ="Data C88C: Computational Structures in Data Science" />
     <meta name="keywords" content ="Computer Science, Programming, Berkeley, EECS" />
-    <meta name="author" content ="John DeNero, Jedi Tsang (Guest Lecturer), Shm Almeda (GSI)" />
+    <meta name="author" content ="John DeNero, Jedi Tsang, Shm Almeda (GSI)" />
     <!-- CHANGED CAREFUL -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
@@ -12,8 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/assets/js/hl.js"></script>
-    <script src="/assets/js/toggledarkmode.js"></script>
+    <script src="/fa24/assets/js/hl.js"></script>
+    <script src="/fa24/assets/js/toggledarkmode.js"></script>
     <script>
         // we aren't registering builtins since
         //      (1) they don't render differently in the current CSS from other names
@@ -24,20 +24,20 @@
         });
         hljs.initHighlightingOnLoad();
     </script>
-    <script src="/assets/js/dark-mode.js"></script>
+    <script src="/fa24/assets/js/dark-mode.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/mono-blue.css">
-    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/fa24/assets/css/style.css">
+    <link rel="stylesheet" href="/fa24/assets/css/mono-blue.css">
+    <link rel="icon" href="/fa24/assets/images/favicon.ico">
 
     
     
-    <link rel="stylesheet" href="/assets/css/lab.css">
+    <link rel="stylesheet" href="/fa24/assets/css/lab.css">
 
 
     <title>
-Lab 10: Interpreters | CS 61A Fall 2024
+Lab 10: SQL | Data C88C Fall 2024
 </title>
   </head>
 
@@ -50,8 +50,8 @@ Lab 10: Interpreters | CS 61A Fall 2024
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">
-            CS 61A
+          <a class="navbar-brand" href="/fa24/">
+            Data C88C
             <!-- <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png"/> -->
           </a>
         </div>
@@ -60,15 +60,15 @@ Lab 10: Interpreters | CS 61A Fall 2024
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="/">Lectures</a></li>
+            <li><a href="/fa24/">Lectures</a></li>
             
-            <li><a href="/articles/about-61a/">Syllabus</a></li>
+            <li><a href="/fa24/articles/about-c88c/">Syllabus</a></li>
             
-            <li><a href="https://edstem.org/us/courses/63971/discussion/">Ed</a></li>
+            <li><a href="https://edstem.org/us/courses/63975/discussion/">Ed</a></li>
             
-            <li><a href="/office-hours/">Office Hours</a></li>
+            <li><a href="/fa24/office-hours/">Office Hours</a></li>
             
-            <li><a href="/articles/contact-61a/">Contact</a></li>
+            <li><a href="/fa24/articles/contact-c88c/">Contact</a></li>
             
 
             
@@ -79,19 +79,17 @@ Lab 10: Interpreters | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="https://go.cs61a.org/61a-extensions">Request an Extension</a></li>
+                <li><a href="https://go.c88c.org/c88c-extensions">Request an Extension</a></li>
                 
-                <li><a href="https://go.cs61a.org/61a-regrades">Request a Regrade</a></li>
+                <li><a href="https://go.c88c.org/c88c-regrades">Request a Regrade</a></li>
                 
-                <li><a href="https://oh.cs61a.org/">Office Hours Queue</a></li>
+                <li><a href="https://oh.c88c.org/">Office Hours Queue</a></li>
                 
-                <li><a href="https://www.gradescope.com/courses/843175">Gradescope</a></li>
+                <li><a href="https://www.gradescope.com/courses/843183">Gradescope</a></li>
                 
-                <li><a href="https://bcourses.berkeley.edu/courses/1538118/pages">Lecture Recordings</a></li>
+                <li><a href="https://bcourses.berkeley.edu/courses/1538122/pages">Lecture Recordings</a></li>
                 
                 <li><a href="https://pythontutor.com/cp/composingprograms.html">Python Tutor</a></li>
-                
-                <li><a href="https://code.cs61a.org/scheme/">Scheme Editor</a></li>
                 
               </ul>
             </li>
@@ -103,19 +101,17 @@ Lab 10: Interpreters | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/resources/">Past Exams & Websites</a></li>
+                <li><a href="https://cs61a.org/resources/">Past Exams & Websites</a></li>
                 
                 <li><a href="https://www.composingprograms.com">Textbook</a></li>
                 
                 <li><a href="https://drive.google.com/file/d/1O72u0ml65pibcjz-PXKpqeJDKaVqQ3D8/view">Debugging Guide</a></li>
                 
-                <li><a href="/articles/studying/">Studying Guide</a></li>
+                <li><a href="/fa24/articles/studying/">Studying Guide</a></li>
                 
-                <li><a href="/articles/composition/">Composition Guide</a></li>
+                <li><a href="/fa24/articles/composition/">Composition Guide</a></li>
                 
-                <li><a href="/articles/campus-res/">Campus Resources</a></li>
-                
-                <li><a href="/articles/advice/">Advice from Students</a></li>
+                <li><a href="/fa24/articles/campus-res/">Campus Resources</a></li>
                 
               </ul>
             </li>
@@ -127,11 +123,9 @@ Lab 10: Interpreters | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/instructor">Instructors</a></li>
+                <li><a href="/fa24/instructor">Instructors</a></li>
                 
-                <li><a href="/staff">TAs & Tutors</a></li>
-                
-                <li><a href="/academic-interns">Academic Interns</a></li>
+                <li><a href="/fa24/staff">TAs & Tutors</a></li>
                 
               </ul>
             </li>
@@ -149,7 +143,7 @@ Lab 10: Interpreters | CS 61A Fall 2024
     <header>
       <h1>
         
-Lab 10: Interpreters
+Lab 10: SQL
 
         
         
@@ -162,7 +156,7 @@ Lab 10: Interpreters
     </header>
     
 
-<p><i>Due by 11:59pm on Wednesday, November 20.</i></p>
+<p><i>Due by 11:59pm on Friday, November 22.</i></p>
 
 
 
@@ -181,442 +175,301 @@ Lab 10: Interpreters
 
 
     
-<h1 id="topics">Topics</h1>
-
-
-<p>Consult this section if you need a refresher on the material for this lab. It's
-okay to skip directly to <a href="#required-questions">the questions</a> and refer back
-here should you get stuck.</p>
-
-<br>
-
-        <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Interpreters<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-1">
-
-
-<h2 id="interpreters" class="no-toc">Interpreters</h2>
-
-
-<p>An interpreter is a program that allows you to interact with the 
-computer using a specific language. It takes the code you write, 
-interprets it, and then executes the corresponding actions, often 
-using a more fundamental language to communicate with the computer 
-hardware.</p>
-
-<p>In Project 4, you'll develop an interpreter for the Scheme 
-programming language using Python. Interestingly, the Python 
-interpreter you've been using throughout this course is primarily 
-written in the C programming language. At the lowest level, computers 
-operate by interpreting machine code, which is a series of ones and 
-zeros that instructs the computer on performing basic tasks such as 
-arithmetic operations and data retrieval.</p>
-
-<p>When we talk about an interpreter, there are two languages at work:</p>
-
-<ol>
-  <li><strong>The language being interpreted:</strong> For Project 4, this is the Scheme language.</li>
-  <li><strong>The implementation language:</strong> This is the language used to create 
-  the interpreter itself, which, for Project 4, will be Python.</li>
-</ol>
-
-<br>
-
-<p><strong>REPL</strong></p>
-
-<p>A common feature of interpreters is the Read-Eval-Print Loop (REPL), which processes user inputs in a cyclic fashion through three stages:</p>
-
-<ul>
-  <li><p><strong>Read:</strong> The interpreter first reads the input string provided by the user. 
-  This input goes through a parsing process that involves two key steps:</p>
-
-  <ul>
-    <li>The <em>lexical analysis</em> step breaks down the input string into tokens, 
-    which are the basic elements or "words" of the language you're 
-    interpreting. These tokens represent the smallest units of meaning within the input.</li>
-    <li><p>The <em>syntactic analysis</em> step takes the tokens from the previous step and organizes
-    them into a data structure that the underlying language can understand. For our 
-    Scheme interpreter, we assemble the tokens into a <code>Pair</code> object (similar to a 
-    <code>Link</code>), to represent the structure of the original call expression.</p>
-
-    <ul>
-      <li>The first item in the <code>Pair</code> represents the operator of the call expression, while the subsequent elements are the operands or arguments upon which the operation will act. Note that these operands can also be call expressions themselves (nested expressions).
-      <br></li>
-    </ul></li>
-  </ul></li>
-</ul>
-
-<p>Below is a summary of the read process for a Scheme expression input:<br></p>
-
-<p><img class="img-responsive center-block" src="assets/parser.png" alt="" width="" height=""><br></p>
-
-<!-- 
-And here is a summary of how syntactic analysis converts input tokens into <code>Pair</code> objects:<br>
-
-<p><img class="img-responsive center-block" src="assets/to_pair.png" alt="" width="" height=""><br> --></p>
-
-<ul>
-  <li><p><strong>Eval:</strong> This step evaluates the expressions you've written in that programming
-  language to obtain a value. It involves the following two functions:</p>
-
-  <ul>
-    <li><code>eval</code> takes an expression and evaluates it based on the language's rules. 
-    When the expression is a call expression, <code>eval</code> uses the <code>apply</code> function to obtain the result. 
-    It will evaluate the operator and its operands in order. For example, in <code>(add 1 2)</code>, 
-    <code>eval</code> would identify <code>add</code> as the operator and <code>1</code> and <code>2</code> as the operands. 
-    It evaluates <code>add</code> to ensure it's a valid function and then evaluates <code>1</code> and 
-    <code>2</code> to ensure they're valid arguments.</li>
-    <li><code>apply</code> takes the evaluated operator (the function) and applies it to the 
-    evaluated operands (the arguments). Note that it's possible that, during this process, <code>apply</code> needs to evaluate more expressions (like those found within the function body). This is where <code>apply</code> may call back to <code>eval</code>, and thus these two stages are <em>mutually recursive</em>.</li>
-  </ul></li>
-  <li><strong>Print:</strong> Display the result of evaluating the user input.</li>
-</ul>
-
-<br>
-Here's how all the pieces fit together:<br>
-
-<p><img class="img-responsive center-block" src="assets/repl.png" alt="" width="" height=""></p>
-
-</div>
-<br>
-
-
 <h1 id="required-questions">Required Questions</h1>
 
 
 
+<h2 id="sql">SQL</h2>
+
+
+<p>A <code>SELECT</code> statement describes an output table based on input rows. To write one:</p>
+
+<ol>
+  <li>Describe the <strong>input rows</strong> using <code>FROM</code> and <code>WHERE</code> clauses.</li>
+  <li>Format and order the <strong>output rows</strong> and columns using <code>SELECT</code> and <code>ORDER BY</code> clauses.</li>
+</ol>
+
+<p><code>SELECT</code> <em>(Step 3)</em> <code>FROM</code> <em>(Step 1)</em> <code>WHERE</code> <em>(Step 1)</em> <code>ORDER BY</code> <em>(Step 3)</em>;</p>
+
+<p>The <code>WHERE</code> and <code>ORDER BY</code> clauses are optional.</p>
+
+<p>Consult the drop-down for a refresher on SQL. It's okay to skip directly to the questions and refer back here should you get stuck.
+<br></p>
+
+
+        <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        SQL<noscript> (enable JavaScript)</noscript>
+        </button>
+        <div class="solution toggle-1">
+
+
+<h2 id="sql-basics" class="no-toc">SQL Basics</h2>
+
+
+
+<h3 id="creating-tables" class="no-toc">Creating Tables</h3>
+
+
+<p>You can create SQL tables either from scratch or from existing tables.</p>
+
+<p>The following statement creates a table by specifying column names and values
+without referencing another table. Each <code>SELECT</code> clause specifies the values
+for one row, and <code>UNION</code> is used to join rows together. The <code>AS</code> clauses give a
+name to each column; it need not be repeated in subsequent rows after the
+first.</p>
+
+<pre><code>CREATE TABLE [table_name] AS
+  SELECT [val1] AS [column1], [val2] AS [column2], ... UNION
+  SELECT [val3]             , [val4]             , ... UNION
+  SELECT [val5]             , [val6]             , ...;</code></pre>
+
+<p>Let's say we want to make the following table called <code>big_game</code> which records
+the scores for the Big Game each year. This table has three columns:
+<code>berkeley</code>, <code>stanford</code>, and <code>year</code>.</p>
+
+<img class="img-responsive center-block" src="assets/big-game.png" width="300">
+
+<p>We could do so with the following <code>CREATE TABLE</code> statement:</p>
+
+<pre><code>CREATE TABLE big_game AS
+  SELECT 30 AS berkeley, 7 AS stanford, 2002 AS year UNION
+  SELECT 28,             16,            2003         UNION
+  SELECT 17,             38,            2014;</code></pre>
+
+
+<h3 id="selecting-from-tables" class="no-toc">Selecting From Tables</h3>
+
+<p>More commonly, we will create new tables by selecting specific columns that we
+want from existing tables by using a <code>SELECT</code> statement as follows:</p>
+
+<pre><code>SELECT [columns] FROM [tables] WHERE [condition] ORDER BY [columns] LIMIT [limit];</code></pre>
+
+<p>Let's break down this statement:</p>
+
+<ul>
+  <li><code>SELECT [columns]</code> tells SQL that we want to include the given columns in our
+  output table; <code>[columns]</code> is a comma-separated list of column names, and <code>*</code>
+  can be used to select all columns</li>
+  <li><code>FROM [table]</code> tells SQL that the columns we want to select are from the
+  given table</li>
+  <li><code>WHERE [condition]</code> filters the output table by only including rows whose
+  values satisfy the given <code>[condition]</code>, a boolean expression</li>
+  <li><code>ORDER BY [columns]</code> orders the rows in the output table by the given
+  comma-separated list of columns</li>
+  <li><code>LIMIT [limit]</code> limits the number of rows in the output table by the integer
+  <code>[limit]</code></li>
+</ul>
+
+<p>Here are some examples:</p>
+
+<p>Select all of Berkeley's scores from the <code>big_game</code> table, but only include
+scores from years past 2002:</p>
+
+<pre><code>sqlite&gt; SELECT berkeley FROM big_game WHERE year &gt; 2002;
+28
+17</code></pre>
+
+<p>Select the scores for both schools in years that Berkeley won:</p>
+
+<pre><code>sqlite&gt; SELECT berkeley, stanford FROM big_game WHERE berkeley &gt; stanford;
+30|7
+28|16</code></pre>
+
+<p>Select the years that Stanford scored more than 15 points:</p>
+
+<pre><code>sqlite&gt; SELECT year FROM big_game WHERE stanford &gt; 15;
+2003
+2014</code></pre>
+
+
+<h3 id="sql-operators" class="no-toc">SQL operators</h3>
+
+
+<p>Expressions in the <code>SELECT</code>, <code>WHERE</code>, and <code>ORDER BY</code> clauses can contain
+one or more of the following operators:</p>
+
+<ul>
+  <li>comparison operators: <code>=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;&gt;</code> or <code>!=</code> ("not equal")</li>
+  <li>boolean operators: <code>AND</code>, <code>OR</code></li>
+  <li>arithmetic operators: <code>+</code>, <code>&#x2d;</code>, <code>*</code>, <code>/</code></li>
+  <li>concatenation operator: <code>||</code></li>
+</ul>
+
+<p>Output the ratio of Berkeley's score to Stanford's score each year:</p>
+
+<pre><code>sqlite&gt; select berkeley * 1.0 / stanford from big_game;
+0.447368421052632
+1.75
+4.28571428571429</code></pre>
+
+<p>Output the sum of scores in years where both teams scored over 10 points:</p>
+
+<pre><code>sqlite&gt; select berkeley + stanford from big_game where berkeley &gt; 10 and stanford &gt; 10;
+55
+44</code></pre>
+
+<p>Output a table with a single column and single row containing the value "hello
+world":</p>
+
+<pre><code>sqlite&gt; SELECT &quot;hello&quot; || &quot; &quot; || &quot;world&quot;;
+hello world</code></pre>
+
+
+<h2 id="usage" class="no-toc">Usage</h2>
+
+
+<p>First, check that a file named <code>sqlite_shell.py</code> exists alongside the assignment files.
+If you don't see it, or if you encounter problems with it, scroll down to the Troubleshooting
+section to see how to download an official precompiled SQLite binary before proceeding.</p>
+
+<p>You can start an interactive SQLite session in your Terminal or Git Bash with
+the following command:</p>
+
+<pre><code>python3 sqlite_shell.py</code></pre>
+
+<p>While the interpreter is running, you can type <code>.help</code> to see some of the
+commands you can run.</p>
+
+<p>To exit out of the SQLite interpreter, type <code>.exit</code> or <code>.quit</code> or press
+<code>Ctrl&#x2d;C</code>.  Remember that if you see <code>...&gt;</code> after pressing enter, you probably
+forgot a <code>;</code>.</p>
+
+<p>You can also run all the statements in a <code>.sql</code> file by doing the following:
+(Here we're using the <code>lab13.sql</code> file as an example.)</p>
+
+<ol>
+  <li><p>Runs your code and then exits SQLite immediately afterwards.</p>
+
+<pre><code>python3 sqlite_shell.py &lt; lab13.sql</code></pre></li>
+  <li><p>Runs your code and then opens an interactive SQLite session, which is
+  similar to running Python code with the interactive <code>&#x2d;i</code> flag.</p>
+
+<pre><code>python3 sqlite_shell.py &#x2d;&#x2d;init lab13.sql</code></pre></li>
+</ol>
+
+</div>
+
+<br>
+
+
+<h2 id="happy-turkey-day">Happy Turkey Day</h2>
+
+
+<p><strong>No turkeys were harmed in the creation of this lab.</strong></p>
+
+<p>The <code>turkeys</code> table has columns <code>age</code> (numbers) in months, <code>weight</code> (numbers) in kilograms, and <code>name</code> (string) and a row for each turkey on a farm.</p>
+
+<solution>
+
+<pre><code>CREATE TABLE turkeys AS
+  SELECT 18 AS age, 16.5 AS weight, &quot;Pecan&quot; AS name UNION
+  SELECT 30       , 22.1          , &quot;Waddle&quot;        UNION
+  SELECT 12       , 17.3          , &quot;Bud&quot;           UNION
+  SELECT 14       , 15.3          , &quot;Bird&quot;          UNION
+  SELECT 30       , 26.8          , &quot;Tom&quot;           UNION
+  SELECT 26       , 18.4          , &quot;Flappy&quot;        UNION
+  SELECT 18       , 19.3          , &quot;Pumpkin&quot;;</code></pre>
+
+</solution>
+
+
+<h3 id="q1-big-ones">Q1: Big Ones</h3>
+
+
+<p>Create a <code>big</code> table with two columns, <code>name</code> (strings) and <code>pounds</code>
+(numbers), that has a row for <strong>each turkey in the <code>turkeys</code> table that weighs more than 18 kilograms</strong>. The <code>name</code> column should contain the name of the turkey, and rows should appear in alphabetical order by name. The <code>pounds</code> column should contain the weight of the turkey <strong>in pounds</strong>. Assume a kilogram is exactly 2.2 pounds.</p>
+
+<p>Your query should work correctly for any data that might appear in the <code>turkeys</code> table, but for the example above the result should be:</p>
+
+<pre><code>name     pounds
+&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;  &#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;
+Flappy   40.48
+Pumpkin  42.46
+Tom      58.96
+Waddle   48.62</code></pre>
+
+
+
+
         <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Getting Started Videos<noscript> (enable JavaScript)</noscript>
+        Hint: Template<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-2">
 
+<pre><code>  SELECT name, _______ AS pounds
+    FROM turkeys
+    WHERE _______
+    ORDER BY _______;</code></pre>
 
-<h2 id="getting-started-videos" class="no-toc">Getting Started Videos</h2>
 
-
-<p>These videos may provide some helpful direction for tackling the coding
-problems on this assignment.</p>
-
-<blockquote><p>To see these videos, you should be logged into your berkeley.edu email.</p></blockquote>
-
-
-            <iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZdwIF0I28zXMYAvd-BQ2nWY"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label = "lab10-getstarted"
-                allowfullscreen></iframe><p><a href='https://youtu.be/playlist?list=PLx38hZJ5RLZdwIF0I28zXMYAvd-BQ2nWY'> YouTube link </a></p>
-</div>
-
-
-<h2 id="calculator">Calculator</h2>
-
-
-<p>An interpreter is a program that executes programs. Today, we will extend the interpreter for Calculator, a simple made-up language that is a subset of Scheme. This lab is like Project 4 in miniature.</p>
-
-<p>The Calculator language includes only the four basic arithmetic operations: <code>+</code>, <code>&#x2d;</code>, <code>*</code>, and <code>/</code>. These operations can be nested and can take various numbers of arguments, just like in Scheme. A few examples of calculator expressions and their corresponding values are shown below.</p>
-
-<pre><code class="scheme"> calc&gt; (+ 2 2 2)
- 6
-
- calc&gt; (&#x2d; 5)
- &#x2d;5
-
- calc&gt; (* (+ 1 2) (+ 2 3 4))
- 27</code></pre>
-
-
-
-<p>Calculator expressions are represented as Python objects:</p>
-
-<ul>
-  <li>Numbers are represented using Python numbers.</li>
-  <li>The symbols for arithmetic operations are represented using Python strings (e.g. <code>&#x27;+&#x27;</code>).</li>
-  <li>Call expressions are represented using the <code>Pair</code> class below.</li>
-</ul>
-
-
-<h2 id="pair-class">Pair Class</h2>
-
-
-<p>To represent Scheme lists in Python, we will use the <code>Pair</code> class (in both this lab and the Scheme project). A <code>Pair</code> instance has two attributes: <code>first</code> and <code>rest</code>. <code>Pair</code> is always called on two arguments. To make a list, nest calls to <code>Pair</code> and pass in <code>nil</code> as the second argument of the last pair.</p>
-
-<ul>
-  <li>Look familiar? <code>Pair</code> is very similar to <code>Link</code>, the class we used to represent linked lists. They differ in their <code>str</code> representation: printing a <code>Pair</code> instance displays the list using Scheme syntax.</li>
-</ul>
-
-<blockquote><p><strong>Note</strong> In the Python code, <code>nil</code> is bound to a user-defined object that represents an empty Scheme list.
-Similarly, <code>nil</code> in Scheme evaluates to an empty list.</p></blockquote>
-
-<p>For example, once our interpreter reads in the Scheme expression <code>(+ 2 3)</code>, it is represented as <code>Pair(&#x27;+&#x27;, Pair(2, Pair(3, nil)))</code>.</p>
-
-<pre><code>&gt;&gt;&gt; p = Pair(&#x27;+&#x27;, Pair(2, Pair(3, nil)))
-&gt;&gt;&gt; p.first
-&#x27;+&#x27;
-&gt;&gt;&gt; p.rest
-Pair(2, Pair(3, nil))
-&gt;&gt;&gt; p.rest.first
-2
-&gt;&gt;&gt; print(p)
-(+ 2 3)</code></pre>
-
-
-
-<p>The <code>Pair</code> class has a <code>map</code> method that takes a one-argument python function <code>fn</code>. It returns the Scheme list that results from applying <code>fn</code> to each element of the Scheme list.</p>
-
-<pre><code>&gt;&gt;&gt; p.rest.map(lambda x: 2 * x)
-Pair(4, Pair(6, nil))</code></pre>
-
-
-
-<br>
-
-        <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Pair Class<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-3">
-
-<p>Here is the <code>Pair</code> class and <code>nil</code> object (<code>__str__</code> and <code>__repr__</code> methods not
-shown).</p>
-
-<pre><code>class Pair:
-    &quot;&quot;&quot;Represents the built&#x2d;in pair data structure in Scheme.&quot;&quot;&quot;
-    def __init__(self, first, rest):
-        self.first = first
-        self.rest = rest
-
-    def map(self, fn):
-        &quot;&quot;&quot;Return a Scheme list after mapping Python function FN to SELF.&quot;&quot;&quot;
-        mapped = fn(self.first)
-        if self.rest is nil or isinstance(self.rest, Pair):
-            return Pair(mapped, self.rest.map(fn))
-        else:
-            raise TypeError(&#x27;ill&#x2d;formed list&#x27;)</code></pre>
-
-
-
-<pre><code>class nil:
-    &quot;&quot;&quot;The empty list&quot;&quot;&quot;
-
-    def map(self, fn):
-        return self
-
-nil = nil() # Assignment hides the nil class; there is only one instance</code></pre>
-
-
-
-</div>
-<br>
-
-<page-break>
-
-
-<h3 id="q1-using-pair">Q1: Using Pair</h3>
-
-
-<p>Answer the following questions about a <code>Pair</code> instance
-representing the Calculator expression <code>(+ (&#x2d; 2 4) 6 8)</code>.</p>
-
-<p>Use Ok to test your understanding:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q using_pair -u<button id="copy-code-python3ok-qusing_pair-u" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qusing_pair-u").onclick = () => copyCode('python3 ok -q using_pair -u', "copy-code-python3ok-qusing_pair-u");
-        </script>
-        <br/>
-
-
-<h2 id="calculator-evaluation">Calculator Evaluation</h2>
-
-
-<p>For Question 2 (New Procedure) and Question 4 (Saving Values), you'll need to update the <code>calc_eval</code> function below, which evaluates a Calculator expression. For Question 2, you'll determine what are the <code>operator</code> and <code>operands</code> for a call expression in Scheme as well as how to apply a procedure to arguments the <code>calc_apply</code> line. For Question 4, you'll determine how to look up the value of symbols previously defined.</p>
-
-<solution>
-
-<pre><code>def calc_eval(exp):
-    &quot;&quot;&quot;
-    &gt;&gt;&gt; calc_eval(Pair(&quot;define&quot;, Pair(&quot;a&quot;, Pair(1, nil))))
-    &#x27;a&#x27;
-    &gt;&gt;&gt; calc_eval(&quot;a&quot;)
-    1
-    &gt;&gt;&gt; calc_eval(Pair(&quot;+&quot;, Pair(1, Pair(2, nil))))
-    3
-    &quot;&quot;&quot;
-    if isinstance(exp, Pair):
-        operator = ____________ # UPDATE THIS FOR Q2, e.g (+ 1 2), + is the operator
-        operands = ____________ # UPDATE THIS FOR Q2, e.g (+ 1 2), 1 and 2 are operands
-        if operator == &#x27;and&#x27;: # and expressions
-            return eval_and(operands)
-        elif operator == &#x27;define&#x27;: # define expressions
-            return eval_define(operands)
-        else: # Call expressions
-            return calc_apply(___________, ___________) # UPDATE THIS FOR Q2, what is type(operator)?
-    elif exp in OPERATORS:   # Looking up procedures
-        return OPERATORS[exp]
-    elif isinstance(exp, int) or isinstance(exp, bool):   # Numbers and booleans
-        return exp
-    elif _________________: # CHANGE THIS CONDITION FOR Q4 where are variables stored?
-        return _________________ # UPDATE THIS FOR Q4, how do you access a variable?
-</code></pre>
-
-</solution>
-
-
-<h3 id="q2-new-procedure">Q2: New Procedure</h3>
-
-
-<p>Add the <code>//</code> operation to Calculator, a floor-division procedure such that <code>(// dividend divisor)</code> returns the result of dividing <code>dividend</code> by <code>divisor</code>, ignoring the remainder (<code>dividend // divisor</code> in Python). Handle multiple inputs as illustrated in the following example: <code>(// dividend divisor1 divisor2 divisor3)</code> evaluates to <code>(((dividend // divisor1) // divisor2) // divisor3)</code> in Python. Assume every call to <code>//</code> has at least two arguments.</p>
-
-<blockquote><p><em>Hint:</em> You will need to modify both the <code>calc_eval</code> and <code>floor_div</code> methods for this question!</p></blockquote>
-
-<pre><code class="scheme">calc&gt; (// 1 1)
-1
-calc&gt; (// 5 2)
-2
-calc&gt; (// 28 (+ 1 1) 1)
-14</code></pre>
-
-
-
-<blockquote><p><em>Hint:</em> Make sure that every element in a <code>Pair</code> (the operator and all operands) will be <code>calc_eval</code>-uated once, so that we can correctly apply the relevant Python operator to operands! You may find the <code>map</code> method of the <code>Pair</code> class useful for this.</p></blockquote>
-
-<solution>
-
-<pre><code>def floor_div(args):
-    &quot;&quot;&quot;
-    &gt;&gt;&gt; floor_div(Pair(100, Pair(10, nil)))
-    10
-    &gt;&gt;&gt; floor_div(Pair(5, Pair(3, nil)))
-    1
-    &gt;&gt;&gt; floor_div(Pair(1, Pair(1, nil)))
-    1
-    &gt;&gt;&gt; floor_div(Pair(5, Pair(2, nil)))
-    2
-    &gt;&gt;&gt; floor_div(Pair(23, Pair(2, Pair(5, nil))))
-    2
-    &gt;&gt;&gt; calc_eval(Pair(&quot;//&quot;, Pair(4, Pair(2, nil))))
-    2
-    &gt;&gt;&gt; calc_eval(Pair(&quot;//&quot;, Pair(100, Pair(2, Pair(2, Pair(2, Pair(2, Pair(2, nil))))))))
-    3
-    &gt;&gt;&gt; calc_eval(Pair(&quot;//&quot;, Pair(100, Pair(Pair(&quot;+&quot;, Pair(2, Pair(3, nil))), nil))))
-    20
-    &quot;&quot;&quot;
-    "*** YOUR CODE HERE ***"
-</code></pre>
-
-</solution>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q floor_div<button id="copy-code-python3ok-qfloor_div" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qfloor_div").onclick = () => copyCode('python3 ok -q floor_div', "copy-code-python3ok-qfloor_div");
-        </script>
-        <br/>
-
-
-<h3 id="q3-new-form">Q3: New Form</h3>
-
-
-<p>Add <code>and</code> expressions to our
-Calculator interpreter as well as introduce the Scheme boolean values
-<code>#t</code> and <code>#f</code>, represented as Python <code>True</code> and <code>False</code>.
-(The examples below assumes conditional operators (e.g. <code>&lt;</code>, <code>&gt;</code>, <code>=</code>, etc) have already been implemented,
-but you do not have to worry about them for this question.)</p>
-
-<pre><code class="scheme">calc&gt; (and (= 1 1) 3)
-3
-calc&gt; (and (+ 1 0) (&lt; 1 0) (/ 1 0))
-#f
-calc&gt; (and #f (+ 1 0))
-#f
-calc&gt; (and 0 1 (+ 5 1)) ; 0 is a true value in Scheme!
-6</code></pre>
-
-
-
-<p>In a call expression, we first evaluate the operator, then evaluate the operands, and finally apply the procedure to its arguments (just like you did for <code>floor_div</code> in the previous question).
-However, since <code>and</code> is a special form that short circuits on the first false argument, we cannot evaluate <code>and</code> expressions the same way we evaluate call expressions.  We need to add special logic for forms that don't always evaluate all the sub-expressions.</p>
-
-<blockquote><p><strong>Important</strong>: To check whether some <code>val</code> is a false value in Scheme, use
-<code>val is scheme_f</code> rather than <code>val == scheme_f</code>.</p></blockquote>
-
-<solution>
-
-<pre><code>scheme_t = True   # Scheme&#x27;s #t
-scheme_f = False  # Scheme&#x27;s #f
-
-def eval_and(expressions):
-    &quot;&quot;&quot;
-    &gt;&gt;&gt; calc_eval(Pair(&quot;and&quot;, Pair(1, nil)))
-    1
-    &gt;&gt;&gt; calc_eval(Pair(&quot;and&quot;, Pair(False, Pair(&quot;1&quot;, nil))))
-    False
-    &gt;&gt;&gt; calc_eval(Pair(&quot;and&quot;, Pair(1, Pair(Pair(&quot;//&quot;, Pair(5, Pair(2, nil))), nil))))
-    2
-    &gt;&gt;&gt; calc_eval(Pair(&quot;and&quot;, Pair(Pair(&#x27;+&#x27;, Pair(1, Pair(1, nil))), Pair(3, nil))))
-    3
-    &gt;&gt;&gt; calc_eval(Pair(&quot;and&quot;, Pair(Pair(&#x27;&#x2d;&#x27;, Pair(1, Pair(0, nil))), Pair(Pair(&#x27;/&#x27;, Pair(5, Pair(2, nil))), nil))))
-    2.5
-    &gt;&gt;&gt; calc_eval(Pair(&quot;and&quot;, Pair(0, Pair(1, nil))))
-    1
-    &gt;&gt;&gt; calc_eval(Pair(&quot;and&quot;, nil))
-    True
-    &quot;&quot;&quot;
-    "*** YOUR CODE HERE ***"
-</code></pre>
-
-</solution>
-
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q eval_and<button id="copy-code-python3ok-qeval_and" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qeval_and").onclick = () => copyCode('python3 ok -q eval_and', "copy-code-python3ok-qeval_and");
-        </script>
-        <br/>
-
-
-<h3 id="q4-saving-values">Q4: Saving Values</h3>
-
-
-<p>Implement a <code>define</code> special form that binds values to symbols. This should work like <code>define</code> in Scheme: <code>(define &lt;symbol&gt; &lt;expression&gt;)</code> first evaluates the <code>expression</code>, then binds the <code>symbol</code> to its value. The whole <code>define</code> expression evaluates to the <code>symbol</code>.</p>
-
-<pre><code class="scheme">calc&gt; (define a 1)
-a
-calc&gt; a
-1</code></pre>
-
-
-
-<p>This is a more involved change. Here are the 4 steps involved:</p>
 
 <ol>
-  <li>Add a <code>bindings</code> dictionary that will store the symbols and correspondings values (done for you).</li>
-  <li>Identify when the define form is given to <code>calc_eval</code> (done for you).</li>
-  <li>Allow symbols bound to values to be looked up in <code>calc_eval</code>.</li>
-  <li>Write the function <code>eval_define</code> which should add symbols and values to the bindings dictionary.</li>
+  <li>Use <code>WHERE</code> to create a row for each turkey above 18 kilograms in weight.</li>
+  <li>Use <code>ORDER BY</code> to order the rows alphabetically by name.</li>
+  <li>Use <code>SELECT</code> to compute each turkey's weight in pounds.
+  </div></li>
 </ol>
 
 <solution>
 
-<pre><code>bindings = {}
-
-def eval_define(expressions):
-    &quot;&quot;&quot;
-    &gt;&gt;&gt; eval_define(Pair(&quot;a&quot;, Pair(1, nil)))
-    &#x27;a&#x27;
-    &gt;&gt;&gt; eval_define(Pair(&quot;b&quot;, Pair(3, nil)))
-    &#x27;b&#x27;
-    &gt;&gt;&gt; eval_define(Pair(&quot;c&quot;, Pair(&quot;a&quot;, nil)))
-    &#x27;c&#x27;
-    &gt;&gt;&gt; calc_eval(&quot;c&quot;)
-    1
-    &gt;&gt;&gt; calc_eval(Pair(&quot;define&quot;, Pair(&quot;d&quot;, Pair(&quot;//&quot;, nil))))
-    &#x27;d&#x27;
-    &gt;&gt;&gt; calc_eval(Pair(&quot;d&quot;, Pair(4, Pair(2, nil))))
-    2
-    &quot;&quot;&quot;
-    "*** YOUR CODE HERE ***"
+<pre><code>CREATE TABLE big AS
+  SELECT "REPLACE THIS LINE WITH YOUR SOLUTION";
 </code></pre>
 
-</solution>
+</solution
 
-<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q eval_define<button id="copy-code-python3ok-qeval_define" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q big<button id="copy-code-python3ok-qbig" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
-        document.getElementById("copy-code-python3ok-qeval_define").onclick = () => copyCode('python3 ok -q eval_define', "copy-code-python3ok-qeval_define");
+        document.getElementById("copy-code-python3ok-qbig").onclick = () => copyCode('python3 ok -q big', "copy-code-python3ok-qbig");
+        </script>
+        <br/>
+
+
+<h3 id="q2-growing-up">Q2: Growing Up</h3>
+
+
+<p>A turkey is expected to increase in weight by 1 kilogram each month until it is 24 months old. After 24 months, it is not expected to grow.</p>
+
+<p>Create a <code>growing</code> table with two columns, <code>name</code> (strings) and <code>full</code> (numbers), that contains a row for every turkey that is expected to be more than 25 kilograms when full grown at 24 months. The <code>name</code> column contains the name of the turkey. The <code>full</code> column contains the expected full size of the turkey at 24 months (or more). The names should appear in the same order as they do in the <code>turkeys</code> table.</p>
+
+<p>Your query should work correctly for any data that might appear in the <code>turkeys</code>
+table, but for the example above the result should be:</p>
+
+<pre><code>name     full
+&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;  &#x2d;&#x2d;&#x2d;&#x2d;
+Bud      29.3
+Bird     25.3
+Pumpkin  25.3
+Tom      26.8</code></pre>
+
+
+
+<p><strong>Hint:</strong> Use <code>MAX</code> and <code>MIN</code> to compute the max or min of two numbers, such as <code>MAX(2, 3)</code>.</p>
+
+
+        <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        Hint: Template<noscript> (enable JavaScript)</noscript>
+        </button>
+        <div class="solution toggle-3">
+
+<pre><code>SELECT name, _______ AS full
+  FROM turkeys
+  WHERE full &gt; 25;</code></pre>
+
+
+</div>
+
+<solution>
+
+<pre><code>CREATE TABLE growing AS
+  SELECT "REPLACE THIS LINE WITH YOUR SOLUTION";
+</code></pre>
+
+</solution
+
+<p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q growing<button id="copy-code-python3ok-qgrowing" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qgrowing").onclick = () => copyCode('python3 ok -q growing', "copy-code-python3ok-qgrowing");
         </script>
         <br/>
 
@@ -633,9 +486,7 @@ def eval_define(expressions):
 <h1 id="submit-assignment">Submit Assignment</h1>
 
 
-<p>If you are in a regular section of CS 61A, fill out this <a href="https://forms.gle/dHxj8gttNWRY6Ptm9">lab attendance and feedback form</a>. (If you are in the mega section, you don't need to fill out the form.)</p>
-
-<p>Then, submit this assignment by uploading any files you've edited <strong>to the appropriate Gradescope assignment.</strong> <a href="../lab00/#submit-with-gradescope">Lab 00</a> has detailed instructions.</p>
+<p>Submit this assignment by uploading any files you've edited <strong>to the appropriate Gradescope assignment.</strong> <a href="../lab00/#submit-with-gradescope">Lab 00</a> has detailed instructions.</p>
 <script>
     $('.alwaystoggle').css('display', 'inline-block');
     $('.alwaystoggle').click(function() {
@@ -649,19 +500,13 @@ def eval_define(expressions):
   <div class='col-md-3 sticky'>
     <nav class='hidden-print hidden-sm hidden-xs sidebar'>
       <ul>
-  <li><a href="#topics">Topics</a></li>
   <li><a href="#required-questions">Required Questions</a></li>
   <ul>
-    <li><a href="#calculator">Calculator</a></li>
-    <li><a href="#pair-class">Pair Class</a></li>
+    <li><a href="#sql">SQL</a></li>
+    <li><a href="#happy-turkey-day">Happy Turkey Day</a></li>
     <ul>
-      <li><a href="#q1-using-pair">Q1: Using Pair</a></li>
-    </ul>
-    <li><a href="#calculator-evaluation">Calculator Evaluation</a></li>
-    <ul>
-      <li><a href="#q2-new-procedure">Q2: New Procedure</a></li>
-      <li><a href="#q3-new-form">Q3: New Form</a></li>
-      <li><a href="#q4-saving-values">Q4: Saving Values</a></li>
+      <li><a href="#q1-big-ones">Q1: Big Ones</a></li>
+      <li><a href="#q2-growing-up">Q2: Growing Up</a></li>
     </ul>
     <li><a href="#check-your-score-locally">Check Your Score Locally</a></li>
   </ul>
@@ -718,12 +563,12 @@ def eval_define(expressions):
   };
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
-    <script src="/assets/js/network_storage.js"></script>
-    <script src="/assets/js/code_tabindex.js"></script>
-    <script src="/assets/js/storable.js"></script>
-    <script src="/assets/js/editor.js"></script>
-    <script src="/assets/js/copy-button.js"></script>
-    <script src="/assets/js/env-diagram.js"></script>
+    <script src="/fa24/assets/js/network_storage.js"></script>
+    <script src="/fa24/assets/js/code_tabindex.js"></script>
+    <script src="/fa24/assets/js/storable.js"></script>
+    <script src="/fa24/assets/js/editor.js"></script>
+    <script src="/fa24/assets/js/copy-button.js"></script>
+    <script src="/fa24/assets/js/env-diagram.js"></script>
     
 <!-- <script src="/assets/js/sketchy.js"></script> -->
 <script>
