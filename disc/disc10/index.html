@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content ="CS 61A: Structure and Interpretation of Computer Programs" />
+    <meta name="description" content ="Data C88C: Computational Structures in Data Science" />
     <meta name="keywords" content ="Computer Science, Programming, Berkeley, EECS" />
-    <meta name="author" content ="John DeNero, Jedi Tsang (Guest Lecturer), Shm Almeda (GSI)" />
+    <meta name="author" content ="John DeNero, Jedi Tsang, Shm Almeda (GSI)" />
     <!-- CHANGED CAREFUL -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
@@ -12,8 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/assets/js/hl.js"></script>
-    <script src="/assets/js/toggledarkmode.js"></script>
+    <script src="/fa24/assets/js/hl.js"></script>
+    <script src="/fa24/assets/js/toggledarkmode.js"></script>
     <script>
         // we aren't registering builtins since
         //      (1) they don't render differently in the current CSS from other names
@@ -24,12 +24,12 @@
         });
         hljs.initHighlightingOnLoad();
     </script>
-    <script src="/assets/js/dark-mode.js"></script>
+    <script src="/fa24/assets/js/dark-mode.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/mono-blue.css">
-    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/fa24/assets/css/style.css">
+    <link rel="stylesheet" href="/fa24/assets/css/mono-blue.css">
+    <link rel="icon" href="/fa24/assets/images/favicon.ico">
 
     
 
@@ -37,7 +37,7 @@
 
 
     <title>
-Discussion 10 | CS 61A Fall 2024
+Discussion 10 | Data C88C Fall 2024
 </title>
   </head>
 
@@ -50,8 +50,8 @@ Discussion 10 | CS 61A Fall 2024
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">
-            CS 61A
+          <a class="navbar-brand" href="/fa24/">
+            Data C88C
             <!-- <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png"/> -->
           </a>
         </div>
@@ -60,15 +60,15 @@ Discussion 10 | CS 61A Fall 2024
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="/">Lectures</a></li>
+            <li><a href="/fa24/">Lectures</a></li>
             
-            <li><a href="/articles/about-61a/">Syllabus</a></li>
+            <li><a href="/fa24/articles/about-c88c/">Syllabus</a></li>
             
-            <li><a href="https://edstem.org/us/courses/63971/discussion/">Ed</a></li>
+            <li><a href="https://edstem.org/us/courses/63975/discussion/">Ed</a></li>
             
-            <li><a href="/office-hours/">Office Hours</a></li>
+            <li><a href="/fa24/office-hours/">Office Hours</a></li>
             
-            <li><a href="/articles/contact-61a/">Contact</a></li>
+            <li><a href="/fa24/articles/contact-c88c/">Contact</a></li>
             
 
             
@@ -79,19 +79,17 @@ Discussion 10 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="https://go.cs61a.org/61a-extensions">Request an Extension</a></li>
+                <li><a href="https://go.c88c.org/c88c-extensions">Request an Extension</a></li>
                 
-                <li><a href="https://go.cs61a.org/61a-regrades">Request a Regrade</a></li>
+                <li><a href="https://go.c88c.org/c88c-regrades">Request a Regrade</a></li>
                 
-                <li><a href="https://oh.cs61a.org/">Office Hours Queue</a></li>
+                <li><a href="https://oh.c88c.org/">Office Hours Queue</a></li>
                 
-                <li><a href="https://www.gradescope.com/courses/843175">Gradescope</a></li>
+                <li><a href="https://www.gradescope.com/courses/843183">Gradescope</a></li>
                 
-                <li><a href="https://bcourses.berkeley.edu/courses/1538118/pages">Lecture Recordings</a></li>
+                <li><a href="https://bcourses.berkeley.edu/courses/1538122/pages">Lecture Recordings</a></li>
                 
                 <li><a href="https://pythontutor.com/cp/composingprograms.html">Python Tutor</a></li>
-                
-                <li><a href="https://code.cs61a.org/scheme/">Scheme Editor</a></li>
                 
               </ul>
             </li>
@@ -103,19 +101,17 @@ Discussion 10 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/resources/">Past Exams & Websites</a></li>
+                <li><a href="https://cs61a.org/resources/">Past Exams & Websites</a></li>
                 
                 <li><a href="https://www.composingprograms.com">Textbook</a></li>
                 
                 <li><a href="https://drive.google.com/file/d/1O72u0ml65pibcjz-PXKpqeJDKaVqQ3D8/view">Debugging Guide</a></li>
                 
-                <li><a href="/articles/studying/">Studying Guide</a></li>
+                <li><a href="/fa24/articles/studying/">Studying Guide</a></li>
                 
-                <li><a href="/articles/composition/">Composition Guide</a></li>
+                <li><a href="/fa24/articles/composition/">Composition Guide</a></li>
                 
-                <li><a href="/articles/campus-res/">Campus Resources</a></li>
-                
-                <li><a href="/articles/advice/">Advice from Students</a></li>
+                <li><a href="/fa24/articles/campus-res/">Campus Resources</a></li>
                 
               </ul>
             </li>
@@ -127,11 +123,9 @@ Discussion 10 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/instructor">Instructors</a></li>
+                <li><a href="/fa24/instructor">Instructors</a></li>
                 
-                <li><a href="/staff">TAs & Tutors</a></li>
-                
-                <li><a href="/academic-interns">Academic Interns</a></li>
+                <li><a href="/fa24/staff">TAs & Tutors</a></li>
                 
               </ul>
             </li>
@@ -149,7 +143,7 @@ Discussion 10 | CS 61A Fall 2024
     <header>
       <h1>
         
-Discussion 10: Interpreters
+Discussion 10: SQL
 
         
         
@@ -166,258 +160,104 @@ Discussion 10: Interpreters
 
 
     
-<p><strong>Reminder:</strong> We'll still use Pensieve, but we've removed the voice/video chat from Pensieve. Use Discord for voice chat with the course staff. It's more reliable and includes screensharing. Write to <code>@discuss</code> in the <code>#discuss&#x2d;queue</code> channel on Discord at any time, and a member of the course staff will join your group's voice channel.</p>
-
-<p>Pick someone in your group to <a href="https://cs61a.org/articles/discord">join Discord</a>.
-It's fine if multiple people join, but one is enough.</p>
+<p>If there are fewer than 3 people in your group, feel free to merge your group with another group in the room.</p>
 
 <p>Now switch to Pensieve:</p>
 
 <ul>
-  <li><strong>Everyone</strong>: Go to <a href="http://discuss.pensieve.co">discuss.pensieve.co</a> and log in with your @berkeley.edu email, then enter your group number. (Your group number is the number of your Discord channel.)</li>
+  <li><strong>Everyone</strong>: Go to <a href="">pensieve.co</a>, log in with your @berkeley.edu email, and <strong>enter your group number</strong> (which was in the email that assigned you to this lab).</li>
 </ul>
 
 <p>Once you're on Pensieve, you don't need to return to this page; Pensieve has all the same content (but more features). If for some reason Penseive doesn't work, return to this page and continue with the discussion.</p>
-
-<p>Post in the <code>#help</code> channel on <a href="https://cs61a.org/articles/discord/">Discord</a> if you have trouble.</p>
-
-<p><strong>Pro tip:</strong> Any of you can type a question into your group's Discord <a href="https://support.discord.com/hc/en-us/articles/4412085582359-Text-Channels-Text-Chat-In-Voice-Channels#h_01FMJT412WBX1MR4HDYNR8E95X">channel's text chat</a> with the <code>@discuss</code> tag, and a member of the course staff will respond.</p>
 
 
 <h1 id="getting-started">Getting Started</h1>
 
 
-<p>If you have only 1 or 2 people in your group, you can join the other group in
-the room with you.</p>
-
-<p>Everybody say your name, and then figure out who is planning to travel outside
-of the Bay Area the soonest.</p>
+<p>Everybody say your name, and then share your favorite restaurant, cafe, or boba shop near campus. (Yes, Kingpin Donuts counts as a restaurant.)</p>
 
 
-<h1 id="representing-lists">Representing Lists</h1>
+<h1 id="select-statements">Select Statements</h1>
 
 
-<p>A Scheme call expression is a Scheme list that is represented using a <code>Pair</code>
-instance in Python.</p>
-
-<p>For example, the call expression <code>(+ (* 3 4) 5)</code> is represented as:</p>
-
-<pre><code>Pair(&#x27;+&#x27;, Pair(Pair(&#x27;*&#x27;, Pair(3, Pair(4, nil))), Pair(5, nil)))</code></pre>
-
-
-
-<p><img class="img-responsive center-block" src="https://i.imgur.com/I3972ut.png" alt="(+ (* 3 4) 5)" width="" height=""></p>
-
-<p>The <code>Pair</code> class and <code>nil</code> object are defined in <a href="http://cs61a.org/proj/scheme/pair.py">pair.py</a> of the <a href="http://cs61a.org/proj/scheme">Scheme project</a>.</p>
-
-<pre><code>class Pair:
-    &quot;A Scheme list is a Pair in which rest is a Pair or nil.&quot;
-    def __init__(self, first, rest):
-        self.first = first
-        self.rest = rest
-
-    ... # There are also __str__, __repr__, and map methods, omitted here.</code></pre>
-
-
-
-
-<h3 id="q1-representing-expressions">Q1: Representing Expressions</h3>
-
-<p>Write the Scheme expression in Scheme syntax represented by each <code>Pair</code> below.
-Try drawing the linked list diagram too. The first one is done for you.</p>
-
-<pre><code>Pair(&#x27;+&#x27;, Pair(Pair(&#x27;*&#x27;, Pair(3, Pair(4, nil))), Pair(5, nil)))</code></pre>
-
-
-
-
-            <label class="sr-only" for="scheme-plus-expr-input">Your Answer:</label>
-            <input class="form-control storable" id="scheme-plus-expr-input" type="text">
-            <div class="storable-status"></div>
-        
-
-<pre><code>&gt;&gt;&gt; Pair(&#x27;+&#x27;, Pair(1, Pair(Pair(&#x27;*&#x27;, Pair(2, Pair(3, nil))), nil)))</code></pre>
-
-
-
-
-            <label class="sr-only" for="scheme-plus-expr-input">Your Answer:</label>
-            <input class="form-control storable" id="scheme-plus-expr-input" type="text">
-            <div class="storable-status"></div>
-        
-
-
-        <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Linked List Diagram<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-1">
-
-<p><img class="img-responsive center-block" src="https://i.imgur.com/LXubaoe.png" alt="" width="" height=""></p>
-
-</div>
-
-<pre><code>&gt;&gt;&gt; Pair(&#x27;and&#x27;, Pair(Pair(&#x27;&lt;&#x27;, Pair(1, Pair(0, nil))), Pair(Pair(&#x27;/&#x27;, Pair(1, Pair(0, nil))), nil)))</code></pre>
-
-
-
-
-            <label class="sr-only" for="scheme-and-expr-input">Your Answer:</label>
-            <input class="form-control storable" id="scheme-and-expr-input" type="text">
-            <div class="storable-status"></div>
-        
-
-        <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Linked List Diagram<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-2">
-<img class="img-responsive center-block" src="https://i.imgur.com/nG9GUbt.png" alt="" width="" height="">
-
-</div>
-
-
-
-<p><strong>Discussion Time:</strong> What does <code>(and (&lt; 1 0) (/ 1 0))</code> evaluate to? Discuss among
-your group until you all agree,
-then post your answer in your group's Discord
-<a href="https://support.discord.com/hc/en-us/articles/4412085582359-Text-Channels-Text-Chat-In-Voice-Channels#h_01FMJT412WBX1MR4HDYNR8E95X">channel's text chat</a>.</p>
-
-
-<h1 id="evaluation">Evaluation</h1>
-
-
-<p>To evaluate the expression <code>(+ (* 3 4) 5)</code> using the Project 4 interpreter,
-<code>scheme_eval</code> is called on the following expressions (in this order):</p>
+<p>A <code>SELECT</code> statement describes an output table based on input rows. To write one:</p>
 
 <ol>
-  <li><code>(+ (* 3 4) 5)</code></li>
-  <li><code>+</code></li>
-  <li><code>(* 3 4)</code></li>
-  <li><code>*</code></li>
-  <li><code>3</code></li>
-  <li><code>4</code></li>
-  <li><code>5</code></li>
+  <li>Describe the <strong>input rows</strong> using <code>FROM</code> and <code>WHERE</code> clauses.</li>
+  <li>Format and order the <strong>output rows</strong> and columns using <code>SELECT</code> and <code>ORDER BY</code> clauses.</li>
 </ol>
 
-<p><strong>Discussion time:</strong> Describe to each other why <code>*</code> is evaluated and what it
-evaluates to.</p>
+<p><code>SELECT</code> <em>(Step 2)</em> <code>FROM</code> <em>(Step 1)</em> <code>WHERE</code> <em>(Step 1)</em> <code>ORDER BY</code> <em>(Step 2)</em>;</p>
+
+<p>The <code>WHERE</code> and <code>ORDER BY</code> clauses are optional.</p>
 
 
-        <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Answer<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-3">
-
-<p>The <code>*</code> is evaluated because it is the operator sub-expression of <code>(* 3 4)</code>,
-which is an operand sub-expression of <code>(+ (* 3 4) 5)</code>.</p>
-
-<p>By default, <code>*</code> evaluates to a procedure that multiplies its arguments together.
-But <code>*</code> could be redefined at any time, and so the symbol <code>*</code> must be evaluated
-each time it is used in order to look up its current value.</p>
-
-<pre><code>scm&gt; (* 2 3)  ; Now it multiplies
-6
-scm&gt; (define * +)
-*
-scm&gt; (* 2 3)  ; Now it adds
-5</code></pre>
+<h2 id="pizza-time">Pizza Time</h2>
 
 
+<p>The <code>pizzas</code> table contains the names, opening, and closing hours of great pizza
+places in Berkeley. The <code>meals</code> table contains typical meal times (for college
+students). A pizza place is open for a meal if the meal time is at or within the
+<code>open</code> and <code>close</code> times.</p>
 
-</div>
+<pre><code>CREATE TABLE pizzas AS
+  SELECT &quot;Artichoke&quot; AS name, 12 AS open, 15 AS close UNION
+  SELECT &quot;La Val&#x27;s&quot;         , 11        , 22          UNION
+  SELECT &quot;Sliver&quot;           , 11        , 20          UNION
+  SELECT &quot;Cheeseboard&quot;      , 16        , 23          UNION
+  SELECT &quot;Emilia&#x27;s&quot;         , 13        , 18;
 
-<p>An <code>if</code> expression is also a Scheme list represented using a <code>Pair</code> instance.</p>
-
-<p>For example, <code>(if (&lt; x 0) (&#x2d; x) x)</code> is represented as:</p>
-
-<p><code>Pair(&#x27;if&#x27;, Pair(Pair(&#x27;&lt;&#x27;, Pair(&#x27;x&#x27;, Pair(0, nil))), Pair(Pair(&#x27;&#x2d;&#x27;, Pair(&#x27;x&#x27;, nil)), Pair(&#x27;x&#x27;, nil))))</code></p>
-
-<p><img class="img-responsive center-block" src="https://i.imgur.com/JySFkth.png" alt="" width="" height=""></p>
-
-<p>To evaluate this expression in an environment in which <code>x</code> is bound to 2 (and
-<code>&lt;</code> and <code>&#x2d;</code> have their default values), <code>scheme_eval</code> is called on the following
-expressions (in this order):</p>
-
-<ol>
-  <li><code>(if (&lt; x 0) (&#x2d; x) x)</code></li>
-  <li><code>(&lt; x 0)</code></li>
-  <li><code>&lt;</code></li>
-  <li><code>x</code></li>
-  <li><code>0</code></li>
-  <li><code>x</code></li>
-</ol>
-
-<p><strong>Presentation time:</strong> Come up with a short explanation of why neither <code>if</code> nor
-<code>&#x2d;</code> are evaluated even though they both appear in <code>(if (&lt; x 0) (&#x2d; x) x)</code>. Once
-your group agrees on an answer (or wants help), send a message to the
-<code>#discuss&#x2d;queue</code> channel with the <code>@discuss</code> tag, your discussion group number,
-and the message "If you please!" and a member of the course staff will join your
-voice channel to hear your explanation and give feedback.</p>
+CREATE TABLE meals AS
+  SELECT &quot;breakfast&quot; AS meal, 11 AS time UNION
+  SELECT &quot;lunch&quot;            , 13         UNION
+  SELECT &quot;dinner&quot;           , 19         UNION
+  SELECT &quot;snack&quot;            , 22;</code></pre>
 
 
 
 
-<h3 id="q2-evaluation">Q2: Evaluation</h3>
-
-<p>Which of the following are evaluated when <code>scheme_eval</code> is called on
-<code>(if (&lt; x 0) (&#x2d; x) (if (= x &#x2d;2) 100 y))</code> in an environment in which <code>x</code> is bound to -2?
-(Assume <code>&lt;</code>, <code>&#x2d;</code>, and <code>=</code> have their default values.)</p>
-
-<ul>
-  <li><code>if</code></li>
-  <li><code>&lt;</code></li>
-  <li><code>=</code></li>
-  <li><code>x</code></li>
-  <li><code>y</code></li>
-  <li><code>0</code></li>
-  <li><code>&#x2d;2</code></li>
-  <li><code>100</code></li>
-  <li><code>&#x2d;</code></li>
-  <li><code>(</code></li>
-  <li><code>)</code></li>
-</ul>
+<h3 id="q1-open-early">Q1: Open Early</h3>
 
 
-        <button id='toggle-4' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-4">
+<p>You'd like to have pizza before 13 o'clock (1pm). Create a <code>opening</code> table with
+the names of all pizza places that <code>open</code> before 13 o'clock, listed in reverse
+alphabetical order.</p>
 
-<p>With <code>x</code> bound to -2, <code>(&lt; x 0)</code> evaluates to <code>#t</code>, and so <code>(&#x2d; x)</code> will be
-evaluated, but <code>(if (= x 1) 100 x)</code> will not. The operator and operands of a
-call expression are evaluated for every call expression that is evaluated.
-<code>(&lt; x 0)</code> and <code>(&#x2d; x)</code> are both call expressions.</p>
-
-</div>
-
-<p>List your group's answers in your group's
-Discord <a href="https://support.discord.com/hc/en-us/articles/4412085582359-Text-Channels-Text-Chat-In-Voice-Channels#h_01FMJT412WBX1MR4HDYNR8E95X">channel's text chat</a>.
-For example, write <code>if &lt; 0 )</code> if you think those are the four that get evaluated.
-A member of the course staff will review your answer and give feedback.</p>
-
-
-<h3 id="q3-print-evaluated-expressions">Q3: Print Evaluated Expressions</h3>
-
-
-<p>Define <code>print_evals</code>, which takes a Scheme expression <code>expr</code> that contains only
-numbers, <code>+</code>, <code>*</code>, and parentheses. It prints all of the expressions that are
-evaluated during the evaluation of <code>expr</code>. They are printed in the order that
-they are passed to <code>scheme_eval</code>.</p>
-
-<p><strong>Note:</strong> Calling <code>print</code> on a <code>Pair</code> instance will print the Scheme expression it represents.</p>
-
-<pre><code>&gt;&gt;&gt; print(Pair(&#x27;+&#x27;, Pair(Pair(&#x27;*&#x27;, Pair(3, Pair(4, nil))), Pair(5, nil))))
-(+ (* 3 4) 5)</code></pre>
+<p><strong><code>opening</code></strong> table:</p>
 
 
 
 
-            <div class="monaco-storable" id="print_evals-input" style="height:702px;"></div>
-            <a href="javascript:void" id="modal-link-print_evals-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-print_evals-input" tabindex="-1" role="dialog">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+          
+  <tr>
+    <th>name</th>
+  </tr>
+  <tr>
+    <td>Sliver</td>
+  </tr>
+  <tr>
+    <td>La Val's</td>
+  </tr>
+  <tr>
+    <td>Artichoke</td>
+  </tr>
+
+          </table>
+        </div>
+        
+
+
+
+
+            <div class="monaco-storable" id="opening-input" style="height:126px;"></div>
+            <a href="javascript:void" id="modal-link-opening-input">Run in 61A Code</a>
+            <div class="modal fade" id="modal-opening-input" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content" style="padding-bottom: -5px">
                     <iframe
-                        id="code-iframe-print_evals-input"
+                        id="code-iframe-opening-input"
                         width="100%"
                         height="700px"
                         style="border: none; display:block;"
@@ -427,41 +267,181 @@ they are passed to <code>scheme_eval</code>.</p>
             </div>
             <div class="storable-status"></div>
             <script>
-                $(() => activateEditor('def print_evals(expr):\n        &quot;&quot;&quot;Print the expressions that are evaluated while evaluating expr.\n\n        expr: a Scheme expression containing only (, ), +, *, and numbers.\n\n        &gt;&gt;&gt; nested_expr = Pair(&#x27;+&#x27;, Pair(Pair(&#x27;*&#x27;, Pair(3, Pair(4, nil))), Pair(5, nil)))\n        &gt;&gt;&gt; print_evals(nested_expr)\n        (+ (* 3 4) 5)\n        +\n        (* 3 4)\n        *\n        3\n        4\n        5\n        &gt;&gt;&gt; print_evals(Pair(&#x27;*&#x27;, Pair(6, Pair(7, Pair(nested_expr, Pair(8, nil))))))\n        (* 6 7 (+ (* 3 4) 5) 8)\n        *\n        6\n        7\n        (+ (* 3 4) 5)\n        +\n        (* 3 4)\n        *\n        3\n        4\n        5\n        8\n        &quot;&quot;&quot;\n        if not isinstance(expr, Pair):\n            "*** YOUR CODE HERE ***"\n        else:\n            "*** YOUR CODE HERE ***"\n\n', "python", "print_evals-input"));
+                $(() => activateEditor('&#x2d;&#x2d; Pizza places that open before 1pm in alphabetical order\nSELECT "REPLACE THIS LINE WITH YOUR SOLUTION";\n\n', "sql", "opening-input"));
             </script>
         
 
 
-        <button id='toggle-5' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Base Case<noscript> (enable JavaScript)</noscript>
+        <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        Hint: Reverse Alphabetical Order<noscript> (enable JavaScript)</noscript>
         </button>
-        <div class="solution toggle-5">
-
-<p>If <code>expr</code> is not a pair, then it is a number or <code>&#x27;+&#x27;</code> or <code>&#x27;*&#x27;</code>. In all of these
-cases, the <code>expr</code> should be printed to indicate that it would be evaluated.</p>
-
+        <div class="solution toggle-1">
+To order by <code>name</code> in reverse alphabitical order, write <code>ORDER BY name DESC</code>.
 </div>
 
 
-        <button id='toggle-6' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Recursive Case<noscript> (enable JavaScript)</noscript>
+<h3 id="q2-study-session">Q2: Study Session</h3>
+
+
+<p>You're planning to study at a pizza place from the moment it opens until 14
+o'clock (2pm). Create a table <code>study</code> with two columns, the <code>name</code> of each pizza
+place and the <code>duration</code> of the study session you would have if you studied there
+(the difference between when it opens and 14 o'clock). For pizza places that are
+not open before 2pm, the <code>duration</code> should be zero. Order the
+rows by decreasing duration.</p>
+
+<p><strong>Hint:</strong> Use an expression of the form <code>MAX(_, 0)</code> to make sure a result is not below 0.</p>
+
+<p><strong><code>study</code></strong> table:</p>
+
+
+
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+          
+  <tr>
+    <th>name</th>
+    <th>duration</th>
+  </tr>
+  <tr>
+    <td>La Val's</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>Sliver</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>Artichoke</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Emilia's</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Cheeseboard</td>
+    <td>0</td>
+  </tr>
+
+          </table>
+        </div>
+        
+
+
+
+
+            <div class="monaco-storable" id="study-input" style="height:126px;"></div>
+            <a href="javascript:void" id="modal-link-study-input">Run in 61A Code</a>
+            <div class="modal fade" id="modal-study-input" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content" style="padding-bottom: -5px">
+                    <iframe
+                        id="code-iframe-study-input"
+                        width="100%"
+                        height="700px"
+                        style="border: none; display:block;"
+                    ></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="storable-status"></div>
+            <script>
+                $(() => activateEditor('&#x2d;&#x2d; Pizza places and the duration of a study break that ends at 14 o&#x27;clock\nSELECT "REPLACE THIS LINE WITH YOUR SOLUTION";\n\n', "sql", "study-input"));
+            </script>
+        
+
+
+        <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        Hint: Order by Duration<noscript> (enable JavaScript)</noscript>
         </button>
-        <div class="solution toggle-6">
+        <div class="solution toggle-2">
+To order by decreasing duration, first name the column with <code>SELECT ..., ... AS duration ...</code>, then <code>ORDER BY duration DESC</code>.
+</div>
 
-<p>If <code>expr</code> is a pair, then it is a call expression. Print it. Then, the operator
-and operands are evaluated. These are the elements in the list <code>expr</code>. So,
-iterate through <code>expr</code> (using either a <code>while</code> statement or <code>expr.map(...)</code>) and
-call <code>print_evals</code> on each element.</p>
 
+<h3 id="q3-late-night-snack">Q3: Late Night Snack</h3>
+
+
+<p>What's still open for a late night <code>snack</code>? Create a <code>late</code> table with one
+column named <code>status</code> that has a sentence describing the closing time of each
+pizza place that closes at or after <code>snack</code> time. <strong>Important:</strong> Don't use any
+numbers in your SQL query! Instead, use a join to compare each restaurant's
+closing time to the time of a snack. The rows may appear in any order.</p>
+
+<p><strong><code>late</code></strong> table:</p>
+
+
+
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+          
+  <tr>
+    <th>status</th>
+  </tr>
+  <tr>
+    <td>Cheeseboard closes at 23</td>
+  </tr>
+  <tr>
+    <td>La Val's closes at 22</td>
+  </tr>
+
+          </table>
+        </div>
+        
+
+
+
+
+            <div class="monaco-storable" id="late-input" style="height:126px;"></div>
+            <a href="javascript:void" id="modal-link-late-input">Run in 61A Code</a>
+            <div class="modal fade" id="modal-late-input" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content" style="padding-bottom: -5px">
+                    <iframe
+                        id="code-iframe-late-input"
+                        width="100%"
+                        height="700px"
+                        style="border: none; display:block;"
+                    ></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="storable-status"></div>
+            <script>
+                $(() => activateEditor('&#x2d;&#x2d; Pizza places that are open for late&#x2d;night&#x2d;snack time and when they close\nSELECT "REPLACE THIS LINE WITH YOUR SOLUTION";\n\n', "sql", "late-input"));
+            </script>
+        
+
+
+        <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        Hint: Referencing the Snack Time<noscript> (enable JavaScript)</noscript>
+        </button>
+        <div class="solution toggle-3">
+To compare a pizza place's <code>close</code> time to the time of a snack:
+
+<ul>
+  <li>join the <code>pizzas</code> and <code>meals</code> tables using <code>FROM pizzas, meals</code></li>
+  <li>use only rows where the <code>meal</code> is a <code>&quot;snack&quot;</code></li>
+  <li>compare the <code>time</code> of the snack to the <code>close</code> of the pizza place.
+  </div></li>
+</ul>
+
+
+        <button id='toggle-4' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        Hint: Composing a Sentence<noscript> (enable JavaScript)</noscript>
+        </button>
+        <div class="solution toggle-4">
+Use <code>name || &quot; closes at &quot; || close</code> to create the sentences in the resulting table. The <code>||</code> operator concatenates values into strings.
 </div>
 
 
 <h1 id="document-the-occasion">Document the Occasion</h1>
 
 
-<p>Please all fill out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeqlK8l6WkScGr-RHR-kM4p5bnR9cllYrG95fDqPJspSlll7A/viewform">attendance form</a> (one submission per person per week).</p>
-
-<p><strong>Important:</strong> Please help put the furniture in the room back where you found it before you leave. Thanks!</p>
+<p>Please all fill out the <a href="https://forms.gle/FXxKTRphbCxZ2sy97">attendance form</a> (one submission per person per week).</p>
 <script>
     $('.alwaystoggle').css('display', 'inline-block');
     $('.alwaystoggle').click(function() {
@@ -476,14 +456,14 @@ call <code>print_evals</code> on each element.</p>
     <nav class='hidden-print hidden-sm hidden-xs sidebar'>
       <ul>
   <li><a href="#getting-started">Getting Started</a></li>
-  <li><a href="#representing-lists">Representing Lists</a></li>
+  <li><a href="#select-statements">Select Statements</a></li>
   <ul>
-    <li><a href="#q1-representing-expressions">Q1: Representing Expressions</a></li>
-  </ul>
-  <li><a href="#evaluation">Evaluation</a></li>
-  <ul>
-    <li><a href="#q2-evaluation">Q2: Evaluation</a></li>
-    <li><a href="#q3-print-evaluated-expressions">Q3: Print Evaluated Expressions</a></li>
+    <li><a href="#pizza-time">Pizza Time</a></li>
+    <ul>
+      <li><a href="#q1-open-early">Q1: Open Early</a></li>
+      <li><a href="#q2-study-session">Q2: Study Session</a></li>
+      <li><a href="#q3-late-night-snack">Q3: Late Night Snack</a></li>
+    </ul>
   </ul>
   <li><a href="#document-the-occasion">Document the Occasion</a></li>
 </ul>
@@ -538,12 +518,12 @@ call <code>print_evals</code> on each element.</p>
   };
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
-    <script src="/assets/js/network_storage.js"></script>
-    <script src="/assets/js/code_tabindex.js"></script>
-    <script src="/assets/js/storable.js"></script>
-    <script src="/assets/js/editor.js"></script>
-    <script src="/assets/js/copy-button.js"></script>
-    <script src="/assets/js/env-diagram.js"></script>
+    <script src="/fa24/assets/js/network_storage.js"></script>
+    <script src="/fa24/assets/js/code_tabindex.js"></script>
+    <script src="/fa24/assets/js/storable.js"></script>
+    <script src="/fa24/assets/js/editor.js"></script>
+    <script src="/fa24/assets/js/copy-button.js"></script>
+    <script src="/fa24/assets/js/env-diagram.js"></script>
     
 <!-- <script src="/assets/js/sketchy.js"></script> -->
 <script>
