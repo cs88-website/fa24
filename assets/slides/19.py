@@ -1,97 +1,55 @@
-# Tracking Instances
+from tree import *
 
-class Transaction:
-    """A logged transaction.
+class Server:
+    """An email server.
 
-    >>> s = [20, -3, -4]
-    >>> ts = [Transaction(x) for x in s]
-    >>> ts[1].balance()
-    17
-    >>> ts[2].balance()
-    13
-    """    
-    log = []
-
-    def __init__(self, amount):
-        self.amount = amount
-        self.prior = list(self.log)
-        self.log.append(self)
-
-    def balance(self):
-        return self.amount + sum([t.amount for t in self.prior])
-
-class Account:
-    """An account has a balance and a holder.
-
-    >>> a = Account('John')
-    >>> a.holder
-    'John'
-    >>> a.deposit(100)
-    100
-    >>> a.withdraw(90)
-    10
-    >>> a.withdraw(90)
-    'Insufficient funds'
-    >>> a.balance
-    10
-    >>> a.interest
-    0.02
+    >>> a, b = Client('John'), Client('Jack')
+    >>> s = Server([a, b])
+    >>> s.send(Email('Hi', 'John', 'Jack'))
+    >>> b.inbox[0].msg
+    'Hi'
     """
+    def __init__(self, clients):
+        self.clients = {c.name: c for c in clients}
 
-    interest = 0.02  # A class attribute
+    def send(self, email):
+        "Append the email to the inbox of the client it is addressed to."
+        self.clients[email.recipient_name].inbox.append(email)
 
-    def __init__(self, account_holder):
-        self.holder = account_holder
-        self.balance = 0
+class Email:
+    def __init__(self, msg, sender, recipient_name):
+        self.msg = msg
+        self.sender = sender
+        self.recipient_name = recipient_name
 
-    def deposit(self, amount):
-        """Add amount to balance."""
-        self.balance = self.balance + amount
-        return self.balance
-
-    def withdraw(self, amount):
-        """Subtract amount from balance if funds are available."""
-        if amount > self.balance:
-            return 'Insufficient funds'
-        self.balance = self.balance - amount
-        return self.balance
-
-
-class CheckingAccount(Account):
-    """A bank account that charges for withdrawals.
-
-    >>> ch = CheckingAccount('Jack')
-    >>> ch.balance = 20
-    >>> ch.withdraw(5)
-    14
-    >>> ch.interest
-    0.01
-    """
-
-    withdraw_fee = 1
-    interest = 0.01
-
-    def withdraw(self, amount):
-        return Account.withdraw(self, amount + self.withdraw_fee)
-        # Alternatively:
-        return super().withdraw(amount + self.withdraw_fee)
-
-# Multiple Inheritance
-
-class SavingsAccount(Account):
-    """A bank account that charges for deposits."""
-
-    deposit_fee = 2
-
-    def deposit(self, amount):
-        return Account.deposit(self, amount - self.deposit_fee)
+class Client:
+    def __init__(self, name):
+        self.inbox = []
+        self.name = name
 
 
-class AsSeenOnTVAccount(CheckingAccount, SavingsAccount):
-    """A bank account that charges for everything."""
+class CallCounter:
+    def __init__(self):
+        self.n = 0
 
-    def __init__(self, account_holder):
-        self.holder = account_holder
-        self.balance = 1  # A free dollar!
+    def count(self, f):
+        def counted(n):
+            self.n += 1
+            return f(n)
+        return counted
+    
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-2) + fib(n-1)
 
-supers = [c.__name__ for c in AsSeenOnTVAccount.mro()]
+def memo(f):
+    cache = {}
+    def memoized(n):
+        if n not in cache:
+            cache[n] = f(n)
+        return cache[n]
+    return memoized
