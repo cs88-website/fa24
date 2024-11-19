@@ -6,7 +6,7 @@ test = {
       'cases': [
         {
           'code': r"""
-          sqlite> SELECT * FROM big;
+          sqlite> SELECT name, ROUND(weight, 2) FROM big;
           Flappy|40.48
           Pumpkin|42.46
           Tom|58.96
