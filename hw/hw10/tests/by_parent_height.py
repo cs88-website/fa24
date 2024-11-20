@@ -7,13 +7,13 @@ test = {
         {
           'code': r"""
           sqlite> SELECT * FROM by_parent_height;
-          herbert
-          fillmore
-          abraham
-          delano
-          grover
-          barack
-          clinton
+          hank
+          finn
+          ace
+          daisy
+          ginger
+          bella
+          charlie
           """,
           'hidden': False,
           'locked': False,

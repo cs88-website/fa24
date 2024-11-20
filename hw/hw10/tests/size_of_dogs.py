@@ -7,11 +7,11 @@ test = {
         {
           'code': r"""
           sqlite> SELECT name FROM size_of_dogs WHERE size="toy" OR size="mini";
-          abraham
-          eisenhower
-          fillmore
-          grover
-          herbert
+          ace
+          ellie
+          finn
+          ginger
+          hank
           """,
           'hidden': False,
           'locked': False,

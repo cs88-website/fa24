@@ -1,21 +1,21 @@
 CREATE TABLE parents AS
-  SELECT "abraham" AS parent, "barack" AS child UNION
-  SELECT "abraham"          , "clinton"         UNION
-  SELECT "delano"           , "herbert"         UNION
-  SELECT "fillmore"         , "abraham"         UNION
-  SELECT "fillmore"         , "delano"          UNION
-  SELECT "fillmore"         , "grover"          UNION
-  SELECT "eisenhower"       , "fillmore";
+  SELECT "ace" AS parent, "bella" AS child UNION
+  SELECT "ace"          , "charlie"        UNION
+  SELECT "daisy"        , "hank"           UNION
+  SELECT "finn"         , "ace"            UNION
+  SELECT "finn"         , "daisy"          UNION
+  SELECT "finn"         , "ginger"         UNION
+  SELECT "ellie"        , "finn";
 
 CREATE TABLE dogs AS
-  SELECT "abraham" AS name, "long" AS fur, 26 AS height UNION
-  SELECT "barack"         , "short"      , 52           UNION
-  SELECT "clinton"        , "long"       , 47           UNION
-  SELECT "delano"         , "long"       , 46           UNION
-  SELECT "eisenhower"     , "short"      , 35           UNION
-  SELECT "fillmore"       , "curly"      , 32           UNION
-  SELECT "grover"         , "short"      , 28           UNION
-  SELECT "herbert"        , "curly"      , 31;
+  SELECT "ace" AS name, "long" AS fur, 26 AS height UNION
+  SELECT "bella"      , "short"      , 52           UNION
+  SELECT "charlie"    , "long"       , 47           UNION
+  SELECT "daisy"      , "long"       , 46           UNION
+  SELECT "ellie"      , "short"      , 35           UNION
+  SELECT "finn"       , "curly"      , 32           UNION
+  SELECT "ginger"     , "short"      , 28           UNION
+  SELECT "hank"       , "curly"      , 31;
 
 CREATE TABLE sizes AS
   SELECT "toy" AS size, 24 AS min, 28 AS max UNION

@@ -7,8 +7,8 @@ test = {
         {
           'code': r"""
           sqlite> SELECT * FROM sentences;
-          The two siblings, barack and clinton, have the same size: standard
-          The two siblings, abraham and grover, have the same size: toy
+          The two siblings, bella and charlie, have the same size: standard
+          The two siblings, ace and ginger, have the same size: toy
           """,
           'hidden': False,
           'locked': False,

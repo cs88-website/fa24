@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content ="CS 61A: Structure and Interpretation of Computer Programs" />
+    <meta name="description" content ="Data C88C: Computational Structures in Data Science" />
     <meta name="keywords" content ="Computer Science, Programming, Berkeley, EECS" />
-    <meta name="author" content ="John DeNero, Jedi Tsang (Guest Lecturer), Shm Almeda (GSI)" />
+    <meta name="author" content ="John DeNero, Jedi Tsang, Shm Almeda (GSI)" />
     <!-- CHANGED CAREFUL -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
@@ -12,8 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/assets/js/hl.js"></script>
-    <script src="/assets/js/toggledarkmode.js"></script>
+    <script src="/fa24/assets/js/hl.js"></script>
+    <script src="/fa24/assets/js/toggledarkmode.js"></script>
     <script>
         // we aren't registering builtins since
         //      (1) they don't render differently in the current CSS from other names
@@ -24,12 +24,12 @@
         });
         hljs.initHighlightingOnLoad();
     </script>
-    <script src="/assets/js/dark-mode.js"></script>
+    <script src="/fa24/assets/js/dark-mode.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/mono-blue.css">
-    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/fa24/assets/css/style.css">
+    <link rel="stylesheet" href="/fa24/assets/css/mono-blue.css">
+    <link rel="icon" href="/fa24/assets/images/favicon.ico">
 
     
 
@@ -37,7 +37,7 @@
 
 
     <title>
-Homework 10 | CS 61A Fall 2024
+Homework 10 | Data C88C Fall 2024
 </title>
   </head>
 
@@ -50,8 +50,8 @@ Homework 10 | CS 61A Fall 2024
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">
-            CS 61A
+          <a class="navbar-brand" href="/fa24/">
+            Data C88C
             <!-- <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png"/> -->
           </a>
         </div>
@@ -60,15 +60,15 @@ Homework 10 | CS 61A Fall 2024
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="/">Lectures</a></li>
+            <li><a href="/fa24/">Lectures</a></li>
             
-            <li><a href="/articles/about-61a/">Syllabus</a></li>
+            <li><a href="/fa24/articles/about-c88c/">Syllabus</a></li>
             
-            <li><a href="https://edstem.org/us/courses/63971/discussion/">Ed</a></li>
+            <li><a href="https://edstem.org/us/courses/63975/discussion/">Ed</a></li>
             
-            <li><a href="/office-hours/">Office Hours</a></li>
+            <li><a href="/fa24/office-hours/">Office Hours</a></li>
             
-            <li><a href="/articles/contact-61a/">Contact</a></li>
+            <li><a href="/fa24/articles/contact-c88c/">Contact</a></li>
             
 
             
@@ -79,19 +79,17 @@ Homework 10 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="https://go.cs61a.org/61a-extensions">Request an Extension</a></li>
+                <li><a href="https://go.c88c.org/c88c-extensions">Request an Extension</a></li>
                 
-                <li><a href="https://go.cs61a.org/61a-regrades">Request a Regrade</a></li>
+                <li><a href="https://go.c88c.org/c88c-regrades">Request a Regrade</a></li>
                 
-                <li><a href="https://oh.cs61a.org/">Office Hours Queue</a></li>
+                <li><a href="https://oh.c88c.org/">Office Hours Queue</a></li>
                 
-                <li><a href="https://www.gradescope.com/courses/843175">Gradescope</a></li>
+                <li><a href="https://www.gradescope.com/courses/843183">Gradescope</a></li>
                 
-                <li><a href="https://bcourses.berkeley.edu/courses/1538118/pages">Lecture Recordings</a></li>
+                <li><a href="https://bcourses.berkeley.edu/courses/1538122/pages">Lecture Recordings</a></li>
                 
                 <li><a href="https://pythontutor.com/cp/composingprograms.html">Python Tutor</a></li>
-                
-                <li><a href="https://code.cs61a.org/scheme/">Scheme Editor</a></li>
                 
               </ul>
             </li>
@@ -103,19 +101,17 @@ Homework 10 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/resources/">Past Exams & Websites</a></li>
+                <li><a href="https://cs61a.org/resources/">Past Exams & Websites</a></li>
                 
                 <li><a href="https://www.composingprograms.com">Textbook</a></li>
                 
                 <li><a href="https://drive.google.com/file/d/1O72u0ml65pibcjz-PXKpqeJDKaVqQ3D8/view">Debugging Guide</a></li>
                 
-                <li><a href="/articles/studying/">Studying Guide</a></li>
+                <li><a href="/fa24/articles/studying/">Studying Guide</a></li>
                 
-                <li><a href="/articles/composition/">Composition Guide</a></li>
+                <li><a href="/fa24/articles/composition/">Composition Guide</a></li>
                 
-                <li><a href="/articles/campus-res/">Campus Resources</a></li>
-                
-                <li><a href="/articles/advice/">Advice from Students</a></li>
+                <li><a href="/fa24/articles/campus-res/">Campus Resources</a></li>
                 
               </ul>
             </li>
@@ -127,11 +123,9 @@ Homework 10 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/instructor">Instructors</a></li>
+                <li><a href="/fa24/instructor">Instructors</a></li>
                 
-                <li><a href="/staff">TAs & Tutors</a></li>
-                
-                <li><a href="/academic-interns">Academic Interns</a></li>
+                <li><a href="/fa24/staff">TAs & Tutors</a></li>
                 
               </ul>
             </li>
@@ -162,7 +156,7 @@ Homework 10: SQL
     </header>
     
 
-<p><em>Due by 11:59pm on Thursday, December 5</em></p>
+<p><em>Due by 11:59pm on Wednesday, December 4</em></p>
 
 
 
@@ -242,23 +236,23 @@ problems on this assignment.</p>
 tables.</p>
 
 <pre><code>CREATE TABLE parents AS
-  SELECT &quot;abraham&quot; AS parent, &quot;barack&quot; AS child UNION
-  SELECT &quot;abraham&quot;          , &quot;clinton&quot;         UNION
-  SELECT &quot;delano&quot;           , &quot;herbert&quot;         UNION
-  SELECT &quot;fillmore&quot;         , &quot;abraham&quot;         UNION
-  SELECT &quot;fillmore&quot;         , &quot;delano&quot;          UNION
-  SELECT &quot;fillmore&quot;         , &quot;grover&quot;          UNION
-  SELECT &quot;eisenhower&quot;       , &quot;fillmore&quot;;
+  SELECT &quot;ace&quot; AS parent, &quot;bella&quot; AS child UNION
+  SELECT &quot;ace&quot;          , &quot;charlie&quot;        UNION
+  SELECT &quot;daisy&quot;        , &quot;hank&quot;           UNION
+  SELECT &quot;finn&quot;         , &quot;ace&quot;            UNION
+  SELECT &quot;finn&quot;         , &quot;daisy&quot;          UNION
+  SELECT &quot;finn&quot;         , &quot;ginger&quot;         UNION
+  SELECT &quot;ellie&quot;        , &quot;finn&quot;;
 
 CREATE TABLE dogs AS
-  SELECT &quot;abraham&quot; AS name, &quot;long&quot; AS fur, 26 AS height UNION
-  SELECT &quot;barack&quot;         , &quot;short&quot;      , 52           UNION
-  SELECT &quot;clinton&quot;        , &quot;long&quot;       , 47           UNION
-  SELECT &quot;delano&quot;         , &quot;long&quot;       , 46           UNION
-  SELECT &quot;eisenhower&quot;     , &quot;short&quot;      , 35           UNION
-  SELECT &quot;fillmore&quot;       , &quot;curly&quot;      , 32           UNION
-  SELECT &quot;grover&quot;         , &quot;short&quot;      , 28           UNION
-  SELECT &quot;herbert&quot;        , &quot;curly&quot;      , 31;
+  SELECT &quot;ace&quot; AS name, &quot;long&quot; AS fur, 26 AS height UNION
+  SELECT &quot;bella&quot;      , &quot;short&quot;      , 52           UNION
+  SELECT &quot;charlie&quot;    , &quot;long&quot;       , 47           UNION
+  SELECT &quot;daisy&quot;      , &quot;long&quot;       , 46           UNION
+  SELECT &quot;ellie&quot;      , &quot;short&quot;      , 35           UNION
+  SELECT &quot;finn&quot;       , &quot;curly&quot;      , 32           UNION
+  SELECT &quot;ginger&quot;     , &quot;short&quot;      , 28           UNION
+  SELECT &quot;hank&quot;       , &quot;curly&quot;      , 31;
 
 CREATE TABLE sizes AS
   SELECT &quot;toy&quot; AS size, 24 AS min, 28 AS max UNION
@@ -274,10 +268,10 @@ with h, you should write:</p>
 
 <p>Instead of assuming that the <code>dogs</code> table has only the data above and writing</p>
 
-<pre><code>SELECT &quot;herbert&quot;;</code></pre>
+<pre><code>SELECT &quot;hank&quot;;</code></pre>
 
-<p>The former query would still be correct if the name <code>grover</code> were changed to
-<code>hoover</code> or a row was added with the name <code>harry</code>.</p>
+<p>The former query would still be correct if the name <code>ginger</code> were changed to
+<code>gigi</code> or a row was added with the name <code>harry</code>.</p>
 
 
 <h3 id="q1-by-parent-height">Q1: By Parent Height</h3>
@@ -291,20 +285,20 @@ CREATE TABLE by_parent_height AS
   SELECT "REPLACE THIS LINE WITH YOUR SOLUTION";
 </code></pre>
 
-<p>For example, <code>fillmore</code> has a parent <code>eisenhower</code> with height 35, and so
-should appear before <code>grover</code> who has a parent <code>fillmore</code> with height 32.
+<p>For example, <code>finn</code> has a parent <code>ellie</code> with height 35, and so
+should appear before <code>ginger</code> who has a parent <code>finn</code> with height 32.
 The names of dogs with parents of the same height should appear together in any
-order. For example, <code>barack</code> and <code>clinton</code> should both appear at the end, but
+order. For example, <code>bella</code> and <code>charlie</code> should both appear at the end, but
 either one can come before the other.</p>
 
 <pre><code>sqlite&gt; SELECT * FROM by_parent_height;
-herbert
-fillmore
-abraham
-delano
-grover
-barack
-clinton</code></pre>
+hank
+finn
+ace
+daisy
+ginger
+bella
+charlie</code></pre>
 
 <p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q by_parent_height<button id="copy-code-python3ok-qby_parent_height" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
@@ -337,14 +331,14 @@ CREATE TABLE size_of_dogs AS
 <p>The output should look like the following:</p>
 
 <pre><code>sqlite&gt; SELECT * FROM size_of_dogs;
-abraham|toy
-barack|standard
-clinton|standard
-delano|standard
-eisenhower|mini
-fillmore|mini
-grover|toy
-herbert|mini</code></pre>
+ace|toy
+bella|standard
+charlie|standard
+daisy|standard
+ellie|mini
+finn|mini
+ginger|toy
+hank|mini</code></pre>
 
 <p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q size_of_dogs<button id="copy-code-python3ok-qsize_of_dogs" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
@@ -376,12 +370,12 @@ CREATE TABLE sentences AS
 </code></pre>
 
 <p>Each sibling pair should appear only once in the output, and siblings should be
-listed in alphabetical order (e.g. <code>&quot;barack and clinton...&quot;</code> instead of
-<code>&quot;clinton and barack...&quot;</code>), as follows:</p>
+listed in alphabetical order (e.g. <code>&quot;bella and charlie...&quot;</code> instead of
+<code>&quot;charlie and bella...&quot;</code>), as follows:</p>
 
 <pre><code>sqlite&gt; SELECT * FROM sentences;
-The two siblings, barack and clinton, have the same size: standard
-The two siblings, abraham and grover, have the same size: toy</code></pre>
+The two siblings, bella and charlie, have the same size: standard
+The two siblings, ace and ginger, have the same size: toy</code></pre>
 
 <blockquote><p><strong>Hint</strong>: First, create a helper table containing each pair of siblings. This
 will make comparing the sizes of siblings when constructing the main table
@@ -435,7 +429,7 @@ SELECT * FROM low_variance;
 &#x2d;&#x2d; Expected output:
 &#x2d;&#x2d; curly|1</code></pre>
 
-<p><em>Explanation</em>: The average height of long-haired dogs is 39.7, so the low variance criterion requires the height of each long-haired dog to be between 27.8 and 51.6. However, <code>abraham</code> is a long-haired dog with height 26, which is outside this range. For short-haired dogs, <code>barack</code> falls outside the valid range (check!). Thus, neither short nor long haired dogs are included in the output. There are two curly haired dogs: <code>fillmore</code> with height 32 and <code>herbert</code> with height 31. This gives a height range of 1.</p>
+<p><em>Explanation</em>: The average height of long-haired dogs is 39.7, so the low variance criterion requires the height of each long-haired dog to be between 27.8 and 51.6. However, <code>ace</code> is a long-haired dog with height 26, which is outside this range. For short-haired dogs, <code>bella</code> falls outside the valid range (check!). Thus, neither short nor long haired dogs are included in the output. There are two curly haired dogs: <code>finn</code> with height 32 and <code>hank</code> with height 31. This gives a height range of 1.</p>
 
 <p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q low_variance<button id="copy-code-python3ok-qlow_variance" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
         <script>
@@ -544,12 +538,12 @@ SELECT * FROM low_variance;
   };
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
-    <script src="/assets/js/network_storage.js"></script>
-    <script src="/assets/js/code_tabindex.js"></script>
-    <script src="/assets/js/storable.js"></script>
-    <script src="/assets/js/editor.js"></script>
-    <script src="/assets/js/copy-button.js"></script>
-    <script src="/assets/js/env-diagram.js"></script>
+    <script src="/fa24/assets/js/network_storage.js"></script>
+    <script src="/fa24/assets/js/code_tabindex.js"></script>
+    <script src="/fa24/assets/js/storable.js"></script>
+    <script src="/fa24/assets/js/editor.js"></script>
+    <script src="/fa24/assets/js/copy-button.js"></script>
+    <script src="/fa24/assets/js/env-diagram.js"></script>
     
 <!-- <script src="/assets/js/sketchy.js"></script> -->
 <script>
