@@ -34,7 +34,7 @@ CREATE TABLE size_of_dogs AS
   SELECT "REPLACE THIS LINE WITH YOUR SOLUTION";
 
 
--- Filling out this helper table is optional
+-- [Optional] Filling out this helper table is recommended
 CREATE TABLE siblings AS
   SELECT "REPLACE THIS LINE WITH YOUR SOLUTION";
 
