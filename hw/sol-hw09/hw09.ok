@@ -1,25 +1,24 @@
 {
     "name": "Homework 9",
-    "endpoint": "cal/cs61a/fa24/hw09",
+    "endpoint": "cal/c88c/fa24/hw09",
     "src": [
-        "hw09.scm"
+        "hw09.py"
     ],
     "tests": {
         "hw*.py": "doctest",
         "tests/*.py": "ok_test"
     },
     "default_tests": [
-        "curry-cook",
-        "curry-consume",
-        "switch-to-cond"
+        "label_squarer",
+        "preorder"
     ],
     "protocols": [
         "restore",
         "file_contents",
-        "grading",
         "analytics",
         "help",
         "unlock",
+        "grading",
         "backup"
     ]
 }
