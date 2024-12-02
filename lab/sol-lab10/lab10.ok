@@ -1,8 +1,8 @@
 {
-    "name": "Lab 12",
-    "endpoint": "cal/cs61a/fa24/lab12",
+    "name": "Lab 10",
+    "endpoint": "cal/c88c/fa24/lab10",
     "src": [
-        "lab12.sql"
+        "lab10.sql"
     ],
     "tests": {
         "lab*.py": "doctest",
