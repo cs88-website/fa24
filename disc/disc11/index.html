@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content ="CS 61A: Structure and Interpretation of Computer Programs" />
+    <meta name="description" content ="Data C88C: Computational Structures in Data Science" />
     <meta name="keywords" content ="Computer Science, Programming, Berkeley, EECS" />
-    <meta name="author" content ="John DeNero, Jedi Tsang (Guest Lecturer), Shm Almeda (GSI)" />
+    <meta name="author" content ="John DeNero, Jedi Tsang, Shm Almeda (GSI)" />
     <!-- CHANGED CAREFUL -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
@@ -12,8 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/assets/js/hl.js"></script>
-    <script src="/assets/js/toggledarkmode.js"></script>
+    <script src="/fa24/assets/js/hl.js"></script>
+    <script src="/fa24/assets/js/toggledarkmode.js"></script>
     <script>
         // we aren't registering builtins since
         //      (1) they don't render differently in the current CSS from other names
@@ -24,12 +24,12 @@
         });
         hljs.initHighlightingOnLoad();
     </script>
-    <script src="/assets/js/dark-mode.js"></script>
+    <script src="/fa24/assets/js/dark-mode.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/mono-blue.css">
-    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/fa24/assets/css/style.css">
+    <link rel="stylesheet" href="/fa24/assets/css/mono-blue.css">
+    <link rel="icon" href="/fa24/assets/images/favicon.ico">
 
     
 
@@ -37,7 +37,7 @@
 
 
     <title>
-Discussion 11 | CS 61A Fall 2024
+Discussion 11 | Data C88C Fall 2024
 </title>
   </head>
 
@@ -50,8 +50,8 @@ Discussion 11 | CS 61A Fall 2024
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">
-            CS 61A
+          <a class="navbar-brand" href="/fa24/">
+            Data C88C
             <!-- <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png"/> -->
           </a>
         </div>
@@ -60,15 +60,15 @@ Discussion 11 | CS 61A Fall 2024
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="/">Lectures</a></li>
+            <li><a href="/fa24/">Lectures</a></li>
             
-            <li><a href="/articles/about-61a/">Syllabus</a></li>
+            <li><a href="/fa24/articles/about-c88c/">Syllabus</a></li>
             
-            <li><a href="https://edstem.org/us/courses/63971/discussion/">Ed</a></li>
+            <li><a href="https://edstem.org/us/courses/63975/discussion/">Ed</a></li>
             
-            <li><a href="/office-hours/">Office Hours</a></li>
+            <li><a href="/fa24/office-hours/">Office Hours</a></li>
             
-            <li><a href="/articles/contact-61a/">Contact</a></li>
+            <li><a href="/fa24/articles/contact-c88c/">Contact</a></li>
             
 
             
@@ -79,19 +79,17 @@ Discussion 11 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="https://go.cs61a.org/61a-extensions">Request an Extension</a></li>
+                <li><a href="https://go.c88c.org/c88c-extensions">Request an Extension</a></li>
                 
-                <li><a href="https://go.cs61a.org/61a-regrades">Request a Regrade</a></li>
+                <li><a href="https://go.c88c.org/c88c-regrades">Request a Regrade</a></li>
                 
-                <li><a href="https://oh.cs61a.org/">Office Hours Queue</a></li>
+                <li><a href="https://oh.c88c.org/">Office Hours Queue</a></li>
                 
-                <li><a href="https://www.gradescope.com/courses/843175">Gradescope</a></li>
+                <li><a href="https://www.gradescope.com/courses/843183">Gradescope</a></li>
                 
-                <li><a href="https://bcourses.berkeley.edu/courses/1538118/pages">Lecture Recordings</a></li>
+                <li><a href="https://bcourses.berkeley.edu/courses/1538122/pages">Lecture Recordings</a></li>
                 
                 <li><a href="https://pythontutor.com/cp/composingprograms.html">Python Tutor</a></li>
-                
-                <li><a href="https://code.cs61a.org/scheme/">Scheme Editor</a></li>
                 
               </ul>
             </li>
@@ -103,19 +101,17 @@ Discussion 11 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/resources/">Past Exams & Websites</a></li>
+                <li><a href="https://cs61a.org/resources/">Past Exams & Websites</a></li>
                 
                 <li><a href="https://www.composingprograms.com">Textbook</a></li>
                 
                 <li><a href="https://drive.google.com/file/d/1O72u0ml65pibcjz-PXKpqeJDKaVqQ3D8/view">Debugging Guide</a></li>
                 
-                <li><a href="/articles/studying/">Studying Guide</a></li>
+                <li><a href="/fa24/articles/studying/">Studying Guide</a></li>
                 
-                <li><a href="/articles/composition/">Composition Guide</a></li>
+                <li><a href="/fa24/articles/composition/">Composition Guide</a></li>
                 
-                <li><a href="/articles/campus-res/">Campus Resources</a></li>
-                
-                <li><a href="/articles/advice/">Advice from Students</a></li>
+                <li><a href="/fa24/articles/campus-res/">Campus Resources</a></li>
                 
               </ul>
             </li>
@@ -127,11 +123,9 @@ Discussion 11 | CS 61A Fall 2024
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <li><a href="/instructor">Instructors</a></li>
+                <li><a href="/fa24/instructor">Instructors</a></li>
                 
-                <li><a href="/staff">TAs & Tutors</a></li>
-                
-                <li><a href="/academic-interns">Academic Interns</a></li>
+                <li><a href="/fa24/staff">TAs & Tutors</a></li>
                 
               </ul>
             </li>
@@ -149,7 +143,7 @@ Discussion 11 | CS 61A Fall 2024
     <header>
       <h1>
         
-Discussion 11: SQL
+Discussion 11: Final Review
 
         
         
@@ -166,273 +160,118 @@ Discussion 11: SQL
 
 
     
-<p><strong>Reminder:</strong> Use Discord for voice chat with the course staff. Write to <code>@discuss</code> in the <code>#discuss&#x2d;queue</code> channel on Discord at any time, and a member of the course staff will join your group's voice channel.</p>
-
-<p>Pick someone in your group to <a href="https://cs61a.org/articles/discord">join Discord</a>.
-It's fine if multiple people join, but one is enough.</p>
+<p>If there are fewer than 3 people in your group, feel free to merge your group with another group in the room.</p>
 
 <p>Now switch to Pensieve:</p>
 
 <ul>
-  <li><strong>Everyone</strong>: Go to <a href="http://discuss.pensieve.co">discuss.pensieve.co</a> and log in with your @berkeley.edu email, then enter your group number. (Your group number is the number of your Discord channel.)</li>
+  <li><strong>Everyone</strong>: Go to <a href="https://tutor.pensieve.co/schools/berkeley/all/cs88/cs88_fa24/d626ab39-7bc3-44a7-a621-4c39d3d456ac/open">pensieve.co</a>, log in with your @berkeley.edu email, and <strong>enter your group number</strong> (which was in the email that assigned you to this lab).</li>
 </ul>
 
 <p>Once you're on Pensieve, you don't need to return to this page; Pensieve has all the same content (but more features). If for some reason Penseive doesn't work, return to this page and continue with the discussion.</p>
-
-<p>Post in the <code>#help</code> channel on <a href="https://cs61a.org/articles/discord/">Discord</a> if you have trouble.</p>
-
-<p><strong>Pro tip:</strong> Any of you can type a question into your group's Discord <a href="https://support.discord.com/hc/en-us/articles/4412085582359-Text-Channels-Text-Chat-In-Voice-Channels#h_01FMJT412WBX1MR4HDYNR8E95X">channel's text chat</a> with the <code>@discuss</code> tag, and a member of the course staff will respond.</p>
 
 
 <h1 id="getting-started">Getting Started</h1>
 
 
-<p>If you have only 1 or 2 people in your group, you can join the other group in
-the room with you.</p>
-
-<p>Everybody say your name, and then share your favorite restaurant, cafe, or boba shop near campus. (Yes, Kingpin Donuts counts as a restaurant.)</p>
+<p>Everybody say your name and the non-CS/EECS course that you're most excited
+about taking next semester.</p>
 
 
-<h1 id="select-statements">Select Statements</h1>
+<h1 id="linked-lists">Linked Lists</h1>
 
-
-<p>A <code>SELECT</code> statement describes an output table based on input rows. To write one:</p>
-
-<ol>
-  <li>Describe the <strong>input rows</strong> using <code>FROM</code> and <code>WHERE</code> clauses.</li>
-  <li>Format and order the <strong>output rows</strong> and columns using <code>SELECT</code> and <code>ORDER BY</code> clauses.</li>
-</ol>
-
-<p><code>SELECT</code> <em>(Step 2)</em> <code>FROM</code> <em>(Step 1)</em> <code>WHERE</code> <em>(Step 1)</em> <code>ORDER BY</code> <em>(Step 2)</em>;</p>
-
-<p>Step 1 may involve joining tables (using commas) to form input rows that consist of two or more rows from existing tables.</p>
-
-<p>The <code>WHERE</code> and <code>ORDER BY</code> clauses are optional.</p>
-
-
-<h2 id="pizza-time">Pizza Time</h2>
-
-
-<p>The <code>pizzas</code> table contains the names, opening, and closing hours of great pizza
-places in Berkeley. The <code>meals</code> table contains typical meal times (for college
-students). A pizza place is open for a meal if the meal time is at or within the
-<code>open</code> and <code>close</code> times.</p>
-
-<pre><code>CREATE TABLE pizzas AS
-  SELECT &quot;Artichoke&quot; AS name, 12 AS open, 15 AS close UNION
-  SELECT &quot;La Val&#x27;s&quot;         , 11        , 22          UNION
-  SELECT &quot;Sliver&quot;           , 11        , 20          UNION
-  SELECT &quot;Cheeseboard&quot;      , 16        , 23          UNION
-  SELECT &quot;Emilia&#x27;s&quot;         , 13        , 18;
-
-CREATE TABLE meals AS
-  SELECT &quot;breakfast&quot; AS meal, 11 AS time UNION
-  SELECT &quot;lunch&quot;            , 13         UNION
-  SELECT &quot;dinner&quot;           , 19         UNION
-  SELECT &quot;snack&quot;            , 22;</code></pre>
-
-
-
-
-<h3 id="q1-open-early">Q1: Open Early</h3>
-
-
-<p>You'd like to have pizza before 13 o'clock (1pm). Create a <code>opening</code> table with
-the names of all pizza places that <code>open</code> before 13 o'clock, listed in reverse
-alphabetical order.</p>
-
-<p><strong><code>opening</code></strong> table:</p>
-
-
-
-
-        <div class="table-responsive">
-          <table class="table table-bordered">
-          
-  <tr>
-    <th>name</th>
-  </tr>
-  <tr>
-    <td>Sliver</td>
-  </tr>
-  <tr>
-    <td>La Val's</td>
-  </tr>
-  <tr>
-    <td>Artichoke</td>
-  </tr>
-
-          </table>
-        </div>
-        
-
-
-
-<!-- <attach-sql>
--- Pizza places that open before 1pm in alphabetical order
-SELECT "REPLACE THIS LINE WITH YOUR SOLUTION";
-</attach-sql> -->
-
-<!--  -->
-
-
-            <div class="monaco-storable" id="opening-input" style="height:126px;"></div>
-            <a href="javascript:void" id="modal-link-opening-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-opening-input" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content" style="padding-bottom: -5px">
-                    <iframe
-                        id="code-iframe-opening-input"
-                        width="100%"
-                        height="700px"
-                        style="border: none; display:block;"
-                    ></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="storable-status"></div>
-            <script>
-                $(() => activateEditor('&#x2d;&#x2d; Pizza places that open before 1pm in alphabetical order\nSELECT "REPLACE THIS LINE WITH YOUR SOLUTION";\n\n', "sql", "opening-input"));
-            </script>
-        
 
 
         <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Reverse Alphabetical Order<noscript> (enable JavaScript)</noscript>
+        Reminder: Linked Lists<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-1">
-To order by <code>name</code> in reverse alphabitical order, write <code>ORDER BY name DESC</code>.
-</div>
+A linked list is a <code>Link</code> object or <code>Link.empty</code>.
 
-<!-- <p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q opening<button id="copy-code-python3ok-qopening" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qopening").onclick = () => copyCode('python3 ok -q opening', "copy-code-python3ok-qopening");
-        </script>
-        <br/> -->
+<p>You can mutate a <code>Link</code> object <code>s</code> in two ways:</p>
 
+<ul>
+  <li>Change the first element with <code>s.first = ...</code></li>
+  <li>Change the rest of the elements with <code>s.rest = ...</code></li>
+</ul>
 
-<h3 id="q2-study-session">Q2: Study Session</h3>
+<p>You can make a new <code>Link</code> object by calling <code>Link</code>:</p>
 
-
-<p>You're planning to study at a pizza place from the moment it opens until 14
-o'clock (2pm). Create a table <code>study</code> with two columns, the <code>name</code> of each pizza
-place and the <code>duration</code> of the study session you would have if you studied there
-(the difference between when it opens and 14 o'clock). For pizza places that are
-not open before 2pm, the <code>duration</code> should be zero. Order the
-rows by decreasing duration.</p>
-
-<p><strong>Hint:</strong> Use an expression of the form <code>MAX(_, 0)</code> to make sure a result is not below 0.</p>
-
-<p><strong><code>study</code></strong> table:</p>
-
-
-
-
-        <div class="table-responsive">
-          <table class="table table-bordered">
-          
-  <tr>
-    <th>name</th>
-    <th>duration</th>
-  </tr>
-  <tr>
-    <td>La Val's</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>Sliver</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>Artichoke</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>Emilia's</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td>Cheeseboard</td>
-    <td>0</td>
-  </tr>
-
-          </table>
-        </div>
-        
-
-
-
-
-            <div class="monaco-storable" id="study-input" style="height:126px;"></div>
-            <a href="javascript:void" id="modal-link-study-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-study-input" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content" style="padding-bottom: -5px">
-                    <iframe
-                        id="code-iframe-study-input"
-                        width="100%"
-                        height="700px"
-                        style="border: none; display:block;"
-                    ></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="storable-status"></div>
-            <script>
-                $(() => activateEditor('&#x2d;&#x2d; Pizza places and the duration of a study break that ends at 14 o&#x27;clock\nSELECT "REPLACE THIS LINE WITH YOUR SOLUTION";\n\n', "sql", "study-input"));
-            </script>
-        
+<ul>
+  <li><code>Link(4)</code> makes a linked list of length 1 containing 4.</li>
+  <li><code>Link(4, s)</code> makes a linked list that starts with 4 followed by the elements of linked list <code>s</code>.
+  </div></li>
+</ul>
 
 
         <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Order by Duration<noscript> (enable JavaScript)</noscript>
+        Link Class<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-2">
-To order by decreasing duration, first name the column with <code>SELECT ..., ... AS duration ...</code>, then <code>ORDER BY duration DESC</code>.
+
+<pre><code>class Link:
+    &quot;&quot;&quot;A linked list is either a Link object or Link.empty
+
+    &gt;&gt;&gt; s = Link(3, Link(4, Link(5)))
+    &gt;&gt;&gt; s.rest
+    Link(4, Link(5))
+    &gt;&gt;&gt; s.rest.rest.rest is Link.empty
+    True
+    &gt;&gt;&gt; s.rest.first * 2
+    8
+    &gt;&gt;&gt; print(s)
+    &lt;3 4 5&gt;
+    &quot;&quot;&quot;
+    empty = ()
+
+    def __init__(self, first, rest=empty):
+        assert rest is Link.empty or isinstance(rest, Link)
+        self.first = first
+        self.rest = rest
+
+    def __repr__(self):
+        if self.rest:
+            rest_repr = &#x27;, &#x27; + repr(self.rest)
+        else:
+            rest_repr = &#x27;&#x27;
+        return &#x27;Link(&#x27; + repr(self.first) + rest_repr + &#x27;)&#x27;
+
+    def __str__(self):
+        string = &#x27;&lt;&#x27;
+        while self.rest is not Link.empty:
+            string += str(self.first) + &#x27; &#x27;
+            self = self.rest
+        return string + str(self.first) + &#x27;&gt;&#x27;</code></pre>
+
+
+
 </div>
 
 
-<h3 id="q3-late-night-snack">Q3: Late Night Snack</h3>
+<h3 id="q1-linear-sublists">Q1: Linear Sublists</h3>
 
 
-<p>What's still open for a late night <code>snack</code>? Create a <code>late</code> table with one
-column named <code>status</code> that has a sentence describing the closing time of each
-pizza place that closes at or after <code>snack</code> time. <strong>Important:</strong> Don't use any
-numbers in your SQL query! Instead, use a join to compare each restaurant's
-closing time to the time of a snack. The rows may appear in any order.</p>
+<p><strong>Definition:</strong> A <em>sublist</em> of linked list <code>s</code> is a linked list of some of the
+elements of <code>s</code> in order. For example, <code>&lt;3 6 2 5 1 7&gt;</code> has sublists <code>&lt;3 2 1&gt;</code>
+and <code>&lt;6 2 7&gt;</code> but not <code>&lt;5 6 7&gt;</code>.</p>
 
-<p><strong><code>late</code></strong> table:</p>
+<p><strong>Definition:</strong> A <em>linear sublist</em> of a linked list of numbers <code>s</code> is a sublist
+in which the difference between adjacent numbers is always the same. For example
+<code>&lt;2 4 6 8&gt;</code> is a linear sublist of <code>&lt;1 2 3 4 6 9 1 8 5&gt;</code> because the difference
+between each pair of adjacent elements is 2.</p>
 
-
-
-
-        <div class="table-responsive">
-          <table class="table table-bordered">
-          
-  <tr>
-    <th>status</th>
-  </tr>
-  <tr>
-    <td>Cheeseboard closes at 23</td>
-  </tr>
-  <tr>
-    <td>La Val's closes at 22</td>
-  </tr>
-
-          </table>
-        </div>
-        
+<p>Implement <code>linear</code> which takes a linked list of numbers <code>s</code> (either a <code>Link</code>
+instance or <code>Link.empty</code>). It returns the longest linear sublist of <code>s</code>. If two
+linear sublists are tied for the longest, return either one.</p>
 
 
-
-
-            <div class="monaco-storable" id="late-input" style="height:126px;"></div>
-            <a href="javascript:void" id="modal-link-late-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-late-input" tabindex="-1" role="dialog">
+            <div class="monaco-storable" id="linear-input" style="height:720px;"></div>
+            <a href="javascript:void" id="modal-link-linear-input">Run in 61A Code</a>
+            <div class="modal fade" id="modal-linear-input" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content" style="padding-bottom: -5px">
                     <iframe
-                        id="code-iframe-late-input"
+                        id="code-iframe-linear-input"
                         width="100%"
                         height="700px"
                         style="border: none; display:block;"
@@ -442,147 +281,41 @@ closing time to the time of a snack. The rows may appear in any order.</p>
             </div>
             <div class="storable-status"></div>
             <script>
-                $(() => activateEditor('&#x2d;&#x2d; Pizza places that are open for late&#x2d;night&#x2d;snack time and when they close\nSELECT "REPLACE THIS LINE WITH YOUR SOLUTION";\n\n', "sql", "late-input"));
+                $(() => activateEditor('def linear(s):\n    &quot;&quot;&quot;Return the longest linear sublist of a linked list s.\n\n    &gt;&gt;&gt; s = Link(9, Link(4, Link(6, Link(7, Link(8, Link(10))))))\n    &gt;&gt;&gt; linear(s)\n    Link(4, Link(6, Link(8, Link(10))))\n    &gt;&gt;&gt; linear(Link(4, Link(5, s)))\n    Link(4, Link(5, Link(6, Link(7, Link(8)))))\n    &gt;&gt;&gt; linear(Link(4, Link(5, Link(4, Link(7, Link(3, Link(2, Link(8))))))))\n    Link(5, Link(4, Link(3, Link(2))))\n    &quot;&quot;&quot;\n    def complete(first, rest):\n        &quot;The longest linear sublist of Link(first, rest) with difference d.&quot;\n        if rest is Link.empty:\n            return ____\n        elif ____ == d:\n            return Link(____, complete(____, ____))\n        else:\n            return complete(first, rest.rest)\n    if s is Link.empty:\n        return s\n    longest = Link(s.first) # The longest linear sublist found so far\n    while s is not Link.empty:\n        t = s.rest\n        while t is not Link.empty:\n            d = t.first &#x2d; s.first\n            candidate = ____\n            if length(candidate) &gt; length(longest):\n                longest = candidate\n            t = t.rest\n        s = s.rest\n    return longest\n\ndef length(s):\n    if s is Link.empty:\n        return 0\n    else:\n        return 1 + length(s.rest)\n', "python", "linear-input"));
             </script>
         
 
 
         <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Referencing the Snack Time<noscript> (enable JavaScript)</noscript>
+        Hint: complete function<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-3">
-To compare a pizza place's <code>close</code> time to the time of a snack:
+There are three cases:
 
 <ul>
-  <li>join the <code>pizzas</code> and <code>meals</code> tables using <code>FROM pizzas, meals</code></li>
-  <li>use only rows where the <code>meal</code> is a <code>&quot;snack&quot;</code></li>
-  <li>compare the <code>time</code> of the snack to the <code>close</code> of the pizza place.
+  <li>If <code>rest</code> is empty, return a one-element list containing just <code>first</code>.</li>
+  <li>If <code>rest.first</code> is in the linear sublist that starts with <code>first</code>, then build a list that contains <code>first</code>, and <code>rest.first</code>.</li>
+  <li>Otherwise, <code>complete(first, rest.rest)</code>.
   </div></li>
 </ul>
 
 
         <button id='toggle-4' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Composing a Sentence<noscript> (enable JavaScript)</noscript>
+        Hint: while statement<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-4">
-Use <code>name || &quot; closes at &quot; || close</code> to create the sentences in the resulting table. The <code>||</code> operator concatenates values into strings.
+This while loop is creating a <code>candidate</code> linear sublist for every two possible starting values: <code>s.first</code> and <code>t.first</code>. The rest of the linear sublist must be in <code>t.rest</code>.
 </div>
-
-
-<h3 id="q4-double-pizza">Q4: Double Pizza</h3>
-
-
-<p>If two meals are more than 6 hours apart, then there's nothing wrong with going
-to the same pizza place for both, right? Create a <code>double</code> table with three
-columns. The <code>first</code> column is the earlier meal, the <code>second</code> column is the
-later meal, and the <code>name</code> column is the name of a pizza place. Only include
-rows that describe two meals that are <strong>more than 6 hours apart</strong> and a pizza
-place that is open for both of the meals. The rows may appear in any order.</p>
-
-<p><strong><code>double</code></strong> table:</p>
-
-
-
-
-        <div class="table-responsive">
-          <table class="table table-bordered">
-          
-  <tr>
-    <th>first</th>
-    <th>second</th>
-    <th>name</th>
-  </tr>
-  <tr>
-    <td>breakfast</td>
-    <td>dinner</td>
-    <td>La Val's</td>
-  </tr>
-  <tr>
-    <td>breakfast</td>
-    <td>dinner</td>
-    <td>Sliver</td>
-  </tr>
-  <tr>
-    <td>breakfast</td>
-    <td>snack</td>
-    <td>La Val's</td>
-  </tr>
-  <tr>
-    <td>lunch</td>
-    <td>snack</td>
-    <td>La Val's</td>
-  </tr>
-
-          </table>
-        </div>
-        
-
-
-
-
-            <div class="monaco-storable" id="double-input" style="height:162px;"></div>
-            <a href="javascript:void" id="modal-link-double-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-double-input" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content" style="padding-bottom: -5px">
-                    <iframe
-                        id="code-iframe-double-input"
-                        width="100%"
-                        height="700px"
-                        style="border: none; display:block;"
-                    ></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="storable-status"></div>
-            <script>
-                $(() => activateEditor('&#x2d;&#x2d; Two meals at the same place\n  SELECT ____ AS first, ____ AS second, name\n  FROM ____, ____, pizzas\n  WHERE ____;\n\n', "sql", "double-input"));
-            </script>
-        
-
-
-        <button id='toggle-5' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Joining Tables<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-5">
-Use <code>FROM meals AS a, meals AS b, pizzas</code> so that each row has info about two meals and a pizza place. Then you can write a <code>WHERE</code> clause that compares both <code>a.time</code> and <code>b.time</code> to <code>open</code> and <code>close</code> and each other to ensure all the relevant conditions are met.
-</div>
-
-<!--  -->
-
-<!-- <p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q double<button id="copy-code-python3ok-qdouble" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
-        <script>
-        document.getElementById("copy-code-python3ok-qdouble").onclick = () => copyCode('python3 ok -q double', "copy-code-python3ok-qdouble");
-        </script>
-        <br/> -->
-
-<!--
-<attach-sql>
--- Two meals at the same place
-  SELECT <strong><em>_ AS first, </em></strong>_ AS second, name
--- BEGIN SOLUTION NO PROMPT ALT="  FROM <strong><em>_, </em></strong><em>, pizzas"
-
-<pre><code>     FROM meals AS a, meals AS b, pizzas</code></pre>
-
-<p>-- END SOLUTION
--- BEGIN SOLUTION NO PROMPT ALT="  WHERE </em><em></em>_;"</p>
-
-<pre><code>     WHERE open &lt;= a.time AND a.time &lt;= close AND
-           open &lt;= b.time AND b.time &lt;= close AND
-           b.time &gt; a.time + 6;</code></pre>
-
-<p>-- END SOLUTION
-</attach-sql> --></p>
 
 
 <h1 id="document-the-occasion">Document the Occasion</h1>
 
 
-<p>Please all fill out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeqlK8l6WkScGr-RHR-kM4p5bnR9cllYrG95fDqPJspSlll7A/viewform">attendance form</a> (one submission per person per week).</p>
+<p>Please all fill out the <a href="https://forms.gle/FXxKTRphbCxZ2sy97">attendance form</a> (one submission per person per week).</p>
 
-<p><strong>Important:</strong> Please help put the furniture in the room back where you found it before you leave. Thanks!</p>
-
-<p>If you finish early, maybe go get pizza together...</p>
+<p><strong>Scheduling time:</strong> This is the last discussion, but you could schedule a
+meeting with your group next week to study for the exam. Your regular lab
+room and time should be available during RRR week if you want to use it.</p>
 <script>
     $('.alwaystoggle').css('display', 'inline-block');
     $('.alwaystoggle').click(function() {
@@ -597,15 +330,9 @@ Use <code>FROM meals AS a, meals AS b, pizzas</code> so that each row has info a
     <nav class='hidden-print hidden-sm hidden-xs sidebar'>
       <ul>
   <li><a href="#getting-started">Getting Started</a></li>
-  <li><a href="#select-statements">Select Statements</a></li>
+  <li><a href="#linked-lists">Linked Lists</a></li>
   <ul>
-    <li><a href="#pizza-time">Pizza Time</a></li>
-    <ul>
-      <li><a href="#q1-open-early">Q1: Open Early</a></li>
-      <li><a href="#q2-study-session">Q2: Study Session</a></li>
-      <li><a href="#q3-late-night-snack">Q3: Late Night Snack</a></li>
-      <li><a href="#q4-double-pizza">Q4: Double Pizza</a></li>
-    </ul>
+    <li><a href="#q1-linear-sublists">Q1: Linear Sublists</a></li>
   </ul>
   <li><a href="#document-the-occasion">Document the Occasion</a></li>
 </ul>
@@ -660,12 +387,12 @@ Use <code>FROM meals AS a, meals AS b, pizzas</code> so that each row has info a
   };
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
-    <script src="/assets/js/network_storage.js"></script>
-    <script src="/assets/js/code_tabindex.js"></script>
-    <script src="/assets/js/storable.js"></script>
-    <script src="/assets/js/editor.js"></script>
-    <script src="/assets/js/copy-button.js"></script>
-    <script src="/assets/js/env-diagram.js"></script>
+    <script src="/fa24/assets/js/network_storage.js"></script>
+    <script src="/fa24/assets/js/code_tabindex.js"></script>
+    <script src="/fa24/assets/js/storable.js"></script>
+    <script src="/fa24/assets/js/editor.js"></script>
+    <script src="/fa24/assets/js/copy-button.js"></script>
+    <script src="/fa24/assets/js/env-diagram.js"></script>
     
 <!-- <script src="/assets/js/sketchy.js"></script> -->
 <script>
