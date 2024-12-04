@@ -1,6 +1,6 @@
 {
     "name": "Homework 11",
-    "endpoint": "cal/cs61a/fa24/hw11",
+    "endpoint": "cal/c88c/fa24/hw11",
     "src": [
         "hw11.scm"
     ],

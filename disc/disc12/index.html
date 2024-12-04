@@ -149,7 +149,7 @@ Discussion 12 | CS 61A Fall 2024
     <header>
       <h1>
         
-Discussion 12: Final Review
+Discussion 12: SQL
 
         
         
@@ -166,100 +166,108 @@ Discussion 12: Final Review
 
 
     
-<p><strong>Reminder:</strong> Use Discord for voice chat with the course staff. Write to <code>@discuss</code> in the <code>#discuss&#x2d;queue</code> channel on Discord at any time, and a member of the course staff will join your group's voice channel.</p>
-
-<p>Pick someone in your group to <a href="https://cs61a.org/articles/discord">join Discord</a>.
-It's fine if multiple people join, but one is enough.</p>
-
-<p>Now switch to Pensieve:</p>
+<p>Switch to Pensieve:</p>
 
 <ul>
-  <li><strong>Everyone</strong>: Go to <a href="http://discuss.pensieve.co">discuss.pensieve.co</a> and log in with your @berkeley.edu email, then enter your group number. (Your group number is the number of your Discord channel.)</li>
+  <li><strong>Everyone</strong>: Go to <a href="https://tutor.pensieve.co/schools/berkeley/all/cs61a/cs61a_fa24/f69c3ec0-bbc1-4d3e-a24f-6f4d9d3fba25/open">pensieve.co</a>, log in with your @berkeley.edu email, and <strong>enter your group number</strong> (which was in the email that assigned you to this lab).</li>
 </ul>
 
 <p>Once you're on Pensieve, you don't need to return to this page; Pensieve has all the same content (but more features). If for some reason Penseive doesn't work, return to this page and continue with the discussion.</p>
-
-<p>Post in the <code>#help</code> channel on <a href="https://cs61a.org/articles/discord/">Discord</a> if you have trouble.</p>
-
-<p><strong>Pro tip:</strong> Any of you can type a question into your group's Discord <a href="https://support.discord.com/hc/en-us/articles/4412085582359-Text-Channels-Text-Chat-In-Voice-Channels#h_01FMJT412WBX1MR4HDYNR8E95X">channel's text chat</a> with the <code>@discuss</code> tag, and a member of the course staff will respond.</p>
 
 
 <h1 id="getting-started">Getting Started</h1>
 
 
-<p>If you have only 1 or 2 people in your group, you can join the other group in
-the room with you.</p>
+<p><strong>To get help from a TA</strong>, If you do not have an in-person TA, you can reach your TA using this <a href="https://berkeley.zoom.us/j/91340395124?pwd=7Lqljf1tslL0QlufLz6HrBtSCB8Ojv.1">Zoom link</a>.</p>
 
-<p><strong>Ice breaker:</strong> Everybody say your name and the non-CS/EECS course that you're
-most excited about taking next semester.</p>
+<p>If there are fewer than 3 people in your group, feel free to merge your group with another group in the room.</p>
 
-
-<h1 id="lists">Lists</h1>
+<p>Everybody say your name, and then share your favorite restaurant, cafe, or boba shop near campus. (Yes, Kingpin Donuts counts as a restaurant.)</p>
 
 
-
-        <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Reminder: list mutation<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-1">
-The two most common mutation operations for lists are item assignment and the
-<code>append</code> method.
-
-<pre><code>&gt;&gt;&gt; s = [1, 3, 4]
-&gt;&gt;&gt; t = s  # A second name for the same list
-&gt;&gt;&gt; t[0] = 2  # this changes the first element of the list to 2, affecting both s and t
-&gt;&gt;&gt; s
-[2, 3, 4]
-&gt;&gt;&gt; s.append(5)  # this adds 5 to the end of the list, affecting both s and t
-&gt;&gt;&gt; t
-[2, 3, 4, 5]</code></pre>
-
-<p>There are many other list mutation methods:</p>
-
-<ul>
-  <li><code>append(elem)</code>:
-  Add <code>elem</code> to the end of the list. Return <code>None</code>.</li>
-  <li><code>extend(s)</code>:
-  Add all elements of iterable <code>s</code> to the end of the list. Return <code>None</code>.</li>
-  <li><code>insert(i, elem)</code>:
-  Insert <code>elem</code> at index <code>i</code>. If <code>i</code> is greater than or equal to the length of
-  the list, then <code>elem</code> is inserted at the end. This does not replace any
-  existing elements, but only adds the new element <code>elem</code>. Return <code>None</code>.</li>
-  <li><code>remove(elem)</code>:
-  Remove the first occurrence of <code>elem</code> in list. Return <code>None</code>.
-  Errors if <code>elem</code> is not in the list.</li>
-  <li><code>pop(i)</code>:
-  Remove and return the element at index <code>i</code>.</li>
-  <li><code>pop()</code>:
-  Remove and return the last element.
-  </div></li>
-</ul>
+<h1 id="select-statements">Select Statements</h1>
 
 
-<h3 id="q1-word-rope">Q1: Word Rope</h3>
+<p>A <code>SELECT</code> statement describes an output table based on input rows. To write one:</p>
+
+<ol>
+  <li>Describe the <strong>input rows</strong> using <code>FROM</code> and <code>WHERE</code> clauses.</li>
+  <li>Format and order the <strong>output rows</strong> and columns using <code>SELECT</code> and <code>ORDER BY</code> clauses.</li>
+</ol>
+
+<p><code>SELECT</code> <em>(Step 2)</em> <code>FROM</code> <em>(Step 1)</em> <code>WHERE</code> <em>(Step 1)</em> <code>ORDER BY</code> <em>(Step 2)</em>;</p>
+
+<p>Step 1 may involve joining tables (using commas) to form input rows that consist of two or more rows from existing tables.</p>
+
+<p>The <code>WHERE</code> and <code>ORDER BY</code> clauses are optional.</p>
 
 
-<p><strong>Definition:</strong> A <em>rope</em> in Python is a list containing only one-letter strings
-except for the last element, which may either be a one-letter string or a rope.</p>
-
-<p>Implement <code>word_rope</code>, a Python function that takes a non-empty string <code>s</code>
-containing only letters and spaces that does not start or end with a space. It
-returns a <em>rope</em> containing the letters of <code>s</code> in which each word is in a
-separate list.</p>
-
-<p><strong>Important:</strong> You may not use slicing or the <code>split</code>, <code>find</code>, or <code>index</code>
-methods of a string. Solve the problem using list operations.</p>
-
-<p><strong>Reminder:</strong> <code>s[&#x2d;1]</code> evaluates to the last element of a sequence <code>s</code>.</p>
+<h2 id="pizza-time">Pizza Time</h2>
 
 
-            <div class="monaco-storable" id="word_rope-input" style="height:360px;"></div>
-            <a href="javascript:void" id="modal-link-word_rope-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-word_rope-input" tabindex="-1" role="dialog">
+<p>The <code>pizzas</code> table contains the names, opening, and closing hours of great pizza
+places in Berkeley. The <code>meals</code> table contains typical meal times (for college
+students). A pizza place is open for a meal if the meal time is at or within the
+<code>open</code> and <code>close</code> times.</p>
+
+<pre><code>CREATE TABLE pizzas AS
+  SELECT &quot;Artichoke&quot; AS name, 12 AS open, 15 AS close UNION
+  SELECT &quot;La Val&#x27;s&quot;         , 11        , 22          UNION
+  SELECT &quot;Sliver&quot;           , 11        , 20          UNION
+  SELECT &quot;Cheeseboard&quot;      , 16        , 23          UNION
+  SELECT &quot;Emilia&#x27;s&quot;         , 13        , 18;
+
+CREATE TABLE meals AS
+  SELECT &quot;breakfast&quot; AS meal, 11 AS time UNION
+  SELECT &quot;lunch&quot;            , 13         UNION
+  SELECT &quot;dinner&quot;           , 19         UNION
+  SELECT &quot;snack&quot;            , 22;</code></pre>
+
+
+
+
+<h3 id="q1-open-early">Q1: Open Early</h3>
+
+
+<p>You'd like to have pizza before 13 o'clock (1pm). Create a <code>opening</code> table with
+the names of all pizza places that <code>open</code> before 13 o'clock, listed in reverse
+alphabetical order.</p>
+
+<p><strong><code>opening</code></strong> table:</p>
+
+
+
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+          
+  <tr>
+    <th>name</th>
+  </tr>
+  <tr>
+    <td>Sliver</td>
+  </tr>
+  <tr>
+    <td>La Val's</td>
+  </tr>
+  <tr>
+    <td>Artichoke</td>
+  </tr>
+
+          </table>
+        </div>
+        
+
+
+
+
+            <div class="monaco-storable" id="opening-input" style="height:126px;"></div>
+            <a href="javascript:void" id="modal-link-opening-input">Run in 61A Code</a>
+            <div class="modal fade" id="modal-opening-input" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content" style="padding-bottom: -5px">
                     <iframe
-                        id="code-iframe-word_rope-input"
+                        id="code-iframe-opening-input"
                         width="100%"
                         height="700px"
                         style="border: none; display:block;"
@@ -269,113 +277,237 @@ methods of a string. Solve the problem using list operations.</p>
             </div>
             <div class="storable-status"></div>
             <script>
-                $(() => activateEditor('def word_rope(s):\n    &quot;&quot;&quot;Return a rope of the words in string s.\n\n    &gt;&gt;&gt; word_rope(&#x27;the last week&#x27;)\n    [&#x27;t&#x27;, &#x27;h&#x27;, &#x27;e&#x27;, [&#x27;l&#x27;, &#x27;a&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, [&#x27;w&#x27;, &#x27;e&#x27;, &#x27;e&#x27;, &#x27;k&#x27;]]]\n    &quot;&quot;&quot;\n    assert s and s[0] != &#x27; &#x27; and s[&#x2d;1] != [ ]\n    result = []\n    word = _____\n    for x in s:\n        if x == &#x27; &#x27;:\n            "*** YOUR CODE HERE ***"\n        else:\n            "*** YOUR CODE HERE ***"\n    return result\n', "python", "word_rope-input"));
+                $(() => activateEditor('&#x2d;&#x2d; Pizza places that open before 1pm in alphabetical order\nSELECT "REPLACE THIS LINE WITH YOUR SOLUTION";\n\n', "sql", "opening-input"));
+            </script>
+        
+
+
+        <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        Hint: Reverse Alphabetical Order<noscript> (enable JavaScript)</noscript>
+        </button>
+        <div class="solution toggle-1">
+To order by <code>name</code> in reverse alphabitical order, write <code>ORDER BY name DESC</code>.
+</div>
+
+
+<h3 id="q2-study-session">Q2: Study Session</h3>
+
+
+<p>You're planning to study at a pizza place from the moment it opens until 14
+o'clock (2pm). Create a table <code>study</code> with two columns, the <code>name</code> of each pizza
+place and the <code>duration</code> of the study session you would have if you studied there
+(the difference between when it opens and 14 o'clock). For pizza places that are
+not open before 2pm, the <code>duration</code> should be zero. Order the
+rows by decreasing duration.</p>
+
+<p><strong>Hint:</strong> Use an expression of the form <code>MAX(_, 0)</code> to make sure a result is not below 0.</p>
+
+<p><strong><code>study</code></strong> table:</p>
+
+
+
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+          
+  <tr>
+    <th>name</th>
+    <th>duration</th>
+  </tr>
+  <tr>
+    <td>La Val's</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>Sliver</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>Artichoke</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Emilia's</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Cheeseboard</td>
+    <td>0</td>
+  </tr>
+
+          </table>
+        </div>
+        
+
+
+
+
+            <div class="monaco-storable" id="study-input" style="height:126px;"></div>
+            <a href="javascript:void" id="modal-link-study-input">Run in 61A Code</a>
+            <div class="modal fade" id="modal-study-input" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content" style="padding-bottom: -5px">
+                    <iframe
+                        id="code-iframe-study-input"
+                        width="100%"
+                        height="700px"
+                        style="border: none; display:block;"
+                    ></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="storable-status"></div>
+            <script>
+                $(() => activateEditor('&#x2d;&#x2d; Pizza places and the duration of a study break that ends at 14 o&#x27;clock\nSELECT "REPLACE THIS LINE WITH YOUR SOLUTION";\n\n', "sql", "study-input"));
             </script>
         
 
 
         <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: Implementation<noscript> (enable JavaScript)</noscript>
+        Hint: Order by Duration<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-2">
-In this implementation, <code>result</code> is a rope and <code>word</code> is a list within that rope which is still being constructed. When <code>x</code> is a space, add an empty list to the end of <code>word</code> and assign <code>word</code> to this empty list. Otherwise, add <code>x</code> to the end of <code>word</code>.
+To order by decreasing duration, first name the column with <code>SELECT ..., ... AS duration ...</code>, then <code>ORDER BY duration DESC</code>.
 </div>
 
 
-<h1 id="linked-lists">Linked Lists</h1>
+<h3 id="q3-late-night-snack">Q3: Late Night Snack</h3>
 
+
+<p>What's still open for a late night <code>snack</code>? Create a <code>late</code> table with one
+column named <code>status</code> that has a sentence describing the closing time of each
+pizza place that closes at or after <code>snack</code> time. <strong>Important:</strong> Don't use any
+numbers in your SQL query! Instead, use a join to compare each restaurant's
+closing time to the time of a snack. The rows may appear in any order.</p>
+
+<p><strong><code>late</code></strong> table:</p>
+
+
+
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+          
+  <tr>
+    <th>status</th>
+  </tr>
+  <tr>
+    <td>Cheeseboard closes at 23</td>
+  </tr>
+  <tr>
+    <td>La Val's closes at 22</td>
+  </tr>
+
+          </table>
+        </div>
+        
+
+
+
+<p>The <code>||</code> operator in SQL concatenates two strings together, just like <code>+</code> in Python.</p>
+
+
+            <div class="monaco-storable" id="late-input" style="height:126px;"></div>
+            <a href="javascript:void" id="modal-link-late-input">Run in 61A Code</a>
+            <div class="modal fade" id="modal-late-input" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content" style="padding-bottom: -5px">
+                    <iframe
+                        id="code-iframe-late-input"
+                        width="100%"
+                        height="700px"
+                        style="border: none; display:block;"
+                    ></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="storable-status"></div>
+            <script>
+                $(() => activateEditor('&#x2d;&#x2d; Pizza places that are open for late&#x2d;night&#x2d;snack time and when they close\nSELECT "REPLACE THIS LINE WITH YOUR SOLUTION";\n\n', "sql", "late-input"));
+            </script>
+        
 
 
         <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Reminder: Linked Lists<noscript> (enable JavaScript)</noscript>
+        Hint: Referencing the Snack Time<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-3">
-A linked list is a <code>Link</code> object or <code>Link.empty</code>.
-
-<p>You can mutate a <code>Link</code> object <code>s</code> in two ways:</p>
+To compare a pizza place's <code>close</code> time to the time of a snack:
 
 <ul>
-  <li>Change the first element with <code>s.first = ...</code></li>
-  <li>Change the rest of the elements with <code>s.rest = ...</code></li>
-</ul>
-
-<p>You can make a new <code>Link</code> object by calling <code>Link</code>:</p>
-
-<ul>
-  <li><code>Link(4)</code> makes a linked list of length 1 containing 4.</li>
-  <li><code>Link(4, s)</code> makes a linked list that starts with 4 followed by the elements of linked list <code>s</code>.
+  <li>join the <code>pizzas</code> and <code>meals</code> tables using <code>FROM pizzas, meals</code></li>
+  <li>use only rows where the <code>meal</code> is a <code>&quot;snack&quot;</code></li>
+  <li>compare the <code>time</code> of the snack to the <code>close</code> of the pizza place.
   </div></li>
 </ul>
 
 
         <button id='toggle-4' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Link Class<noscript> (enable JavaScript)</noscript>
+        Hint: Composing a Sentence<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-4">
-
-<pre><code>class Link:
-    &quot;&quot;&quot;A linked list is either a Link object or Link.empty
-
-    &gt;&gt;&gt; s = Link(3, Link(4, Link(5)))
-    &gt;&gt;&gt; s.rest
-    Link(4, Link(5))
-    &gt;&gt;&gt; s.rest.rest.rest is Link.empty
-    True
-    &gt;&gt;&gt; s.rest.first * 2
-    8
-    &gt;&gt;&gt; print(s)
-    &lt;3 4 5&gt;
-    &quot;&quot;&quot;
-    empty = ()
-
-    def __init__(self, first, rest=empty):
-        assert rest is Link.empty or isinstance(rest, Link)
-        self.first = first
-        self.rest = rest
-
-    def __repr__(self):
-        if self.rest:
-            rest_repr = &#x27;, &#x27; + repr(self.rest)
-        else:
-            rest_repr = &#x27;&#x27;
-        return &#x27;Link(&#x27; + repr(self.first) + rest_repr + &#x27;)&#x27;
-
-    def __str__(self):
-        string = &#x27;&lt;&#x27;
-        while self.rest is not Link.empty:
-            string += str(self.first) + &#x27; &#x27;
-            self = self.rest
-        return string + str(self.first) + &#x27;&gt;&#x27;</code></pre>
-
-
-
+Use <code>name || &quot; closes at &quot; || close</code> to create the sentences in the resulting table. The <code>||</code> operator concatenates values into strings.
 </div>
 
 
-<h3 id="q2-linear-sublists">Q2: Linear Sublists</h3>
+<h3 id="q4-double-pizza">Q4: Double Pizza</h3>
 
 
-<p><strong>Definition:</strong> A <em>sublist</em> of linked list <code>s</code> is a linked list of some of the
-elements of <code>s</code> in order. For example, <code>&lt;3 6 2 5 1 7&gt;</code> has sublists <code>&lt;3 2 1&gt;</code>
-and <code>&lt;6 2 7&gt;</code> but not <code>&lt;5 6 7&gt;</code>.</p>
+<p>If two meals are more than 6 hours apart, then there's nothing wrong with going
+to the same pizza place for both, right? Create a <code>double</code> table with three
+columns. The <code>first</code> column is the earlier meal, the <code>second</code> column is the
+later meal, and the <code>name</code> column is the name of a pizza place. Only include
+rows that describe two meals that are <strong>more than 6 hours apart</strong> and a pizza
+place that is open for both of the meals. The rows may appear in any order.</p>
 
-<p><strong>Definition:</strong> A <em>linear sublist</em> of a linked list of numbers <code>s</code> is a sublist
-in which the difference between adjacent numbers is always the same. For example
-<code>&lt;2 4 6 8&gt;</code> is a linear sublist of <code>&lt;1 2 3 4 6 9 1 8 5&gt;</code> because the difference
-between each pair of adjacent elements is 2.</p>
-
-<p>Implement <code>linear</code> which takes a linked list of numbers <code>s</code> (either a <code>Link</code>
-instance or <code>Link.empty</code>). It returns the longest linear sublist of <code>s</code>. If two
-linear sublists are tied for the longest, return either one.</p>
+<p><strong><code>double</code></strong> table:</p>
 
 
-            <div class="monaco-storable" id="linear-input" style="height:720px;"></div>
-            <a href="javascript:void" id="modal-link-linear-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-linear-input" tabindex="-1" role="dialog">
+
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+          
+  <tr>
+    <th>first</th>
+    <th>second</th>
+    <th>name</th>
+  </tr>
+  <tr>
+    <td>breakfast</td>
+    <td>dinner</td>
+    <td>La Val's</td>
+  </tr>
+  <tr>
+    <td>breakfast</td>
+    <td>dinner</td>
+    <td>Sliver</td>
+  </tr>
+  <tr>
+    <td>breakfast</td>
+    <td>snack</td>
+    <td>La Val's</td>
+  </tr>
+  <tr>
+    <td>lunch</td>
+    <td>snack</td>
+    <td>La Val's</td>
+  </tr>
+
+          </table>
+        </div>
+        
+
+
+
+
+            <div class="monaco-storable" id="double-input" style="height:162px;"></div>
+            <a href="javascript:void" id="modal-link-double-input">Run in 61A Code</a>
+            <div class="modal fade" id="modal-double-input" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content" style="padding-bottom: -5px">
                     <iframe
-                        id="code-iframe-linear-input"
+                        id="code-iframe-double-input"
                         width="100%"
                         height="700px"
                         style="border: none; display:block;"
@@ -385,200 +517,51 @@ linear sublists are tied for the longest, return either one.</p>
             </div>
             <div class="storable-status"></div>
             <script>
-                $(() => activateEditor('def linear(s):\n    &quot;&quot;&quot;Return the longest linear sublist of a linked list s.\n\n    &gt;&gt;&gt; s = Link(9, Link(4, Link(6, Link(7, Link(8, Link(10))))))\n    &gt;&gt;&gt; linear(s)\n    Link(4, Link(6, Link(8, Link(10))))\n    &gt;&gt;&gt; linear(Link(4, Link(5, s)))\n    Link(4, Link(5, Link(6, Link(7, Link(8)))))\n    &gt;&gt;&gt; linear(Link(4, Link(5, Link(4, Link(7, Link(3, Link(2, Link(8))))))))\n    Link(5, Link(4, Link(3, Link(2))))\n    &quot;&quot;&quot;\n    def complete(first, rest):\n        &quot;The longest linear sublist of Link(first, rest) with difference d.&quot;\n        if rest is Link.empty:\n            return ____\n        elif ____ == d:\n            return Link(____, complete(____, ____))\n        else:\n            return complete(first, rest.rest)\n    if s is Link.empty:\n        return s\n    longest = Link(s.first) # The longest linear sublist found so far\n    while s is not Link.empty:\n        t = s.rest\n        while t is not Link.empty:\n            d = t.first &#x2d; s.first\n            candidate = ____\n            if length(candidate) &gt; length(longest):\n                longest = candidate\n            t = t.rest\n        s = s.rest\n    return longest\n\ndef length(s):\n    if s is Link.empty:\n        return 0\n    else:\n        return 1 + length(s.rest)\n', "python", "linear-input"));
+                $(() => activateEditor('&#x2d;&#x2d; Two meals at the same place\n  SELECT ____ AS first, ____ AS second, name\n  FROM ____, ____, pizzas\n  WHERE ____;\n\n', "sql", "double-input"));
             </script>
         
 
 
         <button id='toggle-5' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: complete function<noscript> (enable JavaScript)</noscript>
+        Hint: Joining Tables<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-5">
-There are three cases:
-
-<ul>
-  <li>If <code>rest</code> is empty, return a one-element list containing just <code>first</code>.</li>
-  <li>If <code>rest.first</code> is in the linear sublist that starts with <code>first</code>, then build a list that contains <code>first</code>, and <code>rest.first</code>.</li>
-  <li>Otherwise, <code>complete(first, rest.rest)</code>.
-  </div></li>
-</ul>
-
-
-        <button id='toggle-6' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: while statement<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-6">
-This while loop is creating a <code>candidate</code> linear sublist for every two possible starting values: <code>s.first</code> and <code>t.first</code>. The rest of the linear sublist must be in <code>t.rest</code>.
+Use <code>FROM meals AS a, meals AS b, pizzas</code> so that each row has info about two meals and a pizza place. Then you can write a <code>WHERE</code> clause that compares both <code>a.time</code> and <code>b.time</code> to <code>open</code> and <code>close</code> and each other to ensure all the relevant conditions are met.
 </div>
 
+<!--  -->
 
-<h1 id="scheme">Scheme</h1>
+<!-- <p>Use Ok to test your code:</p><pre style="margin-bottom:0;"><code class="nohighlight">python3 ok -q double<button id="copy-code-python3ok-qdouble" class="inline-copy-button"><div class="copy-tooltip"><span>Copy</span></div>✂️</a></code></pre>
+        <script>
+        document.getElementById("copy-code-python3ok-qdouble").onclick = () => copyCode('python3 ok -q double', "copy-code-python3ok-qdouble");
+        </script>
+        <br/> -->
 
+<!--
+<attach-sql>
+-- Two meals at the same place
+  SELECT <strong><em>_ AS first, </em></strong>_ AS second, name
+-- BEGIN SOLUTION NO PROMPT ALT="  FROM <strong><em>_, </em></strong><em>, pizzas"
 
+<pre><code>     FROM meals AS a, meals AS b, pizzas</code></pre>
 
-<h3 id="q3-increasing-rope">Q3: Increasing Rope</h3>
+<p>-- END SOLUTION
+-- BEGIN SOLUTION NO PROMPT ALT="  WHERE </em><em></em>_;"</p>
 
+<pre><code>     WHERE open &lt;= a.time AND a.time &lt;= close AND
+           open &lt;= b.time AND b.time &lt;= close AND
+           b.time &gt; a.time + 6;</code></pre>
 
-<p><strong>Definition:</strong> A <em>rope</em> in Scheme is a non-empty list containing only numbers
-except for the last element, which may either be a number or a rope.</p>
-
-<p>Implement <code>up</code>, a Scheme procedure that takes a positive integer <code>n</code>. It returns
-a rope containing the digits of <code>n</code> that is the shortest rope in which each pair
-of adjacent numbers in the same list are in increasing order.</p>
-
-<p><strong>Reminder</strong>: the <code>quotient</code> procedure performs floor division, like <code>//</code> in
-Python. The <code>remainder</code> procedure is like <code>%</code> in Python.</p>
-
-
-            <div class="monaco-storable" id="up-input" style="height:360px;"></div>
-            <a href="javascript:void" id="modal-link-up-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-up-input" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content" style="padding-bottom: -5px">
-                    <iframe
-                        id="code-iframe-up-input"
-                        width="100%"
-                        height="700px"
-                        style="border: none; display:block;"
-                    ></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="storable-status"></div>
-            <script>
-                $(() => activateEditor("(define (up n)\n        (define (helper n result)\n            (if (zero? n) result\n                (helper\n                    (quotient n 10)\n                    (let ((first (remainder n 10)))\n                      'YOUR-CODE-HERE\n                        ))))\n        (helper\n          (quotient n 10)\n          'YOUR-CODE-HERE\n        ))\n\n  (expect (up 314152667899) (3 (1 4 (1 5 (2 6 (6 7 8 9 (9)))))))\n", "scheme", "up-input"));
-            </script>
-        
-
-
-        <button id='toggle-7' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: defining helper<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-7">
-Compare <code>first</code> to <code>(car result)</code> to decide whether to <code>cons</code> the value <code>first</code> onto the <code>result</code> or whether to form a new list that contains <code>first</code> and <code>result</code> as elements.
-</div>
-
-
-        <button id='toggle-8' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: calling helper<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-8">
-To correctly call <code>helper</code> from within <code>up</code>, build a rope that only contains the last digit of <code>n</code>: <code>(remainder n 10)</code>.
-</div>
-
-
-<h1 id="sql">SQL</h1>
-
-
-
-        <button id='toggle-9' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Reminder: Writing SELECT Statements<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-9">
-A <code>SELECT</code> statement describes an output table based on input rows. To write one:
-
-<ol>
-  <li>Describe the <strong>input rows</strong> using <code>FROM</code> and <code>WHERE</code> clauses.</li>
-  <li><strong>Group</strong> those rows and determine which groups should appear as output rows using <code>GROUP BY</code> and <code>HAVING</code> clauses.</li>
-  <li>Format and order the <strong>output rows</strong> and columns using <code>SELECT</code> and <code>ORDER BY</code> clauses.</li>
-</ol>
-
-<p><code>SELECT</code> <em>(Step 3)</em> <code>FROM</code> <em>(Step 1)</em> <code>WHERE</code> <em>(Step 1)</em> <code>GROUP BY</code> <em>(Step 2)</em> <code>HAVING</code> <em>(Step 2)</em> <code>ORDER BY</code> <em>(Step 3)</em>;</p>
-
-<p>Step 1 may involve joining tables (using commas) to form input rows that consist of two or more rows from existing tables.</p>
-
-<p>The <code>WHERE</code>, <code>GROUP BY</code>, <code>HAVING</code>, and <code>ORDER BY</code> clauses are optional.
-</div></p>
-
-
-<h3 id="q4-a-secret-message">Q4: A Secret Message</h3>
-
-
-<p>A substitution cipher replaces each word with another word in a table in order
-to encrypt a message. To decode an encrypted message, replace each word <code>x</code> with
-its corresponding <code>y</code> in a code table.</p>
-
-<p>Write a select statement to decode the <code>original</code> message <em>It's The End</em>
-using the <code>code</code> table.</p>
-
-
-            <div class="monaco-storable" id="end-input" style="height:396px;"></div>
-            <a href="javascript:void" id="modal-link-end-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-end-input" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content" style="padding-bottom: -5px">
-                    <iframe
-                        id="code-iframe-end-input"
-                        width="100%"
-                        height="700px"
-                        style="border: none; display:block;"
-                    ></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="storable-status"></div>
-            <script>
-                $(() => activateEditor('CREATE TABLE original AS\n  SELECT 1 AS n, &quot;It&#x27;s&quot; AS word UNION\n  SELECT 2     , &quot;The&quot;      UNION\n  SELECT 3     , &quot;End&quot;;\n\nCREATE TABLE code AS\n  SELECT &quot;Up&quot; AS x, &quot;Down&quot; AS y UNION\n  SELECT &quot;Now&quot;    , &quot;Home&quot; UNION\n  SELECT &quot;It&#x27;s&quot;   , &quot;What&quot; UNION\n  SELECT &quot;See&quot;    , &quot;Do&quot; UNION\n  SELECT &quot;Can&quot;    , &quot;See&quot; UNION\n  SELECT &quot;End&quot;    , &quot;Now&quot; UNION\n  SELECT &quot;What&quot;   , &quot;You&quot; UNION\n  SELECT &quot;The&quot;    , &quot;Happens&quot; UNION\n  SELECT &quot;Love&quot;   , &quot;Scheme&quot; UNION\n  SELECT &quot;Not&quot;    , &quot;Mess&quot; UNION\n  SELECT &quot;Happens&quot;, &quot;Go&quot;;\n\nSELECT "REPLACE THIS LINE WITH YOUR SOLUTION";\n\n', "sql", "end-input"));
-            </script>
-        
-
-
-        <button id='toggle-10' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: first message<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-10">
-
-<p>Join the <code>original</code> and <code>code</code> tables and make sure that the joined roles have
-the same <code>word</code> and <code>x</code>.</p>
-
-</div>
-
-<p>What happens now? Write another select statement to decode this encrypted
-message using the same <code>code</code> table.</p>
-
-
-            <div class="monaco-storable" id="home-input" style="height:450px;"></div>
-            <a href="javascript:void" id="modal-link-home-input">Run in 61A Code</a>
-            <div class="modal fade" id="modal-home-input" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content" style="padding-bottom: -5px">
-                    <iframe
-                        id="code-iframe-home-input"
-                        width="100%"
-                        height="700px"
-                        style="border: none; display:block;"
-                    ></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="storable-status"></div>
-            <script>
-                $(() => activateEditor('CREATE TABLE original AS\n  SELECT 1 AS n, &quot;It&#x27;s&quot; AS word UNION\n  SELECT 2     , &quot;The&quot;      UNION\n  SELECT 3     , &quot;End&quot;;\n\nCREATE TABLE code AS\n  SELECT &quot;Up&quot; AS x, &quot;Down&quot; AS y UNION\n  SELECT &quot;Now&quot;    , &quot;Home&quot; UNION\n  SELECT &quot;It&#x27;s&quot;   , &quot;What&quot; UNION\n  SELECT &quot;See&quot;    , &quot;Do&quot; UNION\n  SELECT &quot;Can&quot;    , &quot;See&quot; UNION\n  SELECT &quot;End&quot;    , &quot;Now&quot; UNION\n  SELECT &quot;What&quot;   , &quot;You&quot; UNION\n  SELECT &quot;The&quot;    , &quot;Happens&quot; UNION\n  SELECT &quot;Love&quot;   , &quot;Scheme&quot; UNION\n  SELECT &quot;Not&quot;    , &quot;Mess&quot; UNION\n  SELECT &quot;Happens&quot;, &quot;Go&quot;;\n\nSELECT "REPLACE THIS LINE WITH YOUR SOLUTION";\n\n', "sql", "home-input"));
-            </script>
-        
-
-
-        <button id='toggle-11' class='btn btn-outline btn-lg alwaystoggle toggle'>
-        Hint: second message<noscript> (enable JavaScript)</noscript>
-        </button>
-        <div class="solution toggle-11">
-
-<p>Join <code>original</code> with <code>code AS a</code> and <code>code AS b</code> to create six-column rows like:
-<code>2|The|The|Happens|Happens|Go</code>, The <em>Go</em> at the end is part of the decoded message.</p>
-
-</div>
-
-<p><strong>Scheduling time:</strong> This is the last discussion, but you could schedule a
-meeting with your group next week to study for the exam. Your regular discussion
-room and time should be available during RRR week if you want to use it.</p>
+<p>-- END SOLUTION
+</attach-sql> --></p>
 
 
 <h1 id="document-the-occasion">Document the Occasion</h1>
 
 
-<p>Please all fill out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeqlK8l6WkScGr-RHR-kM4p5bnR9cllYrG95fDqPJspSlll7A/viewform">attendance form</a> (one submission per person per week).</p>
+<p>Please all fill out the <a href="https://forms.gle/UCYakosihNmKSuZE9">attendance form</a> (one submission per person per week).</p>
 
-<p><strong>Important:</strong> Please help put the furniture in the room back where you found it before you leave. Thanks!</p>
+<p>If you finish early, maybe go get pizza together...</p>
 <script>
     $('.alwaystoggle').css('display', 'inline-block');
     $('.alwaystoggle').click(function() {
@@ -593,21 +576,15 @@ room and time should be available during RRR week if you want to use it.</p>
     <nav class='hidden-print hidden-sm hidden-xs sidebar'>
       <ul>
   <li><a href="#getting-started">Getting Started</a></li>
-  <li><a href="#lists">Lists</a></li>
+  <li><a href="#select-statements">Select Statements</a></li>
   <ul>
-    <li><a href="#q1-word-rope">Q1: Word Rope</a></li>
-  </ul>
-  <li><a href="#linked-lists">Linked Lists</a></li>
-  <ul>
-    <li><a href="#q2-linear-sublists">Q2: Linear Sublists</a></li>
-  </ul>
-  <li><a href="#scheme">Scheme</a></li>
-  <ul>
-    <li><a href="#q3-increasing-rope">Q3: Increasing Rope</a></li>
-  </ul>
-  <li><a href="#sql">SQL</a></li>
-  <ul>
-    <li><a href="#q4-a-secret-message">Q4: A Secret Message</a></li>
+    <li><a href="#pizza-time">Pizza Time</a></li>
+    <ul>
+      <li><a href="#q1-open-early">Q1: Open Early</a></li>
+      <li><a href="#q2-study-session">Q2: Study Session</a></li>
+      <li><a href="#q3-late-night-snack">Q3: Late Night Snack</a></li>
+      <li><a href="#q4-double-pizza">Q4: Double Pizza</a></li>
+    </ul>
   </ul>
   <li><a href="#document-the-occasion">Document the Occasion</a></li>
 </ul>
